@@ -10,13 +10,13 @@ this.ailing_recovers_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 75.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]{%ailing% is walking around camp with his hands out and his fingers stretched as though he were balancing across a rope. He nods to himself as he turns around, foot placed before foot, marching his way back across.%SPEECH_ON%For the first time in a long time I actually feel quite alright. Thanks, %healer%!%SPEECH_OFF%It seems %healer% knew of a couple means to rid what ailed %ailing%.}",
+			Text = "[img]gfx/ui/events/event_05.png[/img]{%ailing% 在营地里走来走去，伸出双手，伸出手指，好像在一根绳子上保持平衡（脑补走钢丝姿势）。 他向自己点点头，然后转身，一只脚放在另一只脚的前面，一路走回去。%SPEECH_ON%这么长时间了，我第一次感觉这么好。 谢谢你， %healer%!%SPEECH_OFF% %healer% 似乎知道两种方法可以帮助 %ailing% 摆脱病痛。}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Glad to hear.",
+					Text = "很高兴听到这个消息",
 					function getResult( _event )
 					{
 						return 0;
@@ -43,7 +43,7 @@ this.ailing_recovers_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/traits/trait_icon_59.png",
-					text = _event.m.Ailing.getName() + " is no longer ailing"
+					text = _event.m.Ailing.getName() + " 不再生病了"
 				});
 			}
 
