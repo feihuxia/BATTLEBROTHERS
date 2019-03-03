@@ -5,17 +5,17 @@ this.aging_swordmaster_paycut_event <- this.inherit("scripts/events/event", {
 	function create()
 	{
 		this.m.ID = "event.aging_swordmaster_paycut";
-		this.m.Title = "During camp...";
+		this.m.Title = "营地中...";
 		this.m.Cooldown = 100.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_17.png[/img]%swordmaster% enters your tent. You wave him to the chair across your table. He sits so slowly and feebly that you fear him standing back up will take twice as long. The man clasps his hands together and elbows his arms onto the table, grunting and shifting, finding little comfort even in doing nothing at all. His lips are dry, his face withered. Liver spots mottle his head and even the hairs about his nose and ears are grey.\n\n You always have time for %swordmaster% so you ask what it is he wishes to speak about.%SPEECH_ON%This might sound peculiar coming from a blade for hire, but I think it needs saying anyway, and it\'d make me sleep better at night. I\'ll be forward with you: I am not the man you hired so long ago. You know that. I know that. Some of the men know it, but they\'re respectful as good men are.%SPEECH_OFF%You agree, but don\'t nod. Instead, you ask what the man is getting at.%SPEECH_ON%I wish to lower my wage. Now don\'t be saying no, you don\'t have to bullshit me. I\'ll take a cut. Money\'s never been an issue anyhow. Those crowns could be used to help arm the men or even pay them better. God knows a young man could always use an extra crown or two.%SPEECH_OFF%Before you say another word, the man springs to his feet with surprising speed. He nods and grins playfully before yelling loudly.%SPEECH_ON%I agree with your decision, good sir. I could use a paycut!%SPEECH_OFF%You laugh as the man leaves your tent almost as soon as he\'d come in.",
+			Text = "[img]gfx/ui/events/event_17.png[/img]%swordmaster% 掀开门帘步入你的营帐. 你向他挥手示意他坐在你对面. 他十分缓慢的坐了下来,你担心他站起来可能需要两倍于此的时间. 他双手紧握成拳，手肘放置于桌面之上, 咕哝着来回挪动着双臂, 但很难找到一个舒适的姿势. 他的嘴唇干燥起皮, 面容衰老憔悴. 老年斑遍布他的脸颊,甚至他的鼻子与耳朵上都充斥着灰色的斑点.\n\n 对于 %swordmaster% 你总能抽出一些时间给他,你询问他有什么想要和你说的.%SPEECH_ON%这可能会听起来很奇怪,对于一位刀口舔血过日子的人, 但我认为我还是需要把这件事说出来, 这至少可以让我晚上睡的安心一些. 我和你直说吧: 我不像以前你雇佣时那样了. 你清楚. 我清楚. 一些其他人也都很清楚, 但他们依旧十分友好的尊重我.%SPEECH_OFF%你认可他所说的话, 但你没有点头附和. 相反, 你装作不明白他在说什么，询问他在说什么.%SPEECH_ON%我希望你降低我的薪水. 先不要拒绝我, 你不用说一些胡话来糊弄我. 我就长话短说吧. 钱对于我来说不是主要问题. 这些钱可以用来给战友们更换更好的装备,甚至给他们更好的报酬. 就连上帝都知道年轻人总会需要额外的一个或两个克朗.%SPEECH_OFF%在你开口讲话之前, 他以十分惊人的速度起身而立. 他咧嘴笑着向你点了点头,玩笑般的叫喊着.%SPEECH_ON%我同意你的决定, 好先生. 我可以好好利用这些省下来的钱!%SPEECH_OFF%你笑起来的时候他离开了你的帐篷，就像他进来时一样迅速.",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "An honorable man if there ever was one.",
+					Text = "毋庸置疑,他是一位可敬的人.",
 					function getResult( _event )
 					{
 						return 0;
@@ -31,7 +31,7 @@ this.aging_swordmaster_paycut_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_daily_money.png",
-					text = _event.m.Swordmaster.getName() + " is now paid " + _event.m.Swordmaster.getDailyCost() + " crowns a day"
+					text = _event.m.Swordmaster.getName() + " 现在只需要 " + _event.m.Swordmaster.getDailyCost() + " 克朗一天"
 				});
 				_event.m.Swordmaster.getTags().add("aging_paycut");
 			}
