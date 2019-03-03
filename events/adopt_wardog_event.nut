@@ -168,7 +168,7 @@ this.adopt_wardog_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "F",
-			Text = "[img]gfx/ui/events/event_37.png[/img]它这样落魄的流浪犬非常适合做机型无。这只狗对士气肯定有帮助。你命令%bro%给它点东西吃，希望它会跟着。他拿出一些剩饭，然后蹲下%SPEECH_ON%好孩子。%SPEECH_OFF%流浪狗闻了闻食物，然后张开口猛咬了一口——好像想把这位兄弟的受也咬掉。佣兵吓得往后挑了一步，手按在胸上发愣。而那只里狼狗把食物吞掉后转身跑掉了。",
+			Text = "[img]gfx/ui/events/event_37.png[/img]它这样落魄的流浪犬非常适合做吉祥物。这只狗对士气肯定有帮助。你命令%bro%给它点东西吃，希望它会跟着。他拿出一些剩饭，然后蹲下%SPEECH_ON%好孩子。%SPEECH_OFF%流浪狗闻了闻食物，然后张开口猛咬了一口——好像想把这位兄弟的手也咬掉。佣兵吓得往后挑了一步，手按在胸上发愣。而那只流浪狗把食物吞掉后转身跑掉了。",
 			Image = "",
 			List = [],
 			Characters = [],
