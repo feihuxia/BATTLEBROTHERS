@@ -7,17 +7,17 @@ this.archery_stunt_event <- this.inherit("scripts/events/event", {
 	function create()
 	{
 		this.m.ID = "event.archery_stunt";
-		this.m.Title = "During camp...";
+		this.m.Title = "营地中...";
 		this.m.Cooldown = 90.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]Something of a commotion draws you from your tent. Men are sitting on a few stumps or on the ground, eagerly watching something in the distance. With squinting eyes, you spot %clown% and %archer% doing something odd. An apple rests on one man\'s head, while the other is walking away - a bow in hand.\n\nYou ask %otherguy% what is going on and he explains that the two men are going to try some sort of stunt or trick that involves shooting a piece of fruit off a man\'s head. Shocked, you exclaim that\'s not safe at all, to which the brother grins and explains that is the point.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]外面的一些骚动把你引出了你的帐篷. 兄弟们分散坐在几个树桩上,有些人干脆直接席地而坐, 他们都十分急切的望着什么东西. 眯着双眼尝试看清远处的某项事物, 你发现 %clown% 和 %archer% 在做一件很奇怪的事情. 其中一人头上顶着一个苹果站在原地, 而另外一人背对着他正在走开 - 手里还拿着一张弓.\n\n你询问 %otherguy% 那两人在做什么,他向你解释说他们正在尝试某种特技或者把戏,包括用弓把一人顶在头上的水果射下来. 你感到很震惊, 你惊呼道那十分危险, 对此, 兄弟笑着说正是如此才精彩.",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Stop at once!",
+					Text = "马上给我停下来!",
 					function getResult( _event )
 					{
 						return "D";
@@ -25,7 +25,7 @@ this.archery_stunt_event <- this.inherit("scripts/events/event", {
 
 				},
 				{
-					Text = "Well... this should be interesting.",
+					Text = "好吧... 这应该会很有趣.",
 					function getResult( _event )
 					{
 						if (this.Math.rand(1, 100) <= _event.m.Archer.getCurrentProperties().RangedSkill)
@@ -49,13 +49,13 @@ this.archery_stunt_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B1",
-			Text = "[img]gfx/ui/events/event_10.png[/img]You mull the situation over. The brothers look to you, expecting a stoppage, but instead you take a seat amongst them. This spurs a brief cheer from the crowd which quickly quiets to hushed whispers as %clown% and %archer% get ready.%SPEECH_ON%Make sure to hit the apple!%SPEECH_OFF%One brother shouts. Laughter ripples through the group.%SPEECH_ON%From that distance %clown_short%\'s nose kinda looks like an apple to me.%SPEECH_OFF%More laughter, but it is ever nervous as the stunt is about to unfold.",
+			Text = "[img]gfx/ui/events/event_10.png[/img]你理清了这里正在发生什么. 兄弟们向你望过来, 等待着你的发言, 但你没有进行什么长篇大论, 相反, 你走过去在他们中间找了个空位坐了下来. 兄弟们欢呼了起来, 但人群很快就安静了下来, 低声询问 %clown% 和 %archer% 是否已准备好.%SPEECH_ON%你可一定要射中那个苹果啊!%SPEECH_OFF%一位兄弟呼喊着. 他喊完, 人们大声的笑了起来.%SPEECH_ON%从这距离看 %clown_short% 的鼻子在我看来都像是一个苹果.%SPEECH_OFF%人们笑的更欢了, 但他们始终是紧张的, 因为特技就要开始了.",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Ohh!",
+					Text = "哦!",
 					function getResult( _event )
 					{
 						return "B2";
@@ -72,13 +72,13 @@ this.archery_stunt_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B2",
-			Text = "[img]gfx/ui/events/event_10.png[/img]%archer% angles his shoulders to %clown% and draws his bow, the silhouette of the man but a crescent of wood, string, and arm. You can\'t see %clown%\'s face, but you assume his eyes are closed. The shot is released. It zips. It disappears. %clown% rocks backward, clutching his face. This isn\'t looking good. The man screams. The crowd oohs. %archer% slowly lowers his bow and looks at it as though it is at fault.\n\n Eventually, %clown% is carried past you, a shaft of an arrow sticking out of his head. Another brother lingers behind, quietly eating an apple in the wake of the chaos.",
+			Text = "[img]gfx/ui/events/event_10.png[/img]%archer% 调整他的肩膀朝向 %clown% 后提起了他的弓, 他手中的弓被拉起弓弦后化作新月的形状. 你看不到 %clown% 的脸, 但你认为他的双眼是紧闭的. 弓弦被释放开. 发出了震鸣声. 短暂的消失了. %clown% 像石头一般向后仰倒, 痛苦的捂着自己的脸. 这看起来可不妙. 他尖叫了起来. 人们发出了惋惜之声. %archer% 缓慢的垂下双臂, 死死的望着手中的弓, 仿佛一切错误都是由它铸就的一般.\n\n 最终, %clown% 从你身边走过, 一根箭死死的钉在他的头上. 一位兄弟绕过他, 趁着人群始终处于混乱之中悄无声息的偷吃掉了那枚苹果.",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "That\'s going to leave a mark...",
+					Text = "那可能会给他留下一个标记...",
 					function getResult( _event )
 					{
 						return 0;
@@ -94,9 +94,9 @@ this.archery_stunt_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = injury.getIcon(),
-					text = _event.m.Clown.getName() + " suffers " + injury.getNameOnly()
+					text = _event.m.Clown.getName() + " 遭受 " + injury.getNameOnly()
 				});
-				_event.m.Archer.worsenMood(2.0, "Severely injured " + this.event.m.Clown.getName() + " by accident");
+				_event.m.Archer.worsenMood(2.0, "严重伤势 " + this.event.m.Clown.getName() + " 因为意外");
 
 				if (_event.m.Archer.getMoodState() < this.Const.MoodState.Neutral)
 				{
