@@ -81,7 +81,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 							this.Flags.set("IsMilitia", true);
 						}
 					}
-					else if (r <= 50 || this.World.FactionManager.isUndeadScourge() && r <= 70)
+					else if (r <= 50  ||  this.World.FactionManager.isUndeadScourge() && r <= 70)
 					{
 						if (nearestZombies.getTile().getDistanceTo(this.Contract.m.Home.getTile()) <= 20)
 						{
@@ -169,7 +169,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 
 			function update()
 			{
-				if (this.Contract.m.UnitsSpawned.len() == 0 || this.Flags.get("IsEnemyHereDialogShown"))
+				if (this.Contract.m.UnitsSpawned.len() == 0  ||  this.Flags.get("IsEnemyHereDialogShown"))
 				{
 					local isEnemyGone = true;
 
@@ -293,7 +293,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 
 			function update()
 			{
-				if (this.Contract.m.Kidnapper == null || this.Contract.m.Kidnapper.isNull() || !this.Contract.m.Kidnapper.isAlive())
+				if (this.Contract.m.Kidnapper == null  ||  this.Contract.m.Kidnapper.isNull()  ||  !this.Contract.m.Kidnapper.isAlive())
 				{
 					if (this.Time.getVirtualTimeF() - this.World.Events.getLastBattleTime() <= 5.0)
 					{
@@ -359,7 +359,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 						}
 					}
 
-					if (numLocations == 0 || this.Flags.get("ActiveLocations") - numLocations >= 2)
+					if (numLocations == 0  ||  this.Flags.get("ActiveLocations") - numLocations >= 2)
 					{
 						if (this.Flags.get("IsKidnapping") && this.Flags.get("IsKidnappingInProgress"))
 						{
@@ -404,14 +404,14 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_20.png[/img]{%employer%\'s looking out the window. He waves you to join him.%SPEECH_ON%Look at those people.%SPEECH_OFF%There\'s a throng of people below, wailing about this or that.%SPEECH_ON%Brigands have been roaming these parts for awhile now and people believe that they are about to attack us in great numbers.%SPEECH_OFF%The man throws the curtains closed and goes to light a candle. He speaks over it, his breath flicking the flame.%SPEECH_ON%We need you to protect us, mercenary. If you can stop these brigands, you\'ll be paid handsomely. Are you interested?%SPEECH_OFF% | A few peasants are roaming outside the halls of the room. You can hear their shouting and it is of a nervous tone. %employer% pours a drink and sips it with a shaking hand.%SPEECH_ON%I\'ll just be clear with you, sellsword. We have many, many reports that brigands are about to attack this town. If you want to know, those reports came by way of dead women and children. Clearly, we\'ve no reason to doubt the seriousness of these reports. So, the question is, will you protect us?%SPEECH_OFF% | %employer%\'s looking at some papers on his desk. You take a seat and ask what it is he wants.%SPEECH_ON%Hello, sellsword. We have a problem I think you will... excel at taking care of.%SPEECH_OFF%You ask him to be straight with you and he jumps right to the point.%SPEECH_ON%Brigands have burned down some homes and hovels just outside town. News is that they are preparing a much larger, gustier attack. I need you here to stop them. Do you think you can handle this task?%SPEECH_OFF% | %employer%\'s staring at his bookshelf, his back to you. He talks somberly.%SPEECH_ON%It\'s a shame not many can read these. Maybe our issues would go away if they could. Or maybe they\'d just get worse.%SPEECH_OFF%He shakes his head and turns around.%SPEECH_ON%We\'ve got a gang of brigands soon to descend upon us. I need you, sellsword, to stop them. My books sure as hell won\'t. If the pay is right, which I promise it will be, are you in?%SPEECH_OFF% | %employer%\'s got two papers in hand. There are faces sketched onto them.%SPEECH_ON%We caught these two the other day. Hanged \'em, burned the remains.%SPEECH_OFF%You shrug.%SPEECH_ON%Congratulations?%SPEECH_OFF%The man is not very amused.%SPEECH_ON%Now we\'ve gotten word that their brigand friends are coming to exact revenge on us! And, yes, we need your help to fight them off. Are you interested?%SPEECH_OFF% | You settle into %employer%\'s room, taking a seat, rubbing your hands along the wooden frame. It\'s a good oak. A once-tree worth sitting in.%SPEECH_ON%Glad you\'re comfortable, sellsword, but I sure as hell ain\'t. We have many, many warnings that a large group of brigands are about to attack our town. We\'re quite short on defense, but not short on crowns. Obviously, that\'s where you come in. Are you interested?%SPEECH_OFF% | %employer% slams a cup against the wall. It scatters, turning and pinwheeling, flecks of wine dotting your cheek.%SPEECH_ON%Vagabonds! Brigands! Marauders! It never ends!%SPEECH_OFF%He absently hands you a napkin.%SPEECH_ON%Now I\'m getting news that a large group of these thugs are coming to burn this town to the ground! Well, I\'ve gotten something in store for them: you. What do you say, sellsword? Will you defend us?%SPEECH_OFF% | A few grieving women can be hear wailing just outside %employer%\'s room. He turns to you.%SPEECH_ON%Hear that? That\'s what happens when brigands come here. They steal, they rape, and they murder.%SPEECH_OFF%You nod. It is, after all, the way of the brigand.%SPEECH_ON%Now some peasants in the hinterland say the thugs are preparing for a massive assault on our village. You must do something to help us, sellsword. Heh, of course I say \'must\'. What I really mean is that we\'ll pay you to help us...%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_20.png[/img]{%employer%正看向窗外。他挥手致意你跟他一起。%SPEECH_ON%看看这些人。%SPEECH_OFF%下面有一群人，为各自的悲伤恸哭。%SPEECH_ON%强盗们现在在这些地方游荡，而人们相信他们马上要集结大批人马来攻击我们。%SPEECH_OFF%他拉起窗帘并点上一根蜡烛。他开口了，呼吸中闪烁着火焰。%SPEECH_ON%我们需要你来保护我们，雇佣兵。如果你能阻止这些强盗，你会获得丰厚的报酬。你有兴趣吗？%SPEECH_OFF%  |  几个农民在房间大厅外徘徊。你可以听到他们的呼喊声，那是一种焦虑的语调。%employer%倒了杯酒手臂颤抖着抿了一口。%SPEECH_ON% 我就跟你说白了吧，佣兵。我们说到非常多报告，说强盗要来攻击这座小镇了。如果你想知道，这些报告来自死去的妇女和儿童。显然，这些报告的严重性不言而喻。所以，问题是，你会保护我们吗？%SPEECH_OFF%  |  %employer%正在他的位置上看着一些文件。你坐了下来并询问他想要什么。%SPEECH_ON%你好，佣兵。我们遇到了麻烦，我在想你……会很擅长搞定。%SPEECH_OFF%你让他打开天窗说亮话，而这时他跳了起来。%SPEECH_ON%强盗们烧毁了镇外的房屋和茅舍。新消息称他们准备更大规模、更贪婪地进攻。我需要你来阻止他们。你能完成这项任务吗？%SPEECH_OFF%  |  %employer%正盯着他的书架背对着你。他阴沉地说着。%SPEECH_ON%没多少人能读这些真是太遗憾了。或许如果他们受过更好教育的话我们就能克服现在的麻烦。又或者那只会更糟。%SPEECH_OFF%他摇着头转过身来。%SPEECH_ON%有一群强盗马上要来袭击我们。佣兵，我需要你来阻止他们。我的书显然什么也做不了。如果报酬合适，这点我可以保证，你同意吗？%SPEECH_OFF%  |  %employer%手上拿了两页纸。上面有两张面部素描。%SPEECH_ON%这两个是我们前几天抓的。吊死他们，烧掉尸体。%SPEECH_OFF%你耸了耸肩。%SPEECH_ON%祝贺你？%SPEECH_OFF%男人不是很高兴。%SPEECH_ON%现在我们得到消息他们的强盗朋友要来向我们寻仇了！是的，我们需要你的帮助来击退他们。你有兴趣吗？%SPEECH_OFF%  |  你适应%employer%的房间，就坐，手指划过木框。是上等的橡木。一件值得坐的椅子。%SPEECH_ON%很高兴你感到舒服，佣兵，但我显然不。我们说到非常多警告，说大群强盗要来攻击我们的小镇了。我们的防御很薄弱，但并不差钱。显然，这是你来这的原因，你有兴趣吗？%SPEECH_OFF%  |  %employer%把杯子摔倒墙上。它散开、转动并旋转，葡萄酒点缀在你的脸颊。%SPEECH_ON%流浪汉！强盗！掠夺者！这没有尽头！%SPEECH_OFF%他心不在焉地递给你一张纸巾。%SPEECH_ON%现在我收到消息说大群这些暴徒正在赶来，意欲将我们的城镇夷为平地！好吧，我为他们准备了：你。你意下如何，佣兵？你会保护我们吗？%SPEECH_OFF%  |  %employer%房间外能听到一些悲痛的妇女哭声。他转向你。%SPEECH_ON%听到了吗？那就是强盗来之后会发生的事。他们奸淫偷盗，烧杀抢掠。%SPEECH_OFF%你点了点头。毕竟，这就是盗贼的方式。%SPEECH_ON%现在腹地的几个农民说这帮暴徒正准备大规模突袭我们村庄。你必须要帮帮我们，佣兵。呵呵，当然我会说‘必须’。我的意思是如果你帮我们的话，我们会支付丰厚的报酬的……%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{What is %townname% prepared to pay for their safety? | This should be worth a good amount of crowns to you, right?}",
+					Text = "{%townname%准备为他们的安危支付多少呢？ |  这对你们来说可值一大笔钱啊，对吗？}",
 					function getResult()
 					{
 						return "Negotiation";
@@ -419,7 +419,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 
 				},
 				{
-					Text = "{I\'m afraid you\'re on your own. | We have more important matters to settle. | I wish you luck, but we\'ll not be part of this.}",
+					Text = "{恐怕你就要靠自己了。 | 你还有更重要的事情要处理。 | 祝你好运，但跟我们无关。}",
 					function getResult()
 					{
 						if (this.Math.rand(1, 100) <= 60)
@@ -443,14 +443,14 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "Plea",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_43.png[/img]{As you\'re leaving %employer% with a rejection, you come outside to find a throng of peasants standing around. Each is holding some sort of oddity, the sort of wealth that the laymen could scrounge together as best they could: chickens, cheap necklaces, worn clothes, rusted blacksmith gear, the list of belongings go on and on. One steps forward, a chicken tucked under each arm.%SPEECH_ON%Please! You can\'t leave! You have to help us!%SPEECH_OFF%%randombrother% laughs, but you have to admit that the poor folk do know how to pull a heartstring or two. Maybe you should stay and help after all? | When you leave %employer%, you come outside to find a woman standing there with a mob of her spawn running around and between her legs and a babe sucking her teat.%SPEECH_ON%Mercenary, please, you mustn\'t leave us like this! This town needs you! The children need you!%SPEECH_OFF%She pauses, then lowers the other side of her shirt, revealing a rather salacious and seductive temptation.%SPEECH_ON%I need you...%SPEECH_OFF%You hold a hand up, both to stop her and wipe your suddenly sweaty brow. Maybe helping this pair, uh, poor people out wouldn\'t be so bad after all? | Getting ready to leave %townname%, a small puppy runs up to you barking and licking your boots. An even smaller child is in chase, practically on the coattails of its literal tail. The kid falls to the mutt and wraps his arms around its nappy fur.%SPEECH_ON%Oh {Marley | Yeller | Jo-Jo}, I love you so much!%SPEECH_OFF%An image of brigands slaughtering the child and his pet runs across your mind. You\'ve better things to do than play sheriff and constable against common thieves, but the dog just keeps licking the boy\'s face and the kid just seems so happy.%SPEECH_ON%Haha! We\'re going to live forever and ever, aren\'t we? Forever and ever!%SPEECH_OFF%Goddammit. | A man walks up to you as you leave %employer%\'s abode.%SPEECH_ON%Sir, I heard you turn that man\'s offer down. It\'s a shame, that\'s all I wanted to say. I thought there were plenty of good men in this world, but I suppose I was wrong on that. Godspeed on your journey, and I do hope you pray for us in your travels.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_43.png[/img]{当你拒绝着离开 %employer%，你来到屋外却发现一群农民围站成一圈。每个人都拿着某种奇物，那种外行能找得到的财富：土鸡、便宜的项链、破旧的衣服、锈迹斑驳的铁匠齿轮，以及诸如此类等等等等。手臂下塞着土鸡的人向前一步，%SPEECH_ON%求求你！你不能走！你一定要救救我们！%SPEECH_OFF%%randombrother%笑了笑，但你不得不承认这些可怜的民众知道一些撩拨人的心弦。或许你真的应该留下来救他们？ |  当你离开%employer%来到屋外，却只发现一个妇女跟一个暴民在追逃，在她腿间是一个吸啜乳房的婴儿。%SPEECH_ON%雇佣兵，求求你，你不能这样丢下我们啊！这个镇需要你！这个孩子需要你！%SPEECH_OFF%她停了下来，然后撩下衬衫的另一边，显露出相当淫荡、诱人的诱惑。%SPEECH_ON%我需要你……%SPEECH_OFF%呢举起一只手，既是阻止她也是擦拭你突然汗湿的额头。或许帮帮这一对可怜人也不是那么糟糕？ | 准备离开%townname%，一只小狗跑向你然后吠着舔你的靴子。后面追逐者一个更小的孩子，真的是在追逐它的尾巴。孩子摔倒在杂种狗身上然后用手臂环在尿布的毛上。%SPEECH_ON%哦 {马利  |  阿黄  |  Jo-Jo}，我如此爱你！%SPEECH_OFF%一幅强盗屠杀孩童和他宠物的画面划过你的脑海。比起对付寻常盗贼的警长和治安官你有更重要的事要做，但狗狗只是一直舔着小男孩的脸蛋，而这个小男孩看着又是如此开心。%SPEECH_ON%哈哈！我们会永永远远这样生活下去，不是吗？永永远远！%SPEECH_OFF%该死。 | 在你离开%employer%住所时一个男人走向你。%SPEECH_ON%先生，我听说你拒绝了那个人的提议。我只想说，那太遗憾了。我还以为这世上还是有很多好人的，但似乎是我错了。祝您的旅途顺利，我也希望你在旅途中为我们祈祷。%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			ShowEmployer = false,
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{Damn, we can\'t leave these people to die. | Fine, fine, we won\'t leave %townname%. Let\'s talk payment, at least.}",
+					Text = "{该死，我们不能就这样看着这些人死去。 | 好吧，好吧，我们不会离开%townname%。那么，至少聊聊报酬吧。}",
 					function getResult()
 					{
 						return "Negotiation";
@@ -458,7 +458,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 
 				},
 				{
-					Text = "{I\'m sure you\'ll pull through. Make way. | I won\'t risk the %companyname% to save some starved peasants.}",
+					Text = "{我敢肯定你会渡过难关的。让路。 | 我不会为了某些要饿死的农民拿%companyname%冒险。}",
 					function getResult()
 					{
 						this.World.Contracts.removeContract(this.Contract);
@@ -474,13 +474,13 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		});
 		this.m.Screens.push({
 			ID = "UndeadAttack",
-			Title = "Near %townname%",
-			Text = "[img]gfx/ui/events/event_29.png[/img]{While standing guard, a crazed peasant comes running up to you. He\'s slackjawed, out of breath. Hands on his knees, he damn near vomits out the words:%SPEECH_ON%The dead... they\'re coming!%SPEECH_OFF%Peering over him, you do indeed see a throng of rather pale creatures shuffling in the distance. | No brigands here, but undead! While waiting for the thugs and miscreants to come storming into the town, you instead spot a large throng of shambling creatures coming your way. Just because the target changes doesn\'t mean the contract does - prepare yourself! | Alarm bells sound off from the town chapel. You listen to them while eyeing the horizon. They keep ringing. A local stands by your side.%SPEECH_ON%One... two... three rings... four...%SPEECH_OFF%He begins to sweat. Then his eyes widen as the bells toll one final time.%SPEECH_ON%That\'s... that can\'t be.%SPEECH_OFF%You inquire as to what he\'s so scared of. He backs away.%SPEECH_ON%The dead walk the earth again!%SPEECH_OFF%Great, just when you thought a contract was going to be easy. | Groaning, moaning, the undead shuffle into view. There are no brigands here - maybe these foul creatures ate them - but the contract isn\'t null: protect the town!}",
+			Title = "%townname%附近",
+			Text = "[img]gfx/ui/events/event_29.png[/img]{ 站岗时，一个疯狂的农民向你跑来。他发呆着，上气不接下气。手臂撑在膝盖上，终于开口：%SPEECH_ON%死人……他们来了！%SPEECH_OFF%你凝视着他，确实看到远处一群相当苍白的生物拖着脚往这边前来。 |  不是强盗，而是不死族！在等待暴徒和恶棍进程时，你却看到一大群步履蹒跚的生物朝你的方向走来。目标变了可不意味着合同也跟着改变—做好准备！ | 城镇教堂中发出警钟声响。你听着钟声望向地平线。钟声继续着。一个当地人站在你身旁。%SPEECH_ON%一下…两下…三下钟声…四下…%SPEECH_OFF%他开始冒汗。然后在最后一次钟声后他瞪大双眼。%SPEECH_ON%那是……那不可能。%SPEECH_OFF%你询问他在怕什么。他退了回去。%SPEECH_ON%死人又出现了！%SPEECH_OFF%好极了，你还以为这合同会简单呢。 | 不死族呻吟着进入视线。这没有强盗—或许这些污秽的生物没写在合同上—但合同上写的是：保护城镇！}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "To arms!",
+					Text = "拿起武器！",
 					function getResult()
 					{
 						return 0;
@@ -491,13 +491,13 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		});
 		this.m.Screens.push({
 			ID = "DefaultAttack",
-			Title = "Near %townname%",
-			Text = "[img]gfx/ui/events/event_07.png[/img]The brigands are in sight! Prepare for battle and protect the town!",
+			Title = "%townname%附近",
+			Text = "[img]gfx/ui/events/event_07.png[/img]强盗出现了！准备战斗，保护小镇！",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "To arms!",
+					Text = "拿起武器！",
 					function getResult()
 					{
 						return 0;
@@ -508,13 +508,13 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		});
 		this.m.Screens.push({
 			ID = "ItsOver",
-			Title = "Near %townname%",
-			Text = "[img]gfx/ui/events/event_22.png[/img]{The fighting is over and the men idle in a welcome respite. %employer% will be waiting for you back in town. | With the battle over, you survey the corpses littered across the field. It is a gruesome sight, yet for some reason it spurs you with energy. The ghastly hills of dead only remind you of the vitality you\'ve yet to yield to this horrid world. People like %employer% should come and see it, but he won\'t, so you\'ll have to go and see him instead. | Flesh and bone scattered across the field, hardly discernible from one owner to the next. Black buzzards cycle overhead, halos of chevron shadows rippling over the dead, the birds waiting for the mourners to clear out. %randombrother% comes to your side and asks if they should start the return trip to %employer%. You leave the sight of the battlefield behind and nod. | A peaceful sort of ruin is made of the dead. Like it was their natural state, stiffened and at a permanent loss, and their whole living was but a fleeting fit of an accident finally come to an end. %randombrother% comes up and asks if you\'re alright. You\'re not sure, to be honest, and simply answer that it is time to go see %employer%. | Misshapen men and crooked corpses litter the ground for battle gives the dead no sovereignty over how one comes to a final rest. The bodiless heads look at most peace, for in battle no man or beast has time to truly hack a neck away, it only comes by the quickest and sharpest of blade swings. A part of you hopes to go with such instant finality, but another part hopes you get the chance to take your killer down with you.\n\n %randombrother% comes to your side and asks for orders. You turn away from the field and tell the %companyname% to get ready to return to %employer%.}",
+			Title = "%townname%附近",
+			Text = "[img]gfx/ui/events/event_22.png[/img]{战斗结束了，空闲下来的人们抓紧开始休息。%employer% 正等着你返回小镇。 |  在战斗结束后，你环视着散落在战场四处的尸体。那是一副令人厌恶的景象，但出于某种原因，这种景象却激励了你。这布满死尸的恐怖丘陵只会让你重新振作起来，你还未向这糟糕的世界屈服。%employer%那样的人应该来看看这样的景象，但是他是不会来的，所以得换作你去找他。 |  血肉残肢散布在战场各处，几乎已经无法辨别出那些肢体到底是属于谁的了。黑色的秃鹰在空中盘旋着，徘徊着的阴影覆盖在了死者之上，那些食腐的鸟类正等待着哀悼者的离去。%randombrother%走到你的身边，询问现在是否开始返回%employer%那里。你点了点头，转过了身子，不再去看那片战场。 |  这片废墟堆满了死尸。那些死者还维持着生前的姿态，只不过他们的动作是永久地固定了，他们的生命在那场意外中落下了帷幕。%randombrother%走了过来，问你是否没事。说实话，你自己也不清楚，你现在唯一想做的就是去见%employer%。 |  畸形的人体和扭曲的尸体散布在战场各处，他们根本不清楚自己是如何在战斗中变成了这样的结果。孤零零的脑袋散落在战场之上，在战斗中，无论是人类还是兽人，都不会浪费力气去将别人的脖子完全砍断，因此，这些脑袋只会是被又快又锋利的剑刃斩下的。你心中有一部分想赶快结束这场纷争，但另一部分却希望趁机去解决你的对手。\n\n %randombrother%走了过来，向你询问接下来的命令。你转身向%companyname%下令，准备返回%employer%。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "We head back to the townhall!",
+					Text = "我们退回城镇大厅！",
 					function getResult()
 					{
 						return 0;
@@ -525,13 +525,13 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		});
 		this.m.Screens.push({
 			ID = "ItsOverDidNothing",
-			Title = "Near %townname%",
-			Text = "[img]gfx/ui/events/event_30.png[/img]Smoke fills the air, smoke and the caustic smell of burning wood, burning livelihoods. %townname%\'s folk put all their hopes into hiring the %companyname%, a fatal mistake.",
+			Title = "%townname%附近",
+			Text = "[img]gfx/ui/events/event_30.png[/img]空气中充满烟雾，烟雾和灼烧木材的苛性气味。%townname%的民众把所有的希望都寄托在雇佣%companyname%上，这是个致命的错误。",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "That didn\'t go as planned...",
+					Text = "那没有如愿……",
 					function getResult()
 					{
 						return 0;
@@ -542,13 +542,13 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		});
 		this.m.Screens.push({
 			ID = "Militia1",
-			Title = "At %townname%",
-			Text = "[img]gfx/ui/events/event_80.png[/img]{While preparing to defend %townname%, the local militia has come to your side. They submit to your orders, only asking that you send them where you think they are most needed. | It appears the local militia have joined the battle! A ragtag group of men, but they\'ll be useful nonetheless. Now the question is, where to send them? | %townname%\'s militia has joined the fight! Although a shoddy band of poorly armed men, they are eager to defend home and hovel. They submit to your command, trusting that you will send them to where they are most needed. | You\'re not alone in this fight! %townname%\'s militia have joined you. They\'re eager to fight and ask you where they are needed most.}",
+			Title = "在%townname%",
+			Text = "[img]gfx/ui/events/event_80.png[/img]{在为防御%townname%做准备之时， 当地民兵来到你身侧。他们服从你的命令，只希望你把他们派去最需要他们的地方。 |  看来当地民兵已经加入了战斗！一群衣衫褴褛的男人，不过他们会派上用场的。现在的问题是，把他们派去哪里呢？ | %townname%民兵已经加入战斗！尽管装备糟糕，他们还是很希望守卫家园和茅舍的。他们服从你的命令，相信你会把他们派到最需要他们的地方。 | 这场战斗中你不是孤军奋战！%townname%民兵已加入。他们渴望战斗并询问哪里最需要他们。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Fall in line, you\'ll be under my command.",
+					Text = "排好队，你们听从我的指令。",
 					function getResult()
 					{
 						return "Militia2";
@@ -556,7 +556,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 
 				},
 				{
-					Text = "Go and defend the townhall of %townname%.",
+					Text = "去守卫%townname%城镇大厅。",
 					function getResult()
 					{
 						local home = this.Contract.m.Home;
@@ -576,7 +576,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 
 				},
 				{
-					Text = "Go and defend the outskirts of %townname%.",
+					Text = "去守卫%townname%郊区。",
 					function getResult()
 					{
 						local home = this.Contract.m.Home;
@@ -607,7 +607,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 
 				},
 				{
-					Text = "Go hide somewhere and stay out of our way.",
+					Text = "去找个地方藏起来别挡道。",
 					function getResult()
 					{
 						return 0;
@@ -618,13 +618,13 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		});
 		this.m.Screens.push({
 			ID = "Militia2",
-			Title = "At %townname%",
-			Text = "[img]gfx/ui/events/event_80.png[/img]Now that you\'ve decided to take some of the locals under your command, they ask how they should arm themselves for the battle to come.",
+			Title = "在%townname%",
+			Text = "[img]gfx/ui/events/event_80.png[/img]既然你决定了要接收一些当地人，他们询问你该如何武装自己来应对即将到来的战斗。",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Take bows, you\'ll be shooting from the back.",
+					Text = "拿上弓，你从后方射箭。",
 					function getResult()
 					{
 						for( local i = 0; i != 4; i = i )
@@ -641,7 +641,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 
 				},
 				{
-					Text = "Take sword and shield, you\'ll be fighting in the front.",
+					Text = "拿上剑和盾牌，你去前线作战。",
 					function getResult()
 					{
 						for( local i = 0; i != 4; i = i )
@@ -658,7 +658,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 
 				},
 				{
-					Text = "Arm yourselves however you want.",
+					Text = "按你们自己喜欢的方式武装自己。",
 					function getResult()
 					{
 						for( local i = 0; i != 4; i = i )
@@ -688,13 +688,13 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		});
 		this.m.Screens.push({
 			ID = "MilitiaVolunteer",
-			Title = "Near %townname%",
-			Text = "[img]gfx/ui/events/event_80.png[/img]{The fighting over, one of the militiamen that helped in the defense comes to you personally, bending low and offering his sword.%SPEECH_ON%Sir, my time with the town of %townname% is at an end. But the prowess of the %companyname% is truly an amazing sight. If you would permit it, sir, I would love to fight alongside you and your men.%SPEECH_OFF% | With the battle over, one of the militiamen from %townname% states that he will gladly come and fight for the %companyname%. Partly because he was most impressed with the mercenary band\'s fighting, and partly because being conscripted into the town\'s defense is neither financially or physically healthy.}",
+			Title = "%townname%附近",
+			Text = "[img]gfx/ui/events/event_80.png[/img]{战斗结束了，其中一位协助防御的民兵亲自找到你，弯低身子献上他的剑。%SPEECH_ON%先生，我和%townname%的时光到头了。但%companyname%的英勇真的太了不起了。如果您允许，我希望与您和您的士兵并肩作战。%SPEECH_OFF%  |  随着战斗的结束，其中一位%townname%民兵表示愿意加入%companyname%并为之作战。部分原因可能是他对雇佣兵团的作战折服，还一部分可能是应征入伍的小镇防御无论是经济上还是身体上都不太健康。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Welcome to the %companyname%!",
+					Text = "欢迎加入%companyname%！",
 					function getResult()
 					{
 						return 0;
@@ -702,7 +702,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 
 				},
 				{
-					Text = "This is no place for you.",
+					Text = "这不是你能待的地方。",
 					function getResult()
 					{
 						return 0;
@@ -713,13 +713,13 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		});
 		this.m.Screens.push({
 			ID = "Kidnapping1",
-			Title = "Near %townname%",
-			Text = "[img]gfx/ui/events/event_30.png[/img]{While keeping watch for the brigands, a peasant comes up telling you that a group of the thugs attacked nearby, taking off with a group of hostages. You shake your head in disbelief. How were they able to sneak in and do this? The layman shakes his head, too.%SPEECH_ON%I thought y\'all were supposed to help us. Why didn\'t you do anything?%SPEECH_OFF%You ask if the brigands have gone far. The peasant shakes his head. Looks like you still have a shot to get them back. | A man wearing rags and carrying a broken pitchfork sprints up to your company. He drops and wails at your feet.%SPEECH_ON%The brigands attacked! Where were you? They killed people... burned some... and... and they took some prisoner! Please, go save them!%SPEECH_OFF%You eye %randombrother% and nod.%SPEECH_ON%Get the men ready. We need to chase these thugs down before they escape entirely.%SPEECH_OFF% | You have your eyes peeled to the horizons, looking for any sight or sound of vagabond or vagathief. Suddenly, %randombrother% comes to you with a woman by his side. She tells a story that the thugs have already attacked, killing a great number of peasants and those they didn\'t kill they made off with. The mercenary nods.%SPEECH_ON%Looks like they snuck past us, sir.%SPEECH_OFF%You\'ve only one choice now - go get those people back! | Stationing yourself close to %townname%, you anticipate the brigands\' attack. You thought this would be easy, but the sudden arrival of a crazed layman says otherwise. The peasant explains that the marauders have already ambushed the outskirts. They slaughtered everyone they could, then made off with a few men, women, and children. The man, either drunk or in shock, slurs his pleas.%SPEECH_ON%Get... get them back, would ya?%SPEECH_OFF% | Keeping watch, a few angry peasants take the roads, storming toward you in a swirl of mob anger.%SPEECH_ON%I thought we were paying you to protect us! Where were you!%SPEECH_OFF%They are covered in blood. Some are half-clothed. A woman hangs a breast, too angry to care about the indecency. You ask the group what it is they are talking about. A man, clutching a cane close to his chest, explains that the raiders and thugs had already attacked, taking to a nearby hamlet. They slaughtered everything in sight then, with their bloodlust satiated, took as many prisoners as they could.\n\nYou nod.%SPEECH_ON%We\'ll get them back.%SPEECH_OFF%}",
+			Title = "%townname%附近",
+			Text = "[img]gfx/ui/events/event_30.png[/img]{就在你搜索那些强盗时，一位农民跑了过来，告诉你有一群暴徒攻击了附近的居民，而且带走了一群人质。你怀疑地摇了摇头。他们是如何溜进来做这种事情的呢？那个农民也摇了摇头。%SPEECH_ON%我以为你们是来帮助我们的。为什么不做点事情呢？%SPEECH_OFF%你问那些强盗是否走远了。农民摇了摇头。看来你还有机会救回他们。 |  一个衣衫褴褛手拿破旧草叉的人向你的战团飞奔而来。他伏在你的脚边嚎啕大哭。%SPEECH_ON%那些强盗攻击了我们！你跑哪去了？他们杀了那些人…烧了一些…还有…他们挟持走了一些人！求求您，快去救他们吧！%SPEECH_OFF%你看了眼%randombrother%然后点了点头。%SPEECH_ON%让大家都做准备。我们需要在那些暴徒逃走前追上他们。%SPEECH_OFF%  |  你望向远方，寻找了那些流浪汉的踪迹。忽然，%randombrother%走到了你的身边，旁边还带着一个女人。她说暴徒们已经攻击杀害了大量农民而且抓走了那些没杀死的。佣兵点了点头。%SPEECH_ON%看来他们悄悄地溜过了我们，大人。%SPEECH_OFF%你现在只有一个选择 - 把那些被俘虏的人救回来！ |  让你的战团在%townname%附近扎营，等待强盗的袭击。你觉得这不是件困难的事情，但是一个农民却突然发疯似的闯入了你的营地。农民解释道掠夺者已经袭击了郊外。他们残杀着无辜的人们，然后，他们还掳走了一些男人，女人，和小孩。那个男人，不知道是因为喝多了还是惊吓过度，口齿不清地恳求着。%SPEECH_ON%把……把他们救回来，行吗？%SPEECH_OFF%  |  继续看着，一些愤怒的农民气势汹汹地向你走来。%SPEECH_ON%我以为只要付给你们钱，你们就会保护我们！然而你们人呢！%SPEECH_OFF%他们浑身沾满了鲜血。有些人甚至衣不遮体。一个女人吊死了一只野兽太过气愤以致于不在乎这无理行径。你走上前询问具体的情况。一个男人在胸口附近握着一根手杖，解释道掠夺者和暴徒已经攻击完并前往了附近的小村庄。他们屠戮了能看到的所有人，他们的杀戮欲满足后，还尽可能多地掳走了很多囚犯。\n\n你点点头。%SPEECH_ON%我们会把他们救回来的。%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Let\'s get them!",
+					Text = "我们去救他们！",
 					function getResult()
 					{
 						return 0;
@@ -730,13 +730,13 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		});
 		this.m.Screens.push({
 			ID = "Kidnapping2",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_22.png[/img]{Sheathing your sword, you order %randombrother% to go free the prisoners. A litany of bewildered peasants are freed from leather leashes, chains, and dog cages. They thank you for your timely arrival, and for the violence you brought to the brigand. | The brigands are slaughtered to a man. You set your men out to go rescue every peasant they can find. Each one comes together, hugging and crying, mad with happiness that they have survived this horrifying ordeal. | After killing the last brigand around, you tell the company to go around freeing the hostages the vagabonds had taken. Each one comes to you in turn, some kissing your hand, others your feet. You only tell them to get back to %townname% as you will do yourself.}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_22.png[/img]{你收起了武器，并让%randombrother%去释放那些俘虏。那些还没反应过来的农民们接连被从皮绳，铁链和狗笼中放了出来。他们感谢你的及时赶到，还有你对强盗的反击。 |  强盗们被一个男人屠杀了。你派出手下去营救那些还活着的农民。每一位死里逃生的幸存者们拥抱着彼此，疯狂而开心地大哭着。 |  在杀死附近最后一个强盗后，你让手下去营救那些被流浪汉抓去的俘虏。每位幸存者都会走到你的面前，有些亲吻你的手，有些亲吻你的脚。你让他们返回%townname%，因为你也会那样做。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Looks like this is over.",
+					Text = "看来都结束了。",
 					function getResult()
 					{
 						return 0;
@@ -747,13 +747,13 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		});
 		this.m.Screens.push({
 			ID = "Kidnapping3",
-			Title = "Near %townname%",
-			Text = "[img]gfx/ui/events/event_53.png[/img]{Unfortunately, the brigands got away with the hostages. May the gods be with those sorry souls now. | You couldn\'t do it - you couldn\'t save those poor peasants. Now only the gods know what will happen to them. | Sadly, the marauders got away with their human cargo in tow. Those poor folks will have to fend for themselves now. The stories you hear, however, tell you they will not fare well at all. | The brigands got away, their prisoners alongside with them. You\'ve no idea what will happen to those people now, but you know it isn\'t good. Slavery. Torture. Death. You\'re not sure which is the worst.}",
+			Title = "%townname%附近",
+			Text = "[img]gfx/ui/events/event_53.png[/img]{很不幸，那些强盗带着俘虏离开了。愿诸神现在与那些可怜的灵魂同在。 |  你没能做到 - 你没能拯救那些可怜的农民。现在只有诸神知道他们身上会发生什么了。 |  不幸的是，那些掠夺者带着人类俘虏离开了。那些可怜人现在只能靠自己了。不过根据那些你听过的传言，你明白那些人是不会有好结果的。 |  那些强盗带着他们的俘虏逃走了。虽然你不知道那些可怜人以后会怎么样，但你清楚一定不会是什么好事。奴役。折磨。死亡。你不知道哪样是最糟糕的。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "{They won\'t like that in %townname%... | Maybe they can be bought back...}",
+					Text = "{在%townname%他们不会喜欢的…… | 或许他们能被召回……}",
 					function getResult()
 					{
 						return 0;
@@ -764,15 +764,15 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		});
 		this.m.Screens.push({
 			ID = "Success1",
-			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_04.png[/img]{You return to %employer% looking rightfully smug.%SPEECH_ON%Work\'s done.%SPEECH_OFF%He nods, tipping a goblet of wine while not necessarily offering it.%SPEECH_ON%Yes. The town is eternally grateful for your help. They are also... monetarily grateful.%SPEECH_OFF%The man gestures toward the corner of the room. You see a satchel of crowns there.%SPEECH_ON%%reward% crowns, just as we had agreed. Thanks again, sellsword.%SPEECH_OFF% | %employer% welcomes your return with a glass of wine.%SPEECH_ON%Drink up, sellsword, you\'ve earned it.%SPEECH_OFF%It tastes... particular. Haughty, if that could be a flavor. Your employer swings around his desk, taking a gleefully happy seat.%SPEECH_ON%You managed to protect the town just as you had promised! I am most impressed.%SPEECH_OFF%He nods, tipping his goblet toward a wooden chest.%SPEECH_ON%MOST impressed.%SPEECH_OFF%You open the chest to find a bevy of golden crowns. | %employer% welcomes you into his room.%SPEECH_ON%I watched from my window, you know? Saw it all. Well, most of it. The good parts, I suppose.%SPEECH_OFF%You raise an eyebrow.%SPEECH_ON%Oh, don\'t give me that look. I don\'t feel bad for enjoying what I saw. We\'re alive, right? Us, the good guys.%SPEECH_OFF%The other eyebrow goes up.%SPEECH_ON%Well... anyway, your payment, as promised.%SPEECH_OFF%The man hands over a chest of %reward% crowns. | When you return to %employer% you find his room has almost been packed up, everything ready to move and go. You raise a bit of humorous concern.%SPEECH_ON%Getting ready to go somewhere?%SPEECH_OFF%The man\'s settled down into his chair.%SPEECH_ON%I had my doubts, sellsword. Can you blame me? For what it\'s worth, you shouldn\'t need doubt my ability to pay.%SPEECH_OFF%He sways a hand across his desk. On the corner is a satchel, lumpy and bulbous with coins.%SPEECH_ON%%reward% crowns, as promised.%SPEECH_OFF% | %employer% raises from his chair when you enter. He bows, somewhat incredulously, but also earnestly. He tips his head toward the window where the din of happy peasants murmurs.%SPEECH_ON%You hear that? You\'ve earned that, mercenary. The people here love you now.%SPEECH_OFF%You nod, but the love of the common man is not what brought you here.%SPEECH_ON%What else have I earned?%SPEECH_OFF%%employer% smiles.%SPEECH_ON%A man on point. I bet that\'s what gives you your... edge. Of course, you\'ve also earned this.%SPEECH_OFF%He heaves a wooden chest onto his desk and unlatches it. The shine of gold crowns warms your heart. | %employer%\'s staring out his window when you enter. He\'s almost in a dreamstate, head bent low to his hand. You interrupt his thoughts.%SPEECH_ON%Thinking of me?%SPEECH_OFF%The man chuckles and playfully clutches his chest.%SPEECH_ON%You are truly the man of my dreams, mercenary.%SPEECH_OFF%He crosses the room and takes a chest from the bookshelf. He unlatches it as he sets it on the table. A glorious pile of gold crowns stare you in the face. %employer% grins.%SPEECH_ON%Now who is dreaming?%SPEECH_OFF% | %employer%\'s at his desk when you enter.%SPEECH_ON%I saw a good deal of it. The killing, the dying.%SPEECH_OFF%You take a seat.%SPEECH_ON%Hope you enjoyed the show. Viewing\'s ain\'t free, though.%SPEECH_OFF%The man nods, taking a satchel and handing it over.%SPEECH_ON%I\'d pay for an encore, but I\'m not sure %townname% wants that.%SPEECH_OFF%}",
+			Title = "在你回来之时……",
+			Text = "[img]gfx/ui/events/event_04.png[/img]{你回到了%employer%那儿，看起来相当得意。%SPEECH_ON%工作完成。%SPEECH_OFF%他点点头，倒了一杯没什么必要的酒给你。%SPEECH_ON%很好。小镇永远感激你的帮助。他们……用物质表达了谢意。%SPEECH_OFF%他用手势示意房间角落。你看到那里有成堆的克朗。%SPEECH_ON%%reward%克朗，正如我们的协议。再次感谢，雇佣兵。%SPEECH_OFF%  |  %employer%用一杯酒欢迎你的回归。%SPEECH_ON%喝吧，雇佣兵，这是你赢来的。%SPEECH_OFF%它的味道……很特别。傲慢，如果有这种味道的话。你的雇主从桌边转过身，高兴地坐下。%SPEECH_ON%你按照承诺保护了小镇！我大为震动。%SPEECH_OFF%他点着头，用酒杯指指橱柜。%SPEECH_ON%相当震动。%SPEECH_OFF%你打开橱柜，看到里面成堆的克朗。 |  %employer%欢迎你进他房间。%SPEECH_ON%我从窗口看到了，你知道吗？全部看到了。好吧，看到了一部分。我想是好的部分。%SPEECH_OFF%你扬起眉毛。%SPEECH_ON%哦，别那么看我。我感觉还不错。我们活着，对吧？我们，好人。%SPEECH_OFF%另一边眉毛也扬起来。%SPEECH_ON%好吧……总之，你的报酬，按照协议。%SPEECH_OFF%他给了你一箱%reward%克朗。 |  你回到%employer%那儿，发现他的房间几乎都收拾好了，一切就绪，准备离开。你产生了一点滑稽的担忧。%SPEECH_ON%准备去别的地方了？%SPEECH_OFF%他坐在椅子上。%SPEECH_ON%我有自己的怀疑，雇佣兵。你能怪我吗？对于值得之物，你不该怀疑我的支付能力。%SPEECH_OFF%他在桌上摆摆手。角落里有个起伏的金币堆。%SPEECH_ON%%reward%克朗，按照协议。%SPEECH_OFF%  |  %employer%在你进门的时候从椅子上站了起来。他鞠了一躬，有几分怀疑，却也十分真诚。他对着窗点点头，那里传来农民快乐的喧闹声。%SPEECH_ON%你听到了吗？这是你赢得的，雇佣兵。这里的人爱着你。%SPEECH_OFF%你点点头，但人民的爱不是你来这里的原因。%SPEECH_ON%我还赢得了什么？%SPEECH_OFF%%employer%笑了。%SPEECH_ON%直接的家伙。我想这就是你占优势的原因。当然，这是你赢来的。%SPEECH_ON%他把一个木箱放在桌上，打开了它。克朗的闪光温暖了你的心。 |  你进门的时候，%employer%正盯着窗。他头低到了手边，几乎处于睡梦状态。你打断了他的沉思。%SPEECH_ON%在想我？%SPEECH_OFF%他咯咯笑着，抓紧了胸口。%SPEECH_ON%你确实是我梦中之人，雇佣兵。%SPEECH_OFF%他走到房间那头，从书架上拿下一个箱子。放到桌上的时候打开了它。你的脸就被克朗照亮了。%employer%笑了。%SPEECH_ON%现在是谁做梦了？%SPEECH_OFF%  |  你进门的时候%employer%正在桌边。%SPEECH_ON%我看到了一大部分。杀戮，还有死亡。%SPEECH_OFF%你坐了下来。%SPEECH_OFF%希望你喜欢这场表演。不过这可不是免费欣赏的。%SPEECH_OFF%他点点头，拿出一个背包给了你。%SPEECH_OFF%我愿意出钱再看一次，但我不确定%townname%还想不想看。%SPEECH_OFF%}",
 			Image = "",
 			Characters = [],
 			List = [],
 			ShowEmployer = true,
 			Options = [
 				{
-					Text = "{The %companyname% will make good use of this. | Payment for a hard day\'s work.}",
+					Text = "{%companyname%会好好利用它的。 |  辛苦一天的报酬。}",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
@@ -796,21 +796,21 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Reward + "[/color] Crowns"
+					text = "你获得 [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Reward + "[/color] 克朗"
 				});
 			}
 
 		});
 		this.m.Screens.push({
 			ID = "Success2",
-			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_30.png[/img]{%employer% welcomes your return with a point out his window.%SPEECH_ON%You see that? There, in the distance.%SPEECH_OFF%You join his side. He asks.%SPEECH_ON%What is it that you see?%SPEECH_OFF%There\'s smoke on the horizon. You let him know that\'s what you see.%SPEECH_ON%Right, smoke. I didn\'t hire you to let the brigands make smoke, understand? Of course... most of the town is still upright...%SPEECH_OFF%He heaves a satchel into your chest.%SPEECH_ON%Good work, sellsword. Just... not good enough.%SPEECH_OFF% | You return to %employer%, he looks a mix of happy and sad, somewhere between drunk and straight. This is not the look you want to see.%SPEECH_ON%You did good, sellsword. Word has it you laid those brigands utterly flat. Word also has it that they burned parts of our outskirts.%SPEECH_OFF%You nod. Not worth lying about what you can\'t cover up.%SPEECH_ON%You\'ll be getting paid, but you have to understand that it takes money to rebuild those areas. Obviously, the crowns for that will be coming out of your pockets...%SPEECH_OFF% | %employer%\'s slouched in his seat when you return.%SPEECH_ON%Most in %townname% are happy, but a few are not. Can you guess which of those aren\'t?%SPEECH_OFF%The brigands did manage to destroy a few parts of the outskirts, but this here was rhetorical question.%SPEECH_ON%I need funds to help rebuild the territories those marauders managed to get their hands on. I\'m sure you understand, then, why you\'ll be receiving less pay...%SPEECH_OFF%You shrug. It is what it is. | %employer%\'s at his bookshelf. He takes a book, spinning around and opening it all in one move. He lays it across his table.%SPEECH_ON%There\'s numbers there. I\'m sure you can\'t read them, but here\'s what they say: the brigands managed to destroy parts of this town and now I need crowns to help rebuild. Unfortunately, I don\'t have that many crowns on hand to do this. I\'m sure you understand this predicament.%SPEECH_OFF%You nod and state the obvious.%SPEECH_ON%It\'s coming out of my pay.%SPEECH_OFF%The man nods and slides an open hand across his desk, drawing your attention to a satchel. There\'s no point in arguing about pay. You take the sack and make your leave.}",
+			Title = "在你回来之时……",
+			Text = "[img]gfx/ui/events/event_30.png[/img]{%employer%指着窗外欢迎你归来。%SPEECH_ON%你看到了？从这么远的距离。%SPEECH_OFF%你加入了他的阵营。他问。%SPEECH_ON%你看到了什么？%SPEECH_OFF%视野内烟雾弥漫。你告诉他，你看到的就是这样。%SPEECH_OFF%对，烟雾。我不是雇佣你来让强盗放火的，明白了吗？当然……镇上大部分人还是正直的……%SPEECH_OFF%他把一个背包扔到你怀里。%SPEECH_OFF%祝你好运，雇佣兵。还不够好。%SPEECH_OFF%  |  你回到%employer%那儿，他看起来高兴又悲伤，仿佛介于醉酒和清醒之间。这可不是你想要看见的模样。%SPEECH_OFF%你做得很好，雇佣兵。有传言说你把那群强盗的皮都剥了。还有传言说他们烧了我们的一部分郊区。%SPEECH_OFF%你电头。没必要为遮掩不住的事撒谎。%SPEECH_OFF%你会拿到报酬的，不过你要理解，重建那些地方需要钱。显然，这些钱都要从你口袋里出……%SPEECH_OFF%  |  你回来的时候，%employer%懒散地坐在椅子上。%SPEECH_ON%大多数%townname%很高兴，但有些就不怎么乐意了。你猜猜哪些是不高兴的？%SPEECH_OFF%强盗确实毁了我们郊区不少地方，这是个夸张的问题。%SPEECH_ON%我需要资金重建被那些掠夺者破坏的地方。我想你肯定理解，那么，你报酬减少的原因……%SPEECH_OFF%你耸耸肩。就是这样。 |  %employer%在书架旁。他拿出一本书，翻转过来打开。放在桌上。%SPEECH_ON%上面有数字。我想你读不懂，不过它们的意思是：强盗毁掉了小镇一部分区域，我现在需要资金重建。很不幸，我手上没那么多钱。你肯定能理解这种困境。%SPEECH_ON%你点头，说出了明显事实。%SPEECH_ON%钱要从我的报酬里扣吧。%SPEECH_ON%他点点头，慷慨地拿出一袋钱放在桌上，你的注意力全到那上面去了。争论报酬完全没有意义。你拿起钱袋离开了。}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			Options = [
 				{
-					Text = "{That\'s just half of what we agreed to! | It is what it is...}",
+					Text = "{这只是我们说好的一半！ |  就这样了...}",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
@@ -834,7 +834,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Reward + "[/color] Crowns"
+					text = "你获得 [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Reward + "[/color] 克朗"
 				});
 				this.Contract.addSituation(this.new("scripts/entity/world/settlements/situations/raided_situation"), 3, this.Contract.m.Home, this.List);
 			}
@@ -842,14 +842,14 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		});
 		this.m.Screens.push({
 			ID = "Success3",
-			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_04.png[/img]{You return to %employer% looking rightfully smug.%SPEECH_ON%Work\'s done.%SPEECH_OFF%He nods, tipping a goblet of wine while not necessarily offering it.%SPEECH_ON%Yes. The town is eternally grateful for your help. They are also... monetarily grateful.%SPEECH_OFF%The man gestures toward the corner of the room. You see a satchel of crowns there.%SPEECH_ON%%reward% crowns, just as we had agreed. Thanks again, sellsword. Oh and, uh, a shame about those peasants...%SPEECH_OFF% | %employer% welcomes your return with a glass of wine.%SPEECH_ON%Drink up, sellsword, you\'ve earned it.%SPEECH_OFF%It tastes... particular. Haughty, if that could be a flavor. Your employer swings around his desk, taking a gleefully happy seat.%SPEECH_ON%You managed to protect the town just as you had promised! I am most impressed.%SPEECH_OFF%He nods, tipping his goblet toward a wooden chest.%SPEECH_ON%MOST impressed.%SPEECH_OFF%You open the chest to find a bevy of golden crowns.%SPEECH_ON%A shame about the peasants that got taken. I\'ve made adjustments accordingly...%SPEECH_OFF% | %employer% welcomes you into his room.%SPEECH_ON%I watched from my window, you know? Saw it all. Well, most of it. The good parts, I suppose.%SPEECH_OFF%You raise an eyebrow.%SPEECH_ON%Oh, don\'t give me that look. I don\'t feel bad for enjoying what I saw. We\'re alive, right? Us, the good guys.%SPEECH_OFF%The other eyebrow goes up.%SPEECH_ON%Well... anyway, your payment, as promised. I heard word that a few peasants were taking away. I made some deductions. That money will be going to the survivors.%SPEECH_OFF%The man hands over a chest of %reward% crowns. | When you return to %employer% you find his room has almost been packed up, everything ready to move and go. You raise a bit of humorous concern.%SPEECH_ON%Getting ready to go somewhere?%SPEECH_OFF%The man\'s settled down into his chair.%SPEECH_ON%I had my doubts, sellsword. Can you blame me? For what it\'s worth, you shouldn\'t need doubt my ability to pay.%SPEECH_OFF%He sways a hand across his desk. On the corner is a satchel, lumpy and bulbous with coins.%SPEECH_ON%A couple crowns shorter than promised. You know what will happen to those peasants the brigands ran off with? Yeah, I reduced your pay for a reason.%SPEECH_OFF% | %employer% raises from his chair when you enter. He bows, somewhat incredulously, but also earnestly. He tips his head toward the window where the din of happy peasants murmurs.%SPEECH_ON%You hear that? You\'ve earned that, mercenary. The people here love you now.%SPEECH_OFF%You nod, but the love of the common man is not what brought you here.%SPEECH_ON%What else have I earned?%SPEECH_OFF%%employer% smiles.%SPEECH_ON%A man on point. I bet that\'s what gives you your... edge. Of course, you\'ve also earned this. Well, a little less. Nasty business about those peasants you let the brigands run off with, no?%SPEECH_OFF%He heaves a wooden chest onto his desk and unlatches it. The shine of gold crowns warms your heart. | %employer%\'s staring out his window when you enter. He\'s almost in a dreamstate, head bent low to his hand. You interrupt his thoughts.%SPEECH_ON%Thinking of me?%SPEECH_OFF%The man chuckles and playfully clutches his chest.%SPEECH_ON%You are truly the man of my dreams, mercenary.%SPEECH_OFF%He crosses the room and takes a chest from the bookshelf. He unlatches it as he sets it on the table. A glorious pile of gold crowns stare you in the face. %employer% flashes a grin, but it fades as quick as it was to come.%SPEECH_ON%A little lighter than what you were expecting? The surviving families of those peasants you let get carried away by brigands will be getting that share. I\'m sure you understand.%SPEECH_OFF% | %employer%\'s at his desk when you enter.%SPEECH_ON%I saw a good deal of it. The killing, the dying.%SPEECH_OFF%You take a seat.%SPEECH_ON%Hope you enjoyed the show. Viewing\'s ain\'t free, though.%SPEECH_OFF%The man nods, taking a satchel and handing it over.%SPEECH_ON%I\'d pay for an encore, but I\'m not sure %townname% wants that. Of course, those poor folks who got taken away by those raiders don\'t want what they got.%SPEECH_OFF%You glance into the sack and notice that it\'s a few crowns lighter than expected.}",
+			Title = "在你回来之时……",
+			Text = "[img]gfx/ui/events/event_04.png[/img]{你回到了%employer%那儿，看起来相当得意。%SPEECH_ON%工作完成。%SPEECH_OFF%他点点头，倒了一杯没什么必要的酒给你。%SPEECH_ON%很好。小镇永远感激你的帮助。他们……用物质表达了谢意。%SPEECH_OFF%他用手势示意房间角落。你看到那里有成堆的克朗。%SPEECH_ON%%reward%克朗，正如我们的协议。再次感谢，雇佣兵。哦，还有，关于那些农民……真可惜……%SPEECH_OFF%  |  %employer%用一杯酒欢迎你的回归。%SPEECH_ON%喝吧，雇佣兵，这是你赢来的。%SPEECH_OFF%它的味道……很特别。傲慢，如果有这种味道的话。你的雇主从桌边转过身，高兴地坐下。%SPEECH_ON%你按照承诺保护了小镇！我大为震动。%SPEECH_OFF%他点着头，用酒杯指指橱柜。%SPEECH_ON%相当震动。%SPEECH_OFF%你打开橱柜，看到里面成堆的克朗。%SPEECH_ON%我为遇难的农民感到惋惜。我做了相应的调整……%SPEECH_OFF%  |  %employer%欢迎你进他房间。%SPEECH_ON%我从窗口看到了，你知道吗？全部看到了。好吧，看到了一部分。我想是好的部分。%SPEECH_OFF%你扬起眉毛。%SPEECH_ON%哦，别那么看我。我感觉还不错。我们活着，对吧？我们，好人。%SPEECH_OFF%另一边眉毛也扬起来。%SPEECH_ON%好吧……总之，你的报酬，按照协议。我听说有几个农民被抓走了。所以扣除了一些。那部分钱会交给幸存者。%SPEECH_OFF%他给了你一箱%reward%克朗。 |  你回到%employer%那儿，发现他的房间几乎都收拾好了，一切就绪，准备离开。你产生了一点滑稽的担忧。%SPEECH_ON%准备去别的地方了？%SPEECH_OFF%他坐在椅子上。%SPEECH_ON%我有自己的怀疑，雇佣兵。你能怪我吗？对于值得之物，你不该怀疑我的支付能力。%SPEECH_OFF%他在桌上摆摆手。角落里有个起伏的金币堆。%SPEECH_ON%比说好的前少了不少克朗。你知道被强盗带走的农民会是什么下场吗？我扣除报酬是有原因的。%SPEECH_OFF%  |  你进门的时候%employer%从椅子上站了起来。他鞠了一躬，有几分怀疑，却也十分真诚。他对着窗点点头，那里传来农民快乐的喧闹声。%SPEECH_ON%你听到了吗？这是你赢得的，雇佣兵。这里的人爱着你。%SPEECH_OFF%你点点头，但人民的爱不是你来这里的原因。%SPEECH_ON%我还赢得了什么？%SPEECH_OFF%%employer%笑了。%SPEECH_ON%直接的家伙。我想这就是你占优势的原因。当然，这是你赢来的。好吧，少了点。你让强盗抓走了农民，肮脏的勾当，不？%SPEECH_OFF%他把一个木箱放到桌上，打开了它。克朗的闪光温暖了你的心。 |  你进门的时候，%employer%正盯着窗。他头低到了手边，几乎处于睡梦状态。你打断了他的沉思。%SPEECH_ON%在想我？%SPEECH_OFF%他咯咯笑着，抓紧了胸口。%SPEECH_ON%你确实是我梦中之人，雇佣兵。%SPEECH_OFF%他走到房间那头，从书架上拿下一个箱子。放到桌上的时候打开了它。你的脸就被克朗照亮了。%employer%露出了一丝笑意，但它瞬间消失了。%SPEECH_ON%比你期待的少了点？你没能阻止强盗带走的那些农民的家人会拿到那些钱。我想你肯定能理解。%SPEECH_OFF%  |  你进门的时候%employer%正在桌边。%SPEECH_ON%我看到了一大部分。杀戮，还有死亡。%SPEECH_OFF%你坐了下来。%SPEECH_OFF%希望你喜欢这场表演。不过这可不是免费欣赏的。%SPEECH_OFF%他点点头，拿出一个背包给了你。%SPEECH_OFF%我愿意出钱再看一次，但我不确定%townname%还想不想看。当然，被强盗抓走的可怜镇民一点都不想有这种遭遇。%SPEECH_OFF%你看了看袋子，发现里面的克朗比期望中要少。}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			Options = [
 				{
-					Text = "{That\'s just half of what we agreed to! | It is what it is...}",
+					Text = "{这只是我们说好的一半！ |  就这样了...}",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
@@ -873,7 +873,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Reward + "[/color] Crowns"
+					text = "你获得 [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Reward + "[/color] 克朗"
 				});
 				this.Contract.addSituation(this.new("scripts/entity/world/settlements/situations/raided_situation"), 3, this.Contract.m.Home, this.List);
 			}
@@ -881,14 +881,14 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		});
 		this.m.Screens.push({
 			ID = "Success4",
-			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_30.png[/img]{%employer% welcomes your return with a point out his window.%SPEECH_ON%You see that? There, in the distance.%SPEECH_OFF%You join his side. He asks.%SPEECH_ON%What is it that you see?%SPEECH_OFF%There\'s smoke on the horizon. You let him know that\'s what you see.%SPEECH_OFF%Right, smoke. I didn\'t hire you to let the brigands make smoke, understand? Of course... most of the town is still upright...%SPEECH_OFF%He heaves a satchel into your chest.%SPEECH_ON%Good work, sellsword. Just... not good enough. And a shame about those poor peasants you let those damned brigands run off with.%SPEECH_OFF% | You return to %employer%, he looks a mix of happy and sad, somewhere between drunk and straight. This is not the look you want to see.%SPEECH_ON%You did good, sellsword. Word has it you laid those brigands utterly flat. Word also has it that they burned parts of our outskirts.%SPEECH_OFF%You nod. Not worth lying about what you can\'t cover up.%SPEECH_ON%You\'ll be getting paid, but you have to understand that it takes money to rebuild those areas. And what of those poor people you let the raiders kidnap? Their families are going to want help, too. Obviously, the crowns for that will be coming out of your pockets...%SPEECH_OFF% | %employer%\'s slouched in his seat when you return.%SPEECH_ON%Most in %townname% are happy, but a few are not. Can you guess which of those aren\'t?%SPEECH_OFF%The brigands did manage to destroy a few parts of the outskirts, but this here was rhetorical question.%SPEECH_ON%I need funds to help rebuild the territories those marauders managed to get their hands on. I also need crowns to help the survivors of those peasants you failed to save. I\'m sure you understand, then, why you\'ll be receiving less pay...%SPEECH_OFF%You shrug. It is what it is. | %employer%\'s at his bookshelf. He takes a book, spinning around and opening it all in one move. He lays it across his table.%SPEECH_ON%There\'s numbers there. I\'m sure you can\'t read them, but here\'s what they say: the brigands managed to destroy parts of this town and now I need crowns to help rebuild. Unfortunately, I don\'t have that many crowns on hand to do this. I\'m sure you understand this predicament.%SPEECH_OFF%You nod and state the obvious.%SPEECH_ON%It\'s coming out of my pay. And those peasants you let the brigands run off with? They have families. Survivors. They\'ll be getting a share of our \'agreement,\' too.%SPEECH_OFF%The man nods and slides an open hand across his desk, drawing your attention to a satchel. There\'s no point in arguing about pay. You take the sack and make your leave.}",
+			Title = "在你回来之时……",
+			Text = "[img]gfx/ui/events/event_30.png[/img]{%employer%指着窗外欢迎你归来。%SPEECH_ON%你看到了？从这么远的距离。%SPEECH_OFF%你加入了他的阵营。他问。%SPEECH_ON%你看到了什么？%SPEECH_OFF%视野内烟雾弥漫。你告诉他，你看到的就是这样。%SPEECH_OFF%对，烟雾。我不是雇佣你来让强盗放火的，明白了吗？当然……镇上大部分人还是正直的……%SPEECH_OFF%他把一个背包扔到你怀里。%SPEECH_OFF%祝你好运，雇佣兵。还……不够好。我为那些被强盗抓走的农民感到惋惜。%SPEECH_OFF%  |  你回到%employer%那儿，他看起来高兴又悲伤，仿佛介于醉酒和清醒之间。这可不是你想要看见的模样。%SPEECH_OFF%你做得很好，雇佣兵。有传言说你把那群强盗的皮都剥了。还有传言说他们烧了我们的一部分郊区。%SPEECH_OFF%你电头。没必要为遮掩不住的事撒谎。%SPEECH_OFF%你会拿到报酬的，不过你要理解，重建那些地方需要钱。还有你没能阻止强盗带走的那些人呢？他们的家人也需要帮助。显然，这些钱都要从你口袋里出……%SPEECH_OFF%  |  你回来的时候，%employer%懒散地坐在椅子上。%SPEECH_ON%大多数%townname%很高兴，但有些就不怎么乐意了。你猜猜哪些是不高兴的？%SPEECH_OFF%强盗确实毁了我们郊区不少地方，这是个夸张的问题。%SPEECH_ON%我需要资金重建被那些掠夺者破坏的地方。我还需要钱帮助幸存者。我想你肯定理解，那么，你报酬减少的原因……%SPEECH_OFF%你耸耸肩。就是这样。 |  %employer%在书架旁。他拿出一本书，翻转过来打开。放在桌上。%SPEECH_ON%上面有数字。我想你读不懂，不过它们的意思是：强盗毁掉了小镇一部分区域，我现在需要资金重建。很不幸，我手上没那么多钱。你肯定能理解这种困境。%SPEECH_ON%你点头，说出了明显事实。%SPEECH_ON%钱要从我的报酬里扣吧。还有那些你没能阻止强盗抓走的人？他们有家人。有幸存者。他们也会拿到我们‘协议’的一部分钱。%SPEECH_OFF%他点点头，慷慨地拿出一袋钱放在桌上，你的注意力全到那上面去了。争论报酬完全没有意义。你拿起钱袋离开了。}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			Options = [
 				{
-					Text = "{That\'s just half of what we agreed to! | It is what it is...}",
+					Text = "{这只是我们说好的一半！ |  就这样了...}",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
@@ -912,7 +912,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Reward + "[/color] Crowns"
+					text = "你获得 [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Reward + "[/color] 克朗"
 				});
 				this.Contract.addSituation(this.new("scripts/entity/world/settlements/situations/raided_situation"), 3, this.Contract.m.Home, this.List);
 			}
@@ -920,14 +920,14 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		});
 		this.m.Screens.push({
 			ID = "Failure1",
-			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_30.png[/img]{When you enter %employer%\'s room, he tells you to close the door behind you. Just as the latch clicks, the man slams you with a stream of obscenities which you couldn\'t hope to keep track of. Calming down, his voice - and language - return to some level of normalcy.%SPEECH_ON%Every bit of our outskirts were destroyed. What is it, exactly, did you think I was paying you for? Get out of here.%SPEECH_OFF% | %employer%\'s slamming back goblets of wine when you enter. There\'s the din of angry peasants squalling outside his window.%SPEECH_ON%Hear that? They\'ll have my head if I pay you, sellsword. You had one job, one job! Protect this town. And you couldn\'t do it. So now you could do one thing and it comes free: get the hell out of my sight.%SPEECH_OFF% | %employer% clasps his hands over his desk.%SPEECH_ON%What is it, exactly, are you expecting to get here? I\'m surprised you returned to me at all. Half the town is on fire and the other half is already ash. I didn\'t hire you to produce smoke and desolation, sellsword. Get the hell out of here.%SPEECH_OFF% | When you return to %employer%, he\'s holding a mug of ale. His hand his shaking. His face is red.%SPEECH_ON%It\'s taking everything in me to not throw this in your face right now.%SPEECH_OFF%Just in case, the man finishes the drink in one big gulp. He slams it on his desk.%SPEECH_ON%This town expected you protect them. Instead, the brigands swarmed the outskirts like they were taking a goddam leisure trip! I\'m not in the business of giving marauders a good time, sellsword. Get the farkin\' hell out of here!%SPEECH_OFF%}",
+			Title = "在你回来之时……",
+			Text = "[img]gfx/ui/events/event_30.png[/img]{当你走进%employer%房间时，他让你关上身后的门。门闩的声音刚落下，那人就扑头盖脸地向你道出污言秽语，你几乎都反应不过来。他的语气逐渐平静，而措辞也恢复常态。%SPEECH_ON%外围被摧毁地精光。你觉得我雇佣你到底是干嘛的？滚。%SPEECH_OFF%  |  当你进来时，%employer%猛地甩开酒杯。窗户外满是喧闹的生气农夫。%SPEECH_ON%听到了吗？雇佣兵，要是我付你钱，他们就要我的脑袋了。你只有一个任务，一个！保护这座镇子。而你还没有做到。现在还有件事你能做到，而且还是免费的：滚出我的视线。%SPEECH_OFF%  |  %employer%拍向桌子。%SPEECH_ON% 你还回来了，你在期待什么？真是让我惊讶。小镇一半着火了，而另一半已经化为了灰烬。雇佣兵，雇佣你不是让你产生硝烟和荒芜的。赶紧给我离开这里。%SPEECH_OFF%  |  当你回去找%employer%时，他手中正拿着一杯麦芽酒。手微微摇动着。脸色酡红。%SPEECH_ON% 我费了好大劲儿才克制住不将这玩意泼向你的脸。 %SPEECH_OFF% 以防万一，他一大口将酒喝光了。然后砸向桌子。%SPEECH_ON% 整个镇子都期待你能保护他们。但是强盗蜂拥而至外围，他妈的就像观光度假一样！我又不是做强盗旅游生意的，雇佣兵。赶紧给我滚！%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			Options = [
 				{
-					Text = "{Damn this peasantfolk! | We should have asked for more payment in advance... | Damnit!}",
+					Text = "{这个该死的乡巴佬！ |  我们应该提前多要点报酬…… |  妈的！}",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);
@@ -946,14 +946,14 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		});
 		this.m.Screens.push({
 			ID = "Failure2",
-			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_30.png[/img]{When you enter %employer%\'s room, he tells you to close the door behind you. Just as the latch clicks, the man slams you with a stream of obscenities which you couldn\'t hope to keep track of. Calming down, his voice - and language - return to some level of normalcy.%SPEECH_ON%Every bit of our outskirts were destroyed. People were even taken to the old gods know what ends! What is it, exactly, did you think I was paying you for? Get out of here.%SPEECH_OFF% | %employer%\'s slamming back goblets of wine when you enter. There\'s the din of angry peasants squalling outside his window.%SPEECH_ON%Hear that? They\'ll have my head if I pay you, sellsword. You had one job, one job! Protect this town. And you couldn\'t do it. Hell, you couldn\'t even save those poor peasants thatgot kidnapped! So now you could do one thing and it comes free: get the hell out of my sight.%SPEECH_OFF% | %employer% clasps his hands over his desk.%SPEECH_ON%What is it, exactly, are you expecting to get here? I\'m surprised you returned to me at all. Half the town is on fire and the other half is already ash. Survivors tell me that their family members were even kidnapped! Do you know what happens to those taken by raiders? I didn\'t hire you to produce smoke and desolation, sellsword. Get the hell out of here.%SPEECH_OFF% | When you return to %employer%, he\'s holding a mug of ale. His hand his shaking. His face is red.%SPEECH_ON%It\'s taking everything in me to not throw this in your face right now.%SPEECH_OFF%Just in case his rage gets the best of him, the man finishes the drink in one big gulp. He slams it on his desk.%SPEECH_ON%This town expected you protect them. Instead, the brigands swarmed the outskirts like they were taking a goddam leisure trip! I\'m not in the business of giving marauders a good time, sellsword. Get the farkin\' hell out of here!%SPEECH_OFF% | %employer% laughs when you step into his room.%SPEECH_ON%The outskirts are destroyed. The people of %townname% are in an uproar, at least those alive to be angry in the first place, that is. And what\'s more? You let a few of our townspeople get taken by these monsters!%SPEECH_OFF%The man shakes his head and points his hand to the door.%SPEECH_ON%I don\'t know what you expected me to pay you for, but it wasn\'t this.%SPEECH_OFF%}",
+			Title = "在你回来之时……",
+			Text = "[img]gfx/ui/events/event_30.png[/img]{当你走进%employer%房间时，他让你关上身后的门。门闩的声音刚落下，那人就扑头盖脸地向你道出污言秽语，你几乎都反应不过来。他的语气逐渐平静，而措辞也恢复常态。%SPEECH_ON%外围被摧毁地精光。还有人被弄得不知死活！你觉得我雇佣你到底是干嘛的？滚。%SPEECH_OFF%  |  当你进来时，%employer%猛地甩开酒杯。窗户外满是喧闹的生气农夫。%SPEECH_ON%听到了吗？雇佣兵，要是我付你钱，他们就要我的脑袋了。你只有一个任务，一个！保护这座镇子。而你还没有做到。见鬼，你连被抓的农夫都没救下来！现在还有件事你能做到，而且还是免费的：滚出我的视线。%SPEECH_OFF%  |  %employer%拍向桌子。%SPEECH_ON% 你还回来了，你在期待什么？真是让我惊讶。小镇一半着火了，而另一半已经化为了灰烬。幸存者跟我说他们的家人被绑架了！你知道被抓的人会怎么样吗？雇佣兵，雇佣你不是让你产生硝烟和荒芜的。赶紧给我离开这里。%SPEECH_OFF%  |  当你回去找%employer%时，他手中正拿着一杯麦芽酒。手微微摇动着。他血气上涌。%SPEECH_ON% 我费了好大劲儿才克制住不将这玩意泼向你的脸。%SPEECH_OFF% 以防自己被怒火冲昏头脑，他一大口将酒喝光了。然后砸向桌子。%SPEECH_ON% 整个镇子都期待你能保护他们。但是强盗蜂拥而至外围，他妈的就像观光度假一样！我又不是做强盗旅游生意的，雇佣兵。给我马不停蹄地滚！%SPEECH_OFF%  |  你进%employer%房间的时候，他笑了。%SPEECH_ON%镇子外围都毁了。%townname%的镇民躁动不安，至少幸存者都很生气。还有什么？你让那群禽兽抓走了我们不少人！%SPEECH_OFF%他摇着头，指着门。%SPEECH_ON%我不知道你觉得我给你报酬的原因是什么，反正不是这个。%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			Options = [
 				{
-					Text = "{Damn this peasantfolk! | We should have asked for more payment in advance... | Damnit!}",
+					Text = "{这个该死的乡巴佬！ |  我们应该提前多要点报酬…… |  妈的！}",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);

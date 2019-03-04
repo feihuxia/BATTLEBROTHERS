@@ -206,7 +206,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 				{
 					local ally = this.World.getEntityByID(a);
 
-					if (ally == null || !ally.isAlive())
+					if (ally == null  ||  !ally.isAlive())
 					{
 						this.Contract.m.Allies.remove(i);
 					}
@@ -323,7 +323,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 					{
 						local ally = this.World.getEntityByID(a);
 
-						if (ally == null || !ally.isAlive())
+						if (ally == null  ||  !ally.isAlive())
 						{
 							this.Contract.m.Allies.remove(i);
 						}
@@ -359,7 +359,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 
 			function onRetreatedFromCombat( _combatID )
 			{
-				if (_combatID == "AssaultTheGates" || _combatID == "AssaultTheCourtyard" || _combatID == "BurnTheCastle")
+				if (_combatID == "AssaultTheGates"  ||  _combatID == "AssaultTheCourtyard"  ||  _combatID == "BurnTheCastle")
 				{
 					this.Flags.set("IsLost", true);
 				}
@@ -390,7 +390,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 					return;
 				}
 
-				if (this.Time.getVirtualTimeF() < this.Flags.get("WaitUntil") || this.World.getTime().IsDaytime)
+				if (this.Time.getVirtualTimeF() < this.Flags.get("WaitUntil")  ||  this.World.getTime().IsDaytime)
 				{
 					return;
 				}
@@ -420,7 +420,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 					{
 						local ally = this.World.getEntityByID(a);
 
-						if (ally == null || !ally.isAlive())
+						if (ally == null  ||  !ally.isAlive())
 						{
 							this.Contract.m.Allies.remove(i);
 						}
@@ -510,7 +510,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 					{
 						local ally = this.World.getEntityByID(a);
 
-						if (ally == null || !ally.isAlive())
+						if (ally == null  ||  !ally.isAlive())
 						{
 							this.Contract.m.Allies.remove(i);
 						}
@@ -637,7 +637,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 					}
 				}
 
-				if (this.Flags.get("IsReliefAttackWon") || !isAlive)
+				if (this.Flags.get("IsReliefAttackWon")  ||  !isAlive)
 				{
 					this.Contract.setScreen("ReliefAttackAftermath");
 					this.World.Contracts.showActiveContract();
@@ -648,7 +648,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 				{
 					local ally = this.World.getEntityByID(a);
 
-					if (ally == null || !ally.isAlive())
+					if (ally == null  ||  !ally.isAlive())
 					{
 						this.Contract.m.Allies.remove(i);
 					}
@@ -811,14 +811,14 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_45.png[/img]{%employer% welcomes you into his room. He\'s got a map laid out on a desk. It is dotted with military trinkets, little wooden emblems made to represent the armies moving back and forth across a world at war. The nobleman points to one in particular.%SPEECH_ON%I need you to go here and talk to %commander%. He is besieging the fortifications there and needs your help in finalizing an assault. You\'ll be paid %reward% crowns which I believe should be more than sufficient, no?%SPEECH_OFF% | You enter %employer%\'s war room and bring sudden silence to a throng of generals and commanders grouped around battle maps. %employer% waves you in and brings you to a side. The military men glare at you for a time before slowly returning to their strategic talks. %employer% explains his situation.%SPEECH_ON%I have commander %commander% besieging the fortifications at %objective%. He needs a few more men to start the assault which is where you come in. Go there, help him, and I will pay you a more than sufficient %reward% crowns in return. Sounds fair, no?%SPEECH_OFF% | Before you can enter %employer%\'s room, he springs out and takes you by a shoulder. He walks you down a hall and comes to a window, speaking as he stares at the courtyard.%SPEECH_ON%My generals need not see you. They don\'t find honor in your vocation. Sometimes a bit of political tact is required in hiring mercenaries.%SPEECH_OFF%You shake your head and respond tersely.%SPEECH_ON%We kill just as they do.%SPEECH_OFF%The nobleman nods.%SPEECH_ON%Of course, sellsword, but perhaps in the future you will be killing us. This keeps my generals up at night, some concerned, others angry. I understand the reality of the world we live in and so I sleep like a baby, understand? So let us conduct business. I need you to go to %objective% and aid commander %commander% in assaulting the fortification there. You will be paid %reward% crowns for your work.%SPEECH_OFF% | %employer% meets you and takes you to his garden. Given the state of things, he seems oddly at ease. He grazes a vine of tomatoes and begins to talk.%SPEECH_ON%War is a hell of a thing. Men are dying as we speak because I spoke a few words. Just like that. I don\'t want to misuse my power.%SPEECH_OFF%You jack your thumbs into your beltline and respond.%SPEECH_ON%For the sake of my men, I hope you do not.%SPEECH_OFF%%employer% nods and grabs a tomato. The vine goes taut before snapping free. He takes a bite then nods again, as though the life of a gardener is the one he\'d prefer.%SPEECH_ON%I have a commander by the name of %commander% currently sieging %objective%. He is finalizing plans to start an assault. I\'m sure that word scares you, but he has been working on this plan for some time. He just needs the last bit of men to make sure it fires off without issue. Go to him, help him, and I will pay you %reward% crowns.%SPEECH_OFF% | %employer% greets you and brings you to one of his battle maps. He points at %objective%.%SPEECH_ON%Commander %commander% is currently sieging their fortifications. I need sturdy men to help him launch the assault. Go there, help him, and I will pay you %reward% crowns. Sounds good, no?%SPEECH_OFF% | When you enter %employer%\'s room you find a bevy of commanders standing around a map. Little tokens representing nobility pepper the paper. One man uses a stick to push a wooden horse across some poorly drawn plains. %employer% welcomes you, but one of his generals takes you to a side and explains what they need: \n\n Commander %commander% is currently in %objective% conducting a siege. The defenders are about to break, but he\'s worried that relief is on its way. He wants to launch the final assault before aid can come to the defenders. Go there, help the commander with whatever he needs, and you will be paid %reward% crowns. | You stop outside %employer%\'s door and ask yourself, Do you need this shit in your life? Suddenly, a servant bumps into you with a chest of crowns. He asks if %employer% is inside because the %reward% crowns are ready for delivery to the sellsword. You quickly butt ahead of the servant and enter the room. %employer% welcomes you warmly. He explains that commander %commander% is currently sieging %objective% and is about to have a breakthrough. He just needs a few more men to push things over the edge. %employer% pretends to think and then finally adds.%SPEECH_ON%%reward% crowns will be in it for you.%SPEECH_OFF%You feign surprise at this amount. | You\'re not sure if the war is going well for %employer%, or if all his generals always appear this stressed during times like these. They look like they\'d rather fall on their swords than spend another second staring at a battle map. %employer% is sitting in the corner of the room next to a fire and a servant holding a pitcher of wine. The nobleman waves you over and begins to talk.%SPEECH_ON%Don\'t mind the grumps. The war is fine. Everything is fine. Just to show you how fine it is, I need you to go talk to commander %commander% at %objective% because his siege of that damned fortification is about to come to an end. Victory is at hand and all you have to do is help me take it! How do %reward% crowns sound?%SPEECH_OFF% | You enter %employer%\'s room to find the nobleman slunk down in a comfy looking chair. There are two large dogs napping at his feet and a purring cat in his lap. He is completely clonked out, snoring loudly with a dripping goblet somehow still wrenched in an outstretched arm. A man adorned in a general\'s attire beckons you across the room.%SPEECH_ON%Don\'t mind the lord. The war has weighed heavy on his mind. Now, listen. I\'ve got my orders, and I\'ve got yours. We need you to go to %objective% and help commander %commander% in sieging the fortifications there. That is all.%SPEECH_OFF%You inquire about pay. The general\'s face sours.%SPEECH_ON%Yes. Pay. Of course. I was to promise you %reward% crowns. I hope it is sufficient for your... honorable services.%SPEECH_OFF%Those final words seem to pain the man. It is clear he\'s been instructed to be as diplomatic as possible. | One of %employer%\'s generals meets you outside in the hall.%SPEECH_ON%The lordship is busy.%SPEECH_OFF%He plants a scroll in your chest. You unfurl it and read. Per the writing, one commander %commander% is currently sieging %objective% and needs help. No doubt this is where the %companyname% is supposed to come in. You look up at the man. He grumbles and speaks through gritted teeth.%SPEECH_ON%Your pay is to be %reward% crowns, your honorable sellsword.%SPEECH_OFF%Those last words seem coached. | You find %employer% and he takes you out to his personal kennels. He throws scraps to the dogs as he walks and talks.%SPEECH_ON%The war is going great. It is simply the greatest event I\'ve ever undertaken and I\'m in utter bliss about the whole affair.%SPEECH_OFF%He pets one of the mutts behind the ear before letting the dog lick his fingers.%SPEECH_ON%But not all is what it could be. I need you to go to %objective% to aid commander %commander% who is leading the siege there. %reward% crowns will be paid for your help.%SPEECH_OFF%A servant runs over with a live chicken. The nobleman takes it by the legs and heaves it into a cage of barking dogs. The poultry flaps madly, bouncing along a sea of jawing canines before suddenly getting snatched down. It\'s torn to shreds in mere moments. %employer% turns to you, brushing a feather off your shoulder.%SPEECH_ON%So, do we have a deal?%SPEECH_OFF% | %employer% welcomes you into his room which has, it appears, been flipped into an adhoc war room. Commanders stand dutifully over a battle map, pushing military tokens back and forth and arguing about the results of the simulacrums. %employer% brings you to a side. He turns the rings on his fingers as he talks.%SPEECH_ON%Commander %commander% needs help sieging %objective%. The birds tell me he is close to a breakthrough, but men such as yourself are needed to really push it through. Go and help him and you will have %reward% crowns waiting here upon your return.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_45.png[/img]{%employer%迎接你进入他的房间。他的桌上放着一张地图。地图上有各种用来表示军队的饰品和徽章。这位贵族指着其中一个部队说道。%SPEECH_ON%我需要你到这里去和%commander%汇合。他正在对一座堡垒展开围攻，并需要你的协助展开最终突袭。完成了这个任务，你就可以领到%reward%克朗的报酬，这个数量应该不少吧？%SPEECH_OFF%  |  你进入了%employer%的战争会议室，房间里的指挥官和将军们突然各个都默不作声了。%employer%招呼你来到他的身旁。在对你打量了一番之后，那些军官这才恢复啦刚才中断的战术讨论。%employer%向你解释他目前的处境。%SPEECH_ON%我让%commander%指挥官围攻一座位于%objective%的堡垒。他需要一些人手才能展开最终的突袭，因此这里就需要你出马了。如果你可以到那里去协助他，我可以出%reward%克朗作为报酬，这个开价不错吧？%SPEECH_OFF%  |  在你进入%employer%的房间前，他突然从里面冲出来，一把抓住了你的肩膀。他拉着你走过房间，来到窗户前，一边看着庭院一边向你说话。%SPEECH_ON%我不能让我的将军们看见你。他们认为你是一个没有荣誉感的人。有的时候，只有借助一些政治手腕才能动用雇佣军。%SPEECH_OFF%你摇了摇头，然后简单地回答了一句。%SPEECH_ON%我们能和正规军一样消灭敌人。%SPEECH_OFF%贵族点了点头。%SPEECH_ON%当然了，佣兵。只是在未来，或许别人会雇用你来对付我们。这会让我的将军们夜不能寐，有些人甚至还会为此忧虑、暴怒。而我很明白这个世界的运行法则，所以我一直睡得很安稳。接下来，让我们说正事吧。我想让你到%objective%去协助%commander%指挥官对那里的堡垒发动突袭。事成之后，你会得到%reward%克朗的报酬。%SPEECH_OFF%  |  %employer%会见了你并带你去他的花园。虽然现在他的处境并不乐观，但他似乎显得很平静。他一边看着一串番茄，一边向你说道。%SPEECH_ON%战争就像是地狱。许多人会因为我说的几句话而死去。因此，我不想滥用我的权力。%SPEECH_OFF%你将手指叉在腰带上，然后回答说。%SPEECH_ON%为了我的手下们着想，我也不希望你那样做。%SPEECH_OFF%%employer%点了点头，然后抓住了其中一个番茄。在一阵用力之后，连接番茄的藤崩断了。他咬了一口番茄，似乎是在向往一个园丁的生活。%SPEECH_ON%我有一位名叫%commander%的指挥官目前正在围攻%objective%。他即将对目标展开最终突袭。这项突袭计划他已经酝酿很久了，所以这方面你不必担心。他只是需要一些增援来确保突袭万无一失。如果你能去帮助他，我可以支付你%reward%克朗的酬劳。%SPEECH_OFF%  |  %employer%迎接了你并将你带到他其中一张战略地图旁。他指着%objective%。%SPEECH_ON%%commander%指挥官目前正在对那里的堡垒展开围攻。我需要一些精锐前去支援他发动最终突袭。如果你能去协助他，我可以付你%reward%作为报酬。这个提议不错吧？%SPEECH_OFF%  |  当你进入%employer%的房间时，你看到一群指挥官围在一张地图旁。地图上放置着各种指示用的印记。其中一个人正在用木棍将一只木马推过潦草画出的平原上。%employer%欢迎了你的到来，但其中一位将军将你拉到一边，并解释了他们的需求： \n\n 指挥官%commander%目前正在%objective%指挥一次围攻。那些防守部队就快崩溃了，但他同时也担心敌方会前来增援。所以，他想在敌方增援出现前发动一次最终突袭。如果你能到那里去协助这位指挥官，我们可以付你%reward%作为报酬。 |  你站在%employer%的门外，为自己是否该去趟这道浑水而感到犹豫不决。突然，一位仆人装上了你，他的胸前抱着一大堆克朗。他问你%employer%是否在房间内，因为这%reward%克朗是要作为报酬支付给佣兵的。于是你二话不说就在赶在这位仆人之前走进了房间。%employer%热情地欢迎了你。他向你解释说，指挥官%commander%目前正在围攻%objective%，并且即将突破敌人的防御。他只需要一些人去帮他完成最终的突袭。%employer%装模作样地思考了一下，然后补充道。%SPEECH_ON%事成之后，你会得到%reward%克朗作为报酬。%SPEECH_OFF%你假装这个数量感到非常震惊。 |  你不清楚目前的战局对%employer%来说是否有利，但他手下的将军们一个个都显得很紧张。看他们的样子，似乎已经忍不住要自己拔剑上战场去了。%employer%就坐在房间中的火堆旁，他的身旁还站着一个端着葡萄酒的侍从。这位贵族朝招呼你过去，并和你说道。%SPEECH_ON%别在意这些脾气暴躁的家伙们。这场战争局势良好。一切都很正常。为了向你证明这一点，我需要你去和位于%objective%的指挥官%commander%汇合，因为他所发起的围攻即将结束。胜利已经在我们手中，我需要你去帮我完成这最后的一战！为此我可以付你%reward%克朗，如何？%SPEECH_OFF%  |  你走进了%employer%的房间，发现这位贵族正坐在一张舒适的椅子上。他的脚下睡着两只狗，而他的手下面还有只猫。他已经彻底陷入了熟睡，不仅鼾声如雷，而且另一只手上还抓着一只酒杯。一个看起来像是将军的人招呼你穿过房间。%SPEECH_ON%不必去在意领主。他为这场战争操劳得太多了。现在，给我听好了。我肩上背负着使命，而你则要听我的指挥。我想让你到%objective%去协助%commander%指挥官对那里的堡垒进行围攻。就是这些。%SPEECH_OFF%你询问你能从中得到多少报酬。将军的脸色一下子变得有些难看。%SPEECH_ON%是啊。还有报酬。我准备为此支付你%reward%克朗。希望这能换来你的……效忠。%SPEECH_OFF%他在说出最后一个词的时候似乎非常不舒服。显然，他的外交式口吻都是装出来的。 |  %employer%的其中一位将军在走廊里迎接了你。%SPEECH_ON%领主大人很忙。%SPEECH_OFF%他将一个卷轴递给了你。你打开它，并开始阅读其中的内容。其中的大意为，指挥官%commander%正在围攻%commander%，并且需要支援。毫无疑问，这些人需要%companyname%为此出力。你抬头看着那位将军。他很不情愿地说道。%SPEECH_ON%身为我们光荣的佣兵，你将会得到%reward%克朗作为报酬。%SPEECH_OFF%在说“光荣”两字的时候，他显然极不情愿。 |  在你找到了%employer%后，他将你带进了他的私人狗舍中。他一边把食物扔给了狗，一边开始说话。%SPEECH_ON%战争的形势对我们来说非常好。这是我有史以来遇上的最佳时机。%SPEECH_OFF%他给狗递了一块食物。%SPEECH_ON%但我们还可以做得更好。我想让你到%objective%去协助%commander%指挥官对那里的堡垒发动突袭。为你你可以得到%reward%克朗的报酬。%SPEECH_OFF%一位侍从带着一直活鸡从旁边经过。那位贵族拎着鸡腿将鸡丢入狗舍中。随着一阵骚动，那只鸡瞬间被狗撕成了碎片。%employer%转过身来，掸掉了身上的鸡毛。%SPEECH_ON%那，我们就这么说定了？%SPEECH_OFF%  |  %employer%迎接你进入了他的房间，这里明显已经被改造成了战争会议室。指挥官们在一张战略图上忙碌着，来回推动着各种模型。%employer%将你领到一边。他一边转动着手上的戒指，一边对你说。%SPEECH_ON%指挥官%commander%在围攻%objective%的过程中需要支援。根据情报，他就快突破敌人的防守了。而你，能助他这最后一臂之力。只要你能完成这项任务，就能领到%reward%克朗作为奖励。%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "How much crowns, did you say?",
+					Text = "你刚才说多少克朗来着?",
 					function getResult()
 					{
 						return "Negotiation";
@@ -826,7 +826,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 
 				},
 				{
-					Text = "{This isn\'t worth it. | We have other obligations. | I won\'t grind the company in some siege.}",
+					Text = "{这不够。 |  我们还有其他事情要做。 |  我不会用围攻的方式把战团碾碎。}",
 					function getResult()
 					{
 						this.World.Contracts.removeContract(this.Contract);
@@ -842,13 +842,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "TheSiege",
-			Title = "At the siege...",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{You arrive at %commander%\'s camp to find his soldiers seemingly relaxed. They\'re playing dice on a wooden board strewn across the mud, exchanging jokes, and singing songs. All around are banners flying in the wind, most having long lost their once bright colors. A few are tethering the poles of a catapult back together. %commander% himself personally guides you to his command tent. He gives you a drink that tastes like a rat had bathed in it. He explains the situation.%SPEECH_ON%As I\'m sure you know, we\'ve been here awhile and are about to make a breakthrough. I need you on hand and at the ready. Once the time to attack comes, I\'ll give the order to begin the assault.%SPEECH_OFF% | %commander%\'s camp has ruined the earth around %objective%. The day-to-day presence of so many men has churned the ground into mud. A few of the men crank the spokes of a shoddy, shaky catapult. They slam a wormy cow\'s head into the bucket and slacken the rope spring until the pole of the war machine shoots forward, launching a spinning, bleeding black head toward the fortifications. It caroms off a crenelated bastion before rolling a sick stain down the walls. One of the defenders yells back.%SPEECH_ON%Nice shot, ya twats!%SPEECH_OFF%%commander% claps you on the shoulder. He\'s grinning.%SPEECH_ON%Welcome to the front, sellsword. The presence of you and your men is much appreciated. %objective% is cut off, but they refuse to surrender and remain feisty despite the hunger in their bellies. But that hunger... it weakens them. When the time is right, I will begin an assault, all I need is for you to be ready.%SPEECH_OFF% | %commander% welcomes you to the front. He informs you that the defenders of %objective% are tired, running low on supplies, and are about ready to break. Given these facts, he is preparing a final assault and simply needs the men of the %companyname% to be ready when the time comes. | The siege at %objective% looks more like the recreation in a large play than the efforts of a concentrated war effort. Both sides are in a state of miserable inadequacy, hurling insults back and forth over the walls, and in between quietly cursing the fact they had the poor luck to be stuck in this hellish situation. %commander%, though, comes to you with a cheery spark in his eyes.%SPEECH_ON%Ah, mercenaries. Let me fill you in on what is going on. We have cut off the food supplies to %objective% and a few nights ago one of our agents managed to burn their granary to the ground. They are hungry and soon they will be dying. Because we are so pressed for time, I\'m organizing an all-out assault to bring this siege to a quick end. Just be ready when the time comes.%SPEECH_OFF% | You come to %objective% to see the fortifications standing silhouetted against the horizon and %commander% staring through a pair of leather-wrapped ocular lenses, grimacing angrily at what he\'s glassing. He hands you the device and you take a look.\n\n The first thing you see is a man\'s ass bobbing up and down as he pats it with both hands. The soldier beside him is slackjawed and crosseyed as he yanks at his bits. You put the scope down, not bothering to see what else is going on. %commander% shakes his head.%SPEECH_ON%We cut off their food supplies and now they\'re going crazy. They think they are being funny, but soon we\'ll see who is laughing. I\'m planning an assault. I need you and the men of the %companyname% to be ready when the order comes.%SPEECH_OFF% | %commander% welcomes you to the outskirts of %objective% where his siege camp has been built. Rows of tents are filled with tired and grumbly men. They cook stews out of pots that have never been cleaned, and exchange jokes that were never clean to begin with. In the distance, diligent defenders of %objective% stare over their crenelations. The commander brings you to his tent and explains the situation.%SPEECH_ON%%objective% is out of food and starving. Unfortunately, I\'m out of time. We need to assault this damned place soon and I mean real farkin\' soon. When the time comes, and it will come sellsword, I need you to be ready.%SPEECH_OFF% | The outskirts of %objective% has become littered with tents. One of %commander%\'s bodyguards marches you through the siege city. Grumbly professional soldiers eye you with suspicion. %commander%, however, cheerily welcomes you to his tent. As you step in, you see a man hanging by both hands, his feet dangling off the ground. A second man is cleaning a knife in a bucket of reddened water. %commander% throws his hand toward the prisoner.%SPEECH_ON%Ah, sellsword. You just missed the action.%SPEECH_OFF%You ask what he was doing. The commander walks to the prisoner and cups him by the chin, lifting a tired and exhausted head.%SPEECH_ON%I was getting answers. %objective% is about to fall, but I don\'t have the time to sit around and wait for that to happen. I will be assaulting the fortifications soon and when I do, I need you and your men at the ready.%SPEECH_OFF% | You come to %commander%\'s siege camp to find soldiers loading a net of heads into a catapult and launching it over %objective%\'s fortifications. The commander himself comes to your side, soaking in the scene with a wide and satisfied smile.%SPEECH_ON%You know, some of those heads were of our own, but I figured the gits over the walls wouldn\'t be able to tell the difference. It\'s not about whose head, but how many, ya know? Come, sellsword.%SPEECH_OFF%He guides you to his command tent and there lays out a map.%SPEECH_ON%The defenders are tired and recent information tells me that they are almost out of food and beginning to fight over scraps. But I do not have the time for them to realize the futility of their situation, I must force it upon them. We are to begin an assault sometime soon. You need to be there when the order comes.%SPEECH_OFF% | As you enter %commander%\'s camp, a few of his soldiers spit on one of your men and a brawl quickly breaks out. Thankfully, the commander himself appears to put things at ease. He quickly guides you to his tent and there you talk while your men stand outside.%SPEECH_ON%I must apologize for the actions of my men. Tempers run razor thin after you\'ve been standing and sleeping in mud, day after day, while your enemies sleep in beds and hurl insults over their walls.\n\nLuckily, one of my agents managed to burn down %objective%\'s granary and stocks and the fort is without supplies. The defenders have been going hungry, but I fear my men will hardly bother to stand out here for long. I also worry that reinforcements might be coming to try and lift the siege. All of this means one thing... I\'m going to order an assault. The plans are currently being drawn, I just need you ready for when the order comes.%SPEECH_OFF%}",
+			Title = "包围圈中……",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{你来到了%commander%\'s 帐篷看见士兵们貌似都很轻松。他们在铺在泥地上的木板上一边玩着骰子，一边讲着笑话，唱着歌。四周飘扬着旗帜，其中的大多数早已褪去了色。有几个人正在把棍子——弹弩的组成成分栓成一捆。%commander%亲自领着你来到他的指挥篷。他给了你一杯酒，尝起来就像是老鼠的洗澡水。他分析着当下的形势。%SPEECH_ON%你肯定知道，我们在这有一会儿了，正打算突围。我需要你留在附近，并时刻准备着。进攻的时机只要一到,我就会发起进攻的号角%SPEECH_OFF%  |  %commander%\'s营地已摧毁了%objective%附近的一切。驻军每日的走动已将平地踏成了泥地。其中的一小部分人批量生产着低劣，下等的弹弩的辐条。他们把一头得了蠕虫的牛的头嗯进木桶中，在战争利器开始发威前，放松绳索的弹簧，同时开始纺织，拼命地筑建着防御工事。在用糟糕的颜料把这些墙毁容之前，对墙进行了一次射击，飞出的子弹碰到齿装堡垒后被弹飞。一个堡垒士兵喊道。%SPEECH_ON%打的不错，你这个讨厌鬼！%SPEECH_OFF%%commander%轻轻地拍了拍你的肩膀。他脸上露着微笑。%SPEECH_ON%欢迎来到前线，佣兵。我很感激你们能来。%objective%中断了，尽管饥饿难耐，他们却拒绝投降，仍奋力地拼命着。但不自已地在饥饿中逐渐失去生气。等时机来临，我会发动进攻，我希望你为那一刻准备着。%SPEECH_OFF%  |  %commander%欢迎来到前线。他传讯给你%objective%守军已经陷入疲势,供给即将耗竭，马上就要溃败了。鉴于这些迹象，他正准备着最后的总攻，需要%companyname%的你们在时机来临时做好准备。 | %objective%的包围圈更像是大型戏剧里的摆设，而非严肃的战事安排。两边都处于严重供给不足的境地，隔着墙有来有往地骂着对方，被困于这个糟糕境地的不幸在其间悄悄地发酵着。但是，%commander%面露喜色地走到你身边%SPEECH_ON%啊，我亲爱的雇佣兵。我来告诉你现在正在发生什么。我们已经切断了运至%objective%的供给并在几天前的一个晚上我们的一个分部成功地焚烧了敌人的粮仓。他们现在饿得发慌，死期就在眼前了。因为我们现在时间不多了。我正在组织一次全员总攻，尽早冲出这个包围圈。在进攻来临时一定要准备好哦。%SPEECH_OFF%  | 你来到%objective%看到地平线上伫立在地平线上的堡垒，%commander%透着一副皮革物在看——透镜，他面露怒色地瞧着镜前的东西。他递给你那副透镜，你凑上去看了一下。\n\n 首入眼帘的是一个男人一边用手拍着屁股，屁股上下晃动着。他旁边的士兵闭着眼，笑着扯拉着他的生殖器。你放下了透镜，不浪费力气去看别的东西。%commander%摇了摇头。%SPEECH_ON%我们切断了他们的食物供给，他们现在已经发傻了。他们自以为这样很好玩，但很快我们就能看到谁才能笑到最后。我正在策划一次进攻。我需要你及%companyname%在命令下达前准备好%SPEECH_OFF%  |  %commander%欢迎来到%objective%的郊区，他们的营地就建在这里。面露疲色，眼透怨念的士兵挤满了行行列列的帐篷。他们用从没洗过的锅炖着东西，讲着不堪入耳的玩笑。在远处，%objective%中不知疲倦的守兵在堡垒中饿着肚子。首领将你领到他的帐篷解释着刚才的情景。%SPEECH_ON%%objective%已经把食物吃光了，一直在饿着肚子。不幸的是，我已经没时间了。我们需要马上把那个死妈的地方攻下来，刻不容缓。等要打时，我会让佣兵来通知你，你一定要准备好。%SPEECH_OFF%  |  %objective%的郊区遍满了帐篷。%commander%\'s一个警卫领着我穿过包围区。怨形于色的职业士兵怀疑地看着你。但是，%commander%微笑地欢迎你来到他的帐篷。进门时，你看到一个双手被悬挂起的人，两只脚在空中来回地晃动。另一个人在一桶发红的水中洗着小刀。%commander%挥手打了那个囚犯。%SPEECH_ON%啊，我的佣兵。你刚好错过了刚才那段。%SPEECH_OFF%你自己问问他刚刚做了什么。首领走到囚犯跟前，托起他的下巴，一张疲倦的脸庞映入眼帘%SPEECH_ON%刚刚你做了什么？%objective%将落之时，我没时间干坐着等着它发生。我马上就要攻打堡垒，在那时，我要你和你的手下准备好。%SPEECH_OFF%  | 你来到 %commander%\'s包围圈营地发现士兵正在拿着一网袋的头往弹弩里装然后在%objective%\'s堡垒上把他发射出去。首领来到你的身边，面露喜色，沉浸在眼前的景象之中。%SPEECH_ON%你是清楚的，有些头是来自我们这边的，但我觉得城墙上的那些饭桶发现不了这点。这不关乎谁的脑袋，有多少，你知道么？跟我来，佣兵。%SPEECH_OFF%他领着我去他的指挥篷，那里铺着一张地图。%SPEECH_ON%这些守军都累透了，最新的一个消息说他们差不多已经把食物给吃完了，开始争残羹冷炙了。但我已经没那时间让他们去自己幡悟了。我只能采取这一策略了。我们马上要开展进攻了。在命令下达时，你得在这里。%SPEECH_OFF%  |  当进入%commander%\'s帐篷时,一些属于他的人朝你的人身上吐唾沫，一场争斗随即就爆发了。幸亏，首领亲自过来把争斗镇压下来。他快速地将你带到他的帐篷，与你进行交谈，与此同时，你的士兵守在外面。%SPEECH_ON%我对刚刚我手下的举动向你表示歉意。当你们整日在泥地中站睡，而你的敌人安逸地在床上休息，并侮辱你们，日复一日，脾气变得越来越差。\n\n幸运的是，我的一个分部焚烧了%objective%\'s粮仓及库存，敌人堡垒已断了供给。守军们已空腹很久，我真的怕我的手下已经坚持不了多久了。我还担心援军会过来帮忙突破包围。眼下的这些都意味着一件事情……我要下达攻击命令了。攻打的计划现在正在制定当中，我需要你在命令下达时准备好。",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "The %companyname% will be ready.",
+					Text = "%companyname%马上就位。",
 					function getResult()
 					{
 						this.Flags.set("WaitUntil", this.Time.getVirtualTimeF() + this.Math.rand(15, 30));
@@ -861,13 +861,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "TakingAction",
-			Title = "At the siege...",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{%commander% greets you at the outskirts of his siege city. He\'s got a troop of horsemen with him and there\'s an awfully sour look on his face. He quickly explains the situation.%SPEECH_ON%Sellsword, you have most excellent timing. My scouts have just reported that reinforcements are coming to lift the siege on %objective%. We need to either attack, or try and burn this damned place down and smoke them out that way. Won\'t be much to take over if we go that route, though.%SPEECH_OFF%Strangely enough, the commander actually looks at you for ideas. | %objective% has been surrounded by %commander%\'s men, but it is the besiegers who seem more on edge than the defenders. %commander% himself draws you into his tent. He knuckles the table as he explains what is going on.%SPEECH_ON%My scouts have spotted a force coming to lift the siege. We do not have enough men, much less the energy, to fight them off. We can either launch an assault now, or load our catapults with fire and burn that damned place to the ground. The defenders will no doubt come out, but there won\'t be much to salvage out of the ruins.%SPEECH_OFF%And then, shockingly, the commander looks up and asks.%SPEECH_ON%What do you think we should do, sellsword?%SPEECH_OFF% | When you come to %commander%\'s tent, him and his lieutenants are standing around a map and your presence brings a quick end to an argument. The commander points at you.%SPEECH_ON%Mercenary! We\'ve gotten word that reinforcements are coming to lift the siege and we\'ve not the men to fight it off. We either assault %objective% or scorch earth this hellhole, smoke the defenders out with fire, and then take whatever ruins remain. My lieutenants are divided on the issue. What say you have the final vote?%SPEECH_OFF%The lieutenants grumble, but are oddly alright with leaving this decision in the hands of a sellsword.}",
+			Title = "包围圈中……",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{%commander%在他包围圈的外面欢迎你。他手上有一队骑兵。他的脸上溢满嫉妒之情。他赶忙解释道。%SPEECH_ON%佣兵，你手握最好的时机。我的侦察兵刚刚报道援军正在赶来解除对%objective%的包围。我们可以对他们发起进攻，也可以直接烧了这个狗地方从而把他们驱赶出去。那样做的话，应该不会太困难。%SPEECH_OFF%奇怪的是，首领看着我仿佛在寻求我的意见。 |  %objective%已被%commander%\'s人所包围，但围攻者看起来比守军更紧张不安。%commander%把你拉近他的帐篷。他一边说着现在的情况一边用指关节敲着桌子。%SPEECH_ON%我的侦察兵发现了一股军队来解除包围。我们没有足够的人能把他们击退，更别提我们精力了。我们可以现在发起进攻，也可以用炮火填满我们的弹弩，把那狗地方夷为平地。守军是肯定能冲出来的，也不会残留下很多需要去援救出来。%SPEECH_OFF%然后，突然，首领抬起头问道。%SPEECH_ON%佣兵，你认为我们应该怎么做？%SPEECH_OFF%  | 当你来到%commander%\'s帐篷时, 他和他的陆军中尉正站着一副地图旁，你的出现很快让他们很快停止了争论。首领手指着你。%SPEECH_ON%佣兵！我们已经得到消息援军正赶来解除包围，而且我们没有人能去击退他们。我们要么攻打%objective%要么烧了这个地方从而把他们驱赶出去，然后拿走剩下的全部东西。我的中尉对这件事看法不同。你怎么看？你来做最后的决定。%SPEECH_OFF%中尉在旁发着牢骚，但却奇怪地任由这个决定权落入一个佣兵手中。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "I say we do a full assault on the castle.",
+					Text = "我认为我们应该对堡垒发起全面的进攻。",
 					function getResult()
 					{
 						this.Flags.set("IsAssaultTheGate", true);
@@ -877,7 +877,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 
 				},
 				{
-					Text = "I say we rain down fire on the castle and smoke them out.",
+					Text = "我认为我们大火烧了堡垒从而把他们驱赶出去。",
 					function getResult()
 					{
 						this.Flags.set("IsBurnTheCastle", true);
@@ -890,13 +890,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "AssaultTheGate",
-			Title = "At the siege...",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{%commander% has given the order attack.\n\n {The %companyname% and a contingent of the nobleman\'s soldiers are to assault the front gate. You all stack up underneath the hood of a battering ram that\'s more shanty on wheels than a compelling war machine. With all arms on the rowbars, you push the ram forward. The roof rattles with a series of ponk-ponk-ponks as arrows riddle across it. You look up to see a few arrowheads have pierced through. When you get to the gate, you order the men to heave the ram backward, and then on command they let it go.\n\nGroaning with heavy oaken deliberation, the ram sails forward and slams against the gate. It fractures in the middle and through the gap you can see %objective%\'s defenders waiting on the other side for you. Another order, another ramming. This time it batters straight through the gate, breaking the hinges and causing each door to fall away in a spray of splinters and metal. Arms at the ready, you and all the men rush through to the other side. | With a retinue of the commander\'s men, the %companyname% pushes a hooded battering ram toward the gates of %objective%. A few defenders bark down at you with jeers.%SPEECH_ON%{Aren\'t you going to take us out to dinner first? | Hmm, nice long ram you got there. Trying to make up for something? | Come and get it ya ugly cunts. | Hope yer praying to the old gods underneath that little roof of yours.}%SPEECH_OFF%Their barbs go quiet as you bump against the gate and, with one swing of the ram, blow it apart. Your men quickly charge through the opening. | Taking a few of the commander\'s men, you and the %companyname% push a battering ram toward the gate of %objective%. The rooftop bumbles and rattles, disturbingly appearing more shanty than shield. You pray it holds. Arrows plock above while others ricochet with sharp scratches of metal across wood. As you get ever closer to %objective%\'s gate, the arrows become rocks, cracking heavily against the war machine\'s hood. %randombrother% looks over the ram, laughing.%SPEECH_ON%Farkin\' hell, man.%SPEECH_OFF%Suddenly a horrid hiss surrounds everyone as though you\'d pitched yourself into a den of vipers. All becomes shade as hot oil runs off the sides of the roof. A stream of it pours down a nobleman\'s back and he cries out, falling forward and becoming a screaming golem of black sludge. You hurriedly order the men to start ramming. Thankfully, it only takes one swing of the ram to blow the gate of %objective% wide open. Your men quickly rush through the opening to battle what few defenders are around to meet you.} | An order to assault %objective% comes down the line. You ready the %companyname%. Your men and %commander%\'s push a battering ram toward the fortification\'s front gate. Arrows sail through the sky, blinkering in the light before whistling into the waves of attackers. Men fall aside in silent collapses, others go down clutching their wounds.\n\n The front gate is quickly bashed open and your men pour through the gap and into a courtyard where some of %objective%\'s defenders await. | %commander% gives the order to begin an assault. Your company and his army rush the fortifications, a barrage of siege shots sailing overhead like a darkly hailstorm. The walls are battered and the defenders kept ducking as %commander%\'s archers keep the pressure on. You manage to push a battering ram to the front gate and swiftly knock it open. As the %companyname% rushes through, the defenders of %objective% organize themselves in the courtyard to meet you. | The order to assault %objective%\'s fortifications comes down the line. Preparations render an apocalyptic scene of a sky darkened with siege shot and arrows. Fires pipe over the walls of %objective% and you see %commander%\'s men staging ladders against the crenelations and fighting their way up and in. Meanwhile, you and your men trundle beneath the hood of a battering ram, pushing it to a front gate and quickly knocking it open. As you rush in, defenders fill the courtyard and prepare to fight. | %commander% gives an order to assault %objective%\'s fortifications. The assault goes like this: the sky darkens with exchanges of arrows, rattling rains that fly past and ricochet off one another. Siege shots hurtle through the sky like cold comets before bouldering into walls and towers. Defenders fight to push ladders off the crenelations. Attackers climb the ladders, the highest man holding up a shield, the man beneath him stabbing forth with a pike. You and the %companyname% push a rickety battering ram to the front gate, largely left alone under the cover of all this chaos.\n\n When the front gate is bashed open, you and your men rush through just in time to meet a group of defenders who have assembled there. All around the surrounding walls you can see %commander%\'s men desperately fighting for control. | Unfortunately, %commander% sees fit to take the fortifications of %objective% head on. You and the %companyname% are charged with taking a battering ram to the front gate. As you push the siege machine through the mud, you notice a man with a steaming cauldron waiting for you just over the gate. You glance around to see soldiers carrying ladders start rushing the walls. They quickly climb up and start battling. When you look back forward, the defender with the burning oil is gone, but there\'s a pair of legs sticking out of the cauldron.\n\n There is no issue bashing open the front gate and rushing in. You are quickly met by an assembly of defenders while all around the surrounding walls %commander%\'s men keep on fighting.}",
+			Title = "包围圈中……",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{%commander%已经做出了进攻的命令。\n\n {%companyname%和一队贵族手下的士兵前去攻打前大门。你们戴着攻城槌的兜帽排着长队，与其说是扣人心弦的战争机器，不如说是破轮胎。大家齐力推着攻城槌前进。随着弓箭一支一支地射在攻城槌上，顶部传来砰-砰-砰的声音。你抬起头看到有些箭头已刺穿攻城槌顶部。当来到大门前，你命令手下去把攻城槌的尾部抬起来，然后在听到命令时把它放下。\n\n发出沉重的橡木声状的呻吟，攻城槌向前驶进，啪的一声撞在大门上。攻城槌中间位置断裂开来，通过缝隙你可以看到 %objective%\'s 守军正在另一边等着你。又一道命令，新的一辆攻城槌。这一次攻城槌连续猛击，直至击穿大门，打断了铰链，伴随着飞舞的碎片和散落的金属，两扇大门被击开。大家都已准备好，你及手下冲进大门之中。 | 在一名commander\'s随行人员的陪同下,%companyname%推着一个带着兜帽的攻城槌驶向%objective%的大门。一些守军面露嘲笑及不屑，向我们吼叫着。%SPEECH_ON%{你不先带我们去吃个晚餐么？ | 真是个绝佳的攻城槌。想要弥补是么？ | 过来拿这个，龟孙子。 | 但愿你的祈祷能得到回应。}%SPEECH_OFF%他们的箭没有发出一丝声响，当你颠簸地向大门行进时，只用了一次进攻，大门就被攻开了。你的手下快速地通过入口。 | 带着一些commander\'s手下,%companyname%推着一个带着兜帽的攻城槌驶向%objective%的大门。顶部发出格格，嗡嗡的声音，出现了更多简陋之处。你祈祷着这能坚持住。上方传来无数箭矢的声响，箭头尖锐的部分插入木顶篷中。当越来越靠近%objective%\'s大门时，箭换成了石头，沉重地击在兜帽上。%randombrother%抬头看攻城槌的顶部，大笑起来。%SPEECH_ON%来源于地狱，朋友。%SPEECH_OFF%突然大家被一种惹人厌的嘶嘶声所包围，就像是跌入了毒蛇的巢穴一般。瞬间陷入阴影当滚烫的油从顶部溢进来。其中的一细流倾倒在那个贵族的背上，他撕心地喊着，倒在了地上，变成了一团嘶喊的岩浆。你惊忙地叫那些手下开始攻城。幸亏，只用了一击就把%objective%的大门打开。你的手下快速地冲进进口与遇到的一小些守军打斗起来。 | 攻打%objective%的命令传达下来。你准备好了么？%companyname%。你的手下和%commander%\'s推着攻城槌驶向堡垒的前大门。箭矢划过天空，射入如潮的进攻者中。士兵们无声息地倒下，其他人上前摁住他们的伤口。\n\n 前大门被攻开，你的手下纷纷涌进庭院，那里等候着%objective%\'s 守军。 |  %commander%下达了进攻的命令。你的战团和他的军队在堡垒里厮杀，一兵营围攻士兵射出了箭，箭多得挡住了阳光，犹如雹暴一般。城墙不停地受到猛击守军们在as %commander%\'s弓箭手的施压下，不停在躲避。你成功地将攻城槌推至大门前，快速地把他撞开。当%companyname%冲进来时， %objective%的守军自发组织起来在庭院里等候你们。 | 攻打%objective%的命令传达下来。进攻引来了预示着灾难的景象——天空布满了箭矢。消防管布满了%objective%的城墙，你看到%commander%\'s手下往堡垒上架梯子，并奋力向上爬。与此同时，你及你的手下躲在攻城槌的兜帽下缓缓前进，将之推至大门前，并快速地将大门撞开。当往进冲时，发现庭院里全是守军，正准备着与你决战。 |  %commander%给你下达了攻打%objective%\'s堡垒的命令。这次进攻的情形大概这样：天空因双方的远攻（使用箭矢）彻底暗了下来，砰砰的碰击声如雨般充斥在耳边，空中遍布着各个方向的箭。箭矢像彗星般划过天空，插入城墙和防御塔中。守军们奋力把梯子从堡垒上推开。进攻者涌上梯子，最高处的那人用盾牌抵挡着来自于堡垒上的进攻，他下面的人用长矛一面往上刺着，一面缓慢向上爬去。你和%companyname%推着一辆快要散架的攻城槌向大门前进，根本不忌惮于外面的激烈斗争。\n\n 撞开了大门，你及你的手下急忙冲进去，与早已在里集合的守军奋战。四处可见%commander%\'s手下为了夺取控制权而奋战。 | 不幸的是，%commander%看到%objective%被撞开，突然癫痫发作。你和%companyname%负责将攻城槌推至大门前。当在泥地中推着这辆突围机器时，你看到一个背着冒着热气的大锅在大门处等着你。你四处瞧了瞧看到士兵们正扛着梯子准备冲上城墙。他们飞快地爬上城墙开始战斗。回头看时，背着盛着热油的士兵已经不见了，仅留一副腿孤零零地露在大锅之外。\n\n 大门已被撞开，士兵们冲了进去。你很快就遇上了一小队守军，与此同时，%commander%\'s手下仍在墙体周围奋战。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Charge!",
+					Text = "冲啊！",
 					function getResult()
 					{
 						local tile = this.Contract.m.Origin.getTile();
@@ -927,13 +927,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "BurnTheCastle",
-			Title = "At the siege...",
-			Text = "[img]gfx/ui/events/event_68.png[/img]{A line of archers poke their arrowheads into bundled cloth and dip them in pitch. As they hold the arrows out, a young boy runs across with a torch to set them all alight. The commander holds his hand up, the archers raise their fiery weapons. He lowers his hand, the bowmen let loose. Fire arrows sail into the sky, crackling and hissing before going quiet and dimly seen. They fall over the fortification and at first that\'s all that seems to happen. A soldier calls out and points at some smoke starting to rise. Soon, fire licking up into the sky. A few minutes later and the front gate bursts open, ashen and smoky men rushing out like golems of the hells.\n\n %commander% raises his arm again, but this time there\'s a sword in the hand.%SPEECH_ON%CHARGE!%SPEECH_OFF% | Catapults, ballistae, and archers launch fire over the walls of %objective%. The shots whistle and hiss as their capes of fire stretch across the sky.\n\n The fortification is soon brimming with an orange hue. Smoke bubbles in gobs of choking black. Fingers of fire slowly crawl up after them. The front gate rattles once, twice, then bursts open. Blackened and coughing men pour out, clambering over one another for fresh air. %commander% draws his sword and points it toward the enemy.%SPEECH_ON%No prisoners!%SPEECH_OFF%The defenders of %objective% seem to have heard this as they quickly rush to formation. For a moment, you wonder if perhaps they once had a white flag of surrender somewhere amongst their blackened shapes. | An order comes down to set %objective% ablaze. You watch as %commander%\'s war camp sets the skies alight in a hellstorm of fiery siege shots and arrow showers. Fires soon start rising from behind the walls and you see men running around wrapped in flames. As the inferno begins to consume the insides of %objective%, the front gates open and a group of blackened, desperate men rush out. Seeing them, %commander% orders everyone to charge. | %commander% orders his men to set %objective% ablaze. This is done by loading catapults and trebuchets with stones wrapped in firewood and dipped in pitch. They\'re set alight and sent hurling through the air. Huge volleys of fire arrows follow suit, sailing deep into %objective%\'s bowels where you start seeing smoke rise. An inferno builds within the fortifications and it isn\'t long at all before the front gates break open and men come running out. %commander% draws his sword.%SPEECH_ON%There they are, men. Let\'s put an end to this once and for all!%SPEECH_OFF% | Archers start wrapping their arrows in cloth and dipping them into pitch. Kids run around with buckets of oil and start lathering the catapult shots. When the preparations are done, %commander% gives the order to let loose. Man perhaps once worshipped fire, but here it is fashioned into a furious terror that goes whistling through the sky, barraging %objective% with fiery ruin. Siege shots pulverize towers and crash through roofs and set the entire place alight. Defenders run around with burning arrows sticking out of them. As the inferno intensifies, the front gate opens and golems of smoke and ash come hurtling out, clambering over themselves to escape the hell which was brought upon them.\n\n Seeing this, %commander% draws his weapon.%SPEECH_ON%At \'em, men, and show them no mercy!%SPEECH_OFF% | %commander% orders his men to launch hell itself upon %objective%. You watch as catapults, trebuchets, and archers fill the sky with a flurry of fiery shots. The fortifications are quickly brimming with fires that churn into an inferno. Desperate men open the front gates and rush out, coughing and desperately clawing over one another for air. %commander% draws his weapon and laughs at the sight of this.%SPEECH_ON%There they are, there they shall fall! Charge!%SPEECH_OFF% | You watch as the siege engineers fill their catapults and trebuchets with cow carcasses and other fatty morkin. Kids with buckets of pitch run the battle line, dousing each shot before setting them alight. The second after, the engineers send the corpses flying. They blubber and drip through the sky. You watch as one shot hits a tower and explodes outward, sending fire raining into the fortification\'s courtyard. It isn\'t long until this animalistic aerial assault has %objective% churning with an inferno.\n\n The front gates burst open and a mob of men come hurtling out. They clamber over one another, looking like smoke and ash come alive, a darkly bracken unfurling before the gate. %commander% draws his weapon.%SPEECH_ON%This is what we\'ve been waiting for, men. Well, wait no more! Charge!%SPEECH_OFF%}",
+			Title = "包围圈中……",
+			Text = "[img]gfx/ui/events/event_68.png[/img]{一排弓箭手们将他们的箭头捆上了帆布，并在柏油里浸了浸。当他们准备好箭矢后，一位年轻的男孩拿着火炬跑了过来，照亮了他们。指挥官举起了他的手，同时弓箭手们搭箭上弦。他挥下了手，箭矢如雨点般射了出去。被点燃的箭矢冲入了天空，发出噼噼啪啪的嘈杂声。它们争先恐后地落在了要塞上。一名士兵指着一个冒烟的地方大喊起来。很快，火焰升腾而起。几分钟后，前门就被大火烧穿了，那群烟熏火燎地冲出来的人，就像刚从地狱走了一圈似的。\n\n %commander%再次举起了他的手臂，但这次他的手中拿着剑。%SPEECH_ON%冲啊！%SPEECH_OFF%  |  弹弩，投石器以及弓箭手们都在不停地向%objective%城墙发射火焰。到处都充斥着弹矢的破空声。\n\n 要塞很快就着起了大火。漆黑的烟雾升腾而起。身后的火焰也在慢慢扩散开来。前门不停地被火焰舔舐着，最终还是被烧穿了。被火焰与浓烟环绕的人们为了呼吸新鲜的空气争先恐后地推挤着彼此。%commander%拔出了他的剑，指向了敌人。%SPEECH_ON%一个不留！%SPEECH_OFF%%objective%的守军似乎也听到了这句话，立刻组成了阵型。有那么一会儿，你很好奇这群被熏得漆黑的敌人如何才能举起白旗。 |  接到上面的命令，说要对%objective%施行火攻。你亲眼看着%commander%的营地不停地发射着燃烧的弹矢，照亮了天空。很快，要塞的城墙着起火来，被困在其中的人们焦急地来回奔跑着。当火焰侵蚀进%objective%内部后，要塞的大门打开了，一群被黑烟熏得漆黑的人冲了出来。看到他们后，%commander%立刻对手下们下达了冲锋的命令。 |  %commander%下令对%objective%施行火攻。于是无数浸过柏油点燃的弹矢射向了要塞。它们的轨迹划亮了天空。无数的燃烧弹矢射入了%objective%内部，很快，你看到那里面冒起了烟。要塞中的火焰升腾而其，不一会儿前门就打开了，里面冲出了一群被烟熏火燎的人。%commander%拔出了他的剑。%SPEECH_ON%他们出来了，伙计们。去解决他们吧！%SPEECH_OFF%  |  弓箭手们开始给箭头包上帆布，然后浸了浸柏油。孩子们拿着油桶在场地里跑动着，不停地给弹弩的弹矢涂抹着。准备好后，%commander%下令开始射击。人类或许曾崇拜火焰，然而现在，火焰的颜色却撕裂了天空，让%objective%变成了恐怖的地狱。燃烧的弹矢粉碎了高塔与屋顶，照亮了整片区域。防守者们不停地四处逃窜着，而燃烧的箭矢不断地降落在他们身边。随着火势越来越大，要塞的前门猛然打开了，里面冲出了一群被烟熏火燎的人，仿佛刚从地狱中跑出来一般。\n\n 看到这个情况后，%commander%拔出了他的武器。%SPEECH_ON%解决他们，兄弟们，不留活口！%SPEECH_OFF%  |  %commander%下令对%objective%发动火攻。于是你看到弹弩，投石机和弓箭手们同时开始发射燃烧的弹矢，火光照亮了天空。很快要塞就着起了大火。奔溃的人们打开了大门冲了出来，剧烈地咳嗽着，渴望着新鲜的空气。%commander%拔出了他的武器，微笑着看着这样的情况。%SPEECH_ON%时机已到，消灭他们！冲啊！%SPEECH_OFF%  |  你看到攻城技师们给弹弩和投石机填装着牛的尸体，同时涂抹着各种动物的脂肪。小孩们在阵线中来回奔波着，给弹矢涂抹油脂。之后，工程师们讲尸体投掷了出去。密集的破空声撕裂了天空。你看到其中一发命中了塔楼，炸开了它的外部，同时点燃了要塞的中庭。在这样的攻击下，很快，%objective%陷入了一片火海当中。\n\n 大门突然被打开了，里面冲出了一群人。他们推挤着彼此，而身后的火焰就像有生命般追逐着他们。%commander%拔出了他的武器。%SPEECH_ON%我们等待的就是这一刻，兄弟们。就是现在！冲啊！%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Charge!",
+					Text = "冲啊！",
 					function getResult()
 					{
 						local tile = this.Contract.m.Origin.getTile();
@@ -994,13 +994,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "AssaultTheCourtyard",
-			Title = "At %objective%...",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{%objective%\'s gate has been taken, but there\'s more to do. The momentum needs to be maintained: you quickly order your men to push into the courtyard. | The gate has been taken, but %objective%\'s courtyard has yet to fall. You order the %companyname% to keep pressing forward. | The %companyname% has taken the gate and %commander%\'s men are currently rushing around the walls of the fort to clean out the towers. You do not want to lose momentum here so you quickly order the men to continue the assault into the courtyard. | As you rush into the courtyard, %commander%\'s men fight above for control of the walls. | You and the %companyname% rush into %objective%\'s courtyard. Above you is the clanging of %commander%\'s men fighting for control of the walls. | The courtyard must be taken! You and the %companyname% rush into the fortifications ready to do battle. Circled all around you are %commander%\'s men fighting for control of the walls. | As you rush into %objective%\'s courtyard, slain men fall from above, killed by %commander%\'s men in a desperate bid to control the walls. | %commander%\'s men are assaulting the walls. Now you must do your part and secure the courtyard! | While %commander%\'s men secure the walls, you are to secure the courtyard. Do not fail!}",
+			Title = "在 %objective%...",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{%objective%的大门已被夺下，但现在还有更多的事情要做。这种势头需要保持住：于是你很快就开始下令让你的手下开始对中庭发动攻击。 |  大门被夺下了，但%objective%的中庭还没有沦陷。你对%companyname%下令，继续向里推进。 |  %companyname%已占领了大门，%commander%的手下正在清理周围的塔楼。你不想失去这股冲劲，于是很快下令，让手下继续向中庭发动进攻。 |  当你冲入中庭时，看到%commander%的手下正在为争夺城墙的控制权而战斗着。 |  你和%companyname%冲进了%objective%的中庭。上方传来了一阵阵刀剑相交的声音，%commander%的手下正在为争夺城墙的控制权而战。 |  必须夺下中庭！你和%companyname%冲进了要塞内部。同时你发现，%commander%的手下正在为争夺城墙的控制权而战。 |  当你冲进%objective%的中庭时，一名被杀死的敌人正好从上方坠落而下，你发现%commander%的手下正在为争夺城墙的控制权而拼死厮杀着。 |  %commander%的人正在对城墙发动攻击。现在你必须履行自己的职责，清扫整片中庭！ |  %commander%的人在争夺城墙，你也得去肃清要塞的中庭。不许失败！}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Charge!",
+					Text = "冲啊！",
 					function getResult()
 					{
 						local tile = this.Contract.m.Origin.getTile();
@@ -1040,13 +1040,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "AssaultAftermath",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{%objective%\'s fort has fallen. You watch as %commander%\'s men scrounge about, pulling dead bodies out from the nooks and crannies the frantic living had crawled to in the last of their desperations. Corpses come burnt, beheaded, missing limbs, trailing viscera as they\'re dragged, and a select few looked as though they\'d simply died in their sleep. One of the professional soldiers leans out from a tower\'s crenelations, tears down the fort\'s banner, and hoists the %noblefamily% sigil in its place to much cheering. | Dead bodies litter the courtyard and they\'re folded over the walls like wet clothes and some are in the corners with looks of shock on their faces and you see some blackened shapes wiry and crooked in the ruins of a burnt stable and amongst these dead men are horses and pigs and dogs and even fray feathered birds that all managed to get sucked into the violence which visited this place with unstoppable inertia.\n\n %commander% is going about his surviving men to congratulate them on a job well done. One of the soldiers hoists the %noblefamily% banner atop one of the towers. The wretched place has new owners. | The assault is over, the defenders of %objective% all cleared out. If anyone of them survived this place, they did so by departing it altogether. %commander% orders one of his men to hoist the sigil of %noblefamily% atop one of the towers and, just like that, ownership of %objective% changes hands, with all the finality of a banner wagging limply in the wind. | It was costly, but the assault has come to an end. %commander% steps over the dead bodies to order his men to start cleaning the place up immediately. One of his men raises the banner of %noblefamily% so that all may see who won the battle this day. | All around you are the bodies of %objective%\'s defenders. They fought hard, but history won\'t remember that. Their names will be forgotten and their existence a futile one. You watch as one of %commander%\'s soldiers unfurls their banner over one of the towers so at least that\'s nice. | A few pockets of fighting remain. You watch as %commander%\'s men throw defenders off a nearby tower, sending the poor men screaming to their deaths. When they\'re all gone, one of the soldiers flies the sigil of %noblefamily%. The banner flaps loudly in the newfound silence. | Healers rush into the fortification to tend to %commander%\'s men. A few of %objective%\'s defenders are also wounded, but they are left to fend for themselves. Any cry for help is met with a sword. The survivors soon learn no wound, no cry.\n\n %noblefamily%\'s banner is unfurled over the front gate. | %commander%\'s men go picking through the remains of %objective%\'s courtyard. A woman is found and she is taken into a tower. Young children rush after her, unfettered and howling and yet nobody pays them any mind. %commander% himself congratulates you on the job well done. He points to a soldier unfurling %noblefamily%\'s banner over the front gate.%SPEECH_ON%See that sigil? It spells victory.%SPEECH_OFF%You thought mounds of dead enemies provided a powerful lexicon for victory declarations, but a flapping piece of cloth suffices too. | The courtyard is hill-fleshed with dead bodies and there\'s blood dripping down the surrounding walls. %commander%\'s men go around collecting all the weapons they can and finishing off any wounded enemies they find. Their own wounded are tended to by frail, old healers with bags of leaves and mortar and pestle remedies. %noblefamily%\'s banner is unfurled over the walls to make sure, in case the evidence wasn\'t already abundantly clear, that %objective% has new owners. | Citizens from %objective% are made to march through its fortifications, to see its dead defenders, and its utterly defeated defenses. %commander% is standing astride them, thumbs jacked into his belt line with a smug smile on his face. When a soldier unfurls %noblefamily%\'s banner, he points to it.%SPEECH_ON%See that? That is who you bow down to now. Understand?%SPEECH_OFF% | You watch as citizens are marched through %objective%\'s defenses. %commander% seems interested in making explicitly clear how absolute his victory was and there is no room for further fighting. You can\'t blame him: defeat fosters a rebellious urgency within a conquered man, an urgency which is often deadlier than the man who takes up a sword and makes his intentions so clear that his enemies have no other way to thank him than immediately cutting him down. | %commander% has the citizens of %objective% lined up and marched through the fortifications. They are made to see the defeat of their defenders, blood still fresh and dripping. A beautiful and lathe woman is in the line and the commander pulls her out. He asks if she knows any of the dead. She points to a man whose face has been caved in. She recognizes the shriveled rose pinned to his uniform - she had given it to her husband that morning. %commander% apologizes for her loss then carefully ushers her back in line. He addresses the crowd with almost fatherly sternness.%SPEECH_ON%You people will be taken care of. We will rebuild and you will be fed. However, make no mistake, %objective% belongs to %noblefamily%. As long as we can agree on that, then all will be well for you.%SPEECH_OFF%}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{%objective%的堡垒已经沦陷。你看到%commander%的手下正在四处搜索着，把那些因绝望而倒在阴暗缝隙处的人的尸体拉扯出来。尸体被点燃了，无头的，缺少肢体的，内脏外流的以及极少数保持完整，就像睡着了一样的尸体。一名专业士兵从塔楼的垛口探出身子，撕下了堡垒原来的旗帜，并升起了%noblefamily%的徽章，大声欢呼着。 |  中庭到处都是尸体，堆叠在城墙边，角落里的一些人甚至还保持着死前的惊恐表情。尸堆中不仅有人的尸体，还有马，猪，狗以及鸟。他们都被这场无情的地狱大火给吞噬了。\n\n %commander%正在向他那些幸存下来的手下们道贺，称赞着他们的功绩。其中一名士兵将%noblefamily%的旗帜挂在了一座塔楼上。这个可怜的地方有了一个新主人。 |  战斗结束了，%objective%的守军都被肃清了。如果还有谁活着的，那一定已经弃城而去了。%commander%下令让他的一名手下在一座塔楼上升起了%noblefamily%的徽章，就这样，%objective%的拥有者变成了另一个人，而那面带有徽章的旗帜也缓缓地随风飘扬起来。 |  虽然代价高昂，但这场战斗总归还是结束了。%commander%踏过了几具尸体，下令让他的手下立即开始清理区域。其中一名手下升起了%noblefamily%的旗帜，证明了这场战斗谁才是最后的胜利者。 |  你身边都是些%objective%驻军的尸体。虽然他们也奋力战斗了，但历史是不会记住失败者的。他们的名字将被遗忘，他们的存在也将被消亡。你看到%commander%的一名士兵将他们的旗帜升到了一座塔楼上，总之，结果还是不错的。 |  战斗就快结束了。你看到%commander%的手下将那些守军从附近的塔楼中扔了出来，让那些可怜的人尖叫着死去。当一切结束后，其中一名士兵升起了%noblefamily%旗帜。它在空中飘荡着，猎猎作响。 |  治疗师们冲进了要塞，开始治疗%commander%的手下。一些要塞的守军们也受伤了，但没有人去照顾他们。求救的哭喊声都被冰冷的剑刃终结了。那样的喊叫声很快就消失了。\n\n %noblefamily%的旗帜在要塞中随风飘扬。 |  %commander%的手下在%objective%的中庭里四处搜索着。他们发现了一个女人，然后将她带入了塔楼中。孩子们哭喊着冲向了她，然而并没有理会他们。%commander%向你打了个招呼，祝贺你的工作顺利完成。他指着那名正在前门升起%noblefamily%旗帜的士兵。%SPEECH_ON%看到那个徽章了吗？它代表着胜利。%SPEECH_OFF%你以为只有敌人成堆的尸体才能见证胜利，然而看来一块破布也足以证明这场胜利了。 |  中庭堆满了尸体，鲜血环绕着城墙。%commander%的手下正在四处收集武器，同时消灭着那些还未彻底死去的受伤的敌人。而他们自己的伤口早就被那些老治疗师们处理过了。%noblefamily%的旗帜在城墙上随风飘扬，作为一种确实的见证：%objective%有了新的主人。 |  %objective%的居民们被迫在要塞中进行游行，看着那些死去的守军，见证了这场彻底的失败。%commander%傲然站在他们面前，手指插在腰带间，脸上还带着得意的笑容。当一名士兵升起%noblefamily%的旗帜后，他指向了他。%SPEECH_ON%看到那个了吗？现在你们要臣服于此。明白了吗？%SPEECH_OFF%  |  你看到居民们被迫在%objective%中游行。%commander%似乎很喜欢宣扬这场绝对的胜利，并让所有人明白，已经没有反抗的余地了。你不能责怪他这点：被征服者通常会产生反抗的情绪，这种隐藏的情绪比那些已然亮剑的敌人更加危险，也更加致命，因此需要尽快开始根除这种情绪。 |  %commander%将%objective%的居民们集合起来，在要塞中开始游行。他们被迫去看些已经死去的守军，上面的鲜血还未干涸。一名美丽的女性也在队列中，而指挥官将她拉了出来。他问她，其中是否有她认识的人。她指向了一个男人，那人的脸已经凹陷了下去。她认出了他胸口间别着的那已经干瘪的玫瑰—她在早上将它送给了她的丈夫。%commander%向她表达了自己的歉意，然后轻轻地将她送回了队列中。他面向人群，用慈父般的声音说道。%SPEECH_ON%你们会得到良好的照顾的。我们会重建此地，不用担心。不过，也请你们不要搞错了，从现在起，%objective%属于%noblefamily%。只要我们在这点上达成共识，那一切都没有问题。%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Victory!",
+					Text = "胜利！",
 					function getResult()
 					{
 						this.Contract.changeObjectiveOwner();
@@ -1059,13 +1059,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "BurnTheCastleAftermath",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_68.png[/img]{Flushing %objective%\'s defenders out worked like a charm. You and the %commander% walk through the now undefended gate to see what\'s left of the place. Unfortunately, the fires burnt most of the place right to the ground. No matter, one of the professional soldiers hoists a banner of %noblefamily% atop one of the towers. You can hardly recognize the sigil through the cloud of swirling ash and smoke. | The battlefield is littered with the dead and dying. %commander%\'s men pass through the mounds of corpses, occasionally stabbing their spears down into the ground and silencing what noise had been mewling there.\n\n You and the commander head through %objective%\'s gate. The fires turned every wooden building to bony and charred frameworks. There are burnt farm animals all over the courtyard. %commander% shrugs and orders one of his men to raise the flag of %noblefamily% atop one of the towers so that all may know who won this day. | The battle is over. Flushing %objective%\'s defenders out with fire more than likely saved many lives, but the beyond the gates everything has been cleansed by flames. It will take time to rebuild to its former glory, whatever that was. %commander% seems happy enough as he orders one of his men to raise the flag of %noblefamily% atop one of the towers. Its colorful linens snap crisply amongst shades of floating ash and smoke. | %commander% steps through the ashes of %objective%\'s fortifications.%SPEECH_ON%Well, we got it. What\'s left of it anyway. I\'m not going to complain, though. Good job, sellsword.%SPEECH_OFF% | %objective%\'s citizens come out to see the remains of their defenses. The women pick through the charred bodies, looking for any sign of their loved ones. Instead, they just find their men burnt to charred and wiry skeletons, faces melted into grim visages that captured their final moments. One of %commander%\'s men unfurls %noblefamily%\'s banner over the front gate and the commander quickly points to it.%SPEECH_ON%Listen up! See that right there? That is who we are. Now, all you have to do is respect that and everything can go back to normal! Disrespect that, and I will bring you a new normal, got it?%SPEECH_OFF%The crowd of citizens quietly nod their heads. %commander% smiles and it is scarily genuine.%SPEECH_ON%Good! Now, does anyone here make a mean scrambled eggs?%SPEECH_OFF% | You and %commander% enter %objective%\'s fortifications to find the coda of a fight for air itself. Blackened shapes, either man or beast, are found having clambered over one another. One man\'s hand is pulling back the charred remains of another man, his grip stretching back a rope of seared flesh. You cover your mouth to keep from vomiting. %commander% orders his men to raise %noblefamily%\'s banner over the front gate. He claps you on the shoulder.%SPEECH_ON%Hey, good job out there, sellsword. You should breathe that stench in, though. It\'ll help you get used to it faster.%SPEECH_OFF% | You pass through %objective%\'s walls holding a cloth to your nose. %commander% walks beside you, holding his head up high with a smugness that is of a stench of its own. Inside %objective%, you find bodies wired together through melted bone and flesh, reared teeth flashing out in gritty grimaces resonating the horrid finality of a burning death. %commander% slaps you on the shoulder.%SPEECH_ON%This was quite a victory, you know that? You should get on back to %employer%, unless you want to help cleanup.%SPEECH_OFF% | You and %commander% enter %objective% with swords raised, but there is nothing to fight: the inferno consumed every living thing. If they weren\'t burned to death, they can be found caked in the ash and smoke they choked on. %commander% kicks some rubble around, a charred body tumbling over as he does so.%SPEECH_ON%Hell, there ain\'t much here but the walls.%SPEECH_OFF%He looks at you sternly.%SPEECH_ON%But walls are everything.%SPEECH_OFF%You crouch down and look at the dead man.%SPEECH_ON%Do you think he thought the same?%SPEECH_OFF%The commander shrugs. He quickly turns away and orders one of his men to unfurl %noblefamily%\'s banner over the front gate. | You step foot into %objective% and immediately regret it. There are bodies everywhere and not a one is remotely identifiable. The fire turned everything black, even the mud itself. %commander% uses his foot to try and turn over a corpse. Fleshen chips crunch and splinter as though he\'d stepped on a thin layer of ice. The man scrunches his nose.%SPEECH_ON%Now that is unsightly, don\'t you think?%SPEECH_OFF%He turns and lets out a sharp whistle before pointing at one of his soldiers.%SPEECH_ON%You! Raise the %noblefamily% banner over the gates and towers!%SPEECH_OFF%The soldier salutes and rushes off to his duty. %commander% slaps you on the shoulder and says %employer% should be most happy with these results. | There isn\'t much to recover from %objective%\'s fortifications: the fires consumed damn near everything. Those who stayed, burned. Those who rushed to the towers for safety, suffocated. The faces of the dead tell both stories in explicit terms - it was not a good way to go. But %commander% seems happy, ordering his men to start cleaning up and unfurling the %noblefamily% banners. | You pick through the remains of %objective%. The dead bodies draw your eye because you\'ve never seen so many burnt corpses in one place. One is clutching a tiny shape that, upon a closer look, is revealed to be an infant. %commander% walks up and claps you on the shoulder.%SPEECH_ON%Ah, that\'s a shame. Hey, you did a good job, sellsword. Don\'t think twice about nothing, got it?%SPEECH_OFF%You nod. The commander smiles briefly before ordering his men to start flying %noblefamily%\'s banners everywhere they can. Best to let strangers know that this burnt husk of a fort has new owners. | Inside %objective%, you find all manner of charred chaos. Dead dogs that were set aflame, their chains smoldering them long before the fires could. Horses stuck in stables with their blackened legs stiff in the air. Pigs that broke through their fences and ran wild, no doubt on fire the whole time. A faint aroma of bacon barely undercutting the otherwise horrid stench. There was no escape for any of these creatures.\n\n You open the door to a storage room and find a pile of defenders that suffocated to death. %commander% comes to stand behind you, looking in.%SPEECH_ON%Poor blokes. They look young. Probably stable hands, squires. What a shame.%SPEECH_OFF%The commander leans into the room and knocks some straw off a loaf of bread. He peels the outer layer away to reveal a fresh core.%SPEECH_ON%Hey, you hungry?%SPEECH_OFF%You politely decline the offer.}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_68.png[/img]{肃清%objective%守军的行动进行得很顺利。你和%commander%走过了现在无人驻守的大门，去看看这地方还有什么剩余的东西。很不幸，大火彻底地烧毁了这个地方。同时，其中一名专业士兵将%noblefamily%的旗帜挂在了一座塔楼上。不过，在如此浓重的烟熏下，你几乎看不清上面的徽章了。 |  战场横尸遍野。%commander%的手下在成堆的尸体中穿梭着，用长矛终结那些还在呻吟的声音。\n\n 你和指挥官前往了%objective%的大门。大火烧毁了这里的一切。中庭散布着各种家畜被烧焦的尸体。%commander%耸了耸肩，下令让一名手下在塔楼上升起了%noblefamily%的旗帜，证明了谁才是这场战斗的胜利者。 |  战斗结束了。用火攻对付%objective%的守军或许减少了牺牲，但大门处的一切都被焚烧殆尽了。重建此地得花上些时间。%commander%看起来很高兴，下令让一名手下升起了%noblefamily%的旗帜。然而在如此烟熏火燎下，那块布的样子也变得不咋地了。 |  %commander%在%objective%焚烧的废墟中行走着。%SPEECH_ON%总之，我们还是成功了。虽然最终的情形不怎么雅观。不过我也不想抱怨什么。干得好，佣兵。%SPEECH_OFF%  |  %objective%的居民们走了出来，看着那些守军们的尸体。妇女们在被烧焦的尸体中翻找着，寻找着她们的所爱之人。然而，找到的只有被烧焦的脸庞以及扭曲的骨头，那些脸上还带着死前恐惧的表情。%commander%的一名手下在前门升起了%noblefamily%的旗帜，他指向了那面旗帜。%SPEECH_ON%都给我听好了！看到那个了吗？那代表着我们的势力。现在，你们要做的，就是尊重这面旗帜，臣服于我们，然后一切都将恢复正常！如果不愿意这样做，那我会让你们明白一些新道理的，明白了吗？%SPEECH_OFF%人们静静地点了点头。%commander%笑了起来，那笑容让人胆寒。%SPEECH_ON%很好！那么现在我想问问，有人会炒蛋吗？%SPEECH_OFF%  |  你和%commander%进入了%objective%要塞，去检视战后的情况。无论是人还是动物，都被烧焦了，各种尸体交织在一起。有个人正在处理那些尸体，拉动着手中的绳子，上面捆着一堆被烧焦的肉体。你捂住了嘴尽量让自己不要吐出来。%commander%下令让他的手下在前门升起了%noblefamily%的旗帜。他拍了拍你的肩。%SPEECH_ON%嘿，干得不错，佣兵。不过你还得多闻闻这股恶臭。这样你就能更快习惯这种味道了。%SPEECH_OFF%  |  你穿过了%objective%的城墙，用一片布捂住了鼻子。%commander%走在你的身边，高高地抬起头，似乎是想摆脱里面的恶臭。%objective%中，你看到那些尸体已扭曲在一起，家畜和人混杂在一起，脸上都带着忍受焚烧的痛苦神情。%commander%拍了拍你的肩。%SPEECH_ON%这真是场伟大的胜利，你知道吗？你得快点回去向%employer%报告，除非你想留在这里进行清理工作。%SPEECH_OFF%  |  你和%employer%举着剑进入了%objective%，但其实根本不用这么做：那场地狱般的火焰已经焚烧了一切。里面的人就算没被烧死，也被烟灰给呛死了。%commander%踢了踢脚边的碎石，同时一具烧焦的尸体从废墟中滚落而出。%SPEECH_ON%操了，这里除了城墙，什么都没剩下。%SPEECH_OFF%他严肃地看向了你。%SPEECH_ON%但城墙就是一切。%SPEECH_OFF%你蹲下看着那具尸体。%SPEECH_ON%你觉得这人也是这么想的吗？%SPEECH_OFF%指挥官耸了耸肩。很快，他下令让手下在前门升起了%noblefamily%的旗帜。 |  你走进了%objective%，不过很快就后悔了。里面到处都是被烧得面目全非的尸体。火焰把一切都烧成了漆黑的颜色，就连地面也一样。%commander%想用脚翻过了一具尸体。然而在触碰的时候，尸体却像冰层那样裂开了。他死命地捏着自己的鼻子。%SPEECH_ON%真没想到会这样，你呢？%SPEECH_OFF%他转身吹了个口哨，指着手下的一名士兵。%SPEECH_ON%你！去把%noblefamily%的旗帜挂到大门和塔楼上！%SPEECH_OFF%那名士兵敬了个礼，然后立刻去办事了。%commander%拍了下你的肩膀，说%employer%会对这个消息感到很高兴的。 |  %objective%要塞里已经没有剩下什么东西了：大火烧尽了一切。那些留在其中的人，都已被烧得面目全非。而那些跑进塔楼躲避者，都窒息而死。死者痛苦的面部表情已清楚地说明了一切—那并不是什么舒服的死法。%commander%看起来很高兴，下令让他的手下去清理战场，并挂起%nobefamily%的旗帜。 |  你在%objective%的废墟中仔细搜索着。成片的死尸吸引了你的注意，因为你从未见过如此众多被烧焦的尸体堆积在一处。其中一人似乎还抓着一个小小的东西，你走近一看，发现那个东西原来是个婴儿。%commander%走了过来，拍了拍你的肩。%SPEECH_ON%啊，这可真惨。嘿，但是你干得很不错，佣兵。别想太多了，明白吗？%SPEECH_OFF%你点了点头。指挥官短短地笑了一下，然后下令让他的手下开始在四处挂起%nobefamily%的旗帜。得让其他陌生人们明白，这座被烧毁的要塞，有了新的主人。 |  在%objective%中，你发现里面已被烧得面目全非了。狗的尸体都已被烧得通红，在被火焰吞噬前，锁链就已经闷死了它们。马匹被困死在了马厩中，漆黑的腿部已经变得僵硬无比。猪冲破了围栏，四处乱跑，当然，身上还燃烧着。淡淡的熏猪肉气味稍稍减缓了这地狱般景象的恐怖感。这些生物毫无退路可走。\n\n 你打开了储物室的门，发现里面还有一群被闷死的守军。%commander%走到了你身边，朝里面看去。%SPEECH_ON%真是可怜的家伙。他们看起来还很年轻。可能只是些养马人，侍从什么的。真惨。%SPEECH_OFF%指挥官把身子探进房间里，拿起了一条面包，拍了拍上面的稻草。他掰掉了外面烧焦的部分，里面的部分还很干净。%SPEECH_ON%嘿，你饿吗？%SPEECH_OFF%你礼貌地拒绝了他的提议。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Victory!",
+					Text = "胜利！",
 					function getResult()
 					{
 						this.Contract.changeObjectiveOwner();
@@ -1089,13 +1089,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "MaintainSiege",
-			Title = "At the siege...",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{%commander% returns with news that the defenders might be weakening. He hopes to avoid a deadly assault and simply wait them out instead. You are instructed to stay with the siege camp until further notice. | One of %commander%\'s lieutenant informs you that the commander has elected to wait a little bit longer, hoping that the defenders will surrender instead of drawing out a fight. The %companyname% is ordered to standby until further notice. | News comes your way that the siege is going to be maintained a little while longer. You are instructed to wait some time until further notice.}",
+			Title = "包围圈中……",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{%commander%带来消息说，守军的力量似乎已被削弱。他希望避免正面激烈的战斗，只想等待他们自己出来。你被指示暂留在前线营地，等待进一步的通知。 |  %commander%的一名副官通知你，指挥官已决定再等一段时间，希望守军能够投降，已避免不必要的伤亡。%companyname%被指示暂且待命，等待进一步通知。 |  你得到了新消息，围城还要再持续一段时间。你被指示暂且待命，等待进一步通知。",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "The %companyname% will be ready.",
+					Text = "%companyname%马上就位。",
 					function getResult()
 					{
 						if (this.Flags.get("IsNighttimeEncounter"))
@@ -1117,13 +1117,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "NighttimeEncounter",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_33.png[/img]{%commander% orders you and the men out on a patrol. While making the rounds, you spot a few of %objective%\'s defenders slipping out of a creekbed beside one of the fort\'s walls. They\'re slipping through some sort of secret passageway. Thinking fast, you order you men to charge down on them, hoping to capture the passageway before they can see you first. Make sure none of those bastards can slip back through the secret passageway! | While you wait to see where the siege goes, %commander% comes by and orders you and the %companyname% to start patrols of %objective%\'s outer defenses.\n\n Lo\' and behold, while you\'re footing about you see a few of %objective%\'s defenders sneaking through a hatch. You crouch and watch them closely. When the hatch closes, you see that the top of it has been covered in moss and grass to mask its location. If you leave now to tell %commander%, it\'s very likely that one of the men will see you and destroy the passageway. You decide to seize the moment and order an attack. The %companyname% needs to ensure that no defenders get away! | As the siege lulls on, you decide to take a bit of initiative and ask if you and the %companyname% can go on patrols. A little bit of walking will keep the men fresh and on their toes. That, or they can linger around the camp and get into fights with the professional soldiers. %commander% agrees.\n\n No more than a few minutes into the patrol do you spot a few of %objective%\'s defenders dragging themselves up the embankment of a half-assed moat. They\'re swimming into it through a sewage hatch close to the fortification walls. %randombrother% shakes his head.%SPEECH_ON%I\'ll be farkin\' damned.%SPEECH_OFF%You tell him to stay quiet. If any of the defenders learn that their secret passageway has been found, they\'ll be sure to close it. You wait for all the defenders to get out into the open, then order an attack. None of the defenders can be allowed to get away! | A patrol is ordered and you elect the %companyname% for the job. Your men grumble and complain, but tasks like this are good for keeping the grunts fresh and on their toes.\n\n Finding a group of %objective%\'s defenders slipping out of a secret passageway is also a great way to keep things fresh! No more than a few minutes out and about do you find the defenders doing just that. You watch as the defenders collect themselves and, just as they\'re about ready to sneak out into the hinterland, do you order an attack. None of these defenders can be allowed to escape! | As the siege goes on, %commander% orders you and your men to start patrols of the fortifications around %objective%. Halfway through the rounds your men stumble upon a few defenders slipping out of a secret passageway, some shitmired grate where the moat goes up to chest level. Capturing this passageway would be an enormous tactical advantage in the days to come. You quickly order your men to attack - and that none of the defenders can be allowed to get away!}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_33.png[/img]{%commander%命令你和你的人前去巡逻。期间，你发现%objective%的一些守军正悄悄地从要塞的一面城墙边溜出来。他们似乎正在穿过某种秘密通道。你思索片刻，立刻命令你的手下冲了过去，希望在被发现前能占据那条通道。别让那些混蛋溜回去！ |  当你在查看围城状况时，%commander%命令你和%companyname%前去%objective%的外部工事进行巡逻。\n\n 就在巡逻期间，你发现一群%objective%的守军正悄悄地从某个口子中溜出来。你蹲下身子，慢慢的靠近他们，仔细观察着。当那个口子关上后，你能到上面盖上了苔藓和青草，标记出了它的位置。如果你现在离开去把这事告诉%commander%，那些人很可能就会发现你，然后毁掉这条通道。于是你决定抓住机会，发动了攻击。%companyname%绝不能让任何一个人逃跑！ |  当围城情况稳定下来后，你决定去外面主动调查一番，于是向上级询问你和%companyname%是否可以出去巡逻一下。外出散散步能帮助你的手下保持良好的状态。否则他们留在营地里，很可能会跟职业士兵们产生争执。%commander%同意了。\n\n 巡逻还没过几秒，你就发现了一些%objective%的守军正从护城河堤岸处溜出来。他们是从要塞城墙处的一道口子中游出来的。%randombrother%摇了摇头。%SPEECH_ON%我了个大操。%SPEECH_OFF%你让他保持安静。如果那些人发现他们的秘密通道被发现了，他们一定会立刻关上它的。你等到那些人全都游出来，然后发起了攻击。不能让任何人逃离！ |  你接到了巡逻的命令，决定和%companyname%一起执行这个任务。你的手下不停地抱怨着，但这样的任务能让他们保持着良好的状态。\n\n 同样，发现一群从密道中偷偷溜出来的%objective%守军也能让士兵们兴奋不已！就在巡逻开始没过几分钟后，你就发现这样的情况了。你看着那群守军集合，就在准备向内陆进发时，下令发动了攻击。不能让任何人逃离！ |  围城持续着，%commander%命令你和你的手下前往%objective%附近进行巡逻。期间，你的手下发现一些守军正从某个秘密通道溜出来。占领那个通道或许能让你们在未来的战斗中占据极大的优势地位。你很快下令让手下们开始发动攻击—不能让那些人跑掉！}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Get them!",
+					Text = "抓住他们！",
 					function getResult()
 					{
 						local tile = this.Contract.m.Origin.getTile();
@@ -1149,13 +1149,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "NighttimeEncounterFail",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_33.png[/img]{Damn it all. A few of the defenders managed to sneak back through the passageway and you can already hear it being sealed up. | You just weren\'t quick enough to stop all the defenders and a few got away. They slipped back into %objective% and sealed the passageway behind them. | Well, the whole point here was to kill those sneaking out and secure the passageway. Instead, a few escaped back into %objective% and closed the passageway behind them.}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_33.png[/img]{真是去他娘的。一些守卫跑了回去，你甚至还听到了通道被封锁的声音。 |  你的动作还不够快，让一些守军溜了回去。他们退回了%objective%，并封锁了通道。 |  好吧，原本的计划是杀光那些溜出来的守军，占领通道。然而现在，有些人却跑回了%objective%，并封锁了通道。",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Damn it!",
+					Text = "该死的！",
 					function getResult()
 					{
 						this.Flags.set("IsNighttimeEncounter", false);
@@ -1169,13 +1169,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "NighttimeEncounterAftermath",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_33.png[/img]{You managed to kill all the defenders and secure the passageway. When you report the news to %commander%, he tells you to sneak through the secret gate and assassinate %objective%\'s leading commander. You\'ll have a few hours to prepare, but time is of the essence and you\'ll have to strike before the night is over. | Killing all the defenders, you manage to secure the passageway. You return to %commander% and explain the situation. He nods dutifully then turns to you.%SPEECH_ON%I want you to sneak through the secret passage, get inside the fortifications, and assassinate their leader.%SPEECH_OFF%Compared to the alternative of a frontal assault, this night operation is about as agreeable of an action that you\'ve heard in some time. | The secret passageway is secured and news of it reported to %commander%. He laughs, shaking his head.%SPEECH_ON%We\'d been looking for such a thing for so long now, and there you are, first patrol out and already finding the keys to %objective%.%SPEECH_OFF%He states that he wants you and the %companyname% to sneak through the passage and assassinate the leadership. Once that is done, the defenders will be ruined and %objective% can be taken easily. It\'s either this or try a frontal assault, the latter of which you have no interest in. You\'ll have a few hours to get ready, but the mission should be undertaken before the night is over. | One of the defenders screams out for help.%SPEECH_ON%They found ughhh-%SPEECH_OFF%%randombrother% is quick to slap a cloth over the man\'s mouth and then slit his throat. You look about %objective%\'s walls for activity, but it appears nobody heard the cry.\n\n Returning to the siege camp, you are intercepted by %commander%. He\'s looking for good news and you readily depart with it. The leader stomps his foot.%SPEECH_ON%By the gods that\'s the best news I\'ve heard in weeks! Alright, this is excellent, but we need to take action and fast. I want you and your men to slip through that passageway and assassinate %objective%\'s leadership. We need to do this as soon as possible, a few hours wait at the most, got it?%SPEECH_OFF%}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_33.png[/img]{你成功杀光了所有的守军，并占领了通道。当你把此事汇报给%commander%后，他下令让你溜进去，暗杀%objective%的指挥官。你有几小时的准备时间，记住，时间很宝贵，你必须在夜晚结束前完成任务。 |  你成功杀光了所有守军，占领了通道。你返回至%commander%处，把这一情况汇报给他。他点了点头，转向了你。%SPEECH_ON%我想让你通过那个密道溜进城中，暗杀他们的首领。%SPEECH_OFF%跟正面对敌比起来，这个夜间行动似乎会更轻松一些。 |  你成功占领了通道，并把这一情况汇报给了%commander%。他大笑起来，摇了摇头。%SPEECH_ON%这种机会我们已经寻找了很久了，而你则是第一个发现%objective%这种秘密的人。%SPEECH_OFF%他希望你和%companyname%能溜进城中暗杀守军的领袖。一旦成功，守军将会溃散，而%objective%就能被轻易拿下。要么这样做，要么就得正面进攻，而你对后者毫无兴趣。你有几小时的准备时间，但必须在夜晚结束前完成任务。 |  一名守军大声呼救。%SPEECH_ON%他们发现了，啊—%SPEECH_OFF%%randombrother%立刻隔断了他的喉咙。你安静地看着%objective%城墙上的活动，似乎没有人发现这个呼救声。\n\n 之后你们返回了围城营地，途中被%commander%拦住了。他似乎在等着好消息，于是你把情况说了一遍。首领顿了顿足。%SPEECH_ON%老天，这是我几周来听到的最好的消息了！这真是好极了，但我们得赶快开始行动。我希望你和你的手下能溜进城中暗杀%objective%的领导人。我们必须尽快完成此事，只有几小时的时间，明白了吗？%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "We\'ll prepare and then sneak in.",
+					Text = "我们做好了准备，然后溜进了城中。",
 					function getResult()
 					{
 						this.Flags.set("IsSecretPassage", true);
@@ -1188,8 +1188,8 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "FailedToReturn",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_33.png[/img]{You failed to kill the defender\'s leader and with their commander still at the helm %commander% had to call off the siege. Although the failure of the siege wasn\'t entirely your fault, it\'s a good bet that %employer% will see it that way. | The secret passage has been closed! With the defenders\' commander still alive, the fortifications will be far too costly to assault. %commander% has called off the siege and you\'ve received a fair bit of the blame for that. | Well, you took too long to use the secret passage. The defenders must have gotten leery of keeping it open and closed it with a pile of rocks. With the defenders still under their steady commander, attacking the fortifications will be very costly for %commander%\'s army. He has called off the siege. %employer% will not be happy.}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_33.png[/img]{你没能杀死守军的首领，因此%commander%不得不取消了围城。虽然围城的失利并不都是你的错，但%employer%可不会这么想。 |  密道被锁上了！因为守军的领导人仍存活着，对要塞发动正面进攻估计会造成极大的牺牲。%commander%取消了围城，而你也承担了很大一部分的责任。 |  你浪费的时间太多了，密道被堵上了。那些守军一定发现了事情有变，于是用石头封死了通道。由于守军的指挥官没有死，对要塞发起正面攻击将会给%commander%的军队带来极大的损失。他取消了围城。%employer%不会满意的。}",
 			Image = "",
 			List = [],
 			Options = [
@@ -1208,13 +1208,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "SecretPassage",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_33.png[/img]{You and the %companyname% quietly slip through the passageway. The walls of the tunnel drip shit and piss and the waters you trudge through are no better. %randombrother% complains a bit, but you tell him to shut it.\n\n Coming out the other side, you spill into a courtyard, the company sneaking along a line of bushes and then lying flat as you survey the field.\n\n A few of the defenders walk about. They\'re sighing and groaning and moaning. Hunger rumbles their bellies, and curses wag their tongues. Soon enough, the commander is seen with a troop of his best guards at his side. He\'s passing through the courtyard for an inspection. You will not get a better chance than this and order the attack! | The %companyname% and yourself open the secret passageway. You find a small stable boy exiting with a list of requested goods written on a scroll. He begs for his life, but you can\'t risk anything now. %randombrother% slits his throat and drowns him in the filth pouring out of the passageway\'s tunnel. You continue on and spill out into a courtyard. The men and yourself slip along a row of bushes and observe for a time.\n\n As you wait, a man attired in a commander\'s garb comes down some steps with a band of guards behind him. You doubt you\'ll get a better opportunity than this and order the attack! | The secret passageway is dark and murky, the waters that run through the tunnels full of shite and piss. You hike up your pants and start inward. Torches would give you away, so you go in blind and feeling the walls. You know not what horrors your fingers run over and you hope to never know. Eventually, a dim light flickers at the far end and you slip out of the passageway and into a courtyard.\n\n %objective%\'s commander is assessing his troops, but stops to turn and look at you and the %companyname% making a grand, stinky entrance. His eyes widen and he points with one hand while the other reaches for his weapon.%SPEECH_ON%Assassins!%SPEECH_OFF%You order the %companyname% to attack! | The secret passageway is a surprisingly short trip to the other side of %objective%\'s walls. On the other side of the tunnels is a man standing guard. He sees the shapes of you and your men coming through the darkness. He asks.%SPEECH_ON%I hope to every farkin\' old god that you got what we requested. Remember, I asked for eggs and...%SPEECH_OFF%For a moment, he sees %randombrother%\'s face emerging from the shadows, and for another moment realizes this stranger before him is no errand boy. The guard reels back, but before he can shout for help your sellsword puts a blade through his chest and both go flying into a bush. With him out of the way, you quietly sneak into %objective% and find its commander doing drills in the courtyard.\n\n Having no better chance than this, you order the %companyname% to attack!}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_33.png[/img]{你和%companyname%悄悄地溜进了密道。密道中沾满屎尿的墙壁和水可不是那么好受的。%randombrother%抱怨了几声，不过你立刻命令他闭上嘴巴。\n\n 出了密道后，你们来到了中庭，战团隐藏在一堆灌木中，而你观察着整片场地。\n\n 有几名守军在四处漫步着。他们有的在叹气，有的在打着哈欠。他们饥饿的肚子在咕咕作响，口中还咒骂着什么。很快，你发现了那名指挥官，身边陪伴着他最好的警卫队。他正在中庭进行检视。再也不会有比这更好的机会了，于是你下令发动攻击！ |  %companyname%和你打开了密道。你们刚好遇到一名看着一卷写满货物名称的卷轴正向外走去的马童。他祈求你饶恕他的性命，但这种关头你可不能冒险。%randombrother%割开了他的喉咙，把他的尸体扔进了肮脏的密道中。你们继续向中庭摸索去。你和手下隐藏在了一堆灌木中，静静着观察着。\n\n 忽然，你发现一名穿着指挥官服装的人在一群守卫的陪伴下走了过来。再也不会有比这更好的机会了，于是你下令发动攻击！ |  密道又暗又脏，里面的水沾满了屎尿。你卷起了裤子，慢慢向内走去。火炬可能会暴露你的存在，所以你们是摸着墙向里走去的。你手指碰到的东西让你感到恶心，你也不想知道那到底是什么。终于，你们走出了密道，来到了中庭。\n\n %objective%的指挥官正埋头工作着，听到响动后，他停下动作转过头来，正好看到你和%companyname%带着浑身恶臭出现在了他的面前。他猛然睁大双眼，立刻伸手去拿武器。%SPEECH_ON%有刺客！%SPEECH_OFF%同时，你下令让%companyname%发起攻击！ |  密道短得惊人，出口在%objective%城墙的另一边。出口处，一名守卫正站在那里。他看到你和你的手下的影子。他说道。%SPEECH_ON%希望你们弄到了我们想要的东西。记着，我要鸡蛋和……%SPEECH_OFF%忽然，他看到%randombrother%的脸从阴影中浮现出来，同时他意识到，面前的陌生人并不是他正在等待的人。守卫立刻往后退去，但在他开口呼救前，你的佣兵就已经刺穿了他的胸膛。没有了那人的阻拦，你们静静地溜进了%objective%，发现指挥官正在中庭进行训练。\n\n 不会有比这更好的机会了，于是你下令让%companyname%发起了攻击！}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Charge!",
+					Text = "冲啊！",
 					function getResult()
 					{
 						this.Contract.getActiveState().onSneakIn(null, false);
@@ -1226,13 +1226,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "SecretPassageAftermath",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{%objective%\'s commander has fallen and his men quickly lay down their arms. One lieutenant raises his hands and speaks hurriedly.%SPEECH_ON%We\'ve no interest in carrying on with this losing proposition. The only man who did is dead there. We surrender.%SPEECH_OFF%%employer% will be most happy about this turn of events. | The battle over, you find the dying commander of %objective%\'s defenses. He\'s spitting blood as you step over him.%SPEECH_ON%We\'ll never surrender. Do your worst you deplorable sellsword.%SPEECH_OFF%You put a sword through his eye socket. One of his lieutenants drops his weapon and raises his hands.%SPEECH_ON%Hey, he was the only one here who cared about defending this place. It\'s all yours. Just let us live!%SPEECH_OFF%You give %randombrother% the order to signal %commander% about the taking of the fortifications. | %objective%\'s commander is dead, and his men immediately surrender in unison. They explain that only the commander wanted to keep holding the place. Apparently he was jockeying for attention within the noble families and thought a heroic defense would purchase him a seat at the table of the powers that be. Well, now he\'s dead in the mud. You tell %randombrother% to raise the signal so that %commander% can know %objective% has surrendered. A defender asks you for mercy.%SPEECH_ON%Surely you\'ll let us live, yes?%SPEECH_OFF%You clean your blade and shrug.%SPEECH_ON%Not up to me. My benefactor and the army he heads is about to come through that door. What his intentions are is beyond me. You want mercy, pick up a weapon and my men will give it to you.%SPEECH_OFF%The defender frowns and nods.%SPEECH_ON%I suppose I\'ll take my chances with him.%SPEECH_OFF% | %objective%\'s commander is dead in the mud. His surviving troops all have their hands in the air. You order your men to shackle the defenders while you give the signal, unfurling your sigil down the side of a tower. %commander%\'s siege camp blares a horn in response. The battle is over. %employer% will no doubt be most pleased. | The battle is over and %objective%\'s leader is dead in the mud. Having ripped out their heart and soul, the defenders immediately give up. You order the %companyname% to round them up and start shackling them. %randombrother% goes to give %commander% the signal that the fort has been taken. %employer% will no doubt be happy to see you upon your return.}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{%objective%的指挥官倒下了，他的手下也很快放弃了抵抗。一位副官举起了他的双手，急切地说道。%SPEECH_ON%我们不想再继续这场没有意义的战斗了。唯一想坚持的人已经死在这里了。我们投降。%SPEECH_OFF%%employer%会感到很满意的。 |  战斗结束了，你找到了那位濒死的%objective%守军指挥官。你跨过他的时候，他朝你吐了口血。%SPEECH_ON%我们永不投降。随你怎么折磨我。%SPEECH_OFF%你把剑刺入了他的眼窝。他的一位副官扔掉了武器，举起了双手。%SPEECH_ON%嘿，他是唯一一个想要防守这个地方的人。现在，这地方是你的了。请放过我们！%SPEECH_OFF%你下令让%randombrother%发送信号，好让%commander%了解这里的情况。 |  %objective%的指挥官死了，他的手下很快就放弃了抵抗。他们说只有那位指挥官想防守这个地方。很显然他正在试图吸引贵族们的注意力，这样史诗般的守城战，一旦成功，他一定能获得不错的回报。不过现在，他已经死了。你让%randombrother%发送信号，好让%commander%了解%objective%已经投降的这一信号。一名守军乞求你的仁慈。%SPEECH_ON%你一定会饶恕我们的，对吗？%SPEECH_OFF%你擦了擦剑上的血，耸了耸肩。%SPEECH_ON%这可不是我说了算。我的赞助人和他的军队正朝这里来。他想怎么做，我可管不着。你想要仁慈，很好办，拿起你的武器，我的手下就会让你感受到什么是仁慈的。%SPEECH_OFF%守军皱着眉点了点头。%SPEECH_ON%我想我还是等着吧。%SPEECH_OFF%  |  %objective%的指挥官死了。剩下的守卫们立刻举起了双手。你下令让手下们把这些守卫绑了起来，同时发出了信号，在塔楼的一侧扬起了你的徽章。%commander%的围城营地立刻吹响了号角做出回应。战斗结束了。%employer%一定会很高兴的。 |  战斗结束了，%objective%的领导者也死了。剩下的守军们立刻投降了。你下令让%companyname%围住了他们，并将其一个个绑了起来。%randombrother%向%commander%发出了信号，通知其要塞已经拿下。%employer%一定会很期待与你的再次见面。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "We did it!",
+					Text = "我们成功了！",
 					function getResult()
 					{
 						this.Contract.changeObjectiveOwner();
@@ -1245,13 +1245,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "SecretPassageFail",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_33.png[/img]{Unfortunately, you did not get into position to assassinate the commander and had to pull back. The defenders of %objective% jeer as you and the men slip back through the tunnels. When you get back outside, you hear the passageway being sealed off. It looks a more difficult route to capturing %objective% will have to be taken. | The battle did not carry on as you hoped. You and the %companyname% are pushed back to the passageway and enact a fighting retreat. When you get back outside, you hear stones and crashing sounds as the defenders seal it all off. You tried your best, but it looks like taking %objective% will not be as easy as you\'d hoped. | To their credit, the defenders did a great job. Tired and underfed, they fought like the cornered dogs that they are. When you retreat back outside %objective%\'s walls, you hear the distinct sound of the passageway being sealed off.}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_33.png[/img]{不幸的是，你没有就位以暗杀指挥官因而必须撤退。%objective%的守卫在你和你的部下溜回通道的时候对你各种嘲笑。当你回到外面时，你听到通道被封的声音。看来必须要采用更困难的办法来抓捕%objective%le . |  战斗没有如预期发展。你和%companyname%被迫撤退回通道并实行战略撤退。当你到外面时，你听到石头崩塌的声响，那是守卫将其封锁的声音。你尽力了，但看来要抓捕%objective%没有预期的简单。 |  值得称赞的是，守卫干的很不错。他们又累又饿，如困兽之斗。当你撤退出%objective%的围墙，你听到通道被封锁的声响。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Damn it!",
+					Text = "该死的！",
 					function getResult()
 					{
 						this.Flags.set("IsSecretPassage", false);
@@ -1265,13 +1265,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "ReliefAttack",
-			Title = "At the siege...",
-			Text = "[img]gfx/ui/events/event_90.png[/img]{%commander%\'s scouts return with news that a relief force is coming to try and end the siege of %objective%. The commander nods and orders his men to prepare for battle. You do the same. | While waiting around, a few scouts return and enter %commander%\'s tent. You go in after them and see the commander nodding and gathering his things. He looks at you and explains.%SPEECH_ON%A relief force is coming. They\'re going to try and end the siege. Get your men ready.%SPEECH_OFF% | {You watch as %randombrother% arm wrestles one of the professional soldiers. They\'re betting on a headless chicken. Winner gets a full belly, the loser a sore arm. | One of the sieging soldiers and %randombrother% are about to begin a staring contest. Whoever blinks first, loses. Whoever wins gets a chicken. | You find %randombrother% heaving large stones close to a stake in the mud. A soldier from the sieging army does the same. Apparently they\'re competing over a chicken and they\'re down to the very last throw for winner take all.} Before they can start, a scout bursts through the camp and states an army is coming to try and relieve %objective%. %commander% orders his men to get ready. You repeat it to the %companyname%. | %commander%\'s scouts have returned with news that an army is coming to try and relieve %objective%. You order the %companyname% to get ready for a large battle. | A large battle is on the horizon: %commander%\'s scouts have returned with news that a relief force is coming to try and end the siege. Get ready!}",
+			Title = "包围圈中……",
+			Text = "[img]gfx/ui/events/event_90.png[/img]{%commander%的侦察兵带消息返回，称一只救援部队正在赶来试图终结对%objective%的包围战。指挥官点点头并让大家准备战斗。你也这么做了。 |  等待的时候，一小队侦察兵返回并进入%commander%的营帐。你跟着进去却发现指挥官正点着头收拾东西。他看着你解释道。%SPEECH_ON%救援部队要来了。他们会试图终结围城战。让你的人准备战斗。%SPEECH_OFF%  |  {你看着%randombrother%和一位职业军人掰手腕。他们在以去了脑袋的鸡打赌。胜者能够饱餐一顿，败者只有手臂酸痛。 |  其中一位围城士兵和%randombrother%正准备开始对视比赛。先眨眼的就输了。胜的人能得到一只鸡。 |  你发现%randombrother%举起泥潭棍子旁边的大石头。一个围城士兵也做了同样的事。显然他们在为了一只鸡比赛，而最后的胜者能赢得所有。}他们还没开始，一个侦察兵冲进营帐并表示一支军队正赶来解救%objective%。%commander%下令让他的士兵做好战斗准备。你将其复述给%companyname%。 |  %commander%的侦察兵带消息返回称一只军队正试图营救%objective%。你命令%companyname%做好大规模交战的准备。 |  一场大战在即：%commander%的侦察兵带消息返回称一只军队正赶来尝试终结围城战。做好准备！}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Prepare for battle!",
+					Text = "准备战斗！",
 					function getResult()
 					{
 						this.Contract.spawnReliefForces();
@@ -1284,13 +1284,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "ReliefAttackAftermath",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_86.png[/img]{The relief force has been defeated and beaten back off the field. %objective%\'s defenders no doubt saw the whole battle and have taken a hit to their morale. It\'s likely only a matter of time until they surrender! | Hurrah! The relief force has been summarily taken care of. %commander% thanks you for the help. He glasses %objective%\'s walls with his leather-wrapped scope and smiles.%SPEECH_ON%Oh, they\'re a beaten bunch. They saw the whole thing. I\'ve never seen such a hopeless lot of men in all my life.%SPEECH_OFF%He claps you on the shoulder with a wide grin.%SPEECH_ON%Sellsword, I think this siege is almost at an end!%SPEECH_OFF% | You managed to beat back the relief force! That was probably the last hope for %objective% and their surrender is to be expected any day now. | %commander% thanks you for helping destroy the relief force. He believes %objective% is likely to surrender any moment now. | Watching your only hope in the world get annihilated is probably not the best for morale. %objective%\'s defenders got to see their relief force slaughtered and no doubt they are now on the verge of surrender. | Well, %objective%\'s great last hope has been completely defeated. You and %commander% convene and agree: the defenders are no doubt ready to surrender. It\'s just a matter of time.}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_86.png[/img]{营救军被击败并逃离战场。%objective%的守卫无疑看到了整场战斗，士气大受打击。他们的投降看来只是时间问题了！ |  万岁！救援军被击溃。%commander%感谢你的帮助。他用皮质外皮的望远镜看着%objective%的围墙笑道。%SPEECH_ON%哦，他们被打得落花流水。他们看到了全程。我这辈子没见过这么多绝望无助的人。%SPEECH_OFF%他大笑着拍打你的肩膀。%SPEECH_ON%佣兵，我觉得围城战就要结束了！%SPEECH_OFF%  |  你成功击退了救援军！那可能是%objective%最后的希望因而他们的投降估计指日可待了。 |  %commander%感谢你帮忙击溃救援军。他相信%objective%现在随时可能投降了。 |  看着你在这世上唯一的希望破灭可能对士气来说是最大的打击了。%objective%的守卫看到了他们的救援军被屠杀，而那无疑使他们到了投降边缘。 |  好吧，%objective%最后的希望也彻底破灭了。你和%commander%召开会议并一直认为：守卫无疑要准备投降了。只是时间问题而已。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "They can\'t hold out forever.",
+					Text = "他们撑不了多久了。",
 					function getResult()
 					{
 						this.Flags.set("IsReliefAttackForced", false);
@@ -1314,13 +1314,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "Surrender",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_31.png[/img]%objective% surrenders!\n\n{You walk through the opened gates to find its defenders strewn all about. Hungry men keeled over in pain, others leaning against the walls, chapped lips cracking as they beg for water. No animals are alive. They have all long since been slaughtered. Black birds do stare down from the walls, joining you in the conquest and just waiting for an opportunity to plunder. %commander% claps you on the shoulder and thanks you for the help. | The front gate rattles open and you walk through it like the victor that you are. However, the scene inside should dispel any notion that there was honor in defeating these poor souls. Dead defenders have been stacked in a corner. A few men have been crucified for cannibalism, but even those executed men show signs of being consumed. There\'s a burnt granary to one side of the courtyard. Some of the men sit with blackened mouths, apparently having tried to scarf down the charred remains of grain. Every single animal has been slaughtered and picked to the bone.\n\n %commander% laughs at the scene and tells his men to start shackling the prisoners. He turns to you.%SPEECH_ON%Thank you, sellsword. You can return to %employer% now.%SPEECH_OFF% | Inside the fort you find the defenders standing in a line. Two of %commander%\'s soldiers are going down it, one hauling chains and the other taking those chains and shackling the men together. You see a corpse impaled atop a stable, having the weathervane blow out his chest and carrying his heart atop it like some visceral end to a ritual. %commander% comes over laughing.%SPEECH_ON%That was their lieutenant. {They said he refused to surrender and threw himself off the tower instead. | Apparently he refused to surrender so his men threw him off the tower.}%SPEECH_OFF%Interesting. Well, %employer% will be more than happy to see you again. | Beyond the walls, %commander%\'s men are taking the defenders\' weapons and heaving them into a great pile. The defenders themselves are huddled in a corner, each with their arms shackled behind their backs, their heads ducked low, their eyes staring at the mud. A few guards watch over them, occasionally kicking them, spitting on them, or even threatening to kill them. All in good fun.\n\n %commander% comes over and claps you on the back.%SPEECH_ON%Job well done, sellsword. Your help was much appreciated. Return to %employer%. Your work here is done.%SPEECH_OFF% | Walking through the gate, you find the defenders begging for mercy. Their lieutenant is dead in the mud, still leaking from dozens of stab wounds. One man explains.%SPEECH_ON%We wanted to surrender so long ago but he wouldn\'t let us! You have to understand! We want no more of this war.%SPEECH_OFF%%commander% walks up beside you and nods.%SPEECH_ON%Your work here is done, sellsword. Go on and see %employer%.%SPEECH_OFF%You ask what he\'s going to do with the prisoners. He shrugs.%SPEECH_ON%Dunno. I think I\'ll eat first. Maybe pen a letter to my loved ones. I try not to be rash about these things.%SPEECH_OFF%Fair enough. | You and %commander% walk through the opened gates. Inside, a few of the surviving defenders are keeled over, begging for food on their hands and knees. They can hardly bend their bodies upward to beg, their stomachs so pitted with pain.%SPEECH_ON%Please! Help...%SPEECH_OFF%%commander% puts a boot on one of the men and pushes him over.%SPEECH_ON%Do we look like help to you?%SPEECH_OFF%The commander turns to you.%SPEECH_ON%Good job, sellsword. Get on back to %employer. Your work here is done.%SPEECH_OFF% | Through the gate you find the defenders being rounded up and put into a corner. %commander% asks which of them is the leader. The group uniformly points across the courtyard. A dead man is hanging from one of the towers, pale faced with purpled hands and a purple nose. One of the prisoners explained.%SPEECH_ON%If we didn\'t do it, you\'d still be standing out there and we\'d still be in here starving.%SPEECH_OFF%%commander nods.%SPEECH_ON%Alright. I won\'t punish ye all for that. Sellsword! You get on back to %employer%. Your work here is done.%SPEECH_OFF% | Going through the gate, you find the fort\'s commander swinging a longsword around as a few of %commander%\'s men corner him with spears. In one big uniform rush, they skewer him like a wild animal. Immobilized by the shafts, he gives up and keels forward, draping his arms over the wood like he was lazily leaning against some fenceposts.%SPEECH_ON%Alright, I suppose ye bastards got me.%SPEECH_OFF%He turns to his men who, it appears, were the ones to actually open the gates.%SPEECH_ON%I\'ll be seeing the lot of you in the next life.%SPEECH_OFF%Blood pours from his mouth and his body shakes once and that is all. The soldiers retrieve their spears and the leader falls straight into the mud. %commander% stands over him and addresses you.%SPEECH_ON%Alright, sellsword. Get on back to %employer%.%SPEECH_OFF% | The inside of the fort is a place of horror. Men are strewn about clutching their bellies, some already dead, some wishing they were. The commander of the place is hanging from a tower, a family banner wrapped around his neck as though that\'d bring some dignity to his death. Bones of animals litter the courtyard and there is shit and piss and vomit potholed all about. %commander% comes to your side and nods.%SPEECH_ON%Looks about right. A shame they didn\'t surrender earlier.%SPEECH_OFF%You suggest that it was probably the dead lieutenant swinging by his own sigil that was resisting surrender. The commander nods again.%SPEECH_ON%Yeah. He thought that was the honorable thing to do. I\'d probably done the same once upon a time, but having seen this, I\'m not so sure he\'s right anymore.%SPEECH_OFF% | Walking through the gate, you find the defenders bunched up outside a place of worship. There aren\'t many left and not a one is praying. The dead have been piled into a corner and there\'s evidence of cannibalism. No animals are around. The stable is so busy with flies it\'s almost roaring with their frenetic buzzing. The pig pen has been outright trampled. One of the prisoners looks up at you.%SPEECH_ON%We ate all that we could. Do you understand? We. Ate. All. That. We. Could.%SPEECH_OFF%%commander% comes up to your side.%SPEECH_ON%Don\'t let them bother ya, sellsword. Travel on back to %employer%. He\'ll no doubt be waiting for you.%SPEECH_OFF% | You and %commander% walk through the front gates. The defenders inside are more skeleton than flesh and they shamble about accordingly. One gloms onto your shoulder.%SPEECH_ON%Food! Food!%SPEECH_OFF%His breath carries the horrid stench of hunger. You throw him to the ground and there he cries out and begins stuffing his mouth with mud. %commander% comes by your side as he munches on a buttered piece of bread.%SPEECH_ON%These bastards look like a sorry lot, no?%SPEECH_OFF%Crumbs spew out of his mouth and the prisoners stare at them as if they were gold. The commander claps you on the shoulder.%SPEECH_ON%Get on back to %employer%, he\'ll be more than happy to hear the great news.%SPEECH_OFF%}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_31.png[/img]%objective%投降！\n\n{你穿过打开的大门发现到处是守卫。饥饿的士兵痛苦倒地，其他人则倾靠在墙壁上，皲裂的嘴唇在祈求着水。动物全死光了。它们早就被屠宰光了。乌鸦从高墙上向下望，加入你的征服战并等待机会分一杯羹。%commander%拍拍你的肩膀表示感谢。 |  前门打开，你以胜利者的姿态从中穿过。然而，里面的景象却能消除任何荣耀感，因为你看到自己所击败的是这些可怜的家伙。死去的守卫被堆在角落。少数人因同类相食被钉死在十字架上，但即便是那些被处决的人也显露出被食用的迹象。庭院一边有一个烧焦的粮仓。一些人嘴唇发黑地坐着，显然试过狼吞虎咽遗留的焦黑谷物。每只动物都被屠宰并蚕食的只剩骨头。\n\n %commander%对着这场景发笑并下令让他的属下开始拷住这些人。他转向你说道。%SPEECH_ON%谢谢你，佣兵。你现在可以回到%employer%那了。%SPEECH_OFF%  |  城堡里你看到守卫站成排。两位%commander%的士兵开始着手行动，一个拖着链条，另一个则拉着链条把这些人拷在一起。你看到一具尸体刺在马棚上面，风向标穿过他的胸膛穿透胸膛然后刺着心脏像是某种仪式。%commander%笑着走过来。%SPEECH_ON%那是他们的中尉。{他们说他拒绝投降并自己跳下了高塔。 |  显然他拒绝投降于是他的手下将其丢下了防御塔。}%SPEECH_OFF%有意思。好吧，%employer%再见到你会很高兴的。 |  这些高墙后，%commander%的士兵正在收缴守卫的武器并堆成堆。守卫被赶在角落，每个人都手被拷在身后，他们低着头，眼睛盯着泥地。少数守卫看着他们，偶尔踢着他们，朝他们吐痰，甚至威胁杀掉他们。一切都很有趣的样子。\n\n %commander%走过来拍拍你的背。%SPEECH_ON%干得好，佣兵。非常感谢你的帮助。回%employer%那去吧。这里的活干完了。%SPEECH_OFF%  |  穿过大门，你看到卫士在祈求怜悯。他们的中尉死躺在泥地中，还因数个刺伤流血。一个人解释道。%SPEECH_ON%我们很久之前就想投降但他不同意！你必须要理解！我们并不想要战争。%SPEECH_OFF%%commander%走到你旁边点头道。%SPEECH_ON%这里的工作完成了，佣兵。回去见%employer%吧。%SPEECH_OFF%你询问他要怎么处置这些囚犯。他耸耸肩道。%SPEECH_ON%不知道。我会想先吃点东西。然后或许给我爱的人写封信。我试着更慎重些。%SPEECH_OFF%很好。 |  你和%commander%走过打开的大门。里面，一些幸存的守卫跪在地上，祈求食物。他们几乎弯不下腰，因为肠胃会疼。%SPEECH_ON%求求你们！救命……%SPEECH_OFF%%commander%用脚踹开他。%SPEECH_ON%我们看起来像是来帮你们的吗？%SPEECH_OFF%指挥官转向你。%SPEECH_ON%干得好，佣兵。回%employer%那吧。这里的工作完成了。%SPEECH_OFF%  |  通过大门你发现守卫被圈在一个角落。%commander%问谁是领袖。那群人一起将手指向了庭院。防御塔下吊着一个死人，脸色死白，鼻子和手都发紫了。其中一位囚犯解释道。%SPEECH_ON%如果我们不这么做，你还会站在外面，而我们依然在这里忍饥挨饿。%SPEECH_OFF%%commander点点头。%SPEECH_ON%好吧。这我就不惩罚你们了。佣兵！你回%employer%那吧。这里的工作完成了。%SPEECH_OFF%  |  穿过大门，你发现堡垒的指挥官挥舞着长剑被逼至角落，他周围则是几个手持长矛的%commander%士兵。一次统一的冲击，士兵们把他刺成了刺猬。被刺枪固定后，他放弃了向前跪倒，像慵懒依靠在篱笆桩似的挂下手臂。%SPEECH_ON%好吧，你们抓到我了。%SPEECH_OFF%他转向自己的属下，看来他们真是来开门的。%SPEECH_ON%死了之后我会缠着你的。%SPEECH_OFF%血从他的口中喷出，他的身体最后一次晃了一下。士兵们收回长矛，于是这位领袖笔直落到了泥地中。%commander%站在他旁边然后跟你说道。%SPEECH_ON%好了，佣兵。回%employer%那吧。%SPEECH_OFF%  |  堡垒内是人间炼狱。人们捂着肚子散在各处，有一些已经死了，有些则希望如此。堡垒的指挥官被吊死在防御塔，一面家族旗帜缠在他的脖子上仿佛那给他的死带去了一些尊严。动物骨架散落在庭院，到处都是屎尿屁呕吐物。%commander%走了过来点头道。%SPEECH_ON%看来不错。他们没早点投降真是太可惜了。%SPEECH_OFF%你暗示可能是被吊死的中尉坚决主张反对投降才至此。%commander%又点了点头。%SPEECH_ON是啊。他认为那才是光荣的选择。过去我可能也会做同样的事，但看过这些后，我不确定他做的到底是对是错了。%SPEECH_OFF%  |  穿过大门，你发现守卫们被集中到一个朝拜地。剩下的人不多并且没有人在祈祷。死者在角落堆积而且有同类相食的迹象。看不见任何动物。马棚中满是苍蝇，嗡嗡声震天响。猪舍被彻底践踏。其中一个囚犯看向你说道。%SPEECH_ON%我们吃掉了所有能吃的。你明白吗？我们。吃掉了。所有。能。吃。的。%SPEECH_OFF%%commander%来到你身边。%SPEECH_ON%别让他们烦你了，佣兵。回%employer%那吧。他肯定在等着你了。%SPEECH_OFF%  |  你和%commander%走过大门。里面的守卫都只剩皮包骨了因而摇晃不稳。一个人抓住你的肩膀。%SPEECH_ON%食物！食物！%SPEECH_OFF%他的呼吸中带有因饥饿而散发的可怕恶臭。你将他推倒在地，他大声呼喊着然后开始用泥土填嘴巴。%commander%嚼食一片黄油面包来到你旁边。%SPEECH_ON%这些混蛋真是让人不忍直视啊，不是吗？%SPEECH_OFF%他嘴里喷出面包屑，像盯着金子一样两眼发亮。指挥官拍着你的肩膀。%SPEECH_ON%回%employer%那吧，他会非常开心得知这消息的。%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "%objective% has fallen!",
+					Text = "%objective%沦陷了！",
 					function getResult()
 					{
 						this.Contract.changeObjectiveOwner();
@@ -1346,13 +1346,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "DefendersSallyForth",
-			Title = "At the siege...",
-			Text = "[img]gfx/ui/events/event_78.png[/img]{A loud squall breaks over the din of the siege camp. You look out to see the gates of %objective% opening up and a band of men running out. %commander% sprints out of his tent, takes one look, then starts yelling at his men.%SPEECH_ON%Sally! Sally! They\'re coming, men, they\'re coming! Ready yourselves! Kill these rat bastards to the last man, you hear me?%SPEECH_OFF%The siege camp roars with anticipation. You quickly gather the %companyname% and prepare to join the battle. | The defenders of %objective% are sallying forth! You order you men to ready themselves and prepare to join %commander% in battle. | There isn\'t going to be any surrender! The defenders of %objective% are sallying forth. They\'re a poor, hungry looking lot, but it appears they\'d rather die out here than give themselves up. %commander% tells his men to get ready and you do the same with the %companyname%. | The gates of %objective% are opening up! At first, that\'s all that happens, then a muted roar comes and a small band of defenders start marching out. They\'re raising their arms to cheers and are singing their family\'s battlecry. They\'re bringing volume and you\'ll be bringing violence. To battle! | The squall of rusted hinges rings over the siege camp. You look to %objective% to see its gates slowly opening. A band of men marches out, carrying banners and weapons. They look like they\'ve already been beaten in one battle, shambling forward on hungry bellies. %commander% shakes his head.%SPEECH_ON%Those fools. Why don\'t they just surrender?%SPEECH_OFF%You shrug and turn to the %companyname%.%SPEECH_ON%If they wish to die, then so be it. To arms, men!%SPEECH_OFF% | %randombrother% comes to you and points at the gates of %objective%.%SPEECH_ON%Look, sir.%SPEECH_OFF%You watch as the gates slowly open up. A troop of men shambles out. They do not carry a white flag, but instead the sigils of their families. You run to %commander% and inform him that the defenders are sallying forth. He nods.%SPEECH_ON%I knew they were a resilient bunch, but this is just pathetic. No man should die so pointlessly.%SPEECH_OFF%You almost say if that were true no man would be out here doing this shite in the first place. Instead, you hold your tongue and go out to prepare the men of the %companyname% for battle.}",
+			Title = "包围圈中……",
+			Text = "[img]gfx/ui/events/event_78.png[/img]{围城营地传来一阵响亮的尖叫声。你探出头看到%objective%的大门打开然后跑出来一群人。%commander%冲出营帐，看了一眼，然后开始朝他的士兵大喊。%SPEECH_ON%出击！出击！他们来了，士兵们，他们来了！做好战斗准备！杀光那些混蛋，听到了吗？%SPEECH_OFF%围城营地发出吼叫声。你很快集结了%companyname%并准备加入战斗。 |  %objective%的守卫向前出击！你下令士兵做好战斗准备加入%commander%的战斗。 |  不会有投降一说！%objective%的守卫向前出击。他们都是一群可怜饥饿的模样，但似乎他们宁死不屈。%commander%让他的士兵准备应战，你也同样告知了%companyname%。 |  %objective%的大门打开了！起初就是如此，然后一小群守卫咆哮着开始向外出击。他们提起手臂欢呼，高唱着家族的战吼。他们只是用吼叫攻击，而你将用暴力反制。准备作战！ |  锈迹斑驳的铰链环声响响彻围攻营地。你看向%objective%发现大门缓慢打开。一群人走出来，携带旗帜和武器。他们看着像是已经战败的军队，饥肠辘辘地蹒跚前行。%commander%摇摇头。%SPEECH_ON%那些白痴。他们怎么救不直接投降呢？%SPEECH_OFF%你耸耸肩然后转向%companyname%。%SPEECH_ON%既然你们求死，那就成全你们。做好战斗准备，士兵！%SPEECH_OFF%  |  %randombrother%走到你跟前指向%objective%的大门。%SPEECH_ON%看，长官。%SPEECH_OFF%你看到大门缓缓打开。一群人蹒跚而出。他们没有举任何白旗，而是举着家族的图章。你跑向%commander%并告知了守卫正在进击的消息。他点点头道。%SPEECH_ON%我知道他们很顽固，但这不过是可悲罢了。谁都不该如此毫无意义地死去。%SPEECH_OFF%你差点开口说那样最初就不会有人参战。然而你没有，你去让%companyname%的士兵们准备作战。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Let\'s end this!",
+					Text = "做个了结吧！",
 					function getResult()
 					{
 						local tile = this.Contract.m.Origin.getTile();
@@ -1413,13 +1413,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "DefendersPrevail",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_22.png[/img]Unbelievably, the tired defenders of %objective% have won! You retreat as the siege crumbles.",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_22.png[/img]难以置信，疲惫的%objective%守卫获胜了！你在围城战溃败后撤退。",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "The siege has failed.",
+					Text = "围城战失败了。",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);
@@ -1433,13 +1433,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "DefendersAftermath",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{The defenders of %objective% have been annihilated and the fortifications left wide open. You and %commander% walk through the open gates to find corpses, trash, and slaughtered animals all over the place, bloody signs of desperation. The commander nods and claps you on the shoulder.%SPEECH_ON%Good job, sellsword. You should get on back to %employer% now and tell him the news.%SPEECH_OFF% | The battle\'s over, the defenders of %objective% totally defeated and their fort left wide open for the taking. %commander% thanks you for your service before dismissing the %companyname%\'s services from the field. You should go and see a very happy %employer% now. | It was a spirited effort on the part of %objective%\'s defenders, but if they were going to make a play like this they should have done it weeks ago when their strengths matched their heroism. No matter now. A starving dead man looks very similar to a well fed dead man and, with enough time, they all look the same.\n\n %commander% comes and tells you that the services of the %companyname% are no longer needed. You agree and should head on back to %employer% for payment. | Sallying forth when you\'re starving and beleaguered by poor leadership is never the best of ideas. You\'re not sure if %commander% would have granted the defenders of %objective% mercy had they surrendered. As it is now, they\'re all dead in the mud and the world in which they gave up has long since passed. You gather the men of the %companyname% and order them to prepare for the march back to %employer%. Payday will be very sweet after this day. | With the defenders of %objective% out of the way, you and %commander% head into the fortifications. There\'s a reason the men were so desperate: the conditions are absolutely deplorable. Dead men had been stripped and piled into a corner. A spit holds the cooked remains of what could have been a pig, but it\'s hard to tell because they flat out consumed every single bit of that animal. A hanged man swings from one of the towers. They\'d nailed a board to his chest with \'cannibal\' written across it, possibly penned with the use of his own blood.\n\n %commander% laughs.%SPEECH_ON%Looks like a real party in here, don\'t it? Remember this scene the next time some belligerent lieutenant with a stick up his ass tells you to just keep holding out.%SPEECH_OFF% | The %companyname% and %commander%\'s army have summarily defeated the sallying defenders of %objective%. With the fortifications left free, %commander%\'s men quickly take it over. The commander himself tells you to go see %employer% for pay. | %objective%\'s defenders died on a battlefield, but if anything it was a field of mercy. Behind the walls of their fort remains almost nothing of value and, in particular, a complete and total absence of food. It is as though the world which existed behind the walls never even knew of food, the defenders had so picked the place clean. You\'re sure mere mentions of food was a crime for even a torturous word of a flavor would be like a flogging across a man\'s growling stomach. %commander% comes to your side and laughs.%SPEECH_ON%I thought I knew what it was to be hungry, but I always had an answer for it, you know? I never went hungry with no hope to fix it. What a horrible thing. But then again, they fixed it, didn\'t they?%SPEECH_OFF%You nod as the man laughs at his dark humor.%SPEECH_ON%You did a good job, sellsword. Go on and see to it that %employer% pays you well.%SPEECH_OFF%}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{%objective%的守卫被消灭而防御工事则留出完全空当。你和%commander%走过大门发现尸体、垃圾和屠宰的动物到处都是，一副绝望的迹象。指挥官点点头拍了拍你的肩膀。%SPEECH_ON%干得好，佣兵。你现在该回到%employer%那然后告诉他这个喜讯了。%SPEECH_OFF%  |  战斗结束了，%objective%守卫溃败而他们的堡垒则完全放空等待被夺取。%commander%在解除%companyname%战场上的服务前向你表示感谢。你现在该去看看开心的%employer%了。 |  %objective%的守卫很英勇，但如果他们像这样玩的话他们该在几周前这样做，那时候他们的体力补给还能与他们激昂的斗志相符。现在都无所谓了。饿死鬼跟饱死鬼看起来差不多，再花点时间，他们就完全一样了。\n\n %commander%过来告诉你不再需要%companyname%效力了。你同意了并回去找%employer%要报酬。 |  饿着肚皮进军和糟糕领导下导致陷入困境显然都不是什么好情况。你无从得知要是%objective%的守卫投降%commander%是否会放过他们。至于现在，他们都死在泥地中了，而他们的时代也早已过去。你召集%companyname%的士兵并下令他们准备返回%employer%。领报酬的日子会很开心的。 |  %objective%的守卫被清除掉后你和%commander%走向堡垒。这些士兵这么绝望是有原因的：条件太凄惨了。尸体被扒去衣服堆在角落。一口原本应该是煮过猪的锅，但很难辨别因为他们似乎把那动物吃的一点不剩。防御塔下吊着一具尸体。他们在他的胸膛上钉了一块“食人者”的牌子，可能是用他自己的血书写的。\n\n %commander%笑了。%SPEECH_ON%看来这里才是真正的派对啊，不是吗？记得这个场景，下次碰到好战的中尉坚持要你坚守时。%SPEECH_OFF%  |  %companyname%和%commander%的军队已经击败了大部分进击的%objective%守卫。堡垒无人驻守后，%commander%的士兵很快将其夺取。指挥官亲自告诉你可以去找%employer%要报酬了。 |  %objective%的守卫战死沙场，但那也算是战场的仁慈了。这些高墙后几乎没剩下任何有价值的东西，尤其是粮食近乎绝迹。仿佛墙壁后的人甚至不知道食物是什么，守卫不得不清理这个地方。你很确信光是提到食物这个字眼对于这些人来说都是煎熬了。%commander%来到你身边笑着说。%SPEECH_ON%我原以为自己知道什么叫饥饿，然而我一直是知道答案的，你知道吗？我从未饥饿到绝望。真是太可怕了。但话说回来，他们最终还是找到解决办法了，不是吗？%SPEECH_OFF%他对自己的黑色幽默发笑时你点点头。%SPEECH_ON%你完成的很棒，佣兵。去找%employer%要报酬吧。%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "%objective% has fallen!",
+					Text = "%objective%沦陷了！",
 					function getResult()
 					{
 						this.Contract.changeObjectiveOwner();
@@ -1452,13 +1452,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "Prisoners",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_53.png[/img]{A few of your men managed to capture some of %objective%\'s defenders. They stand huddled together, fenced in by your sellsword\'s weapons. Some are shaking in their boots. One doesn\'t even have boots. Another has stains down his pants. %randombrother% asks what should be done with them. | %randombrother% reports that a few defenders of %objective% have been captured. You go to find a group of men huddled together, embraced in a circled hug, but with their heads down. One calls out.%SPEECH_ON%Please, don\'t kill us! We were just doing what we were told, just as you were!%SPEECH_OFF% | Your men have managed to capture a few of %objective%\'s defenders. They\'ve been rounded up, stripped to their pants, and ordered facedown into the mud. %randombrother% asks what should be done with them.}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_53.png[/img]{你的几个部下成功抓捕了几个%objective%守卫。他们站在一起，被佣兵的武器拦着。一些人在靴子里瑟瑟发抖。有一个甚至连靴子都没穿。另一个已经吓得尿裤子了。%randombrother%询问该如何处置他们。 |  %randombrother%报告一些%objective%的守卫被捕。你看到一组人挤在一起，围成一个圈，但他们都低着头。一个人大喊道。%SPEECH_ON%求求你，不要杀我们！我们不过是遵照指令，跟你们一样！%SPEECH_OFF%  |  你的人成功抓捕了几个%objective%守卫。他们被堆在一起，脱去裤子，然后还硬逼他们脸扎进泥土。%randombrother%询问该如何处置他们。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Let them go. %rivalhouse% may take it as a sign of good faith.",
+					Text = "放他们走。%rivalhouse%可以将此作为示好的表示。",
 					function getResult()
 					{
 						return "PrisonersLetGo";
@@ -1466,7 +1466,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 
 				},
 				{
-					Text = "They may be worth something. Take them to %commander% as prisoners.",
+					Text = "他们或许会有些价值。把他们作为囚犯带给%commander%。",
 					function getResult()
 					{
 						return "PrisonersSold";
@@ -1474,7 +1474,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 
 				},
 				{
-					Text = "Better to kill them now than face them again in battle in the days to come.",
+					Text = "最好现在就杀了他们，免得在几天后的战场上见到他们。",
 					function getResult()
 					{
 						return "PrisonersKilled";
@@ -1490,13 +1490,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "PrisonersLetGo",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_53.png[/img]{The prisoners are of no use to you or anyone else. You cut them loose, hoping that you won\'t come to regret this decision. | You cut the prisoners loose. They cry as they thank you, but you simply hope that this was not a mistake. | You let the prisoners go. They thank you personally before taking off, hopefully to never be seen again.}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_53.png[/img]{囚犯对你和任何人都没有价值。你放了他们，希望你不会后悔这个决定。 |  你放了这些囚犯。他们哭着向你表示感谢，但你只希望这不是犯错。 |  你放走了囚犯。他们在离开前私下感谢你，希望永远不用再见。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Enough death for one day.",
+					Text = "死的够多了。",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(2);
@@ -1509,13 +1509,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "PrisonersKilled",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_53.png[/img]{You nod at %randombrother%.%SPEECH_ON%Kill them all.%SPEECH_OFF%The prisoners get to their feet, but there is no escaping the closure of their worlds. They are slaughtered piecemeal. | There is no use for these men in shackles, but it is quite likely that they\'ll come back to fight you another day as free men. You order their execution, a command carried out in a frenzy of pleading and throat slashing. | In wars like this, there is no food to house so many prisoners, and there\'s no use for them while you\'re still deep in enemy territory. But if you let them go it is very probable they\'ll raise their swords against you another day.\n\n With that in mind, you order their executions. The words of protest are short lived, fading into the gargle of throats being slashed, cut, and hacked.}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_53.png[/img]{你朝%randombrother%点点头。%SPEECH_ON%杀光他们。%SPEECH_OFF%囚犯企图逃跑，但那显然不可能。他们被砍成碎片。 |  他们带着手铐没有任何价值，但很显然若是逃脱了有一天他们会回来攻击你。你下令处决他们，怒气下的命令。 |  像这样的战斗中，没那么多食物来供养囚犯的，而在你还深陷敌人据点时他们对你也毫无用处。但如果让他们走，他们某天或许会反过来再攻击你。\n\n 想到这里，你下令处决他们。抗议声很快变成了被抹脖子的声音。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "On to more important things...",
+					Text = "着手更重要的事情……",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(-2);
@@ -1533,13 +1533,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "PrisonersSold",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_53.png[/img]{You take the prisoners to %commander%. The men are lined up and the commander walks up and down their arrangement.%SPEECH_ON%This one. This one. Him. And him. Kill the rest.%SPEECH_OFF%A few lucky ones, who coincidentally happen to be the biggest and most useful looking of the bunch, are pulled forward. The rest are summarily killed with spears through their chests. %commander% hands you some crowns.%SPEECH_ON%Appreciate you catching them. They\'ll be put to good, hard work.%SPEECH_OFF% | The prisoners are taken to %commander%. He orders the men shackled and ordered to some hard labor. The commander pays you a decent sum for the haul.}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_53.png[/img]{你将囚犯带到指挥官面前。这些人站成排然后指挥官一个个打量着。%SPEECH_ON%这个。这个。他。还有他。其他的杀掉。%SPEECH_OFF%几个幸运儿，碰巧也是队伍中最大块头，看起来最实用的，被拉到前面。剩下的大多数被长矛刺透胸膛杀死。%commander%给了你一些钱。%SPEECH_ON%感谢你抓到他们。他们会被好好利用的。%SPEECH_OFF%  |  囚犯们被带到%commander%那。他命令被拷住的人去做苦力活。指挥官付给你一笔可观的钱感谢你。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "On to more important things...",
+					Text = "着手更重要的事情……",
 					function getResult()
 					{
 						this.World.Assets.addMoney(250);
@@ -1554,22 +1554,22 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]250[/color] Crowns"
+					text = "你获得 [color=" + this.Const.UI.Color.PositiveEventValue + "]250[/color] 克朗"
 				});
 			}
 
 		});
 		this.m.Screens.push({
 			ID = "Success1",
-			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_04.png[/img]{You report to %employer% that %objective% has been taken and is now under control. The man hides a smirk behind his hand, keeping some fair bit of composure as if nobility shouldn\'t lower themselves to the unprofessional excitement of the layman. He simply nods as though this news had been expected.%SPEECH_ON%Good. Good. Of course.%SPEECH_OFF%The man snaps his fingers and a servant hands you a satchel of %reward_completion% crowns. | Entering %employer%\'s room brings silence to a throng of commanders, lieutenants, and the nobleman himself. He straightens up.%SPEECH_ON%My birds have already reported of the capture of %objective%. Your pay is outside.%SPEECH_OFF%The leaders hardly even thank you, though %reward_completion% crowns is more than enough thanks as far as you\'re concerned. | %employer% welcomes you to his war room. A group of commanders linger around a map on a table. You watch as they push one of their tokens over %objective%. %employer% grins.%SPEECH_ON%Those men may not let it slip, but we are might happy about the work you\'ve done. The stories my spies have brought me ensured I did not make a poor investment with the likes of you.%SPEECH_OFF%The nobleman personally gives you a satchel of %reward_completion% crowns. | %employer%\'s room is a hive of business. Commanders run to and fro, arguing with one another no matter which side of the room they\'re on or how far apart, while servants duck and weave to make sure they\'re properly fed. War is no time to waste energy on pitiful things like picking up your own cloak or cooking meals. You\'re surprised there are no servants forking bites into their mouths between arguments.\n\n However, %employer% is simply off to the side. He\'s flipping through a book like he was by himself in a chirpy garden. He looks up. Glances at his generals, then at you.%SPEECH_ON%Good job. Your pay.%SPEECH_OFF%A chest is slowly pushed your way. %reward_completion% crowns rest inside. | A servant cuts you off from entering %employer%\'s room. He explains.%SPEECH_ON%I\'ve been requested to meet you here with this satchel of %reward_completion% crowns.%SPEECH_OFF%You take the satchel and nod. | You try to enter %employer%\'s room, but a guard stops you.%SPEECH_ON%Nobles only.%SPEECH_OFF%Pushing the guard\'s halberd out of your face, you state that you have business with %employer%. The guard lowers the halberd back down.%SPEECH_ON%Nobles only.%SPEECH_OFF%Just as you are about to start an argument, a servant steps out of the room with a large satchel. He sees the sigil of the %companyname% and hands you a satchel.%SPEECH_ON%Your %reward_completion% crowns. I\'m afraid my liege and his commanders are busy.%SPEECH_OFF%And just like that the servant is gone. The guard peers down at you.%SPEECH_ON%Nobles only.%SPEECH_OFF% | The reward for helping conquer %objective% is %reward_completion% crowns and a door slammed in your face. %employer% is too busy arguing with his commanders to congratulate you any more than that. | One of %employer%\'s commanders meets you in a foyer. He\'s got a servant with him that\'s carrying a large satchel. The commander speaks.%SPEECH_ON%Ah, the %companyname%. You\'ve little honor in your vocation, sellsword. You should be a real man and fight with the nobles. There is great honor in what we do. Why not join us?%SPEECH_OFF%The large satchel of %reward_completion% crowns is placed in your hands. You smile back at the commander, a gilded reflection rimming your teeth.%SPEECH_ON%Yes, why?%SPEECH_OFF%}",
+			Title = "在你回来之时……",
+			Text = "[img]gfx/ui/events/event_04.png[/img]{你向%employer%报告 %objective%已被夺取控制。男人手后藏着假笑，让他保持一些风度仿佛贵族不应该自降身价到表现这种门外汉似非专业的激动。他只是点点头仿佛这消息是理所当然。%SPEECH_ON%很好。很好。当然了。%SPEECH_OFF%这个男人打了个响指然后一个仆人递给你一袋%reward_completion%钱。 |  进入%employer%的房间让一群指挥官、中尉和贵族本人都安静了一阵。他站起身。%SPEECH_ON%我的线报已经告知了我%objective%的夺取消息。你的酬劳在外面。%SPEECH_OFF%领袖连感谢都没说，虽然%reward_completion%钱在你看来足够表达感谢。 |  %employer%欢迎你到他的作战指挥室。一群指挥官围在桌子上的地图四周。你看着他们将自己的印记推到%objective%。%employer%笑了。%SPEECH_ON%那些人可能没说，但我们对你所完成的功绩非常满意。我的探子带回来的消息使我确信我对你的投资没有错。%SPEECH_OFF%贵族亲自给了你一袋%reward_completion%钱。 |  %employer%的房间业务繁忙。%commander%来来回回，彼此争论着自己的观点，而仆人则躲闪迂回以确保他们用膳妥当。战争可没工夫浪费在收拾衣服和做饭这种小事上。你甚至惊讶没有仆人在他们争论当中给他们喂食。\n\n 然而，%employer%在一旁却显得很奇怪。他正犹如坐在叽喳鸟叫的花园中翻看着一本书。他抬头看向你。看了眼他的将军们，然后看向你。%SPEECH_ON%干得好。这是你的报酬。%SPEECH_OFF%一个箱子被推到你面前。其中有%reward_completion%克朗。 |  一个仆人拦着没让你进%employer%的房间。他解释道。%SPEECH_ON%我被要求在这见你然后给你这袋%reward_completion%钱。%SPEECH_OFF%你收下钱点点头。 |  你想进%employer%的房间，但一个守卫拦住了你。%SPEECH_ON%你推开拦在面前的戟，声称自己与%employer%有业务关系。守卫放低了戟。%SPEECH_ON%仅限贵族。%SPEECH_OFF%当你要开口骂人时，一个仆人拿着一个大袋子从房间走出。他看到了%companyname%的标记然后递给你一个袋子。%SPEECH_ON%这是你的%reward_completion%钱。抱歉我的主人和他的指挥官很忙。%SPEECH_OFF%就那样仆人走了。守卫看向你。%SPEECH_ON%仅限贵族。%SPEECH_OFF%  |  帮助攻克%objective%的奖励是%reward_completion%克朗以及一碗闭门羹。%objective%太忙于跟他的指挥官争论了以致于没有那么多功夫祝贺你。 |  其中一个%employer%的指挥官在一个休息室里接见了你。他随行还带了一个带着一个大袋子的仆人。指挥官开口了。%SPEECH_ON%啊，%companyname%。你的旅途中没多少荣耀，佣兵。你应该像个男人一样跟贵族们并肩作战。我们所做有着巨大的荣耀。你何不加入我们呢？%SPEECH_OFF%大袋%reward_completion%克朗放在你的手上。你笑着回应指挥官，你的金牙闪闪发光。%SPEECH_ON%是，怎么了？%SPEECH_OFF%}",
 			Image = "",
 			Characters = [],
 			List = [],
 			ShowEmployer = true,
 			Options = [
 				{
-					Text = "%objective% has fallen.",
+					Text = "%objective%沦陷了。",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
@@ -1592,20 +1592,20 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
+					text = "你获得 [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] 克朗"
 				});
 			}
 
 		});
 		this.m.Screens.push({
 			ID = "Failure",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_22.png[/img]What a disaster. The battle is lost and you retreat to spare what men you have left. %objective% will not fall anytime soon.",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_22.png[/img]真是场灾难。战斗输了，你也退回到余下的人那。%objective%不会很快陷落的。",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Damn this place!",
+					Text = "这地方真可恶！",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);
@@ -1619,13 +1619,13 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		});
 		this.m.Screens.push({
 			ID = "TooFarAway",
-			Title = "Along the way...",
-			Text = "[img]gfx/ui/events/event_36.png[/img]{The passage of time as a concept seems to have eluded you. Despite your absence, the siege tried to go on, but eventually collapsed without the expected help of the %companyname%. Don\'t bother returning to %employer%. | You were hired to help the siege, not abandon it. Without the %companyname% by their side, the soldiers will likely have to withdraw from the field. | You strayed too far from the siege! Without your help, the attackers had to retreat and %objective% was spared %employer%\'s conquest. Considering that was what you were hired to help accomplish, it\'s probably for the best that you do not return to the nobleman.}",
+			Title = "路上…",
+			Text = "[img]gfx/ui/events/event_36.png[/img]{时间流逝的概念似乎在逃避你。尽管你不在，围城战突然尝试继续，但最终由于没有%companyname%的帮助而失利。别急着返回%employer%。 |  你受雇来协助攻城的，而不是弃城。没有%companyname%指挥作战，士兵们不得不从战场撤退。 |  你闲逛的离攻城营地太远了！没有你的帮助，进攻者不得不撤退，而%objective%也摆脱了%employer%的进攻。考虑到那是你受雇所要完成的，你或许还是最好先别回到贵族那。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Right, there was this siege...",
+					Text = "对的，就是这战场……",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);
@@ -1661,7 +1661,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 				continue;
 			}
 
-			if (tile.Type == this.Const.World.TerrainType.Ocean || tile.Type == this.Const.World.TerrainType.Mountains)
+			if (tile.Type == this.Const.World.TerrainType.Ocean  ||  tile.Type == this.Const.World.TerrainType.Mountains)
 			{
 				continue;
 			}
@@ -1917,19 +1917,19 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		{
 			_p.TerrainTemplate = "tactical.tundra";
 		}
-		else if (_p.TerrainTemplate == "tactical.hills_snow" || _p.TerrainTemplate == "forest_snow")
+		else if (_p.TerrainTemplate == "tactical.hills_snow"  ||  _p.TerrainTemplate == "forest_snow")
 		{
 			_p.TerrainTemplate = "tactical.snow";
 		}
-		else if (_p.TerrainTemplate == "tactical.hills" || _p.TerrainTemplate == "tactical.mountain")
+		else if (_p.TerrainTemplate == "tactical.hills"  ||  _p.TerrainTemplate == "tactical.mountain")
 		{
 			_p.TerrainTemplate = "tactical.plains";
 		}
-		else if (_p.TerrainTemplate == "tactical.hills" || _p.TerrainTemplate == "tactical.mountain")
+		else if (_p.TerrainTemplate == "tactical.hills"  ||  _p.TerrainTemplate == "tactical.mountain")
 		{
 			_p.TerrainTemplate = "tactical.plains";
 		}
-		else if (_p.TerrainTemplate == "tactical.forest_leaves" || _p.TerrainTemplate == "tactical.forest" || _p.TerrainTemplate == "tactical.autumn")
+		else if (_p.TerrainTemplate == "tactical.forest_leaves"  ||  _p.TerrainTemplate == "tactical.forest"  ||  _p.TerrainTemplate == "tactical.autumn")
 		{
 			_p.TerrainTemplate = "tactical.plains";
 		}
@@ -1964,7 +1964,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		]);
 		_vars.push([
 			"direction",
-			this.m.Origin == null || this.m.Origin.isNull() ? "" : this.Const.Strings.Direction8[this.World.State.getPlayer().getTile().getDirection8To(this.m.Origin.getTile())]
+			this.m.Origin == null  ||  this.m.Origin.isNull() ? "" : this.Const.Strings.Direction8[this.World.State.getPlayer().getTile().getDirection8To(this.m.Origin.getTile())]
 		]);
 	}
 
@@ -2021,7 +2021,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 			return false;
 		}
 
-		if (this.m.Origin == null || this.m.Origin.isNull() || this.m.Origin.getFaction() == this.getFaction())
+		if (this.m.Origin == null  ||  this.m.Origin.isNull()  ||  this.m.Origin.getFaction() == this.getFaction())
 		{
 			return false;
 		}

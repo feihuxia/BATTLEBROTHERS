@@ -1213,7 +1213,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 		]);
 		_vars.push([
 			"days",
-			days <= 1 ? "a day" : days + " days"
+			days <= 1 ? "1 天" : days + " 天"
 		]);
 	}
 

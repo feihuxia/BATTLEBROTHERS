@@ -43,7 +43,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 				continue;
 			}
 
-			if (!s.isDiscovered() || s.isMilitary())
+			if (!s.isDiscovered()  ||  s.isMilitary())
 			{
 				continue;
 			}
@@ -53,14 +53,14 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 				continue;
 			}
 
-			if (this.m.Home.isIsolated() || s.isIsolated() || !this.m.Home.isConnectedToByRoads(s) || this.m.Home.isCoastal() && s.isCoastal())
+			if (this.m.Home.isIsolated()  ||  s.isIsolated()  ||  !this.m.Home.isConnectedToByRoads(s)  ||  this.m.Home.isCoastal() && s.isCoastal())
 			{
 				continue;
 			}
 
 			local d = this.m.Home.getTile().getDistanceTo(s.getTile());
 
-			if (d < 15 || d > 100)
+			if (d < 15  ||  d > 100)
 			{
 				continue;
 			}
@@ -94,7 +94,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		local distance = this.getDistanceOnRoads(this.m.Home.getTile(), this.m.Destination.getTile());
 		local days = this.getDaysRequiredToTravel(distance, this.Const.World.MovementSettings.Speed, false);
 
-		if (days >= 2 || distance >= 40)
+		if (days >= 2  ||  distance >= 40)
 		{
 			this.m.DifficultyMult = this.Math.rand(95, 105) * 0.01;
 		}
@@ -147,7 +147,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 
 				if (r <= 10)
 				{
-					if (this.Contract.getDifficultyMult() >= 0.95 && this.World.Assets.getBusinessReputation() > 750 && (!this.World.Ambitions.hasActiveAmbition() || this.World.Ambitions.getActiveAmbition().getID() != "ambition.defeat_mercenaries"))
+					if (this.Contract.getDifficultyMult() >= 0.95 && this.World.Assets.getBusinessReputation() > 750 && (!this.World.Ambitions.hasActiveAmbition()  ||  this.World.Ambitions.getActiveAmbition().getID() != "ambition.defeat_mercenaries"))
 					{
 						this.Flags.set("IsMercenaries", true);
 					}
@@ -242,7 +242,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Contracts.showActiveContract();
 						this.Flags.set("IsEvilArtifact", false);
 					}
-					else if (this.Flags.get("IsThieves") && !this.Flags.get("IsStolenByThieves") && (this.World.Assets.isCamping() || !this.World.getTime().IsDaytime) && this.Math.rand(1, 100) <= 3)
+					else if (this.Flags.get("IsThieves") && !this.Flags.get("IsStolenByThieves") && (this.World.Assets.isCamping()  ||  !this.World.getTime().IsDaytime) && this.Math.rand(1, 100) <= 3)
 					{
 						local tile = this.Contract.getTileToSpawnLocation(this.World.State.getPlayer().getTile(), 5, 10, [
 							this.Const.World.TerrainType.Shore,
@@ -312,7 +312,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 
 			function update()
 			{
-				if (this.Contract.m.Location == null || this.Contract.m.Location.isNull())
+				if (this.Contract.m.Location == null  ||  this.Contract.m.Location.isNull())
 				{
 					this.Contract.setScreen("Thieves2");
 					this.World.Contracts.showActiveContract();
@@ -329,14 +329,14 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_112.png[/img]{%employer% shoves a sizeable crate into your hands before he or you even says a word.%SPEECH_ON%Look at that, the cargo I need delivering has already found someone to ship it off! What wonder!%SPEECH_OFF%He drops the theatrics.%SPEECH_ON%I need that taken to %objective% where a man by the name of %recipient% is waiting for it. It may look small, but I\'m willing to pay good crowns to be sure it gets there safe and sound. You interested? Or is it a little too heavy for your arms?%SPEECH_OFF% | You find %employer% closing a box up. He quickly glances up, as though he\'s been caught with his pants down.%SPEECH_ON%Sellsword! Thank you for coming.%SPEECH_OFF%He locks the latches with a few quick snaps. Then he pats the crate a few times, even leans on it as though it needed one more, fat latch.%SPEECH_ON%This here cargo has to be delivered safely to %objective%. A man by the name of %recipient% is waiting for it. I do not believe the task will be easy, as the cargo is rather precious to certain people who\'d go to great lengths to acquire it, which is why I\'m turning to a man of your... experiences. Are you interested in doing this for me?%SPEECH_OFF% | As you enter %employer%\'s room he and one of his servants are nailing a box shut.%SPEECH_ON%Good seeing you, sellsword. One moment, please. No, idiot, hold the nail that way! I know I hit your thumb before, but I won\'t do it again.%SPEECH_OFF%His servant reluctantly holds a nail while the man hammers it home. Finished, he wipes the sweat off his brow and looks to you.%SPEECH_ON%I need this here crate delivered to %objective% about %days% %direction% by road. It\'s going to %recipient%, you know. Him. Alright, maybe you don\'t know him. What I do know is that this may not ordinarily be your line of work, but I\'m willing to pay some serious crowns for you to see it through. That\'s your real business, right? Earning some crowns?%SPEECH_OFF% | %employer% folds his hands together when he sees you.%SPEECH_ON%This might be a strange question, but how interested are you in making a delivery for me?%SPEECH_OFF%You explain that, for the right price, such a journey would be a welcome departure from the usual killing and dying that goes on around you. The man claps his hands together.%SPEECH_ON%Excellent! Unfortunately, I don\'t expect it to be quite like that. It\'s of enough import to garner unsavory attention, which is why I\'m looking to hire sellswords in the first place. It\'s going to %objective%, %days% or so %direction% of here by road, where a man by the name of %recipient% is waiting for it to fall into his hands. So, you see, this won\'t be the \'departure\' you speak of, but it can be a fine payday if you\'re interested.%SPEECH_OFF% | %employer%\'s men are standing around a bit of cargo. Their employer shoos them away when he sees you.%SPEECH_ON%Welcome, welcome. Good seeing you. I\'m in need of armed guards to have this here package delivered to a man by the name of %recipient% in %objective%. I reckon it\'s about %days% of travel for a company as your. How interested would you be in doing that for me?%SPEECH_OFF% | %employer%\'s got his feet up on his table when you enter. He puts his hands behind his head, looking a little too relaxed for your tastes.%SPEECH_ON%Good tidings, captain. What say you take a leave from all that killing and dying.%SPEECH_OFF%He raises an eyebrow at your response, which is precisely none at all.%SPEECH_ON%Huh, I figured you\'d jump on that opportunity. No matter, it was a lie: I need you to take a certain package to %recipient%, a fellow residing in %objective%. This cargo has undoubtedly garnered some ill-intentioned eyes which is why I need your men watching it for me. If you\'re interested, which you should be, let\'s talk numbers.%SPEECH_OFF% | %employer% welcomes you, waving you in.%SPEECH_ON%Very well, now that you\'re here, would you please shut the door behind you?%SPEECH_OFF%One of the man\'s guards pokes his head around the corner. You smile as you slowly shut him out. Turning around, you find %employer% walking toward a window. He stares out as he talks.%SPEECH_ON%I need something... it\'s a, uh, well you don\'t need to know what it is. I need this \'something\' delivered to a fellow called %recipient%. He\'s waiting for it in %objective%. It\'s important that it actually gets there, important enough for an armed escort for %days% of travel, which is why I\'m turning to you and your company. What say you, mercenary?%SPEECH_OFF% | Dim candles barely light the room enough for you to see, it\'s %employer% sitting behind his desk while his shadows dance on the walls by the tune of flickering lights.%SPEECH_ON%Would you lend your swords to me if I paid you good coin? I need {a small chest | something dear to me | something valuable} delivered safely to %recipient% in %objective%, about %days% of travel %direction% of here. Men have killed each other over this, so you must be ready to defend it with your life.%SPEECH_OFF%He takes a pause, measuring your response.%SPEECH_ON%I will write a sealed letter with instructions to pay you as you deliver the item to my contact in %objective%. What say you?%SPEECH_OFF% | A servant bids you to wait for %employer%, who, he says, will be right with you. And so you wait, and wait, and wait. And finally, as you are about to leave for the second time, %employer% throws open the doors and rushes towards you.%SPEECH_ON%Who\'s this, again? The mercenary?%SPEECH_OFF%His assistant nods and %employer% sets on a smile.%SPEECH_ON%Oh most fortuitous to have you in %townname%, good captain!\n\nIt is imperative that some precious commodities of mine reach %objective% as safely and quickly as possible. You are precisely who I need, for no common brigand would dare attack you and your men.\n\nYes, I\'d like to hire you for escort. Make sure the items are delivered to %recipient%, no detours of course. Can we come to an understanding?%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_112.png[/img] {%employer%将一个大箱子推进你手中，你和他甚至都没来得及说一个字。%SPEECH_ON%瞧啊，需要运送的货物已经找到快递员了！真棒！%SPEECH_OFF%他停下夸张的动作。%SPEECH_ON%你得将这玩意送到%objective%，一个叫%recipient%的正等着呢。虽然看起来没什么，但是只要能安全送到，我不会吝啬酬金的。有兴趣吗？还是你个弱鸡连这都搬不动了？%SPEECH_OFF%  |  你发现%employer%正关上一个盒子。他抬头迅速瞄了一眼，似乎被人抓了个现行。%SPEECH_ON%雇佣兵！多谢前来！%SPEECH_OFF%啪嗒几声，他迅速锁上门闩。然后轻怕了箱子数次，甚至靠在上面，就像还需要一个厚实的栓门一样。%SPEECH_ON%需要将这货物安全送到%objective%。一个叫%recipient%的人正等着呢。任务绝非易事，因为货物相当宝贵，有些人为了得到它肯定会不择手段，所以我才求助于你这样的…老手。有兴趣接下这活儿吗？%SPEECH_OFF%  |  当你走进%employer%房间时，他和一名仆人正钉上箱子。%SPEECH_ON%雇佣兵，很高兴见到你。稍等片刻。不，蠢货，握紧好钉子！我知道之前敲中你的手指了，但是我不会重蹈覆辙的。%SPEECH_OFF%仆人迟疑地握着钉子，雇主好锤在箱子上。完事后，他擦了擦额头的汗水，然后看向你。%SPEECH_ON%我需要将这玩意送到%objective%。接货人是%recipient%，你懂的。就是他。好吧，或许你不认识他。虽然我知道通常来说这并非你的行当，但是只要能完成，我绝不会吝啬酬金。那就是你的需求，对吧？想赚钱？%SPEECH_OFF%  |  %employer%看到你时交叉着双手。%SPEECH_ON%问题或许有点儿奇怪，但是愿意给我送个货吗？%SPEECH_OFF%你解释道，只要价格满意，离别寻常刀尖上舔血的生活也挺不错的。雇主鼓掌说道。%SPEECH_ON%很好！不幸的是，我感觉不会那样。这趟运货很重要，会招引各种苍蝇，所以我才首先找上了雇佣兵。东西得送往%objective%，收货人是%recipient%。所以，如你所闻，并非是你所期待的“离别”，但是酬金不菲。%SPEECH_OFF%  |  %employer%的手下站在货物旁。当雇主看到你时，他示意手下离开。%SPEECH_ON%欢迎，欢迎。很高兴见到你。我需要武装卫兵将这货物送往%objective%的%recipient%。有兴趣替我做这事吗？%SPEECH_OFF%  |  当你进入时，%employer%翘起双脚放在桌子上。手放在头后面，在你看来有点略过于轻松惬意。%SPEECH_ON%好消息，队长。远离杀戮生活，你觉得意下如何。%SPEECH_OFF%你的回应让他轻挑眉毛，准确来说没什么。%SPEECH_ON%哈，我就知道你会抓住机会的。无论如何，是这样的：我需要你将包裹送给居住在%objective%的伙计，名叫%recipient%。货物绝对会引来一些意图不轨的鼠辈，所以我需要你的帮忙。如果你感兴趣，你也应该感兴趣才对，那咱们就来谈谈价格吧。%SPEECH_OFF%  |  %employer%欢迎你，招手示意你进去。%SPEECH_ON% 很好，既然来了，劳烦关上门好吗？%SPEECH_OFF%他的一名卫兵从角落处探出头。你微笑着将他关在外面。你转身发现%employer%正走向一扇窗户。边盯着外面边说。%SPEECH_ON%我有需要…呃，其实吧，你不需要知道具体情况。我需要将这个“东西”送给一个叫%recipient%的伙计。他正在%objective%等着呢。这活儿相当重要，务必要送到目的地，并且必须要有武装护送，所以我才请求你和你的战团帮忙。雇佣兵，意下如何？%SPEECH_OFF%  |  房间里烛光黯淡，你勉强能看到东西，%employer%坐在桌子后，影子随着摇曳烛光在墙上舞动着。%SPEECH_ON%如果我报价不菲，你愿意为我效力吗？我需要将{一个小箱子  |  对我来说很重要  |  很有价值}安全送给%objective%的%recipient%，就在%direction%。这东西引起了杀戮，所以你必须做好拿命守好它的准备。%SPEECH_OFF%他停了下来，权衡着你的反应。%SPEECH_ON%我会写封密信，其中叮嘱了交给你报酬，只要你将它送给%objective%的联系人。如何？%SPEECH_OFF%  |  一名仆人示意你等待%employer%，他说马上就接待你了。于是你等着，等着，等着。终于，当你准备第二次离开时，%employer%%employer%打开门，冲向你。%SPEECH_ON%这是谁来着？雇佣兵？%SPEECH_OFF%他的助手点点头，%employer%便露出了笑容。%SPEECH_ON%队长，你在%townname%里真是三生有幸啊！\n\n我有些宝贵货物得尽快且安全地送往%objective%。我正需要你这样的人，寻常毛贼绝没有那个胆子招惹你和你的手下。\n\n没错，我想雇佣你执行护送任务。确保货物一定要送给%recipient%，当然不用绕弯路。你觉得如何？%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{Let\'s talk money. | How many crowns are we talking about?}",
+					Text = "{咱们谈谈价格吧。 |  多少克朗？}",
 					function getResult()
 					{
 						return "Negotiation";
@@ -344,7 +344,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "{Not interested. | Our travels will not take us there for a while. | This is not the kind of work we\'re looking for.}",
+					Text = "{没兴趣。 |  我们的旅途暂时不会前往那里。 |  我们不接这样的活儿。}",
 					function getResult()
 					{
 						this.World.Contracts.removeContract(this.Contract);
@@ -360,13 +360,13 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Mercenaries1",
-			Title = "Along the road...",
-			Text = "[img]gfx/ui/events/event_07.png[/img]{While on the road, a band of well-armed men cross your path. | Marching toward %objective%, a few men interrupt your quiet travels, the clinky-clank of their weapons and armor filling the air as they step into formation. | Your travels, unfortunately, are not to be simple. A number of men have stepped out in front of you, clearly blocking your way. | Some armed and well armored men have come out to make something of a metal impasse. They look as though they intend to make sure you go no farther. | A few of the men come to a stop. You go to the front to figure out what is going on, only to see a line of well-armed men standing in %companyname%\'s way. Well, this should be interesting.} The enemy lieutenant steps forward and pounds his chest with his fist clenched.%SPEECH_ON%{It is us, the %mercband%, that stand before you. Slayers of beasts beyond imagination, the last hope of this godsforsaken land! | The name is %mercband% and we\'re well known throughout this land as splitters of heads, drinkers of kegs and lovers of ladies! | \'Tis the legendary %mercband% standing before you. It is we, saviors of %randomtown% and slayers of the false king! | Behold my proud band, the %mercband%! We, who fought off a hundred orcs to save a city from certain doom. What have you to your name? | You\'re talking to a man of the %mercband%. No common brigand, foul greenskin, bag of coins or skirt ever escaped from us!}%SPEECH_OFF%After the man finishes his posturing and personal pontificating, he points at the cargo you are carrying.%SPEECH_ON%{So now that you realize the danger you are in, why don\'t you go ahead and hand that cargo over? | I hope you realize who you\'ve come to face, pathetic sellsword, so that you may best make sure your men make it to their beds tonight. All you need to do is hand over the cargo and we won\'t have to add you to the history of %mercband%. | Ah, I bet you\'d like to be a part of our history, wouldn\'t you? Well, good news, all you gotta do is not hand over that cargo and we\'ll scribble you in with our swords. Of course, you can escape the scribe\'s pen if you just give us that cargo. | Now, if it isn\'t the %companyname%. As much as I\'d like add you to our list of victories, I\'ll give you a chance here, mercenary to mercenary. All you have to do is hand over that cargo and we\'ll be on our way. How\'s that sound?}%SPEECH_OFF%{Hmm, well it was a bombastic request if nothing else. | Well, the theatrics were pretty entertaining if nothing else. | You don\'t quite understand the need for showmanship, but there\'s little doubt about the seriousness of this new situation you\'ve found yourself in. | While you appreciated the superlatives and hyperbole, there remains the very terse reality that these men do actually mean business.}",
+			Title = "沿路行走…",
+			Text = "[img]gfx/ui/events/event_07.png[/img]{路程中，一群装备精良的人挡住你的去路。 |  在前往%objective%时，一群人打断的安静的旅途，他们的武器和盔甲叮当作响，并结成阵型。 |  很不幸，你的旅途并不是那么简单。一群人出现在你面前，挡住了去路。 |  一些装备精良的人出现了，似乎陷入了僵局。他们似乎是想拦住你的去路。 |  部分人停了下来。你走上前查明情况，却只看到一排装备精良的人挡住了%companyname%的去路。这下有意思了。}敌人中尉向前一步，紧握拳头锤击胸口。%SPEECH_ON%{%mercband%，站在你面前的是我们。凶兽屠夫，空前绝后，神弃之地的最后希望！ |  行不改名坐不改姓，我们是大名鼎鼎的%mercband%，抛头颅啥热血，大口喝酒大口吃肉，美女们尽皆投怀送抱！ |  在你面前的是传说中的%mercband%。我们乃是%randomtown%的救世主，伪王刽子手！ |  见识下大名鼎鼎的%mercband%！我们击败了上百兽人，拯救城市于水火之中。你又是什么来头？ |  和你说话的是%mercband%。任何寻常毛贼，肮脏绿皮，钱财或妹纸能逃出我们的手掌心！}%%SPEECH_OFF%等这人故作姿态，发表完壮志豪言后，他指了指你带着的货物。%SPEECH_ON%{现在你该明白趟进了什么样的浑水了吧，不如乖乖把货物交出来吧！ |  可悲的雇佣兵，希望你意识到遇到了什么样的对手，不然你的手下今晚可就要长眠于此了。只要你乖乖交出货物，那你的名字就不会荣登咱们%mercband%的光辉史了。 |  啊，我打赌你肯定想登上咱们的光辉史，对吧？哟，好消息，不交货物就可以见识下咱们用剑练就的草书了。当然了，只要你交出货物，那咱们就放你一马。 |  好了，只有%companyname%才会这样。虽然很想让你成为我的手下败将，但是雇佣兵一家亲，我就破例一次好了。你只需要交出货物，那咱们就大路朝天各走一边。意下如何？}%SPEECH_OFF%{嗯，如果别无其他，那真是言过其实了。 |  呃，舞台效果还是相当逗趣的。 |  你不明白表演的必要性，但是新局势的严重性是毫无疑问的。  |  虽然你很欣赏空前绝后的夸张，但是简明扼要的事实仍没有改变，那就是这些人不是开玩笑的。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "If you want it, come and take it!",
+					Text = "如果想要，那就亲手来取吧！",
 					function getResult()
 					{
 						local p = this.World.State.getLocalCombatProperties(this.World.State.getPlayer().getPos());
@@ -381,7 +381,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "It\'s not worth dying over. Take that damn cargo and be gone.",
+					Text = "没必要丢掉性命。拿走该死的箱子，然后滚吧。",
 					function getResult()
 					{
 						return "Mercenaries2";
@@ -392,8 +392,8 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Mercenaries2",
-			Title = "Along the road...",
-			Text = "[img]gfx/ui/events/event_07.png[/img]{Not wanting a fight, you hand the cargo over. They laugh as they take it off your hands.%SPEECH_ON%Good choice, mercenary. Maybe someday you\'ll be the one doing the threatening.%SPEECH_OFF% | The cargo, whatever it is, isn\'t worth the lives of your men. You hand the crate over and the mercenaries take it. They laugh at you as you leave.%SPEECH_ON%Like charming a whore!%SPEECH_OFF% | This does not seem like the time or place to be sacrificing your men in the name of %employer%\'s delivery service. You hand the cargo over. The mercenaries take it then make their leave, their lieutenant flipping you a crown that spins its way into the mud.%SPEECH_ON%Get yerself a shinebox, kid, this work ain\'t cut out for you.%SPEECH_OFF% | The mercenaries are well armed and you don\'t know if you could sleep at night knowing you spent the lives of your men just for some silly crate carrying the old gods know what. With a nod, you hand the cargo over. The mercenary band gladly takes it from you, their lieutenant pausing to nod back with respect.%SPEECH_ON%A wise choice. Don\'t think I didn\'t make many like it when I was coming up.%SPEECH_OFF%}",
+			Title = "沿路行走…",
+			Text = "[img]gfx/ui/events/event_07.png[/img]{不欲战斗，你交出了货物。他们大笑着接过。%SPEECH_ON%明智的选择，雇佣兵。或许有一天你也会像今天的我们。%SPEECH_OFF%  |  无论货物是什么，都不值得自己的手下搭上性命。你交出箱子，然后雇佣兵拿走了。当你离开时，他们大笑着。%SPEECH_ON%真他娘的带劲！%SPEECH_OFF%  |  时间地点都不是自己手下献出性命的时候，而且还是为%employer%运送货物。你交出货物。雇佣兵拿到手后便离开了，他们的副官抛出一枚克朗，旋转着落入尘土之中。%SPEECH_ON%孩子，给自己买点好的吧，这行当不适合你。%SPEECH_OFF%  |  雇佣兵装备精良，如果手下因为什么愚蠢的箱子而丢掉性命，你觉得自己晚上会良心不安，睡不着觉。你点头将货物交了出去。雇佣兵高兴地接过去，他们的副官尊敬地点点头。%SPEECH_ON%明智的选择。Don\'t think I didn\'t make many like it when I was coming up.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [
@@ -420,13 +420,13 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "BountyHunters1",
-			Title = "Along the road...",
-			Text = "[img]gfx/ui/events/event_07.png[/img]{While on the roads, you come across a band of bounty hunters. Their prisoner calls out to you, his voice cracking as he begs for you to save him. He claims he is an innocent man. The bounty hunters tell you to fark off and die. | You\'re traveling the roads when you come across a group of well-armed bounty hunters. They\'re yanking along a man shackled from head to toe.%SPEECH_ON%You want no part of this fellow.%SPEECH_OFF%One man says, striking his prisoner in the back of the shins. The man yelps and crawls to you on bloodied hands and knees.%SPEECH_ON%They\'re all liars! These men will kill me even though I\'ve done nothing wrong! Save me, sirs, I beg of you!%SPEECH_OFF% | You come across a large band of bounty hunters, your two groups oddly mirroring one another, though your purposes in this world clearly diverge. They\'re transporting a prisoner who has been chained and his mouth stuffed with a rag. The man yells out to you, almost pleading, choking on his words until he\'s red in the face. One of the bounty hunters spits.%SPEECH_ON%Pay him no mind, stranger, and get on down the road. Best there be no trouble between men such as we.%SPEECH_OFF%}",
+			Title = "沿路行走…",
+			Text = "[img]gfx/ui/events/event_07.png[/img]{行程中你遇到了一帮赏金猎人。他们的囚犯向你大声呼喊，渴求着救命。他称自己是无辜的。赏金猎人让你滚犊子玩蛋去。 |  在路上你遇到了一群装备精良的赏金猎人。他们推搡着一个头和脚都有镣铐的人。%SPEECH_ON%你可不想成为阶下囚。%SPEECH_OFF%一人说道，踹了下囚犯的腿。那人痛苦地大喊，用染血的手和膝盖向你爬来。%SPEECH_ON%他们都是骗子！我是无辜的，他们却想杀了我！救救我，求求你们了！%SPEECH_OFF%  |  你遇到一大群赏金猎人，虽然俩群人惊人的相似，但明显各自目的迥然不同。他们在运输一名囚犯，那人铐上枷锁，嘴中还塞着破布。他渴求般地向你大喊，直到窒息到满脸通红。一名赏金猎人吐了口唾沫。%SPEECH_ON%陌生人，不关你的事，走你的路。最好还是不要招惹麻烦的好。%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "This isn\'t any of our business.",
+					Text = "这跟我们没关系。",
 					function getResult()
 					{
 						return 0;
@@ -434,7 +434,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "Perhaps we can buy the prisoner?",
+					Text = "或许我们能买下囚犯？",
 					function getResult()
 					{
 						return this.Math.rand(1, 100) <= 50 ? "BountyHunters1" : "BountyHunters1";
@@ -442,7 +442,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "If you want it, come and take it!",
+					Text = "如果想要，那就亲手来取吧！",
 					function getResult()
 					{
 						local p = this.World.State.getLocalCombatProperties(this.World.State.getPlayer().getPos());
@@ -460,13 +460,13 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Thieves1",
-			Title = "During camp...",
-			Text = "[img]gfx/ui/events/event_05.png[/img]{You raise up from a nap and turn over, looking for the package as though it were a lover. But she\'s not there and neither is the cargo. Quickly getting to your feet, you begin ordering the men to attention. %randombrother% runs up and says he\'s tracked some footprints leading off from the site. | While taking a rest, you hear a disturbance somewhere in the camp. You rush to it to find %randombrother% face down in the dirt, rubbing the back of his head.%SPEECH_ON%Sorry sir, I was taking a piss, and then they went on ahead and took it out of me. Also, they stole the package.%SPEECH_OFF%You tell him to repeat that last part.%SPEECH_ON%Goddamn thieves have stolen the goods!%SPEECH_OFF%Time to track those bastards down and get it back. | Naturally, it wouldn\'t be an ordinary trip. No, this world is too shite for that to be the case. It appears thieves have taken off with the cargo. Luckily, they\'ve left a hell of a lot of evidence, namely footprints and dragmarks from toting the package around. They should be easy to find... | Just once you\'d like to have a nice walk from one town to the next. Instead, your agreement with %employer% has attracted trouble once again. Thieves, somehow, managed to sneak into the camp and make off with the cargo. The good news is that they didn\'t manage to sneak back out: you\'ve found their footprints and they won\'t be hard to follow.}",
+			Title = "营地…",
+			Text = "[img]gfx/ui/events/event_05.png[/img]{你小睡醒来，翻身寻找包裹，就像寻找爱人一般。但是爱人不在，货物也无影无踪。你麻溜的起身，命令手下打起精神。%randombrother%跑上前说他找到了些许足迹。 |  休息时，你听到营地某处发生了骚乱。你快步冲过去，发现%randombrother%躺在地上，手挠着后脑窝。%SPEECH_ON%抱歉，长官，我正在小便，他们报复了我。而且，他们偷走了包裹。%SPEECH_OFF%你让他重复下最后一部分。%SPEECH_ON%该死的毛贼偷走了货物！%SPEECH_OFF%该找到那些狗崽子，夺回货物了。 |  很明显，这趟旅途并非普通。这个狗屎世界怎么会有普通的事情。似乎窃贼带着货物跑了。幸运的是，他们留下了许多证据，足迹，携带包裹留下的拖痕。应该很容易就能找到… |  你就想在两个镇子间享受下旅途，哪怕一次也好。但事与愿违，与%employer%的协议再次引来了麻烦。窃贼想法设法溜进了营地，而且带走了货物。好消息是他们没能逃太远：你发现了足迹，应该不难追踪。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "We follow their tracks!",
+					Text = "我们追踪他们的痕迹！",
 					function getResult()
 					{
 						this.Contract.setState("Running_Thieves");
@@ -478,13 +478,13 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Thieves2",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_22.png[/img]{Thief blood runs thick. You manage to find your employer\'s goods still in the camp, all locked and safe. He doesn\'t need to know about this little excursion. | Well, everything\'s right where it should be. %employer%\'s cargo was found underneath a thief\'s writhing body. You made sure to kick him off before running him through. Wouldn\'t want to get blood on the package, after all. | Killing off the last of the thieves, you and the men spread out through the brigands\' camp looking for the package. %randombrother% spots it right quick, the container still held in the clutches of a dead fool. The mercenary fumbles with the corpse\'s grasp and, in frustration, simply cuts the arms off the bastard. You retrieve the package and hold it a little closer for the trip going forward. | Staring over the bodies of the felled thieves, you wonder if %employer% needs to know about this. The package looks alright. Some blood and bone on it, but you can rub that right off. | The package\'s a little scuffed, but it\'ll be fine. Alright, there\'s blood all over it and a thief\'s degloved finger is all smashed up into one of the latches. Those issues aside, everything is perfectly fine.}",
+			Title = "战斗之后……",
+			Text = "[img]gfx/ui/events/event_22.png[/img]{窃贼的血液变得浓稠。你成功找到雇主的货物，仍在营地里，而且完好无损。这小小的意外就不用让他知道了。 |  好了，一切正常。%employer%的货物就在窃贼扭动的身体下。你一脚踢开他，然后再一剑刺下。毕竟你可不想包裹上沾染了血迹。 |  你和手下杀光所有盗贼后，便分头在强盗营地里寻找包裹。%randombrother%很快发现了，东西被一个死掉的蠢货抓着。雇佣兵笨拙地想松开尸体的手，但沮丧地发现，只能一刀砍下那王八羔子的手臂。你取回了包裹，在前行路上，你握得更紧了。 |  你盯着窃贼尸体，沉思着是否将这状况告诉%employer%。包裹似乎完好无损。虽然有些血渍和骨头，但是擦擦就行了。 |  虽然包裹有些磨损了，但小事一桩而已。好吧，上面满是血，而且还有一根粉碎的窃贼手指。除了这些，其他一切都很完美无缺。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Back where it belongs.",
+					Text = "放回原处。",
 					function getResult()
 					{
 						this.Flags.set("IsThieves", false);
@@ -498,13 +498,13 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "EnragingMessage1",
-			Title = "At %objective%",
-			Text = "{The cemetery is layered in fog - that or a thick miasma given off by the dead. Wait... that IS the dead! To arms! | You eye a tombstone with a mound of soil unearthed at its base. Blots of mud lead away like a crumb trail. There are no shovels... no men... As you follow the lead, you come across a band of undead moaning and groaning... now staring at you with insatiable hunger... | A man lingers deep in the rows of tombstones. He seems to be wavering, as though ready to pass out. %randombrother% comes to your side and shakes his head.%SPEECH_ON%That\'s no man, sir. There\'s undead afoot.%SPEECH_OFF%Just as he finishes talking, the stranger in the distance slowly turns and there in the light reveals he\'s missing half his face. | You come to find many of the graves are emptied. Not just emptied, but unearthed from below. This is not the work of graverobbers...}",
+			Title = "在%objective%",
+			Text = "{墓地模糊不清，不知是迷雾还是尸体散发的瘴气。等等…亡灵！准备迎战！ |  你发现一座墓碑下有个土堆。泥土如面包屑一般指向远方。没有铲子…空无一人…你一路追踪，遇到了一帮哀嚎的亡灵…饥肠辘辘地盯着你… |  一个人徘徊在墓碑深处。身影摇曳，似乎要倒下了。%randombrother%来到你身边，摇摇头。%SPEECH_ON%长官，那并非活人。那是行进中的亡灵。%SPEECH_OFF%他话刚说完，远方的陌生人就出现了，光照下，你发现他一半脸都没了。 |  你发现众多坟墓都是空的。不仅如此，而且还是从下方挖空的。这可不像是盗墓贼的杰作…}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "To arms!",
+					Text = "拿起武器！",
 					function getResult()
 					{
 						this.Contract.getActiveState().onDestinationAttacked(this.Contract.m.Destination);
@@ -516,13 +516,13 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "EvilArtifact1",
-			Title = "Along the way...",
-			Text = "[img]gfx/ui/events/event_55.png[/img]{While on the move, you notice that something else is moving, too: the cargo. The lid on it is jumping around and there\'s a strange glow emerging from its sides. %randombrother% approaches, looks at it, then looks at you.%SPEECH_ON%Should we open it, sir? Or I can take it and throw it in the closest pond because none of that right there is alright.%SPEECH_OFF%You jab the man and ask if he\'s scared. | Moving along the paths, you begin to hear a low hum emanating from the package %employer% had given you. %randombrother% is standing beside it, poking it with a stick. You slap him back. He explains himself.%SPEECH_ON%Sir, there\'s something that ain\'t right with the cargo we\'re tugging...%SPEECH_OFF%You take a good look at it. There\'s a faint color brimming at the edges of the lid. As far as you know, fire can\'t breathe in such a space, and the only thing else that glows in the dark are the moons and the stars. You worry that curiosity is starting to get the better of you... | The cargo rests in the wagon beside you, jostling about to the tilts and turns of the paths. Suddenly, it begins to hum and you swear you saw the lid float upward for just a second. %randombrother% glances over.%SPEECH_ON%You alright, sir?%SPEECH_OFF%Just as he finishes talking, the lid explodes outward, a swirl of colors, mist, ash, fiery heat and brutish cold. You throw your arms up, shielding yourself, and when you take a peek through your elbows the package is completely still, the lid back on. You exchange a glance with the sellsword, then both of you stare at the cargo. This might be a little more than an ordinary delivery... | A low hum emanates from nearby. Thinking a bee hive nearby, you instinctively duck, only to realize the sound is coming from the cargo %employer% had handed you. The lid atop the container is rattling side to side, jostling the latches and nails that are supposed to keep it there. %randombrother% looks a little frightened.%SPEECH_ON%Let\'s just leave it here. That thing ain\'t right.%SPEECH_OFF%}",
+			Title = "路上…",
+			Text = "[img]gfx/ui/events/event_55.png[/img]{行进路上，你发现还有东西也有动静：货物。盖子跳动着，而且周围散发着奇怪的光芒。%randombrother%走上前来，看了看货物，又看了看你。%SPEECH_ON%长官，咱们要打开看看吗？或许交给我，我扔进附近的水塘里，看起来很不对劲啊。%SPEECH_OFF%你捅了那人一下，问他是否害怕。 |  沿路前进，你听到%employer%交给你的包裹中传来了低沉的嗡嗡声。%randombrother%站在旁边，用一根棍子戳了戳它。你一个耳光抽开他。他解释道。%SPEECH_ON%长官，咱们运送的货物有点儿不对劲…%SPEECH_OFF%你仔细观察了下。盖子边缘溢出了浅淡的颜色。就你所知，火焰是不可能的，而且黑暗中能发光的只有月亮和星星。你担心好奇心逐渐会占了上风… |  货物就在你身旁，晃动着就要倾斜了。突然之间，它发出嗡嗡声，而且你对天发誓，刹那之间绝对看到了盖子向上漂浮了。%randombrother%瞧了一眼。%SPEECH_ON%长官，你没事吧？%SPEECH_OFF%他话刚说完，盖子就爆炸般地飞出，纷乱的颜色，迷雾，灰烬尽皆而出，炽烈的热和刺骨的冷。你拔出武器防御，当你透过肘部缝隙看向包裹时，它仍完好无损，而且盖子又合上了。你与雇佣兵交换了下眼神，然后两人都盯着货物。这送货任务非比寻常… |  附近传来低沉的嗡嗡声。你以为附近出现了蜜蜂，于是本能地闪避，却发现声音是从%employer%的货物传来的。容器上的盖子左右晃动，插销和钉子动荡不安。%randombrother%似乎有点吓到了。%SPEECH_ON%咱们把这玩意就扔这儿吧。这玩意有点邪门。%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "I want to know what\'s going on.",
+					Text = "我不想知道发生了什么",
 					function getResult()
 					{
 						return "EvilArtifact2";
@@ -530,7 +530,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "Leave that thing alone.",
+					Text = "扔下那玩意。",
 					function getResult()
 					{
 						this.Flags.set("IsEvilArtifact", false);
@@ -542,13 +542,13 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "EvilArtifact2",
-			Title = "Along the way...",
-			Text = "[img]gfx/ui/events/event_73.png[/img]{Curiosity gets the best of you. Slowly you start prying at the lid. %randombrother% takes a step back and protests.%SPEECH_ON%I think we should leave it alone, sir. I mean c\'mon, look at it.%SPEECH_OFF%Ignoring him, you tell the men it\'s going to be alright, and then you lift the lid up.\n\n It isn\'t alright. The explosion knocks you off your feet. Horrible shapes and shrieks swirl all around you. The men instinctively arm themselves as the piloted specters spear into the earth. There the ground lifts in mounds, and there, too, the earth begins to groan. You watch as hands shoot forth, dragging decrepit bodies from their pit. The dead live again and surely they mean to add to their ranks! | Against anyone\'s best judgment, you pry the cargo open. At first, there is nothing. It\'s just an empty box. %randombrother% nervously laughs.%SPEECH_ON%Well... I guess that\'s it then.%SPEECH_OFF%But that can\'t be it, can it? Why would %employer% have you delivering an empty container unless -- \n\n You wake up to a ringing slowly fading from your ears. Turning over, you see that the box has completely evaporated, a flurry of snowy sawdust all that remains of it. %randombrother% rushes over, picking you up and dragging you toward the rest of the company. They point, their mouths moving, shouting...\n\n A mob of well-armed men are... shuffling your way? As you get a better sight of them, you realize that they are armed with old wooden shields painted with odd spiritual rites, and their armor is of shapes and sizes you have never seen before, as though they were crafted by men just learning the trade, yet still well learned in what they had learned thus far. These are like ancients... the first men. | %randombrother% shakes his head as you go to pick up the lid. With some effort, it\'s pried open and you quickly step back, expecting the worst. But there\'s nothing. Not even a sound comes out of the box. You take a sword and rattle it around in the empty box, looking for a secret compartment or something. %randombrother% laughs.%SPEECH_ON%Hey, we\'re just delivering a bunch of air! And to think I thought that damned thing was too heavy!%SPEECH_OFF%Just then, the box lifts briefly into the air, spins, and smashes itself into the ground. It breaks perfectly, noiselessly, and with no wasted movements, every piece of wood laid against the grass like ancient stoneworks. An incorporeal shape leers up from the splintered rites, grinning as it twists.%SPEECH_ON%Oh humans, it is truly good to see you again.%SPEECH_OFF%The voice is like ice down your back. You watch as the specter shoots into the sky then slams back down, spearing into the very earth. Not a second passes before the ground is erupting as bodies begin to clamber out. | The box magnetizes you. Without hesitation, you crank the cargo open and take a look inside. You smell before you see - a horrid stench overwhelming you almost to the point of blindness. One of the men pukes. Another retches. When you look back at the box, blackened tendrils of smoke are sifting out of it, stretching long and far, probing the ground as they go. When they find what they\'re looking for, they dive into the earth, yanking up bones of dead men like a lure would a fish. | Ignoring the worries of a few of the men, you bust the package open. A pile of heads are to be found, their glowing eyes flickering awake. Their jaws crackle open, shifting from unmoved states to rattle in laughter. You quickly close the box, but a force pushes it back open. You struggle with it, %randombrother% and a few others trying to help, but it\'s almost as if the utterly silent winds of a storm are pushing back against you.\n\nA bare moment later, you\'re all thrown back, the lid of the crate soaring into the sky, ushered upward by a gust of blackened souls. They zip around, combing the earth, then collectively position opposite the %companyname%. There you watch in horror as the incorporeal begins to take shape, the foggy mists of souls hardening into the very real bones of souls lost long ago. And, of course, they come armed, the crackling jawbones still clattering with hollow laughter.}",
+			Title = "路上…",
+			Text = "[img]gfx/ui/events/event_73.png[/img]{你终究没克制好奇心。你慢慢撬着盖子。%randombrother%后退抗议道。%SPEECH_ON%长官，我觉得不该去碰那玩意。说真的，你倒是看看啊。%SPEECH_OFF%你无视他的话，并告诉他没事的，然后你揭开盖子。\n\n 并不安全。爆炸轰得你四肢朝天。你周身尽是可怕的形状和尖叫声。随着幽影冲入地面，人们本能地拿出武器。地面出现土堆，并且伴随着哀嚎声。你看到一双双手如出芽般，将衰败的尸体从土中拉了出来。亡者再生，并且数量还不少！ |  你无视所有人的判断，撬开了货物。起初，一切正常。只是个空盒子。%randombrother%紧张地大小。%SPEECH_ON%好吧…看来就这样了。%SPEECH_OFF%但是不可能就这样吧？为什么%employer%会让你护送个空盒子，除非— \n\n 你意识到铃声慢慢从你耳边消散。你转身看到盒子完全蒸发了，空留下一堆雪花般的木屑。%randombrother%冲过来，拖着你来到战团其他人身边他们手挥舞着，嘴巴动着，大喊道…\n\n 一群装备精良的人…挡住了去路？当你看清楚后，你意识到他们举着破旧的木盾，上面涂着奇怪的灵魂仪式，而且盔甲的形状和尺寸你见所未见，就像是青涩的铁匠打造的。他们就像古人…先民。 |  当你打开盖子时，%randombrother%摇着头。你费了些力气撬开了，然后快速后退以应对最糟糕的情况。但是什么都没发生。连一丝儿声音都没有。你拿起剑，敲了敲空盒子周围，寻找秘密隔间什么的。%randombrother%大笑。%SPEECH_ON%嘿，我们护送的是一盒空气。之前我还觉得这傻逼玩意太重了！%SPEECH_OFF%就在那时，盒子略微升入空中，旋转着，然后自己砸向地面。轻松且没有一丝噪音地就碎了，每片木头躺在草地上，就像古代的石雕工艺。一个灵魂体飘出，诡异地笑着。%SPEECH_ON%噢，人类，见到你实在太高兴了。%SPEECH_OFF%声音如刺骨冰锥，让你脊背发凉。你看着幽灵冲向天空，然后如长矛般刺入地面。不消一会儿，地面碎裂，尸体从中爬出。 |  盒子似乎有魔力一般。你果决地打开货物，然后瞧了瞧。未见其物，先闻其味—一股恶臭几乎让人要失去了感官能力。一人呕吐了。其他人开始作呕。当你再次看向盒子时，散发着丝丝黑烟，如触须般伸向远方，似乎摸索着地面。当似乎找到需要的东西时，便一股脑儿潜入地下，接着亡灵便像看到饵的鱼一般出现了。 |  你无视了数人的担忧，打开了包裹。其中有一堆人头，眼睛睁着，散发着光芒。他们下颌裂开，上下合动，发出咯咯的笑声。你快速关上盒子，但是一股力量意欲冲开。你奋力关上，%randombrother%和其它数人也来帮忙，但是那感觉就像与风暴无声的飓风对抗着。\n\n过了一会儿，你们所有人都开始往后退去。那群黑色的灵魂挂起一阵阴风将箱子的盖子吹向了天空。他们地面上快速的移动着，然后突然停了下来，面对着%companyname%。之后你就看到了恐怖的一幕：那群幽灵般的存在逐渐化为实体，雾状的灵魂凝结成了结实的骨头。而且，当然了，他们身上全副武装，你甚至可以听见他们的下颚咯咯作响，似乎在嘲笑你们。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "To arms!",
+					Text = "拿起武器！",
 					function getResult()
 					{
 						local p = this.World.State.getLocalCombatProperties(this.World.State.getPlayer().getPos());
@@ -575,13 +575,13 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "EvilArtifact3",
-			Title = "Along the way...",
-			Text = "[img]gfx/ui/events/event_55.png[/img]{The battle over, you quickly rush back over to the artifact, finding it floating in the air. %randombrother% runs up to your side.%SPEECH_ON%Destroy it, sir, before it causes any more trouble!%SPEECH_OFF% | Your men weren\'t the only thing to survive the battle - the artifact, or whatever remains of its pulsing power, floats innocently where you\'d last seen it. The thing is an orb swirling with energy, occasionally rattling, sometimes whispering a language you know not of. %randombrother% nods toward it.%SPEECH_ON%Smash it, sir. Smash it and let us be done with this horror.%SPEECH_OFF% | Such power was not meant for this world! The artifact has taken the shape of an orb the size of your fist. It floats off the ground, humming as though singing a song from another world. The thing almost seems to be waiting for you, like a dog would wait its master.%SPEECH_ON%Sir.%SPEECH_OFF%%randombrother% tugs on your shoulder.%SPEECH_ON%Sir, please, destroy it. Let us not take that thing another step with us!%SPEECH_OFF%}",
+			Title = "路上…",
+			Text = "[img]gfx/ui/events/event_55.png[/img]{战斗结束后，你立刻冲向了那件器具，发现它正漂浮在空中。%randombrother%跑到你的身边。%SPEECH_ON%快毁了它，大人，趁它还没造成更多的麻烦前！%SPEECH_OFF%  |  战斗后，除了你的部下，还有一个东西存活了下来 - 那件器具，还有它里面残存的力量，无意识地漂浮在它原来的位置上。那个器具化作球体旋转着，周边环绕着某种能量，偶尔会咯咯作响，有时还会发出一阵你从未听见过的笑声。%randombrother%朝那东西点了点头。%SPEECH_ON%快毁了它，大人。快点结束这场灾难吧。%SPEECH_OFF%  |  这个世界不应存在这样的力量！那件器具化作了球体形状，跟你的拳头差不多大小。它飘离了地面，嗡嗡作响，仿佛低唱着另一个世界的歌谣。那东西似乎在等你，像条正在等待主人的小狗似的。%SPEECH_ON%大人。%SPEECH_OFF%%randombrother%拉住了你的肩膀。%SPEECH_ON%大人，拜托，快毁了它。别再带着它了！%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "We have to destroy it.",
+					Text = "我们必须毁了它。",
 					function getResult()
 					{
 						return "EvilArtifact4";
@@ -589,7 +589,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "We\'re paid to deliver this, so that\'s what we\'ll do.",
+					Text = "我们已经收了钱，所以必须完成这趟护送。",
 					function getResult()
 					{
 						this.Flags.set("IsEvilArtifact", false);
@@ -601,13 +601,13 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "EvilArtifact4",
-			Title = "Along the way...",
-			Text = "[img]gfx/ui/events/event_55.png[/img]{You take out your sword and stand before the artifact with the blade slowly raised over your head.%SPEECH_ON%Don\'t do it!%SPEECH_OFF%Glancing over your shoulder, you see %randombrother% and the other men scowling at you. Blackness surrounds them and the whole world as far as your eye can see. Their eyes glow red, pulsing furiously with every spoken word.%SPEECH_ON%You shall burn forever! Burn forever! Destroy it and you shall burn! Burn! BURN!%SPEECH_OFF%Screaming, you turn around and slice your sword through the relic. It splits effortlessly in two and a wave of color sweeps back into your world. Sweat pours from your forehead as you find yourself leaning on the pommel of your weapon. You look back to see your mercenary company staring at you.%SPEECH_ON%Sir, are you alright?%SPEECH_OFF%You sheathe your sword and nod, but you\'ve never felt so horrified in all your life. %employer% won\'t be happy, but he and his anger be damned! | Just as soon as the thought of destroying the relic crosses your mind, so too does a wave of horrified screaming. The shrill crying of women and children, their voices cracking with terror as though they had come running at you all on fire. They scream at you in hundreds of languages, but every so often the one you know passes you and it\'s always with the same word: DON\'T.\n\n You draw your sword and swing it back over your head. The artifact hums and vibrates. Smoky tendrils waft off it and a brutish heat washes over you. DON\'T.\n\n You steady your grip.\n\n Davkul. Yekh\'la. Imshudda. Pezrant. DON\'T.\n\nYou swallow and steady your aim.\n\n DON\'T.RAVWEET.URRLA.OSHARO.EBBURRO.MEHT\'JAKA.DON\'T.DON\'T.DON\'T.DO--\n\n The strike is true, the word is lost, the artifact falls to the earth in twine. You fall with it, to your knees, and a few of the company\'s brothers come to lift you back up. %employer% won\'t be happy, but you can\'t help but feel as though you\'ve spared this world a horror it need not ever see or hear.}",
+			Title = "路上…",
+			Text = "[img]gfx/ui/events/event_55.png[/img]{你拔出了剑，站在了那件器具前面，然后慢慢举了武器。%SPEECH_ON%住手！%SPEECH_OFF%你转过头去，看见%randombrother%和其他人怒视着你。黑暗包围了他们，整个世界似乎都离你远去。他们的眼睛变得血红，口中清晰地怒吼着。%SPEECH_ON%下地狱吧！下地狱吧！一旦毁了它你就得下地狱！万劫不复！万劫不复！%SPEECH_OFF%尖叫声中，你转身用剑劈开了那件器具。它瞬间化作两半，同时斑斓的色彩重新回到了你的世界当中。这时你才发现自己的前额布满了汗水，依靠武器才勉强地站着。你回头看向战团的兄弟们，他们也正看着你。%SPEECH_ON%大人，你没事吧？%SPEECH_OFF%你收起剑点了点头，但你清楚，你一生中从未经历过如此另人心悸的事情。%employer%不会高兴的，而且会极度地愤怒！ |  就在摧毁这个器具的念头闪过你的脑海时，你听到了一阵恐怖的尖叫声。那是女人和孩童尖锐的哭喊声，他们撕心裂肺的恐怖叫声仿佛是从地狱中传来的。他们用各种语言向你大叫着，但你明白那些话语只代表一个意思：住手。\n\n 你拔出了武器，回头顺势一劈。那件器具发出了嗡嗡声，颤抖了起来。里面散发出阵阵烟雾，忽然一阵炽烈的热浪向你席卷而来。住手。\n\n 你抓紧了剑柄。\n\n Davkul。Yekh\'la。Imshudda。Pezrant。住手。\n\n你咽了口气，仔细地瞄准着。\n\n 住手。RAVWEET。URRLA。OSHARO。EBBURRO。MEHT\'JAKA。--住手。住手。住手。住--\n\n 你将手中的剑劈下，话语声瞬间消失了，那件器具掉落在了地面上。你也无力地跪倒在地上，身后的战团弟兄们立刻上来扶起了你。%employer%不会高兴的，但你明白自己让整个世界避免了一场恐怖的灾难。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "It\'s done.",
+					Text = "结束了。",
 					function getResult()
 					{
 						this.Flags.set("IsEvilArtifact", false);
@@ -628,13 +628,13 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "EvilArtifact5",
-			Title = "Along the way...",
-			Text = "[img]gfx/ui/events/event_55.png[/img]{You shake your head and get another crate, carefully pushing the floating artifact into it then closing the lid. %employer% was paying you good money and, well, you plan on seeing it through. But for some reason you\'re not sure if that choice is your own, or if this strange relic\'s whispering is guiding your hand for you. | You go and retrieve a wooden chest and lift it up to the artifact, quickly closing the lid over it. A few of the mercenaries shake their head. It\'s probably not the best of ideas, but for some reason you fill compelled to finish your task. | Better judgment says you should destroy this horrible relic, but better judgment fails once more. You take a wooden chest and move it over the artifact before closing the lid and snapping shut the latches. You\'ve no idea what you are doing this, but your body is filled with newfound energy as you get ready to get back on the road.}",
+			Title = "路上…",
+			Text = "[img]gfx/ui/events/event_55.png[/img]{你摇了摇头，拿出了另一只箱子，小心翼翼地将那漂浮着的器具放了进去，然后盖上了盖子。%employer%付给了你很大一笔钱，你也很想要这笔钱。但不知怎的，你不确定这样的选择是出自于自己的内心，还是被那件遗物奇怪的低语声影响的结果。 |  你取来了一只木箱，抬起来把那件器具装了进去，然后立刻封上了箱子。有些雇佣兵摇了摇头。这样做或许不是最好的选择，但不知怎的，你感觉自己必须去完成这项任务。 |  你的直觉告诉你应该去摧毁那件遗物，但你并没有那么做。你拿来了一只木箱，将那件器具装了进去，然后把箱子封了起来。你完全不知道自己为什么要这么做，但你感觉自己的体内重新充满了力量，能够再次踏上旅途。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "We should move on.",
+					Text = "我们得继续上路了。",
 					function getResult()
 					{
 						return 0;
@@ -645,15 +645,15 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Success1",
-			Title = "At %objective%",
-			Text = "[img]gfx/ui/events/event_20.png[/img]{%recipient%\'s waiting for you as you enter the town. He hurriedly takes the cargo off your hands.%SPEECH_ON%Oh, ohhh I did not think you would get here.%SPEECH_OFF%His grubby fingers dance along the chest carrying the cargo. He turns around and barks an order to one of his men. They step forward and hand you a satchel of crowns. | Finally, you\'ve made it. %recipient% is standing there in the middle of the road, his hands clasped over his stomach, a slick grin on his cheeky face.%SPEECH_ON%Sellsword, I was not sure you\'d make it.%SPEECH_OFF%You lug the cargo up and hand it over.%SPEECH_ON%Oh yeah, and why do you say that?%SPEECH_OFF%The man takes the box and hands it off to a robed man who quickly hurries away with it tucked under an arm. %recipient% laughs as he hands you a satchel of crowns.%SPEECH_ON%The roads are rough these days, are they not?%SPEECH_OFF%You understand he\'s making small talk, anything to get your attention off the cargo you just handed over. Whatever, you got your pay, that\'s good enough for you. | %recipient% welcomes you and a few of his men hurry over to take the cargo. He claps you on the shoulders.%SPEECH_ON%I take it your journey went well?%SPEECH_OFF%You spare him the details and inquire about your pay.%SPEECH_ON%Bah, a sellsword through and through. %randomname%! Get this man what he deserves!%SPEECH_OFF%One of %recipient%\'s bodyguards walks over and hands you a small chest of crowns. | After some looking, a man asks who you\'re looking for. When you say %recipient%, he points you out toward a nearby paddock where a man is strutting about on a rather opulent looking horse.\n\n You walk on over and the man rears the steed and asks if that\'s the cargo %employer% sent. You nod.%SPEECH_ON%Leave it there at your feet. I\'ll come and get it.%SPEECH_OFF%You don\'t, instead asking about your pay. The man sighs and whistles to a bodyguard who hurries over.%SPEECH_ON%See to it that this sellsword gets the pay he deserves.%SPEECH_OFF%Finally, you put the crate on the ground and make your leave.} ",
+			Title = "在%objective%",
+			Text = "[img]gfx/ui/events/event_20.png[/img]{你进入城中时%recipient%正在等着你。他急忙把货物从你手中接了过去。%SPEECH_ON%哦，啊，我真没想到你能安全到达这里。%SPEECH_OFF%他那肮脏的手指愉悦地敲打着装着货物的箱子。他转过身去跟他的手下说了些什么。然后他们走向前来并交给你一大袋克朗。 |  终于，你成功了。%recipient%正站在道路中间，双手紧捂真自己的腹部，脸上浮现出一抹假笑。%SPEECH_ON%佣兵，我本来还不相信你能做得到呢。%SPEECH_OFF%你搬出货物交给了他。%SPEECH_ON%哦是吗，你为什么要那么说？%SPEECH_OFF%那个男人那走了箱子，将其交给了一位穿着长袍的家伙，然后那个长袍男就抱着箱子匆匆离开了。%recipient%大笑着交给你一袋克朗。%SPEECH_ON%最近这路可不好走呐，不是吗？%SPEECH_OFF%你知道他只是在瞎扯，好把你的注意力从货物上转移开。管他呢，你拿到了报酬，这就足够了。 |  %recipient%对你的到来表示了欢迎，而他的手下很快就将货物拿了过去。他拍了拍你的肩。%SPEECH_ON%我想你路上还算是顺利的吧？%SPEECH_OFF%你跟他大致说了下路上的情况，然后问起了你的报酬。%SPEECH_ON%哎呀，佣兵到底是佣兵啊。%randomname%！把他的报酬拿来！%SPEECH_OFF%%recipient%的一位手下走了过来，交给你一只装满克朗的小箱子。 |  你四处寻找了一会儿后，一个男人走来过来，问你在找谁。当你说出%recipient%的名字后，他指了指不远处的马场，那里有个男人正牵着一匹看起来很昂贵的马。\n\n 你走向了那个正在喂马的男人，那人看见了你，并问那件货物是否是%employer%送来的。你点了点头。%SPEECH_ON%你把它放在脚边就行。我会去拿的。%SPEECH_OFF%你并没那样做，而是问起你的报酬。那人叹了口气，很快招来了一位手下。%SPEECH_ON%把这位佣兵的报酬拿来。%SPEECH_OFF%最后，你拿到了报酬，然后留下箱子离开了。}",
 			Image = "",
 			Characters = [],
 			List = [],
 			ShowEmployer = false,
 			Options = [
 				{
-					Text = "Crowns well deserved.",
+					Text = "一笔数量可观的克朗。",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
@@ -678,7 +678,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
+					text = "你获得 [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] 克朗"
 				});
 			}
 
@@ -690,7 +690,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		local days = this.getDaysRequiredToTravel(this.m.Flags.get("Distance"), this.Const.World.MovementSettings.Speed, true);
 		_vars.push([
 			"objective",
-			this.m.Destination == null || this.m.Destination.isNull() ? "" : this.m.Destination.getName()
+			this.m.Destination == null  ||  this.m.Destination.isNull() ? "" : this.m.Destination.getName()
 		]);
 		_vars.push([
 			"recipient",
@@ -702,11 +702,11 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		]);
 		_vars.push([
 			"direction",
-			this.m.Destination == null || this.m.Destination.isNull() ? "" : this.Const.Strings.Direction8[this.World.State.getPlayer().getTile().getDirection8To(this.m.Destination.getTile())]
+			this.m.Destination == null  ||  this.m.Destination.isNull() ? "" : this.Const.Strings.Direction8[this.World.State.getPlayer().getTile().getDirection8To(this.m.Destination.getTile())]
 		]);
 		_vars.push([
 			"days",
-			days <= 1 ? "a day" : days + " days"
+			days <= 1 ? "1 天" : days + " 天"
 		]);
 	}
 
@@ -725,7 +725,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 
 	function onIsValid()
 	{
-		if (this.m.Destination == null || this.m.Destination.isNull() || !this.m.Destination.isAlive() || !this.m.Destination.isAlliedWithPlayer())
+		if (this.m.Destination == null  ||  this.m.Destination.isNull()  ||  !this.m.Destination.isAlive()  ||  !this.m.Destination.isAlliedWithPlayer())
 		{
 			return false;
 		}

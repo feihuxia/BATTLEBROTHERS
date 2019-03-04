@@ -75,7 +75,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		this.World.State.getPlayer().setPos(tile.Pos);
 		this.World.getCamera().jumpTo(this.World.State.getPlayer());
 		this.m.Flags.set("BossName", "Hoggart the Weasel");
-		this.m.Flags.set("LocationName", "Hoggart\'s Refuge");
+		this.m.Flags.set("LocationName", "霍加特的避难处");
 		this.setState("StartingBattle");
 		this.contract.start();
 	}
