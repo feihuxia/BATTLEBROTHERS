@@ -5,17 +5,17 @@ this.fear_beasts_event <- this.inherit("scripts/events/event", {
 	function create()
 	{
 		this.m.ID = "event.fear_beasts";
-		this.m.Title = "During camp...";
+		this.m.Title = "在扎营期间...";
 		this.m.Cooldown = 25.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_26.png[/img]{%brother% is carving a rabbit into a piece of bark. It\'s shaping up nicely until he angrily throws the whole thing into the campfire.%SPEECH_ON%Oh who the fark am I kidding? I wish I was out here hunting game! But this ain\'t game, these are monsters! Creatures of the night! Bullshit, all of it, where\'d they even come from? Well I tell you what, I ain\'t gonna be killed by one of them things! Not a farking chance!%SPEECH_OFF%The rest of the company stares at him as he comes down from the outburst. He quietly watches the rabbit carving churn and burn.}",
+			Text = "[img]gfx/ui/events/event_26.png[/img]{%brother% 正在将一截木头雕刻一只兔子，突然他愤怒的把整个雕刻扔进了篝火。%SPEECH_ON% 谁和我开玩笑吗？我希望我在这里是在进行打猎游戏，但是这根本不是个游戏！这些全是怪物！夜晚的魔鬼！艹！所有的这些，他们从哪里来？唉，我告诉你，我不希望被它们杀死啊！%SPEECH_OFF% 队伍的所有人都盯着愤怒的他。但是他却静静的看着火中的雕刻慢慢的燃烧。}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "This is taking a toll on the men.",
+					Text = "这事儿对他造成了一些创伤.",
 					function getResult( _event )
 					{
 						return 0;
@@ -31,7 +31,7 @@ this.fear_beasts_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = trait.getIcon(),
-					text = _event.m.Casualty.getName() + " now fears beasts"
+					text = _event.m.Casualty.getName() + " 现在害怕野兽"
 				});
 			}
 

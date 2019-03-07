@@ -7,17 +7,17 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 	function create()
 	{
 		this.m.ID = "event.hedge_knight_vs_refugee";
-		this.m.Title = "During camp...";
+		this.m.Title = "宿营间...";
 		this.m.Cooldown = 60.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_52.png[/img]%hedgeknight% the hedge knight walks up to an eating %refugee%. The former refugee sees the shadow loom over him and slowly turns about.%SPEECH_ON%Yeah?%SPEECH_OFF%The hedge knight snorts and spits a loogie about the size of a baby\'s arm. He snorts again.%SPEECH_ON%You ran from your home. You watched it burn and put yer back to the flames rather than fight them. This company is your home now. What stops you from running from the fire now?%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_52.png[/img]%hedgeknight%雇佣骑士走向一个正在吃东西的难民。这位难民看到眼前的阴影，缓缓转过身来。%SPEECH_ON% 怎么了，伙计? %SPEECH_OFF% 雇佣骑士哼了一声，吐出一口浓痰。%SPEECH_ON%你逃离你燃烧的家，看着他们在你家里破坏而不是去反抗。现在佣兵队是你的家了，这次你还打算继续逃跑吗？%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Come on, %hedgeknight%. Stop it!",
+					Text = "喂, %hedgeknight%. 住手!",
 					function getResult( _event )
 					{
 						return "B";
@@ -25,7 +25,7 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 
 				},
 				{
-					Text = "You can deal with this yourselves.",
+					Text = "你可以自己处理这事儿！",
 					function getResult( _event )
 					{
 						return "C";
@@ -41,7 +41,7 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 				if (_event.m.OtherGuy != null)
 				{
 					this.Options.push({
-						Text = "Wait. %streetrat%, you look like you have something to say?",
+						Text = "等下. %streetrat%, 你看起来有话要说？",
 						function getResult( _event )
 						{
 							return "D";
@@ -54,13 +54,13 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_52.png[/img]You step forward and tell the hedge knight to stuff it. The company ain\'t here to stroke his ego. Laughing, the bear of a man steps off.%SPEECH_ON%As you say, sir. Wouldn\'t want to get into a scrap with the company princess.%SPEECH_OFF%The company laughs, but the refugee only stares into is bowl of food like someone\'d just spat in it.",
+			Text = "[img]gfx/ui/events/event_52.png[/img]你走上前去告诉雇佣骑士收敛些。佣兵队不是来打击他的自尊心的。 虎背熊腰的男人大笑着走开了。%SPEECH_ON%如您所说，先生，我也不想和废物在一起！%SPEECH_OFF%队伍里的人都大笑起来，只有难民继续盯着他的碗发呆，就像有人吐在里面一样。",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Well, I guess that\'s settled.",
+					Text = "好吧，我想这事儿已经解决了！",
 					function getResult( _event )
 					{
 						return 0;
@@ -78,7 +78,7 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 16,
 					icon = "ui/icons/bravery.png",
-					text = _event.m.Refugee.getName() + " loses [color=" + this.Const.UI.Color.NegativeEventValue + "]-" + bravery + "[/color] Resolve"
+					text = _event.m.Refugee.getName() + " 失去了 [color=" + this.Const.UI.Color.NegativeEventValue + "]-" + bravery + "[/color] 决心"
 				});
 				_event.m.Refugee.worsenMood(1.0, "Got humiliated in front of the company");
 
@@ -95,13 +95,13 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_06.png[/img]You don\'t intervene. The hedge knight continues.%SPEECH_ON%I\'ve no pity for your pain. You understand?%SPEECH_OFF%Nodding, the refugee looks up.%SPEECH_ON%Aye, but what pity does anyone have for yours?%SPEECH_OFF%%refugee%\'s arm shoots forward so fast it flips the plate into the campfire. The fork sticks in the thigh of %hedgeknight% and %refugee% can\'t wrench it out no better than if it were stuck in a trunk of oak. The hedge knight grits and falls on the refugee and flattens him. His giant hands press the refugee\'s skull into the earth until the poor man\'s breathing dirt. The rest of the company stands up and backs off. You step forward, but %hedgeknight% holds his hand out before standing back up.%SPEECH_ON%Alright, little runner, alright. You\'ve fight in you yet.%SPEECH_OFF%He retrieves the fork and holds it out. A drop of blood grooves between he tines.%SPEECH_ON%Whatcha eating? Oh yeah? Good. I\'ll double it with my portion. Come and sit.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_06.png[/img]你没有干预。雇佣骑士继续挖苦说道。%SPEECH_ON%我才不会在意你的痛苦，明白吗懦夫！%SPEECH_OFF% 难民抬起头来.%SPEECH_ON% 很好，懦夫你一点也不可怜！%SPEECH_OFF%难民扔掉盘子，拿起餐叉迅猛的扎向 %hedgeknight%的大腿，但是难民的叉子像被卡在树枝上一样无法抽出. 雇佣骑士把难民粗暴的摔在了地上，巨大的双手讲他的头颅压入泥土，肮脏的泥水涌入了这个可怜的人的口腔和鼻腔.休息中的佣兵都被吓得后退了一步。你走上前来，但是%hedgeknight%站起来并拉起了难民。%SPEECH_ON% 很好，爱逃跑的小家伙,你已经和你自己较量过了！%SPEECH_OFF% 他捡起自己的叉子，吐出口中的碎牙和血沫。%SPEECH_ON% 继续吃吗？很好，我用我的部分给你加倍，快来坐吧！%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Glad that\'s settled.",
+					Text = "很好！问题解决了！",
 					function getResult( _event )
 					{
 						return 0;
@@ -119,7 +119,7 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 16,
 					icon = "ui/icons/bravery.png",
-					text = _event.m.Refugee.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + bravery + "[/color] Resolve"
+					text = _event.m.Refugee.getName() + " 获得 [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + bravery + "[/color] 决心"
 				});
 				_event.m.Refugee.improveMood(1.0, "Got some recognition from " + _event.m.HedgeKnight.getName());
 
@@ -147,13 +147,13 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/event_80.png[/img]%streetrat% steps forward. He points a finger at the hedge knight.%SPEECH_ON%You ain\'t got a lick of understanding of no flame nor fire.%SPEECH_OFF%Laughing, %hedgeknight% turns around and cracks his knuckles.%SPEECH_ON%Course I do. I AM the fire.%SPEECH_OFF%The lowborn defiantly crosses his arms.%SPEECH_ON%And we ain\'t the ash, but the wood itself. You\'re a whore for the noblemen, that\'s what you truly are. They pay you a high price and you go on with your strength and cruelty and do what they tell you to do. Like... like a whore...%SPEECH_OFF%Another sellsword holds up a finger.%SPEECH_ON%I think yer describing us in general. We\'re mercenaries.%SPEECH_OFF%And another adds.%SPEECH_ON%Did you just compare yerself to kindling?%SPEECH_OFF%%streetrat% rubs the back of his head.%SPEECH_ON%Yeah I\'m gonna be honest the hedge knight scared me a bit there and I lost what I was going to say.%SPEECH_OFF%The company looks around before bursting into laughter and whatever animosity there was is gone.",
+			Text = "[img]gfx/ui/events/event_80.png[/img]%streetrat% 走到前面，用手指着雇佣骑士。%SPEECH_ON%你觉得你是篝火的哪一部分，火焰还是火苗？。%SPEECH_OFF%哈哈哈哈。 %hedgeknight% 转过身，捏响自己的指关节。%SPEECH_ON%我当然知道。我是火焰！%SPEECH_OFF%他轻蔑的抱着双臂。%SPEECH_ON%对，你是火焰，但是我们也不是灰烬，我们是木柴！他已经为懦弱复出了高额的代价，你却用你的力量残忍揭露他的痛苦，这就像..就像一个肮脏妓女！%SPEECH_OFF%另一个佣兵也举起了手指。%SPEECH_ON%我认为我们都一样，我们都是佣兵。%SPEECH_OFF%另一个补充道%SPEECH_ON%你刚刚把你自己比喻成火焰？%SPEECH_OFF%%streetrat% 挠了挠他的脑袋。%SPEECH_ON%很好！刚刚雇佣骑士确实吓到我了，现在我没什么想说的了。%SPEECH_OFF%大家相视一笑，矛盾烟消云散。",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "What were were fighting about again?",
+					Text = "现在还要打架吗?",
 					function getResult( _event )
 					{
 						return 0;

@@ -5,17 +5,17 @@ this.fear_greenskins_event <- this.inherit("scripts/events/event", {
 	function create()
 	{
 		this.m.ID = "event.fear_greenskins";
-		this.m.Title = "During camp...";
+		this.m.Title = "宿营期间...";
 		this.m.Cooldown = 25.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_26.png[/img]{%brother% stares at the campfire with his hands bridged between his knees.%SPEECH_ON%Fark, man. I don\'t know if I can look at a greenskin again. They\'re so much stronger and faster than us! We, we shouldn\'t face them again until we got at least, two, no three times as many men!%SPEECH_OFF%You tell the company to keep an eye on him. Fear is justified but spreading it sure as hell ain\'t.}",
+			Text = "[img]gfx/ui/events/event_26.png[/img]{%brother% 木讷的盯着篝火，双手放在膝盖之间。％SPEECH_ON％ 艹！伙计，我真的不知道我是否还有勇气面对那些绿皮，他们更快！更高！更强！我们，我们真不应该再次面对他们，直到我们拥有两三倍的人手！％SPEECH_OFF％ 你告诉他队伍会留意他。恐惧是有可以的，但在佣兵中传播恐惧肯定是不可能的。}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "This is taking a toll on the men.",
+					Text = "这件事对他造成了创伤。",
 					function getResult( _event )
 					{
 						return 0;
@@ -31,7 +31,7 @@ this.fear_greenskins_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = trait.getIcon(),
-					text = _event.m.Casualty.getName() + " now fears greenskins"
+					text = _event.m.Casualty.getName() + " 现在害怕绿皮肤。"
 				});
 			}
 

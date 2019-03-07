@@ -3,17 +3,17 @@ this.encounter_gnomes_event <- this.inherit("scripts/events/event", {
 	function create()
 	{
 		this.m.ID = "event.encounter_gnomes";
-		this.m.Title = "Along the way...";
+		this.m.Title = "旅途中..";
 		this.m.Cooldown = 200.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_25.png[/img]You give the men a break and decide to scout the forest ahead yourself. Not more than five minutes out you hear the steady hum of chanting. Drawing your sword, you crest an embarkment of fallen trees and look over the side. There you see a dozen of what look like miniature men dancing in a circle. Half or whistling lowly while the rest keep repeating some word you\'ve never heard before. In the center of the nonsense is a mushroom and a very bored looking toad which, occasionally, one mini man will run up and touch before sprinting back to the circle grinning as though he got away with some roguish crime.\n\n This is too much. You crawl forward to get a better look only to have a branch snap under your weight. The little men stop instantly and look toward you like a herd of prey. One yells in gibberish and the lot of them skip and hop away, diving into tree holes or into bushes. When you go down to see them out, you find nothing. They\'ve vanished entirely. You go to the stump and find the toad impaled to the hilt by a dagger and the mushroom gone.",
+			Text = "[img]gfx/ui/events/event_25.png[/img]你让大家休息一下自己独自探访前方的森林。不到五分钟你就听到持续的吟唱的声音。 你抽出佩剑， 来到了一片倒下的树林边，看着树林的另一边 。 在哪里你看到有一群小矮人在绕着圈跳舞。他们一边吹口哨一边说着一些你听不懂的话语，讨论的中心是一个蘑菇和一些非常无聊的蟾蜍，偶尔，也会有小矮人欢笑着在圈子里调皮的跑进跑出,\n\n 喔！小矮人数量太多了，你向前爬为了看的更清楚，不小心弄翻了隐蔽的树枝，小矮人们都停止了歌舞，想看着猎物一样看着你， 突然他们大叫起来，奔跑跳跃着离去，有些躲入树洞有些藏进灌木丛中。你跑到他们跳舞的木桩边，但是什么也没找到，只有一个蘑菇和一只被匕首刺穿的蟾蜍。",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Strange.",
+					Text = "真奇怪.",
 					function getResult( _event )
 					{
 						return 0;
