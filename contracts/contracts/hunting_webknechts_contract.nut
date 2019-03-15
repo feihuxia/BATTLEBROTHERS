@@ -241,14 +241,14 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_43.png[/img]{%employer% waves you into his room. You notice that there are pitchfork-armed men keeping vigilant watch by means of grimly staring out his windows, though one of these fellows is clearly asleep against the wall. You ask the settlement\'s mayor what it is he wants. He gets to the point.%SPEECH_ON%Townsfolk in the hinterland are reporting monstrosities taking children and dogs and the like. Now I don\'t mean to give leeway to paranoia and superstition, but it sounds an awful lot like these reports are talking about spiders. Webknechts as my father would call \'em, and if it\'s true then it is likely they\'ve a nest in these parts and I need you to find and destroy it. Are you interested, sellsword?%SPEECH_OFF% | You find %employer% stretching a cobweb between two forks. He turns one of the utensils and wraps the webbing around a twine. Sighing, he finally looks at you.%SPEECH_ON%I\'ve little mind to bring sellswords to these parts, but I\'m at my wit\'s end here. Enormous spiders are afoot, stealing livestock, pets. One lady reported her infant taken from the crib, all there being a pit of webbing where it slept. I need these horrid creatures taken care of, their nest destroyed. With proper incentive, would you be interested?%SPEECH_OFF% | You come to %employer% and your shadow alone startles the man. He sits up straight at his desk and nods.%SPEECH_ON%Ah, I got the fits. No mind to your being here, sellsword, though you\'re scary enough, but word around these parts is that large spiders are afoot. I\'ve reason to believe the stories, being that I\'d gone to a farmstead and seen the large webbings and the devoured livestock. I need a man privy to absolute violence, speaking to you here, and I need such a man to find the nest of monsters and put them to an end. Are you interested?%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_43.png[/img]{%employer% 把你送到他的房间. 你注意到，有两个武装的人员冷酷地盯着窗户，保持警惕，尽管其中一个家伙显然靠着墙睡着了。你问市长他想要什么？%SPEECH_ON%城里的居民报告说，怪物带走了孩子和狗等。这些报告听起来谈论的很像是蜘蛛。巨型蜘蛛，正如我父亲所说，如果它是真的，那么它们很可能在某些地方筑巢，我需要你找到并摧毁它。你有兴趣吗，剑士?%SPEECH_OFF% | 当你进入%employer%的房间时，你发现那个男人弯腰站在他的窗前，几乎是在秘密地向外张望。他的眼睛又细又长。他拉起窗帘，转头看着你。%SPEECH_ON%巨大的蜘蛛在我的眼皮底下，偷走牲畜、宠物。我不想把我的士兵们带到那些地方，但我在这里已经无计可施了。我需要杀死这些可怕的生物，把它们的巢摧毁。有了适当的奖励，你会感兴趣吗？%SPEECH_OFF% | 你到了%employer%那里，你的影子吓到了那个人。他笔直地坐在书桌前抬起头来。%SPEECH_ON%啊，真是太吓人了。别介意，剑士，尽管你已经够吓人了，但这地方的大蜘蛛更吓人。我有理由相信这些故事，因为我去了一个农庄，看到了巨大的蜘蛛网和被吃掉的牲畜。我需要一个了解绝对暴力的人，我需要一个这样的人来找到怪物的巢穴并终结它们. 你有兴趣吗?%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{How much crowns can you muster? | Let\'s talk pay. | Let\'s talk crowns.}",
+					Text = "{你能凑多少克朗? | 让我们谈谈报酬. | 让我们谈谈能得到多少克朗.}",
 					function getResult()
 					{
 						return "Negotiation";
@@ -256,7 +256,7 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "{This doesn\'t sound like our kind of work.}",
+					Text = "{这听起来不像是我们的工作.}",
 					function getResult()
 					{
 						this.World.Contracts.removeContract(this.Contract);
@@ -272,13 +272,13 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Banter",
-			Title = "Along the way...",
-			Text = "[img]gfx/ui/events/event_25.png[/img]{You stumble across a dead cow with its flesh sucked to its very bones, yet its hide does not carry any sign of being sundried. %randombrother% crouches and runs his finger among a number of puncture wounds. He nods.%SPEECH_ON%The work of a webknecht, no doubt to it. I\'d say they poisoned it and then fed upon its paralyzed body. And a fresh corpse means they\'re close...%SPEECH_OFF% | You find a webbed corpse leaning against a lone tree. You slash the filaments away. A child\'s body slips out and crumples to the ground. Its face is tight to the bone, a pallid skull with the eyeballs peeking from deep in the sockets. The tongue is equally receded and there\'s hardly a nose at all. %randombrother% spits and nods.%SPEECH_ON%Alright. We\'re close. Rather, they\'re close. If it\'s solace to you folks, the boy died prior to this here state of being. Webknechts bring poison with their puncturing and no kid would stand to survive it long.%SPEECH_OFF%Well that\'s good. Time for the men to find these monsters. | You find a lad hiding beneath an upturned wheelbarrow. He refuses to come out, his tiny head staring out from the shelter like a pearl from a clamshell. You ask what he\'s doing. He frantically explains that he\'s hiding from the spiders and that you should go.%SPEECH_ON%Getcher own barrow. This here\'s mine.%SPEECH_OFF% Brandishing your sword, you tell him that it\'s the spiders you\'re looking for. The boy stares at you. He nods.%SPEECH_ON%That\'s a right goddam bad idea, sir. And no, I ain\'t a clue where\'d they gone to. I was here with a caravan and do you see a caravan? No that\'s right you damn don\'t cause they all spider salad now, so git before they see you speaking to me!%SPEECH_OFF%The barrow clatters closed. You\'ve no mind to lift it back up, though you do give it a good kick as you depart.}",
+			Title = "沿路行走...",
+			Text = "[img]gfx/ui/events/event_25.png[/img]{你偶然遇见一头死牛，牛的肉被吸到骨头里，但它的皮却没有晒干的痕迹. %randombrother% 蹲下来，用手指在一堆伤口中摸索。他点头.%SPEECH_ON%毫无疑问，这是巨蛛的作品。它们毒死了牛，然后用牛身体喂养自己。一具新鲜的尸体意味着他们就在附近…%SPEECH_OFF% | 你发现一具被网包裹的尸体挂在一棵树上. 你把网剪掉。一个孩子的身体滑了出来，瘫倒在地。他的脸皮紧贴着骨头，苍白的头盖骨，眼珠从眼窝深处探出头来。舌头也同样萎缩，鼻子几乎都没有了.%SPEECH_ON%好吧，我不会自欺欺人。如果这对你们是一种安慰的话，那男孩在这种状态之前就死了。巨蛛的穿刺带着剧毒，没有一个孩子能活得长久.%SPEECH_OFF%那好。是找到这些怪物的时候了. | 你发现一个小伙子躲在一辆翻过来的手推车下面。他拒绝出来，他的小脑袋像贝壳上的珍珠一样向外凝视。你问他在干什么。他疯狂地解释说他在躲避蜘蛛，你应该马上离开.%SPEECH_ON%离开我的手推车，这是我的.%SPEECH_OFF% 你挥舞着剑，告诉他你要找的是蜘蛛。那男孩盯着你看。他点点头.%SPEECH_ON%这是一个该死的坏主意，先生。不，我不知道它们去了哪里。我和一辆货车一起来的。你看到货车了吗?不，我想你不会看到的，因为他们变成蜘蛛的沙拉了，所以在它们看到你和我说话之前赶紧走吧!%SPEECH_OFF%手推车啪的一声关上了。你不介意把它抬起来，尽管你离开时踢了它一脚.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Keep your eyes peeled.",
+					Text = "小心行动.",
 					function getResult()
 					{
 						return 0;
@@ -289,13 +289,13 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Encounter",
-			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_110.png[/img]{The nest of webknechts is a pit of earth wreathed in white. At its rim are thin filaments which list about at even the slightest suggestion of a breeze. Marching your company inward, the webbing begins to take a sort of civilized shape, as though you were walking in from wintery hinterland, the recency of its creation apparent in its tight trappings: deer, dogs, man-sized cocoons which show no sign of life, all bound snug in the hangars of white silos and planes like morsels lost upon a pale rug. A black shadow saunters up behind the veiled domicile, coming to the fore with its legs squatting defilade, its head crouched beyond them as though the foul cretin were gated by its own stride. A human hand sucks in and out from its mandibles like some macabre pacifier. You\'ve come to the right place. | The webknecht nest is silent and the clatter of the company\'s arrival seems apocryphal, with the chink and clink of metals distinctly sharp in their trespass.\n\n You find a man hanging upside down from a tree, his whole body cocooned save his face which is stretched and pulled by the filaments. He asks you cut his eyelids free of the webbing which you oblige. His lids slowly close, the crust of the dry eyes crackling closed for the first time in possibly days. But then they snap open and the man screams. The cocoon bubbles at his waist and rips apart, a sputtering of tiny black spiders flooding out. The man\'s body jolts violently around as the swarm consumes him, his gargled screams rife with the skittering of spiderlings which fill his lungs and which he coughs out in dying fits. Horrified, you step back only to see a throng of much larger spiders emerging from around the trees! | The nest is an easy spot, a stretch of winterscape where there\'s no cold, the white webbing patchy and listing from every tree, every copse, every inch of the place. You march the company right in, weapons drawn, and there you come across the wrapped bodies, their centers blown open and blackened, a spawn of spiderlings sucking on the organs.\n\n  Staring up, you see red eyes flare between the branches of the surrounding trees, the whole arachnidian arboretum come alive, its wardens perched there amongst the brush with their squatted legs indistinguishable from the branches, the enemy hiding in plain sight. You damn near shit yourself when a supposed tree unfolds entirely, every wooden stalk but a spider leg, the arborous sleight descending on the company chittering and chamfering for a bite!}",
+			Title = "当你靠近...",
+			Text = "[img]gfx/ui/events/event_110.png[/img]{蜘蛛的巢穴是一个白色的土坑。在它的边缘有些细丝，一丝微风的吹拂过后能隐约可见. 随着你的同伴向里走去，蛛网开始散开，就好像你走进了冬天，漫天雪花。蛛网中严密的包裹物显现出来：鹿、狗、没有生命迹象的人，都紧紧地绑在白色蛛茧中。一个黑影在岩石后面悠闲地走着，两腿蹲在地上，脸伏在外面，好像那肮脏的克里丁人. 一只手被像一个奶嘴一样从它的下颌骨中吸进和吸出。你来对地方了. | 蜘蛛的巢穴是无声无息的，雇佣军到来的嘈杂声，金属的叮当声在他们的进入地过程中尤为明显.\n\n 你发现一个倒挂在树上的人，他的全身都结了茧，只剩下被细丝拉长的脸。他要求你把他眼皮上的蛛网割开。他的眼皮慢慢合上，干裂的眼皮在几天内第一次合上。但突然他睁开眼，那人尖叫起来。茧在他的腰上冒泡，撕开，一股微小的黑蜘蛛奔涌而出。当蛛群吞噬他时，这个人的身体剧烈地摇晃着，他那咯咯作响的尖叫声充斥着蜘蛛的叫声，蜘蛛的叫声充满了他的肺，他在垂死的时候咳嗽出来。你被吓坏了，你后退一步，只看到一大群大得多的蜘蛛从树周围冒出来！ | 巢穴是一个容易找到的地方，到处是一片寒冷的冬季景观，从每棵树、每片树林、每一寸地方都可以看到白色的斑驳的蛛丝。你和兄弟们进入这里，拔出武器，在那里你遇到了被包裹的尸体，他们的身体被炸开并变黑，一大群蜘蛛在器官上吮吸.\n\n  你抬头一看，周围树木的枝条间闪着红眼，整个蛛形植物园都活了，它的守卫们蹲在灌木丛中，蹲着的腿和枝条一模一样，敌人就躲在眼前。当一棵树完全展开，树枝上挂满了蜘蛛，你刚才还再想如何找到它们，现在看来简直是自寻烦恼!}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Charge!",
+					Text = "冲锋!",
 					function getResult()
 					{
 						this.Contract.getActiveState().onTargetAttacked(this.Contract.m.Target, this.Contract.m.IsPlayerAttacking);
@@ -307,13 +307,13 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Victory",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_123.png[/img]{The last of the webknechts is dealt with, its legs gating itself in as though to eternally clutch at the weapon which had slain it. You nod at the company\'s good work then order the whole place torched. Fires rapidly run the length of the webs, breaking bridges of filament apart and sending fiery doom to their connectors. The whole nest is consumed in the inferno and somewhere deep in its bedding you hear the shrill cry of spiderlings set alight. | You step close to the last of the webknechts and stare at its grisly maw. It carries a vicious set of mandibles for a sort of gum guard, the mouth itself a slit lined with razor sharp teeth pointed counter-current as to shred anything that tried to escape.\n\n You order the whole nest put to the torch. As the flames rise, there comes the cry of spiderlings somewhere in their warrens. | You ready a return to %employer%, but first have the nest torched entirely. The company stands before the flames listening to the shrill cries of spiderlings and at times laughing at the little mites scuttling around like tiny fireballs on legs. | The spiders defeated, you have the whole godsforsaken place burned and ready a return to %employer%. As the fires rise, tiny spiderlings come running out with their bodies aflame like fireflies in the night. A few sellswords take up an impromptu game of seeing who can squash the most, an affair which ends with a particularly ambitious spiderling almost setting a mercenary\'s pants alight.}",
+			Title = "战斗之后...",
+			Text = "[img]gfx/ui/events/event_123.png[/img]{最后一只蜘蛛被处理了，它的腿像是要永远地抓住杀死它的武器。你对雇佣军的好兄弟们点头确认，然后命令把整个地方都烧了。火势迅速蔓延到整个地区，把细丝桥烧裂。整个巢穴在地狱中被吞噬，在它的深处，你听到了蜘蛛的尖叫声. | 你走近最后一只蜘蛛，凝视着它可怕的内脏。它有一副邪恶的下颌骨作为护牙套，嘴本身就是一条缝，缝里布满锋利的牙齿，可以撕碎任何试图逃跑的东西。\n\n 你命令把整个蜘蛛巢都放火烧掉。当火焰升起时，在某个地方传来了蜘蛛的叫声。 | 你准备好了一份给%employer%的报告，但是首先要把整个蜘蛛巢都烧掉。雇佣军战队站在火焰前，听着蜘蛛的尖叫声，有些还嘲笑那些腿上挂着火焰四处飞来飞去的小虫子。 }",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Let\'s be done with this, we have crowns to collect.",
+					Text = "让我们把这件事做完吧，我们还有克朗要拿.",
 					function getResult()
 					{
 						return 0;
@@ -324,13 +324,13 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "OldArmor",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_123.png[/img]{With the webknechts dispatched you have the company briefly search the creatures\' nest, though the mercenaries are ordered to never wander alone. You muck about as well, %randombrother% at your side. Together, you spot a tree that\'s remarkably untouched by the webs. As you circle around, you find a knight\'s corpse leaning against its trunk. His hand rests atop a broken sword\'s pommel, the other hand is missing altogether, nothing but sleeve at the wrist with the mutilated arm couched at his belly. The corpse rests in a nest of its own making, a thicket of what look like spoiled rhubarb stalks and decayed carapaces, the broken bodies caverned and smelling of poison. %randombrother% nods.%SPEECH_ON%That\'s a right shame. I\'d wager he would have made a sound addition to the %companyname%, whoever he was.%SPEECH_OFF%Indeed, it has all the look of a great fighter\'s end. You\'ve mind to bury him, but you\'ve no time. You tell %randombrother% to fetch what he can from the corpse and to ready a return to %employer%.}",
+			Title = "战斗之后...",
+			Text = "[img]gfx/ui/events/event_123.png[/img]{根除了蜘蛛的威胁，你就可以让雇佣军们简单地搜索这些生物的巢穴，尽管雇佣军被命令永远不要独自游荡。你也在搜索，%randombrother%在你身边。你发现一棵树没有被网碰过。当你绕圈时，你发现一具骑士的尸体。他的手放在一把断了的剑的把手上，另一只手完全不见了，只剩下手腕上的袖子，残缺不全的手臂蜷缩着。尸体躺在自己做的棺材里，一个像变质的大黄茎和腐烂的甲壳的灌木丛里，破碎的尸体陷在洞穴里，散发着有毒的气味。%randombrother%说了一句话%SPEECH_ON%真丢脸。我敢打赌，无论他是谁，他都是战队历史上的耻辱。%SPEECH_OFF%实际上，这看起来就像是一个伟大的战士的终结。你想埋葬他，但你没有时间。你告诉%randombrother%从尸体中取出他能得到的物品并准备报告给%employer%。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Back to %townname%!",
+					Text = "回到 %townname%!",
 					function getResult()
 					{
 						return 0;
@@ -356,21 +356,21 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain a " + item.getName()
+					text = "你获得了 " + item.getName()
 				});
 			}
 
 		});
 		this.m.Screens.push({
 			ID = "Survivor",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_123.png[/img]{The battle over, you find a man dangling by webbing attached to his feet. Half of his body is bound in the filaments and more dangle from his hip like a shredded dress. Seems the spiders deserted him upon the %companyname%\'s arrival. He smiles at the sight of you.%SPEECH_ON%Hey there. Mercenaries ain\'t ya? Yeah I see it. You\'ve no mind being here lest it was coin that brought ya, and you fought like bastards that\'d been bet on. Absolute savages.%SPEECH_OFF%You ask the man what you\'ll get for cutting him down. He turns his head up, his whole body then starting to swing about and at times twist him away from you entirely. He speaks, either to you or to whichever direction he\'s facing.%SPEECH_ON%Aye, good question! Well, you may not see it here and now, but I\'m a sellsword m\'self, and wouldn\'t you know that my company and its captain all been done stringed up and consumed whole by them spiders! Cut me down and I\'ve nowhere else better to go then your company. That is, if you\'d have me.%SPEECH_OFF%You have the man cut free and debate what to do before returning to %employer%.}",
+			Title = "战斗之后...",
+			Text = "[img]gfx/ui/events/event_123.png[/img]{战斗结束后，你会发现一个人被绑在茧里。他一半的身体被纤维束住，更多的像碎布衣服一样从臀部垂下。似乎蜘蛛在%companyname%到来时就离开了他。他看到你非常高兴。%SPEECH_ON%嘿，这里。是不是雇佣兵？是的，我明白了。你需要克朗，所以你来到了这里，救我出来你就能得到克朗.%SPEECH_OFF%你问那个人，如果你砍掉他会得到什么。他抬起头，整个身体开始颤抖。%SPEECH_ON%是的，好问题！好吧，你现在可能看不到克朗，但我是一个卖宝剑的人，你难道不知道我的商店？把我砍倒，你的战队就再也见不到我这么能干的人了。也就是说，你能拥有我.%SPEECH_OFF%你释放了那个人并讨论在返回%employer%之前该怎么做.}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Welcome to the company!",
+					Text = "欢迎加入本战队!",
 					function getResult()
 					{
 						this.World.getPlayerRoster().add(this.Contract.m.Dude);
@@ -382,7 +382,7 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "You\'ll have to find your luck elsewhere.",
+					Text = "你得去别处碰碰运气.",
 					function getResult()
 					{
 						this.World.getTemporaryRoster().clear();
@@ -405,7 +405,7 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 					this.Contract.m.Dude.getSkills().add(this.new("scripts/skills/traits/fear_beasts_trait"));
 				}
 
-				this.Contract.m.Dude.getBackground().m.RawDescription = "You found %name% dangling from a tree, the sellsword the last survivor of a mercenary band sent to kill webknechts. He joined the company after you rescued him.";
+				this.Contract.m.Dude.getBackground().m.RawDescription = "你发现%name%被挂在树上，他是一个雇佣队派来杀死蜘蛛的最后一个幸存者。你救了他之后他加入了战队.";
 				this.Contract.m.Dude.getBackground().buildDescription(true);
 				this.Contract.m.Dude.worsenMood(0.5, "Lost his previous company to webknechts");
 				this.Contract.m.Dude.worsenMood(0.5, "Almost consumed alive by webknechts");
@@ -436,15 +436,15 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Success",
-			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_85.png[/img]{%employer% meets you at the town entrance and there\'s a crowd of folks beside him. He welcomes you warmly, stating he had a scout following you who saw the whole battle unfold. After he hands you your reward, the townsfolk come forward one by one, many of which are reluctant to stare a sellsword in the eyes, but they offer a few gifts as thanks for relieving them of the webknecht horrors. | You have to track down %employer%, ultimately finding the man in a stable livery with a peasant girl. He saws upward from the hay, startling the horses which whinny and stamp their feet. Half-dressed, the man states he already has your pay and forks it over. Eyeing you eyeing the girl, he then starts to grab whatever\'s in reach, including from the saddlebags of stabled mounts, and hands them over.%SPEECH_ON%The, uh, townsfolk also sought to pitch in. You know, as thanks.%SPEECH_OFF%Right. For further \'thanks\' you ask if he\'ll give you whatever\'s in a nearby satchel. | %employer% welcomes you back with a great clap and rub of his hands, as though you\'d just brought in a turkey and not the horrifying evidence of your victory. After paying you the agreed reward, you hear some surprising news. The mayor states that the estate of a lost townsman could not be properly divvied up and, as further thanks, you\'re free to take what\'s left of it.}",
+			Title = "当你回来...",
+			Text = "[img]gfx/ui/events/event_85.png[/img]{%employer% 在镇子门口遇见你，他旁边有一群人. 他热情地欢迎你，说他有一个侦察兵跟着你，他看到了整个战斗的展开。在他把你的奖赏交给你之后，镇上的居民一个接一个地走了出来，他们中的许多人都不愿直视你的眼睛，但他们提供了一些礼物，以感谢你们解除了蜘蛛的恐怖威胁。 | %employer% 欢迎你回来，用他热烈的掌声，就好像你刚带来了一只火鸡，而不是你胜利的证据。在付给你约定的报酬之后，你听到了一些令人惊讶的消息。市长说，一个失散的城镇居民的财产不能适当地处理，而且，作为进一步的感谢，你可以自由地拿走剩下的。}",
 			Image = "",
 			Characters = [],
 			List = [],
 			ShowEmployer = true,
 			Options = [
 				{
-					Text = "A successful hunt.",
+					Text = "一次成功的狩猎.",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
@@ -461,7 +461,7 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
+					text = "你获得 [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] 克朗"
 				});
 				local food;
 				local r = this.Math.rand(1, 3);
@@ -483,7 +483,7 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + food.getIcon(),
-					text = "You gain " + food.getName()
+					text = "你获得 " + food.getName()
 				});
 				this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
 			}

@@ -1,4 +1,4 @@
-this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
+﻿this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 	m = {
 		Target = null,
 		Dude = null,
@@ -231,14 +231,15 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_79.png[/img]{When you enter %employer%\'s room you find the man stooped beside his window, looking out it with nearly conspiratorial flinching. His eyes slim and open wide and slim again. He snaps a curtain over the window and jerks his head to look at you.%SPEECH_ON%You didn\'t happen to see a very angry woman heading my way, did you? Ah, nevermind it. Look at this.%SPEECH_OFF%He tosses you a scroll which you unfurl. There\'s a crude drawing of what looks like a man hunched over an ant or some insect. You can\'t really tell. %employer% claps his hands.%SPEECH_ON%Local farmers are reporting missing livestock. All they found were footprints large enough for a man to lay a coffin in. Sounds like hearsay and rumormongering to me, could be rivals trying to hide their misdoings, but I\'ll leave you to it. Search the surrounding lands and see what you find. If you come upon an actual giant I think you know what do.%SPEECH_OFF% | You find %employer% sitting at his desk and seemingly in congress with half the village\'s farmers. They\'re hunched over scrolls and streaking lead prints over the papers, drawing up what look like giants or fat men with horns. One man is doodling a stick figure farking another stick figure. %employer% throws you a more prescient page upon which is the visage of a monster.%SPEECH_ON%These fine gentlemen tell me that a giant is afoot. I do not wish to doubt the concerns of my peers and so I request your services, sellsword. The money\'s on the table, all you need to do is search the area round %townname% and find this beast. What say you?%SPEECH_OFF% | You find %employer% staving off a throng of peasants. They\'ve entered his room with pitchforks and unlit torches, which he must constantly warn them not to light given the all-wood architecture. Seeing you, %employer% calls out like a drowning man yelling for a raft.%SPEECH_ON%Sellsword! By the gods get over here. These fine folks state that there is a beast afoot.%SPEECH_OFF%One of the peasants stomps his pitchfork into the ground.%SPEECH_ON%Naw, no ordinary beast, but a monster ya? A giant! A biggun. A big ol\' giant. Out there. Right out that way. I seen it.%SPEECH_OFF%With a sigh and a nod, %employer% butts back in.%SPEECH_ON%Right. So, I\'m willing to offer you payment to seek this giant out. Are you up to the task?%SPEECH_OFF% | %employer% is at his desk with his head in his hands. He\'s mumbling to himself.%SPEECH_ON%Monster this, beast that. \'Oh my chicken got taken\', oh maybe you should consider putting it in a pen you damned piece of - oh hi sellsword!%SPEECH_OFF%The man rises from his chair and throws you a piece of paper. There\'s a crude drawing of a large headed beast on it.%SPEECH_ON%Folks are reporting there\'s a giant roaming around these parts. I\'ll pay good money to see these reports investigated properly, and of course good money to see the beast slain properly as well. Are you up for it? Please say yes.%SPEECH_OFF% | %employer% reluctantly welcomes you into his room, pretending that he doesn\'t need your help, thought it\'s clear he\'d rather not want it at all.%SPEECH_ON%Ah, mercenary. It\'s not often a place such as %townname% would seek out men of your ilk, but I\'m afraid there have been sightings of unholds scouring these lands, stealing enough livestock that the townsfolk have put in the coin to fetch a man such as yourself. Are you interested in hunting down this foul creature?%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_79.png[/img]{当你进入%employer%的房间时，你发现那个男人弯腰站在他的窗前，几乎是在秘密地向外张望。他的眼睛又细又长。他拉起窗帘，转头看着你。%SPEECH_ON%你没有碰巧看到一个非常愤怒的女人朝我走来，是吗？啊，别想了。看看这个.%SPEECH_OFF%他把打开的画卷扔给你。有一幅粗略的图画，画的是一个男人弓着背，伏在蚂蚁或昆虫身上。你不能辨别真伪。%SPEECH_ON%当地农民报告牲畜丢失。他们发现的只是足印，足印大到足以让一个人躺进棺材。听上去像是道听途说和流言蜚语，可能是竞争对手试图隐瞒他们的错误，但我会让你相信的。搜索周围的土地，看看你发现了什么。如果你遇到一个真正的巨魔，我想你知道该怎么做.%SPEECH_OFF% | 你发现%employer%坐在他的办公桌旁，似乎和一半的市民在会面。他们弯腰在卷轴上，在纸上画画，画出一幅像巨人或长着角的胖男人的画。%employer%给你一张更清晰生动的画纸，上面是怪物的容貌。%SPEECH_ON%这些绅士告诉我，一个巨人正在逼近。我不想让我的市民担忧，所以我请求你的服务，剑士。钱在桌子上，你所要做的就是搜索%townname%周围的区域并找到这个野兽。你意下如何？%SPEECH_OFF% | 你发现%employer%真在躲避一群农民。他们带着干草叉和未点燃的火把进入他的房间，考虑到全木结构，他必须不断警告他们不要点燃。看到你，%employer%像一个溺水的人一样喊着要一条木筏。%SPEECH_ON%剑士！上帝保佑你到这里来。这些好人说有一只野兽在村里.%SPEECH_OFF%一个农民把他的干草叉跺到地上.%SPEECH_ON%不，不是普通的野兽，而是怪物呀！巨人！一个巨大的欧拉巨魔。在那里。就在那里。我看见了.%SPEECH_OFF%一声叹气，%employer%又插嘴了。%SPEECH_ON%非常好。所以，我愿意给你钱来寻找这个巨人。你能胜任这项任务吗？%SPEECH_OFF% }",
+			//| %employer% is at his desk with his head in his hands. He\'s mumbling to himself.%SPEECH_ON%Monster this, beast that. \'Oh my chicken got taken\', oh maybe you should consider putting it in a pen you damned piece of - oh hi sellsword!%SPEECH_OFF%The man rises from his chair and throws you a piece of paper. There\'s a crude drawing of a large headed beast on it.%SPEECH_ON%Folks are reporting there\'s a giant roaming around these parts. I\'ll pay good money to see these reports investigated properly, and of course good money to see the beast slain properly as well. Are you up for it? Please say yes.%SPEECH_OFF% | %employer% reluctantly welcomes you into his room, pretending that he doesn\'t need your help, thought it\'s clear he\'d rather not want it at all.%SPEECH_ON%Ah, mercenary. It\'s not often a place such as %townname% would seek out men of your ilk, but I\'m afraid there have been sightings of unholds scouring these lands, stealing enough livestock that the townsfolk have put in the coin to fetch a man such as yourself. Are you interested in hunting down this foul creature?%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{Fighting giants won\'t come cheap. | The %companyname% can help for the right price. | Let\'s talk crowns.}",
+					Text = "{和巨人战斗的价格可不便宜. | 只要你开价合适，我们 %companyname% 会帮助你的. | 让我们谈谈价格.}",
 					function getResult()
 					{
 						return "Negotiation";
@@ -246,7 +247,7 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "{This doesn\'t sound like our kind of work. | This won\'t be worth the risk.}",
+					Text = "{这听起来不像是什么好工作. | 不值得为这事冒险.}",
 					function getResult()
 					{
 						this.World.Contracts.removeContract(this.Contract);
@@ -263,12 +264,13 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Banter",
 			Title = "Along the way...",
-			Text = "[img]gfx/ui/events/event_71.png[/img]{%randombrother% returns from his reconnoiter. He reports that a nearby farm has been destroyed, a hole blown through its roof likened to someone kicking an ant pile. You ask if there are survivors. He nods.%SPEECH_ON%Of a sort. A young lad who refuses to speak a word. A woman who kept yelling at me to git. That aside, no. They\'re survivors by circumstance and good luck. This world won\'t permit them being here much longer.%SPEECH_OFF%You tell the sellsword to keep the judgments to himself and get the company moving forward again. | You find a half a cow beside the path. It has not been butchered so much as pulled apart unevenly and with great violence. Much of its innards have slopped to the ground in a pile. Footprints the size of graves lead away. The trail of carnage goes through a fence which lays sundered and further down the way you can see the wreckage of a barn. %randombrother% laughs.%SPEECH_ON%All we\'re missing is a giant pile of shit.%SPEECH_OFF%You tell him to check his boot. | A few peasants on the road warn you off.%SPEECH_ON%Get on out of here! That armor won\'t save you from a single lick!%SPEECH_OFF%You ask them about the unhold and they garner up a great description of a monstrous giant which tore through the land not long ago. It appears you\'re on the right track. | The unhold has left a giant mess in its wake. Stomped livestock, others broke apart and slurped like honeysuckles. Chickens mill about pecking the ground, a farmer keeping watch of them. He nods.%SPEECH_ON%Just missed the show.%SPEECH_OFF%Looks like you\'re getting close.}",
+			Text = "[img]gfx/ui/events/event_71.png[/img]{%randombrother% 侦察归来。他报告说，附近的一个农场被毁，屋顶上有一个洞被炸开，就像有人在踢一堆蚂蚁。你问是否有幸存者。他点了点头.%SPEECH_ON%当然有。一个拒绝说话的年轻小伙子。一个女人不停地叫我滚蛋。除了他们,没有人了。他们是环境和好运的幸存者。这个世界不会允许他们在这里呆太久%SPEECH_OFF%你告诉佣兵，让他自己做出判断，让战队重新前进. }",
+			//| You find a half a cow beside the path. It has not been butchered so much as pulled apart unevenly and with great violence. Much of its innards have slopped to the ground in a pile. Footprints the size of graves lead away. The trail of carnage goes through a fence which lays sundered and further down the way you can see the wreckage of a barn. %randombrother% laughs.%SPEECH_ON%All we\'re missing is a giant pile of shit.%SPEECH_OFF%You tell him to check his boot. | A few peasants on the road warn you off.%SPEECH_ON%Get on out of here! That armor won\'t save you from a single lick!%SPEECH_OFF%You ask them about the unhold and they garner up a great description of a monstrous giant which tore through the land not long ago. It appears you\'re on the right track. | The unhold has left a giant mess in its wake. Stomped livestock, others broke apart and slurped like honeysuckles. Chickens mill about pecking the ground, a farmer keeping watch of them. He nods.%SPEECH_ON%Just missed the show.%SPEECH_OFF%Looks like you\'re getting close.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "They can\'t be far.",
+					Text = "他们离这不远了.",
 					function getResult()
 					{
 						return 0;
@@ -280,12 +282,13 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Encounter",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_104.png[/img]{The unholds in part remind you of any group of laborers, circled around a dead fire, rubbing their bellies and looking like boulders there hunched on the ground. Of course, your arrival brings them to their feet and destroys any notion that you\'ve anything resembling them at all, except maybe similarly sized third legs. The beasts growl and stomp, but they do not attack. They throw their hands out and try and shoo you away. But the %companyname% didn\'t come this far to quit. You draw your sword and lead the men forward. | Each unhold is enormous beyond measure. They\'re bewildered at the ants come to do battle with them. One scratches his head and blithely belches, freckling the company with bovine blood. They seem to recognize the steel of your drawn sword, though, and the flash of it wakes them from their satiated slumbers. After earthshaking stomps of their feet, they stride forward to run you from the land or into it. | The %companyname% stacked from leg to head still would not size up to a single unhold. Yet here you stand, waving a sword and ready to combat the tremendous monsters. They regard you with incredulous stares, not quite sure what to make of these tiny creatures so willing to confront them. One scratches his belly and flakes of molted skin the size of dogs come twirling down. Well, there\'s no point dwelling on it any longer. You order the company forward! | The unhold sniff you out and come charging across the land to meet the %companyname%. They look like toddlers the size of mountains, legs awkwardly trundling forward yet each step sends tremors through the earth, their maws agape and slobbering for a meal. You calmly draw out your sword and put the men into formation.}",
+			Text = "[img]gfx/ui/events/event_104.png[/img]{每一个巨魔都是不可估量的巨大。他们被前来与他们战斗的蚂蚁弄糊涂了。一个人挠挠头，愉快地打了个嗝，用牛血把战队弄得满脸雀斑。然而，他们似乎认出了你拔出的剑，它的闪光把他们从酣睡中唤醒。在他们的脚上踏出惊天动地的响声之后，他们大步向前，把你从这片土地上赶出去}",
+				//The unholds in part remind you of any group of laborers, circled around a dead fire, rubbing their bellies and looking like boulders there hunched on the ground. Of course, your arrival brings them to their feet and destroys any notion that you\'ve anything resembling them at all, except maybe similarly sized third legs. The beasts growl and stomp, but they do not attack. They throw their hands out and try and shoo you away. But the %companyname% didn\'t come this far to quit. You draw your sword and lead the men forward. | Each unhold is enormous beyond measure. They\'re bewildered at the ants come to do battle with them. One scratches his head and blithely belches, freckling the company with bovine blood. They seem to recognize the steel of your drawn sword, though, and the flash of it wakes them from their satiated slumbers. After earthshaking stomps of their feet, they stride forward to run you from the land or into it. | The %companyname% stacked from leg to head still would not size up to a single unhold. Yet here you stand, waving a sword and ready to combat the tremendous monsters. They regard you with incredulous stares, not quite sure what to make of these tiny creatures so willing to confront them. One scratches his belly and flakes of molted skin the size of dogs come twirling down. Well, there\'s no point dwelling on it any longer. You order the company forward! | The unhold sniff you out and come charging across the land to meet the %companyname%. They look like toddlers the size of mountains, legs awkwardly trundling forward yet each step sends tremors through the earth, their maws agape and slobbering for a meal. You calmly draw out your sword and put the men into formation.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Charge!",
+					Text = "冲锋!",
 					function getResult()
 					{
 						this.Contract.getActiveState().onTargetAttacked(this.Contract.m.Target, this.Contract.m.IsPlayerAttacking);
@@ -298,13 +301,13 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "DriveThemOff",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_104.png[/img]{As you put the men into formation, %shouter% goes running by you and right toward the unholds. He\'s hooting and hollering, his arms flailing like a sea cretin drawn up by the hook. The unholds pause and stare amongst one another. You\'re not sure whether this should be allowed to continue...}",
+			Text = "[img]gfx/ui/events/event_104.png[/img]{当你让士兵们排成队形时，%shouter%从你身边跑过去，径直朝打开的门跑去。他又叫又叫，他的手臂像被钩子钩住的海怪一样扑腾着。您不确定是否应该允许这种情况继续下去...}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Attack them!",
+					Text = "攻击他们!",
 					function getResult()
 					{
 						this.Contract.getActiveState().onTargetAttacked(this.Contract.m.Target, this.Contract.m.IsPlayerAttacking);
@@ -313,7 +316,7 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "%shouter% knows what he\'s doing.",
+					Text = "%shouter% 知道他在干什么.",
 					function getResult()
 					{
 						if (this.Math.rand(1, 100) <= 35)
@@ -337,13 +340,13 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "DriveThemOffSuccess",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_104.png[/img]{Against better judgment, you let %shouter% go. He doesn\'t stop for nothing, like he was chasing down a throng of beautiful women undressing just for him. Shockingly, the unholds take a step back. They start to retreat one by one until only a lone giant remains.\n\n%shouter% runs up to its feet like a yapping dog and lets forth some atavistic scream so hoarsely made that you wonder if every ancestor of the earth buried or otherwise had heard it. The unhold slings an arm before its face as though to shield it, then starts stepping back, further and further until it\'s gone! They\'re all gone!}",
+			Text = "[img]gfx/ui/events/event_104.png[/img]{%shouter%像一条狂吠的狗，跑到巨魔的脚边，发出一种返祖的尖叫，声音嘶哑得让人怀疑是不是地球上的每一位祖先都听到了它的叫声。巨魔开始时好像要挡住它，然后开始后退，越来越远，直到消失!他们都消失了}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "And don\'t come back!",
+					Text = "别再回来了！",
 					function getResult()
 					{
 						this.Contract.m.Target.die();
@@ -373,13 +376,13 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "DriveThemOffFailure",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_104.png[/img]{Against better judgment, you let %shouter% go. He doesn\'t stop for nothing, like he was chasing down a throng of beautiful women undressing just for him. Shockingly, the unholds take a step back. They start to retreat one by one until only a lone giant remains.\n\n%shouter% runs up to its feet like a yapping dog and lets forth some atavistic scream so hoarsely made that you wonder if every ancestor of the earth buried or otherwise had heard it. The unhold slings an arm before its face and then throws it down and swats %shouter% away. The man goes cartwheeling through the air and his screams go with him like a rabbit stolen up by a hawk. His shouts somersault back to earth in an echo of dizzying whoops and he lands with a hardy thud. The giant jiggles with an earthen chuckle. It\'s amusement catches the attention of the departed unholds who all turn around and start to return.}",
+			Text = "[img]gfx/ui/events/event_104.png[/img]{%shouter%像一条狂吠的狗，跑到巨魔的脚边，发出一种返祖的尖叫，声音嘶哑得让人怀疑是不是地球上的每一位祖先都听到了它的叫声。巨魔伸手抓住了他，把他甩在地上，%shouter%发出了痛苦的喊叫.}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "So much for that.",
+					Text = "到此为止.",
 					function getResult()
 					{
 						this.Contract.getActiveState().onTargetAttacked(this.Contract.m.Target, false);
@@ -422,13 +425,13 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Victory",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_113.png[/img]{The unholds slain, you order the men to take what trophies they can as proof of your work, and possibly as something to use for yourself. If man can make leather from a cow, surely there\'s something worthy of giants such as these? Either way, %employer% will be waiting. | With the giants slain to the last, %employer% should be awaiting your return now. His town will be forever safe now and no longer require the services of sellswords such as yourself. You dwell on the thought until you start a laughing fit to which none of your men understand. You tell them to ignore it and round them up for the return trip. | The ghastly monsters put up a hell of a fight, but they were no match for the collective strength, smarts, and sheer balls of the %companyname%. You tell the men to take what trophies they can and to prepare for the return march to %employer%. | With the last of the unholds slain, you round up the men. %randombrother% is found jumping on one\'s belly and seems disappointed when you tell him to quit it and get down. %employer% will be looking for killers and their trophies, not a bunch of children.}",
+			Title = "战斗之后...",
+			Text = "[img]gfx/ui/events/event_113.png[/img]{你命令那些被你杀死的巨魔，拿出他们能证明自己的战利品，也许是你自己的东西。如果人能用牛做皮革，那么肯定有什么东西配得上这些巨人?无论如何%employer%都在等你. | 当最后一个巨魔被杀, %employer% 现在应该在等你回来. 他的城镇将永远安全，不再需要像你这样的佣兵。你老是想着这件事，直到你笑得前仰后合，你的男人们都不明白。你告诉他们忽略它，把他们集合起来，准备返程.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Time to get paid.",
+					Text = "获得报酬的时间到了.",
 					function getResult()
 					{
 						return 0;
@@ -439,13 +442,13 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "SignsOfAFight",
-			Title = "After the battle...",
+			Title = "战斗之后...",
 			Text = "[img]gfx/ui/events/event_113.png[/img]{With the giants slain, you get the men ready for a return to %employer%, but %randombrother% fetches your attention with a bit of quiver in his throat. You head on over to see him standing before one of the felled unholds. He points across its flesh which has been torn asunder in slices and hangs like the ears of a corn stalk. The damage is far beyond the ability of your own weaponry. The sellsword turns and looks past you with his eyes widening.%SPEECH_ON%What do you imagine did that?%SPEECH_OFF%Further along the skin are concave scars shaped like saucers with punctures rent right into the holes. You climb atop the unhold and crank your sword into one of these divots, wrenching free a tooth about the length of your forearm. Along its edges are barbs, teeth upon teeth it seems. The men see this and start muttering amongst themselves and you wished you\'d never saw it at all for you\'ve no sense to make of it.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "The wilds are dark and full of terrors.",
+					Text = "野外黑暗而又恐怖.",
 					function getResult()
 					{
 						return 0;
@@ -461,14 +464,15 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Success",
 			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_79.png[/img]{%employer% welcomes your return, almost immediately stating that he hasn\'t heard a single story of the unholds\' ravaging since you left. You nod and present evidence of the reason why, the slick remains of the slain giants sputtering as you bowl them across his floor. The wood is stained as though you\'d unfurled a carpet. The mayor purses his lips.%SPEECH_ON%What the hell, sellsword?%SPEECH_OFF%You cock your head and raise an eyebrow. The man lets his hands fall and he bows a bit.%SPEECH_ON%Ah, no worries! All is well! Here, your reward as promised!%SPEECH_OFF% | You return to %employer% and find the man reading stories to children. He rends his hand through the air and growls like a beast. Knocking on the door, you intrude upon the theater.%SPEECH_ON%Aye, and then the ever honorable sellswords slew the monster!%SPEECH_OFF%The children cheer at your timely arrival. The mayor stands and gives you the promised reward, declaring he had a scout following your every move and he\'s already heard the reports of your success. He asks if you\'ll stick around and tell the tale for the kiddos. You tell him you don\'t work for free and leave the room. | You have to root about the town a while to find %employer%, the man himself found kept up in his room by a young lass who hides beneath the sheets you caught them in. The mayor gets dressed with no hesitation as to his own nakedness. He pitches a coin toward the girl and then speaks to you.%SPEECH_ON%Aye, sellsword, I\'ve been expecting you! Your reward, as promised!%SPEECH_OFF%He gives you the satchel, but a coin slips free and runs between the floorboards. The man purses his lips a moment then runs back to the girl and snatches the coin out of her hands and drops it in the satchel. | %employer% is found arguing with peasants about unpaid taxes and how the lords of the land will get their coin one way or another. The arrival of an armed fellow such as yourself is rather apropos and sends the peons scuttling for their coin purses. You tell them to quiet down and then address the mayor to get your money. He fetches it from a drawer, pausing only to fill it to the brim by taking a coin from a peasant, and then he hands it over to you.%SPEECH_ON%Appreciate your work, sellsword.%SPEECH_OFF% | You report to %employer% of your doings and he is, surprisingly not incredulous in the least.%SPEECH_ON%Aye, I had a scout tracking your company and he\'d beaten you back to town. Every word you say mirrors his. Your pay, as promised.%SPEECH_OFF%He hands you a satchel.}",
+			Text = "[img]gfx/ui/events/event_79.png[/img]{%employer%欢迎你的归来，自从你离开后，他还没有听到过任何有关房屋被拆的消息。你点了点头，拿出证据来说明原因，当你把被杀死的巨人的尸体扔到他的地板上时，他们光滑的尸体在飞溅。木头被弄脏了，好像你铺开了地毯似的。市长噘起嘴唇。该死的，佣兵?你扬起头，挑了挑眉毛。那人垂下双手，微微鞠了一躬。%SPEECH_ON%啊,没烦恼!一切都好!在这里，你的回报正如所承诺的！%SPEECH_OFF% }",
+			//| You return to %employer% and find the man reading stories to children. He rends his hand through the air and growls like a beast. Knocking on the door, you intrude upon the theater.%SPEECH_ON%Aye, and then the ever honorable sellswords slew the monster!%SPEECH_OFF%The children cheer at your timely arrival. The mayor stands and gives you the promised reward, declaring he had a scout following your every move and he\'s already heard the reports of your success. He asks if you\'ll stick around and tell the tale for the kiddos. You tell him you don\'t work for free and leave the room. | You have to root about the town a while to find %employer%, the man himself found kept up in his room by a young lass who hides beneath the sheets you caught them in. The mayor gets dressed with no hesitation as to his own nakedness. He pitches a coin toward the girl and then speaks to you.%SPEECH_ON%Aye, sellsword, I\'ve been expecting you! Your reward, as promised!%SPEECH_OFF%He gives you the satchel, but a coin slips free and runs between the floorboards. The man purses his lips a moment then runs back to the girl and snatches the coin out of her hands and drops it in the satchel. | %employer% is found arguing with peasants about unpaid taxes and how the lords of the land will get their coin one way or another. The arrival of an armed fellow such as yourself is rather apropos and sends the peons scuttling for their coin purses. You tell them to quiet down and then address the mayor to get your money. He fetches it from a drawer, pausing only to fill it to the brim by taking a coin from a peasant, and then he hands it over to you.%SPEECH_ON%Appreciate your work, sellsword.%SPEECH_OFF% | You report to %employer% of your doings and he is, surprisingly not incredulous in the least.%SPEECH_ON%Aye, I had a scout tracking your company and he\'d beaten you back to town. Every word you say mirrors his. Your pay, as promised.%SPEECH_OFF%He hands you a satchel.}",
 			Image = "",
 			Characters = [],
 			List = [],
 			ShowEmployer = true,
 			Options = [
 				{
-					Text = "A successful hunt.",
+					Text = "一次成功的狩猎.",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
@@ -485,7 +489,7 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
+					text = "你获得 [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] 克朗"
 				});
 				this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
 			}
@@ -494,14 +498,14 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "SuccessPeaceful",
 			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_79.png[/img]{%employer% drives his fingers up to the corners of his eye then fans them forward.%SPEECH_ON%Let me get this straight, one of your sellswords shouted the giants into a retreat?%SPEECH_OFF%You nod and tell him the direction they went which is, rather importantly, away from %townname%. The mayor leans back in his chair.%SPEECH_ON%Well. Alright then. I guess it ain\'t my problem now. Dead or gone, all the same I suppose.%SPEECH_OFF%He hands you a satchel, but holds his hand on it a moment.%SPEECH_ON%You know if you\'re lying and they come back I\'ll send every messenger bird I got to speak of your honor.%SPEECH_OFF%You stand up, draw your sword, and tell him they\'ll have his skull to rest in when they get there. The man nods and lets the coin go.%SPEECH_ON%No bother, sellsword, only business.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_79.png[/img]{%employer% 把他的手指举到眼角，然后向前指。。%SPEECH_ON%让我把话说清楚，你的一个佣兵向巨人们喊了一声撤退?%SPEECH_OFF%你点了点头，告诉他他们去的方向，很重要的是，要远离城镇。市长向后靠在椅子上。%SPEECH_ON%好吧。我想现在不是我的问题了。不管他是死了还是走了，我想都是一样的。%SPEECH_OFF%他递给你一个小提包，但把手放在上面。%SPEECH_ON%你知道，如果你在说谎，我会把这里的每一个克朗都收回来的%SPEECH_OFF%}",
 			Image = "",
 			Characters = [],
 			List = [],
 			ShowEmployer = true,
 			Options = [
 				{
-					Text = "A successful hunt.",
+					Text = "一次成功的狩猎.",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
@@ -518,7 +522,7 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
+					text = "你获得 [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] 克朗"
 				});
 				this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
 			}

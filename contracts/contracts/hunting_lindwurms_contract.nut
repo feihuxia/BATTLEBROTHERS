@@ -229,14 +229,15 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_77.png[/img]{%employer% is staring into a basket when you find him. A few peasants are off in the corner scratching themselves and looking rather tense. You ask what is going on. Your potential employer brings you over to the basket and inside you find a snake slithering about. It\'s a docile one, and the colors aren\'t arranged in a manner to suggest it carries poison in its belly. You tell him as much. He shrugs and closes the lid.%SPEECH_ON%Gonna kill it and eat it anyhow, take its skin for a dagger sheath. What I need you to do is go find a much larger snake than this. I\'m talking lindwurms, sellsword. Bigguns. Roaming about, eating folks in the hinterland. You the kind to see this situation sorted?%SPEECH_OFF% | You find %employer% mucking about his personal library that\'s more cobweb than knowledge. He seems to sense your entrance and asks if you know about lindwurms. Before you can answer he wheels around, scroll in hand.%SPEECH_ON%I need you to go out to the hinterland. We got a couple of them monsters on our hands. They\'re killing farmers, peddlers. Hell, some of those folks were even well liked. I figure you\'d be just the man we\'d need to get these beasts off our backs. Are you interested?%SPEECH_OFF%You see his scroll unfurl a bit to reveal a crudely drawn woman and her exposed breast. The man hurriedly rolls it back up and stows it behind his back. He smiles.%SPEECH_ON%Well are ya?%SPEECH_OFF% | A line of peasants stand outside %employer%\'s door. You cut by them all and when a few protest you grab the handle on your sword. %employer% jumps out of his door and intervenes.%SPEECH_ON%Ease up, ease up everyone. This is the mercenary I wanted to hire. Sir, please, let me explain the short tempers. Lindwurms are ravaging the countryside and we need a strapping sellsword such as yourself to slay them all. Are you interested?%SPEECH_OFF%The once angry peons now stare at you as though you were a savior.}",
+			//Text = "[img]gfx/ui/events/event_77.png[/img]{%employer% is staring into a basket when you find him. A few peasants are off in the corner scratching themselves and looking rather tense. You ask what is going on. Your potential employer brings you over to the basket and inside you find a snake slithering about. It\'s a docile one, and the colors aren\'t arranged in a manner to suggest it carries poison in its belly. You tell him as much. He shrugs and closes the lid.%SPEECH_ON%Gonna kill it and eat it anyhow, take its skin for a dagger sheath. What I need you to do is go find a much larger snake than this. I\'m talking lindwurms, sellsword. Bigguns. Roaming about, eating folks in the hinterland. You the kind to see this situation sorted?%SPEECH_OFF% | You find %employer% mucking about his personal library that\'s more cobweb than knowledge. He seems to sense your entrance and asks if you know about lindwurms. Before you can answer he wheels around, scroll in hand.%SPEECH_ON%I need you to go out to the hinterland. We got a couple of them monsters on our hands. They\'re killing farmers, peddlers. Hell, some of those folks were even well liked. I figure you\'d be just the man we\'d need to get these beasts off our backs. Are you interested?%SPEECH_OFF%You see his scroll unfurl a bit to reveal a crudely drawn woman and her exposed breast. The man hurriedly rolls it back up and stows it behind his back. He smiles.%SPEECH_ON%Well are ya?%SPEECH_OFF% | A line of peasants stand outside %employer%\'s door. You cut by them all and when a few protest you grab the handle on your sword. %employer% jumps out of his door and intervenes.%SPEECH_ON%Ease up, ease up everyone. This is the mercenary I wanted to hire. Sir, please, let me explain the short tempers. Lindwurms are ravaging the countryside and we need a strapping sellsword such as yourself to slay them all. Are you interested?%SPEECH_OFF%The once angry peons now stare at you as though you were a savior.}",
+		Text = "[img]gfx/ui/events/event_77.png[/img]{你的雇主把你带到篮子旁边，里面有一条蛇在游动。它是一种温顺的动物，颜色的排列方式并不表明它肚子里有毒药。你告诉他这些。他耸了耸肩，关上了盖子。%SPEECH_ON%无论如何，我要杀了它，吃掉它，把它的皮当匕首鞘。然后我要你去找一条比这大得多的蛇。我在说巨蛇，佣兵。它们到处游荡，吃内陆的人。你能帮我解决这个问题吗?%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{That\'s a mighty big task you\'re asking of us. | I expect to be well compensated to fight an enemy such as this. | I expect you to make me a rich man for this.}",
+					Text = "{你要求我们做的是一项艰巨的任务. | 与这样的敌人作战，我期望得到丰厚的报酬. | 我希望你能让我成为一个富翁.}",
 					function getResult()
 					{
 						return "Negotiation";
@@ -244,7 +245,7 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "{Sounds more like what you need are heroes and fools. | It\'s not worth the risk. | I don\'t think so.}",
+					Text = "{听起来你更需要的是英雄和傻瓜. | 不值得冒这个险. | 我不这么认为.}",
 					function getResult()
 					{
 						this.World.Contracts.removeContract(this.Contract);
@@ -262,11 +263,12 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 			ID = "Banter",
 			Title = "Along the way...",
 			Text = "[img]gfx/ui/events/event_66.png[/img]{%randombrother% holds a sleeve of scaly skin at the length of his weapon. He wiggles it around, the shedding scratching itself in dry rasps. You tell him to put it down and to be on guard. The lindwurms are no doubt close. | %randombrother% states that he once heard the story of a lindwurm that killed someone without eating them.%SPEECH_ON%That\'s right. They said it spewed green water and the man just melted into his own boots. Said it looked like soup with his shins for stirring.%SPEECH_OFF%A disgusting tale, but one that hopefully keeps the men rightfully on their toes. Those lindwurms can\'t be far. | The tracks have the grass flattened in a snaking pattern with holes set to the sides. %randombrother% crouches beside the patterns.%SPEECH_ON%Either a plough with no dig or this be the critters we\'re lookin\' for.%SPEECH_OFF%You nod. The lindwurms can\'t be far.}",
+			Text = "[img]gfx/ui/events/event_66.png[/img]{%randombrother%说他曾经听过一个故事，一条巨蛇在没有东西可吃的情况下杀死了一个人。他们说它喷出了绿色的水，那个人的靴子都融化了。这看起来荒谬，但他的小腿在颤抖。这是一个令人作呕的故事，但希望能让男人们保持警觉。那些巨蛇们可能离着不远}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Be on the lookout!",
+					Text = "注意...!",
 					function getResult()
 					{
 						return 0;
@@ -278,12 +280,13 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Encounter",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_129.png[/img]{You\'re checking the map when %randombrother% calls out. Looking up, you see the lindwurms emerging from a hole in the ground, great sheets of dust streaming off their sides. Their bodies sway low to the ground as they whip their way toward the %companyname%. You draw out your sword and order the men into formation. | The company comes upon a cave lined with boulders at its front. But as you draw near, the rocks uncoil and flip mid-air and legs shoot out their bellies to plant the landings of what are clearly lindwurms. You step back as the beasts wriggle the dust off their backs and snap their maws with guttural croaking. They turn to you, eyes blinking, and begin to lazily come forward as though your mercenaries were but a minor inconvenience to dispatch. You order the company into formation. The monsters, perhaps sensing you\'re more of a threat, suddenly surge forward, powerfully hissing as their bodies sidewinder over the ground with surprising speed. | The %companyname% steps toward a hill with bones crunching under every step. %randombrother% shushes the company and points to the hilltop. Lindwurms are curved about its crest as though to embroider the very earth. Seemingly sensing your stare, the beasts unfurl and slumber down the slope, some half twisting like children rolling down a hill. Their maws clap and snap, tongues licking the dust out of their eyes, altogether looking like sleepwalking critters more than murderous monsters. But the second their feet step upon the flat earth they seize up and bolt forward, their snaky shapes streaking across the boneyard, powdered bonemeal rooster tailing up in their wake. Drawing your sword, you urgently order the men to formation.}",
+			Text = "[img]gfx/ui/events/event_129.png[/img]{当你在查看地图时，%randombrother%突然叫了起来。抬头一看，巨蛇一家从地上的一个洞里冒了出来，一片片的尘土从他们的身上流了下来。当他们朝着 %companyname%疾驰而来时，它们的身体低低地摇晃着。你拔出剑来，命令士兵们排成队形}",
+			//You\'re checking the map when %randombrother% calls out. Looking up, you see the lindwurms emerging from a hole in the ground, great sheets of dust streaming off their sides. Their bodies sway low to the ground as they whip their way toward the %companyname%. You draw out your sword and order the men into formation. | The company comes upon a cave lined with boulders at its front. But as you draw near, the rocks uncoil and flip mid-air and legs shoot out their bellies to plant the landings of what are clearly lindwurms. You step back as the beasts wriggle the dust off their backs and snap their maws with guttural croaking. They turn to you, eyes blinking, and begin to lazily come forward as though your mercenaries were but a minor inconvenience to dispatch. You order the company into formation. The monsters, perhaps sensing you\'re more of a threat, suddenly surge forward, powerfully hissing as their bodies sidewinder over the ground with surprising speed. | The %companyname% steps toward a hill with bones crunching under every step. %randombrother% shushes the company and points to the hilltop. Lindwurms are curved about its crest as though to embroider the very earth. Seemingly sensing your stare, the beasts unfurl and slumber down the slope, some half twisting like children rolling down a hill. Their maws clap and snap, tongues licking the dust out of their eyes, altogether looking like sleepwalking critters more than murderous monsters. But the second their feet step upon the flat earth they seize up and bolt forward, their snaky shapes streaking across the boneyard, powdered bonemeal rooster tailing up in their wake. Drawing your sword, you urgently order the men to formation.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Charge!",
+					Text = "冲锋!",
 					function getResult()
 					{
 						this.Contract.getActiveState().onTargetAttacked(this.Contract.m.Target, this.Contract.m.IsPlayerAttacking);
@@ -296,13 +299,13 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "AnimalActivist",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_17.png[/img]{You find the lindwurms slithering about a dugout in the ground, but before you can go to battle a man interrupts you with a humanly hiss. He looks like he hasn\'t shaved in days and he\'s got a fat satchel yoked over both shoulders and a bandana bunches up his hair like potted sagebrush. Aside from his haggard looks there isn\'t a weapon on him. You ask what he wants. He speaks hurriedly and in a hushed tone.%SPEECH_ON%You here to kill the lindwurms?%SPEECH_OFF%The nasty snakelike monsters are wriggling around in the distance, seemingly playing with one another like puppies or kittens would. You nod and tell him they\'re killers and you\'ve been paid to slay them all. The man purses his lips.%SPEECH_ON% See that gleam in their coat? That\'s unique to them, and they are the last of their kind. These are rarified lindwurms, sir, and it\'d be a horrid ruin upon the world itself for them to be made wholly nonexistent. How about I give you %bribe% crowns and, uh, you was paid by someone, right? So you take this, too.%SPEECH_OFF%He pulls a great, scratchy lindwurm skinsuit out of his satchel and offers to hand it over.%SPEECH_ON%Tell your employer you\'d found and killed the lindwurms and show them this. They won\'t know the difference. And if you think about doublecrossing me here let me say this, I look a hint of crazy but I\'m actually a barrel of it. And a crazy fark like myself wouldn\'t survive following these giant, wonderful, and beautiful lindwurms around if he didn\'t know a thing or two, got it?%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_17.png[/img]{在你开始战斗之前，一个男人的大喊声打断了你的指挥。他看起来几天没刮胡子了，肩膀上挎着一个大背包，头上缠着一条大手帕，头发像盆栽的山艾树一样。除了他憔悴的样子外，身上没有武器。你问他想要什么。他说话急促，声音低沉。%SPEECH_ON%你是来杀巨蛇一家的吗?%SPEECH_OFF%令人讨厌的蛇形怪物在远处扭动着，似乎在像小狗小猫一样互相玩耍.你点点头，告诉他你是被雇来杀死它们的。男人噘起嘴唇。%SPEECH_ON%看见它们皮肤上的闪光了吗?这对它们来说是独一无二的，他们是同类中最后的一群。这些都是稀有的巨蛇，先生，如果把它们完全消灭掉，那对世界本身就是一种可怕的毁灭。 不如我给你%bribe%克朗，然后，呃，你被人雇佣了，对吧?所以你拿这个，%SPEECH_OFF%他从背包里拿出一件又大又粗糙的巨蛇皮衣，递了过来。%SPEECH_ON%告诉你的雇主你找到并杀死了巨蛇一家，并给他们看这个。他们不会知道其中的区别。我看起来有点疯狂，但实际上我很疯狂。像我这样的疯子，如果连一两件事都不懂，就不会跟在这些高大、非常漂亮、非常漂亮的巨蛇后面活下来，明白吗? %SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Out of the way, fool. We have a beast to slay.",
+					Text = "让开，笨蛋。我们要杀野兽.",
 					function getResult()
 					{
 						this.Contract.getActiveState().onTargetAttacked(this.Contract.m.Target, this.Contract.m.IsPlayerAttacking);
@@ -311,7 +314,7 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "Very well. I accept your offer.",
+					Text = "很好。我接受你的提议.",
 					function getResult()
 					{
 						return "AnimalActivistAccept";
@@ -328,13 +331,13 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "AnimalActivistAccept",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_17.png[/img]{The way you see it the lindwurms here are not truly your problem, you were just paid to take care of them. And you could potentially get paid twice if the crazy lindwurm protector\'s skinsuit fools %employer%.\n\nYou take the deal. The fool thanks you and hugs you unexpectedly. He smells awful and his hair has become so matted and thick that tiny little bugs have bored out caves there and can be seen staring at you. A tiny skink scuttles between the stinky stalks and snatches one of the bugs. You throw the man back and wish him luck in whatever the hell he\'s doing. He puts out his thumb and pinky finger and wags the hand.%SPEECH_ON%You, sir, are righteous.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_17.png[/img]{在你看来，巨蛇一家并不是你真正的问题，你只是被雇来杀死它们的。如果疯狂的巨蛇保护者的皮衣愚弄了雇主，你可能会得到双倍的报酬。你接受这笔交易。傻瓜出乎意料地感谢你，拥抱你。他闻起来很难闻，他的头发变得又密又乱，虫子都钻出了洞，你都能看到它们在盯着你看。你把他扔回去，不管他在做什么，祝他好运 %SPEECH_ON%先生，你是正义的.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Righteous. Right.",
+					Text = "但愿我的决定是正确的.",
 					function getResult()
 					{
 						local bribe = this.Flags.get("Bribe");
@@ -361,7 +364,7 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + bribe + "[/color] Crowns"
+					text = "你获得 [color=" + this.Const.UI.Color.PositiveEventValue + "]" + bribe + "[/color] 克朗"
 				});
 			}
 
@@ -369,13 +372,13 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "BeastFight",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_129.png[/img]{Dust clouds belch from a distant cave entrance. As you draw near, you can hear the hiss of the lindwurms and intermittent growling of something else entirely.%SPEECH_ON%Look, sir!%SPEECH_OFF%%randombrother% points to the rim of the cave dugout. There\'s a pair of nachzehrers tackling a lindwurm, one being slung around as it holds onto the tail, the other is hand fighting its maw to not get bit. The monsters are fighting one another!\n\nShaking your head, you draw out your sword and order the men into formation. Looks like this is going to be a proper barnstormer if there ever was one.}",
+			Text = "[img]gfx/ui/events/event_129.png[/img]{尘云从一个遥远的洞口喷出来。当你走近时，你能听到巨蛇的嘶嘶声和其他东西断断续续的咆哮声.%SPEECH_ON%看, 阁下!%SPEECH_OFF%%randombrother% 指着其中一个洞口. 这里有两只吸血鬼在对付一只巨蛇，一只在抓尾巴的时候被甩来甩去，另一只则在用手抓着它的嘴不让它被咬. 怪物们在互相战斗!\n\n你摇摇头，拔出剑来，命令士兵们排成队形。}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "I don\'t know if this is good or bad.",
+					Text = "我不知道这样做是好是坏.",
 					function getResult()
 					{
 						local p = this.World.State.getLocalCombatProperties(this.World.State.getPlayer().getPos());
@@ -398,13 +401,13 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "MerchantDistress",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_41.png[/img]{You spot a merchant and his wagon trundling up the road. The rear of the wagon lifts upward and the caravan hand on the back is launched like a ragdoll. A streak of green slips behind the caravan and another goes to the side. The merchant turns and jumps into the wagon as lindwurms start their assault. These are no doubt the creatures you\'ve been looking for. At your command, the %companyname% can rush forward before the caravan is destroyed.}",
+			Text = "[img]gfx/ui/events/event_41.png[/img]{你看到一个商人和他的马车在路上缓慢地行进。大篷车的后部向上抬起，大篷车后部像布娃娃一样被抛起。一缕绿色从车队后面滑过，另一缕滑到一边。当巨蛇开始进攻时，商人转身跳上了马车。毫无疑问，这些就是你一直在寻找的生物. 在您的命令下,  %companyname% 在车队被摧毁之前冲过去.}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Attack!",
+					Text = "攻击!",
 					function getResult()
 					{
 						local p = this.World.State.getLocalCombatProperties(this.World.State.getPlayer().getPos());
@@ -458,7 +461,7 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "Fall back!",
+					Text = "后退!",
 					function getResult()
 					{
 						this.Flags.set("IsMerchantInDistress", false);
@@ -475,13 +478,13 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "MerchantDistressSuccess",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_41.png[/img]{The battle is over. You have the men skin a few of the lindwurms while you go and talk to the merchant. He bows in thanks and kisses your ringless finger.%SPEECH_ON%Thank you, sir, thank you! Ohhh, my wagon! My goods!%SPEECH_OFF%His eyes twist away to the remains of his caravan. He collapses, his knees in the debris, and shakes his head.%SPEECH_ON%I wish I had anything to pay you with, stranger, but it\'s all gone.%SPEECH_OFF%But then he holds a finger up. He jumps back to his feet and asks if you have a map. You show what you got, and he takes out a quill pen.%SPEECH_ON%Here, I know of a spot that is said to hold great treasure. I don\'t know if that\'s true or not, but the rumor\'s as good as gold if it is!%SPEECH_OFF%Yeah, if. You thank the merchant for his generosity anyway and wish him better luck on his journey ahead. As for the %companyname%, it needs to return to %employer% to get paid.}",
+			Text = "[img]gfx/ui/events/event_41.png[/img]{战斗结束了。当你去和商人谈话时，你让佣兵们剥了几块巨蛇的皮。他向你鞠躬表示感谢，亲吻你没有戒指的手指。%SPEECH_ON%谢谢您，先生，谢谢您!呵呵,我的车!我的货物!%SPEECH_OFF%他的目光转向他那辆大篷车的残骸。他瘫倒在地，膝盖埋在废墟里，摇了摇头。%SPEECH_ON%陌生人，我真希望我有什么东西可以报答你，可是它全不见了%SPEECH_OFF%然后他询问道你有没有地图。你拿出你的地图，他拿出一支羽毛笔。%SPEECH_ON%我知道有一个地方据说藏有珍宝。我不知道那是真的还是假的，如果真是这样的话，这谣言就和黄金一样！%SPEECH_OFF%无论如何，你要感谢商人的慷慨，并祝他在未来的旅途中好运。对于%companyname%，需要返回%employer%才能获得报酬.}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "We should pay a visit to that place one day.",
+					Text = "有时间的话我们应该去探索那个地方.",
 					function getResult()
 					{
 						this.Contract.setState("Return");
@@ -519,13 +522,13 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "MerchantDistressFailure",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_60.png[/img]{The battle is over. You have half your men go about skinning the lindwurms to show %employer% when you get back. The other half sift through the remains of the merchant\'s caravan. There is nothing of note to find, not even gold. Anything of value has been smashed to pieces in the fighting. The merchant himself has been torn in half and the legs sit a way away with their pockets turned out and empty, %randombrother% squatting beside the remains. He nods.%SPEECH_ON%Well, that\'s a sorry way to go. Broke and even more broke.%SPEECH_OFF%You nod back and then holler at the men to pack their things. It\'s time to return to your employer and collect your pay.}",
+			Text = "[img]gfx/ui/events/event_60.png[/img]{战斗结束了。你让一半的人去剥巨蛇的皮，当你回去的时候，让雇主看看你的成果。另一半人在商队的残骸中筛选。没有什么值得注意的东西可找，连金子也没有。任何有价值的东西在战斗中都被打得粉碎。商人本人也被撕成两半，两条腿挂在远处，口袋都翻了出来，里面空空如也。嗯，这是一个令人遗憾的方式。破产了，甚至更多。你点点头，然后对着男人们大喊，让他们收拾东西.}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "At least we put an end to those beasts.",
+					Text = "至少我们消灭了那些野兽.",
 					function getResult()
 					{
 						this.Contract.setState("Return");
@@ -542,12 +545,13 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Victory",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_130.png[/img]{Fighting the lindwurms was like taking a butterknife and jabbing it into a basket of vipers. They fought like something from another world, hissing and spewing and biting, but they were no match for the %companyname%\'s resolve and skill. You have the men scalp and skin the creatures and ready them for a return to %employer% for a well earned payday. | The lindwurms lay in well earned ruin. Your company goes about poking the corpses at a distance, making sure the bastards are truly dead. A few gargle and flip over, but that\'s about the last of their living issuances. You order the overgrown lizards scalped and skinned. %employer% will be expecting proof, after all. | You crouch beside a lindwurm and take your hand over its skin. The way you figure, the scales are long and sharp enough to cut your fingers off if jammed in between the wedges. You then stand akimbo over the head and stare into its maw, getting a measure of its teeth with your hands and its gullet with the steel of your sword. %randombrother% comes to your side and asks what they\'re to do next. You unsheathe your sword from the lindwurm\'s throat, wipe it clean, and sheathe it proper. You order the men to skin a few of the beasts and ready a return to %employer%. | The battle over, you have the lindwurms skinned and dressed for anything of value. It isn\'t long for the field to stink of the skinks, the overly large lizards being shorn of the scales that once protected them. Their sickly, glistening musculature bared for all to see, a nakedness and vulnerability is wrought upon the once and always monsters. %randombrother% snorts and runs a sleeve beneath his nose. He nods at his handiwork.%SPEECH_ON%Nothing more than a common creature, just a shade larger than it ought to be.%SPEECH_OFF%Damn right. You order the men to collect what they\'ve got and ready a return to %employer%.}",
+			Text = "[img]gfx/ui/events/event_130.png[/img]{巨蛇一家已经名正言顺地倾家荡产了。你的战队在远处戳着尸体，确保那些混蛋真的死了。你让一些人去剥皮。雇主终究会期待证据 ｜ 战斗结束了，你收刮着巨蛇一家任何有价值的东西，如剥皮制成衣服。过不了多久，这片土地就会散发出臭味，这种体型过大的蜥蜴被剥去了曾经保护它们的鳞片。向所有人展示着他们那病态的、闪闪发光的肌肉组织。}",
+				//Fighting the lindwurms was like taking a butterknife and jabbing it into a basket of vipers. They fought like something from another world, hissing and spewing and biting, but they were no match for the %companyname%\'s resolve and skill. You have the men scalp and skin the creatures and ready them for a return to %employer% for a well earned payday. | The lindwurms lay in well earned ruin. Your company goes about poking the corpses at a distance, making sure the bastards are truly dead. A few gargle and flip over, but that\'s about the last of their living issuances. You order the overgrown lizards scalped and skinned. %employer% will be expecting proof, after all. | You crouch beside a lindwurm and take your hand over its skin. The way you figure, the scales are long and sharp enough to cut your fingers off if jammed in between the wedges. You then stand akimbo over the head and stare into its maw, getting a measure of its teeth with your hands and its gullet with the steel of your sword. %randombrother% comes to your side and asks what they\'re to do next. You unsheathe your sword from the lindwurm\'s throat, wipe it clean, and sheathe it proper. You order the men to skin a few of the beasts and ready a return to %employer%. | The battle over, you have the lindwurms skinned and dressed for anything of value. It isn\'t long for the field to stink of the skinks, the overly large lizards being shorn of the scales that once protected them. Their sickly, glistening musculature bared for all to see, a nakedness and vulnerability is wrought upon the once and always monsters. %randombrother% snorts and runs a sleeve beneath his nose. He nods at his handiwork.%SPEECH_ON%Nothing more than a common creature, just a shade larger than it ought to be.%SPEECH_OFF%Damn right. You order the men to collect what they\'ve got and ready a return to %employer%.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "We did it.",
+					Text = "我们成功了.",
 					function getResult()
 					{
 						return 0;
@@ -559,14 +563,15 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Success",
 			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_77.png[/img]{You enter %employer%\'s room dragging in some lindwurm flesh. He looks up from his desk, eyes the scales and long sleeve of reptilian skin, glances at you, then glances at his paymaster and gives a steady nod. The paymaster takes a satchel of crowns and hands them over. %employer% returns to his work, addressing you as he writes with a quill.%SPEECH_ON%Good work, sellsword. Reports of the bastards has died off in total, so I wager our money here has been put to good use. Leave the skin. I\'ve a man who can fix up some mean boots with it.%SPEECH_OFF%Did the %companyname% just work to get this fool new boots? You shake your head and make your leave. | %employer% welcomes you and your booty, a long, scratchy, scaly, scraping piece of lindwurm skin. You heave it across the floor where it skitters like a stiff leather jacket. The mayor nods.%SPEECH_ON%Very, very well done, good sir! Most excellent. Your pay, as promised.%SPEECH_OFF%The man hands you a satchel heavy with well earned crowns. | %employer% is found warming himself beside a fire. He turns around in the seat to see the lindwurm flesh you have brought in with you. The mayor nods.%SPEECH_ON%Quite alright work, sellsword. I\'m curious, do the lizard bastards grow their limbs back? I\'ve heard tales of the reptilian sort carrying such tricks.%SPEECH_OFF%You shrug and state each creature was slain with as much scientific curiosity a good sword can muster. %employer% purses his lips.%SPEECH_ON%Ah. Right. Well your pay is in the corner there, as much as agreed upon.%SPEECH_OFF%He returns to the fire, cozying himself up in a blanket and sipping at the lip of a steamy mug. | %employer% found outside and surrounded by raucous peasants. You yell over the crowd and display the lindwurm skin which you\'ve brought. The crowd quiets for a moment, whispers amongst its numbers, then returns to shouting. You purse your lips and elbow your way into the mob and demand the pay which you are owed. %employer% yells at the peons to spread out and let him breathe. While two guards stand close, he you a leather satchel.%SPEECH_ON%Good work, sellsword. If it ain\'t all there feel free to come back and kill me. I won\'t mind, not on this damned day.%SPEECH_OFF%As you take the satchel and leave, a peasant jabs his finger at the mayor.%SPEECH_ON%Tellin\' ya, that damned bastard, my supposed \'neighborly neighbor\', stole my birds and if he don\'t return them I\'mma burn his whole farm to the farkin\' ground!%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_77.png[/img]{你拖着一些巨蛇的皮肉进入%employer%的房间。%SPEECH_ON%做的好，佣兵。关于那些混蛋的报道已经全部绝迹了，所以我敢打赌我们在这里的钱已经花得很值了。用这些皮，我有一个人能用它来修几双破靴子。%SPEECH_OFF%我们只是为了得到这双愚蠢的新靴子吗?你摇摇头，%SPEECH_ON% 啊。好吧，你的工资就在那边的角落里，就像我们商定的那样%SPEECH_OFF%}",
+			//| %employer% welcomes you and your booty, a long, scratchy, scaly, scraping piece of lindwurm skin. You heave it across the floor where it skitters like a stiff leather jacket. The mayor nods.%SPEECH_ON%Very, very well done, good sir! Most excellent. Your pay, as promised.%SPEECH_OFF%The man hands you a satchel heavy with well earned crowns. | %employer% is found warming himself beside a fire. He turns around in the seat to see the lindwurm flesh you have brought in with you. The mayor nods.%SPEECH_ON%Quite alright work, sellsword. I\'m curious, do the lizard bastards grow their limbs back? I\'ve heard tales of the reptilian sort carrying such tricks.%SPEECH_OFF%You shrug and state each creature was slain with as much scientific curiosity a good sword can muster. %employer% purses his lips.%SPEECH_ON%Ah. Right. Well your pay is in the corner there, as much as agreed upon.%SPEECH_OFF%He returns to the fire, cozying himself up in a blanket and sipping at the lip of a steamy mug. | %employer% found outside and surrounded by raucous peasants. You yell over the crowd and display the lindwurm skin which you\'ve brought. The crowd quiets for a moment, whispers amongst its numbers, then returns to shouting. You purse your lips and elbow your way into the mob and demand the pay which you are owed. %employer% yells at the peons to spread out and let him breathe. While two guards stand close, he you a leather satchel.%SPEECH_ON%Good work, sellsword. If it ain\'t all there feel free to come back and kill me. I won\'t mind, not on this damned day.%SPEECH_OFF%As you take the satchel and leave, a peasant jabs his finger at the mayor.%SPEECH_ON%Tellin\' ya, that damned bastard, my supposed \'neighborly neighbor\', stole my birds and if he don\'t return them I\'mma burn his whole farm to the farkin\' ground!%SPEECH_OFF%}",
 			Image = "",
 			Characters = [],
 			List = [],
 			ShowEmployer = true,
 			Options = [
 				{
-					Text = "A successful hunt.",
+					Text = "一次成功的狩猎.",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
@@ -583,7 +588,7 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
+					text = "你获得 [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] 克朗"
 				});
 				this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
 			}
@@ -592,13 +597,13 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Failure",
 			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_43.png[/img]{You find %employer% in his room and it is full of guards. Not sure what is going on, you display the lindwurm\'s flesh to the mayor and demand your pay. His fingers clap together before fanning forward like a lumber saw.%SPEECH_ON%I don\'t think that will be happening, sellsword. I don\'t know where you got that goddam skinsuit you\'re carrying, and trust me I can tell it\'s old as shite and not some new flay, but I\'m still getting reports of lizards tearing the hinterlands a new arshole so if you don\'t mind, please kindly leave this town before I sic a whole different predator upon ya.%SPEECH_OFF%Taking a deep breath, you eye the guards. There\'s too many to fight off. %employer% sighs.%SPEECH_ON%If it\'s your honor you\'re thinking to protect, don\'t. I already talked these folks down from ambushing your arse the second you were to walk through that door. I did that out of little respect I have left. Don\'t waste it, hm?%SPEECH_OFF%Fair enough. It is what it is and you\'ve no one else to blame but yourself anyhow. You close the door and take your leave.}",
+			Text = "[img]gfx/ui/events/event_43.png[/img]{你发现%employer%在他的房间里，里面全是警卫。。不知道发生了什么事，你向市长展示了巨蛇的皮革，并要求支付报酬. %SPEECH_ON%我不认为会发生这种事，佣兵。我不知道你从哪儿弄来的该死的小蜥蜴，相信我，我可以告诉你它是旧的，像石头一样，不是新的。而且我仍然收到蜥蜴袭击领地的报告，所以如果你不介意的话，请在我叫警卫之前离开这个城镇。%SPEECH_OFF%很好。事情就是这样，不管怎样，你只能怪你自己。你关上门就走了.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			Options = [
 				{
-					Text = "Not entirely surprising.",
+					Text = "完全在意料之内.",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail * 2);

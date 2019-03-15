@@ -1,4 +1,4 @@
-this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
+﻿this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 	m = {
 		Target = null,
 		Dude = null,
@@ -226,14 +226,15 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_79.png[/img]{You find %employer% with a scapula around his neck, though its ordinary thaumaturgical arrangements have been replaced with garlic and onions. He has tears in his eyes.%SPEECH_ON%Oh sellsword am I glad to see you! Please, sit.%SPEECH_OFF%Ducking under herb-heavy streamers, you come and sit before the man. Your eyes slim and begin to water. He continues.%SPEECH_ON%Look, this is going to make me sound like the biggest goddam fool you\'ve ever come by, but listen. Many years ago my firstborn, %protectee%, came into this world clothed in illness. Desperate, I sought the aid of witches...%SPEECH_OFF%You hold up your hand. You ask him if he made a pact and if they\'re here to collect on the debt. The man nods.%SPEECH_ON%Aye. Eighteen years is what they promised and tonight is his eighteenth upon the earth. This is no simple task, sellsword. These women are dangerous beyond any steel\'s proper reckoning, and I wager they\'ll be all the more hellish once they learn I refuse to pay. Are you sure you wish to help me protect my child?%SPEECH_OFF%Wiping your eyes, you weigh the options... | %employer% is found in the corner of his room. He\'s contorted to look out the window like marmot from its warren. Seeing your shadow stretch over him, he leaps and clutches his chest. His wink of cowardice is no laughing matter, though, and he comes to you earnestly.%SPEECH_ON%Witches have hexed my family! Well, hexed my bloodline. Well, more specifically my firstborn, %protectee%. Many moons ago I struggled to put it in... you know, with the wife. I asked the witches for help and they brewed me something proper for the bedroom. Of course, witches being what they is, they\'re now back and asking to take my firstborn away!%SPEECH_OFF%You\'re amazed that witches would do that to him and express your sympathy. %employer% snaps at you.%SPEECH_ON%This is no joking matter! I need protection for my firstborn, are you willing to help save %protectee% or not?%SPEECH_OFF% | You find %employer% fervently flipping through books. It\'s in a manner which suggests he\'s pored over them previously and now he\'s just hurriedly hunting for any missed clue. There is none and he throws the tomes off his table with a burst of anger. Seeing you, he wipes his forehead and explains.%SPEECH_ON%I\'ve searched high and low for an answer, but it seems I will have to resort to steel. That would be your steel, sellsword. I\'ll be honest with you. I made dealings with witches many years ago to protect my firstborn, %protectee%, from a hellish fever. The child survived, but now those awful women are coming back and demand my child as payment.%SPEECH_OFF%You nod. This is almost as bad as the schemes of some loan sharks. He continues, poling a finger into the desk.%SPEECH_ON%I need you here, sellsword. I need a sword to protect %protectee% through the night, and to kill these damned wenches so that my bloodline can live on beyond this nightmare. Are you willing to help?%SPEECH_OFF%}",
+			//Text = "[img]gfx/ui/events/event_79.png[/img]{You find %employer% with a scapula around his neck, though its ordinary thaumaturgical arrangements have been replaced with garlic and onions. He has tears in his eyes.%SPEECH_ON%Oh sellsword am I glad to see you! Please, sit.%SPEECH_OFF%Ducking under herb-heavy streamers, you come and sit before the man. Your eyes slim and begin to water. He continues.%SPEECH_ON%Look, this is going to make me sound like the biggest goddam fool you\'ve ever come by, but listen. Many years ago my firstborn, %protectee%, came into this world clothed in illness. Desperate, I sought the aid of witches...%SPEECH_OFF%You hold up your hand. You ask him if he made a pact and if they\'re here to collect on the debt. The man nods.%SPEECH_ON%Aye. Eighteen years is what they promised and tonight is his eighteenth upon the earth. This is no simple task, sellsword. These women are dangerous beyond any steel\'s proper reckoning, and I wager they\'ll be all the more hellish once they learn I refuse to pay. Are you sure you wish to help me protect my child?%SPEECH_OFF%Wiping your eyes, you weigh the options... | %employer% is found in the corner of his room. He\'s contorted to look out the window like marmot from its warren. Seeing your shadow stretch over him, he leaps and clutches his chest. His wink of cowardice is no laughing matter, though, and he comes to you earnestly.%SPEECH_ON%Witches have hexed my family! Well, hexed my bloodline. Well, more specifically my firstborn, %protectee%. Many moons ago I struggled to put it in... you know, with the wife. I asked the witches for help and they brewed me something proper for the bedroom. Of course, witches being what they is, they\'re now back and asking to take my firstborn away!%SPEECH_OFF%You\'re amazed that witches would do that to him and express your sympathy. %employer% snaps at you.%SPEECH_ON%This is no joking matter! I need protection for my firstborn, are you willing to help save %protectee% or not?%SPEECH_OFF% | You find %employer% fervently flipping through books. It\'s in a manner which suggests he\'s pored over them previously and now he\'s just hurriedly hunting for any missed clue. There is none and he throws the tomes off his table with a burst of anger. Seeing you, he wipes his forehead and explains.%SPEECH_ON%I\'ve searched high and low for an answer, but it seems I will have to resort to steel. That would be your steel, sellsword. I\'ll be honest with you. I made dealings with witches many years ago to protect my firstborn, %protectee%, from a hellish fever. The child survived, but now those awful women are coming back and demand my child as payment.%SPEECH_OFF%You nod. This is almost as bad as the schemes of some loan sharks. He continues, poling a finger into the desk.%SPEECH_ON%I need you here, sellsword. I need a sword to protect %protectee% through the night, and to kill these damned wenches so that my bloodline can live on beyond this nightmare. Are you willing to help?%SPEECH_OFF%}",
+Text = "[img]gfx/ui/events/event_79.png[/img]{%SPEECH_ON%多年前，我的长子是个早产儿，但是体弱多病，药石无医。绝望中，我寻求女巫的帮助...%SPEECH_OFF%  你问他是否签了协议，她们是否来这里收债? 他点头。%SPEECH_ON% 十八年是她们承诺的期限，今晚是他在地球上的第十八个年头。这不是一个简单的任务，剑士。这些女人是危险的，超出了任何合理计算，我敢打赌，一旦她们知道我拒绝付钱，她们就会更加疯狂。你能帮助我保护我的孩子吗？%SPEECH_OFF% }", 
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{You\'ll have to pay us very well in order to take on this enemy. | Convince me this is worth it with a full pouch of crowns. | I expect to be paid very well to fight an enemy as this.}",
+					Text = "{为了对付这个敌人，你必须付给我们很多钱. | 用一袋克朗说服我这是值得的. | 我希望和这样的敌人战斗能得到丰厚的报酬.}",
 					function getResult()
 					{
 						return "Negotiation";
@@ -241,7 +242,7 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "{Sounds to me like you should honor your pact. | This won\'t be worth the risk. | I\'d rather not get the company involved with an enemy like this.}",
+					Text = "{听起来这是你应该遵守的约定. | 不值得冒这个险. | 我不想让战队和这样的敌人扯上关系.}",
 					function getResult()
 					{
 						this.World.Contracts.removeContract(this.Contract);
@@ -257,13 +258,14 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Banter",
-			Title = "Along the way...",
-			Text = "[img]gfx/ui/events/event_79.png[/img]{%randombrother% comes up to you. He\'s auguring his ear with a pinky.%SPEECH_ON%Hey there captain. You seen any of them saucy broads yet?%SPEECH_OFF%Hearing this, %randombrother2% comes over. He leans in.%SPEECH_ON%Hey, the way I hear it them hexes ARE quite the lookers, but that\'s how they get ya. They fool ya with their charms and then eat yer very soul.%SPEECH_OFF%Laughing, %randombrother% wipes the wax on %randombrother2%\'s garb.%SPEECH_ON%They\'ll have to go to %randomtown% to get my soul, then, cause another woman done beat them to the punch.%SPEECH_OFF% | You\'re inspecting inventory when %randombrother% comes up. You\'d sent him to scout the lands and he\'s readied a report.%SPEECH_ON%Sir, nothing sighted as of yet, but I got talking to some of the locals. The way they have it, the witches make pacts with regular folk and then trade on the investment years later, usually with great interest. They said they can fool you into seeing them as licentious minxes. They can bed you right into the grave! I said that sounded like cicada cockamamie to me.%SPEECH_OFF%Nodding, you ask the man what the hell a cicada is. He laughs.%SPEECH_ON%Seriously? It\'s a kind of nut, sir.%SPEECH_OFF% | The brothers are idling the time away, bantering about women and witches alike and if there\'s any real significant difference at all. %randombrother% holds his hand out.%SPEECH_ON%Now in all seriousness, I\'ve heard tales of these wenches. They can put a hex on you to make you see things. They\'ll make you sign bloodpacts and if you don\'t pay they\'ll cut your kneecaps out and use them for divination. Hell, when I was a child, my neighbor made a deal with one and then he disappeared. I later saw a mysterious woman walking around with a fresh skull being used for a lantern!%SPEECH_OFF%%randombrother2% nods attentively.%SPEECH_ON%That\'s incredible, but does anybody know what a witch does?%SPEECH_OFF%}",
+			Title = "沿路行走...",
+			//Text = "[img]gfx/ui/events/event_79.png[/img]{%randombrother% 向你走来。他灵敏的耳朵听见了响动.%SPEECH_ON%嘿，队长。你见过他们中的任何一个漂亮的女人吗？?%SPEECH_OFF%听见这话, %randombrother2% 也靠了过来.%SPEECH_ON%嘿，据我所知，她们用眼光魅惑你，她们就是这样得到你的。她们用他们的魅力愚弄你，然后吃掉你的灵魂.%SPEECH_OFF%哈哈, %randombrother% 试图差掉掉落在 %randombrother2% 衣服上的口水.%SPEECH_ON% 她们必须去 %randomtown% 才能得到我的灵魂, 因为我已经被另外的女人所俘虏了.%SPEECH_OFF% | You\'re inspecting inventory when %randombrother% comes up. You\'d sent him to scout the lands and he\'s readied a report.%SPEECH_ON%Sir, nothing sighted as of yet, but I got talking to some of the locals. The way they have it, the witches make pacts with regular folk and then trade on the investment years later, usually with great interest. They said they can fool you into seeing them as licentious minxes. They can bed you right into the grave! I said that sounded like cicada cockamamie to me.%SPEECH_OFF%Nodding, you ask the man what the hell a cicada is. He laughs.%SPEECH_ON%Seriously? It\'s a kind of nut, sir.%SPEECH_OFF% | The brothers are idling the time away, bantering about women and witches alike and if there\'s any real significant difference at all. %randombrother% holds his hand out.%SPEECH_ON%Now in all seriousness, I\'ve heard tales of these wenches. They can put a hex on you to make you see things. They\'ll make you sign bloodpacts and if you don\'t pay they\'ll cut your kneecaps out and use them for divination. Hell, when I was a child, my neighbor made a deal with one and then he disappeared. I later saw a mysterious woman walking around with a fresh skull being used for a lantern!%SPEECH_OFF%%randombrother2% nods attentively.%SPEECH_ON%That\'s incredible, but does anybody know what a witch does?%SPEECH_OFF%}",
+Text = "[img]gfx/ui/events/event_79.png[/img]{%randombrother% 向你走来。他灵敏的耳朵听见了响动.%SPEECH_ON%嘿，队长。你见过他们中的任何一个漂亮的女人吗？?%SPEECH_OFF%听见这话, %randombrother2% 也靠了过来.%SPEECH_ON%嘿，据我所知，她们用眼光魅惑你，她们就是这样得到你的。她们用他们的魅力愚弄你，然后吃掉你的灵魂.%SPEECH_OFF%哈哈, %randombrother% 试图差掉掉落在 %randombrother2% 衣服上的口水.%SPEECH_ON% 她们必须去 %randomtown% 才能得到我的灵魂, 因为我已经被另外的女人所俘虏了.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Stay focused, lads.",
+					Text = "保持专注,小伙子.",
 					function getResult()
 					{
 						return 0;
@@ -274,13 +276,13 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "SpiderQueen",
-			Title = "Near %townname%",
-			Text = "[img]gfx/ui/events/event_106.png[/img]{A lone woman crosses your path and approaches between a gap of trees. She saunters with her thighs slipping in and out of a silk dress. Her skin is spotless and emerald eyes stare between locks of red with licentiousness you haven\'t seen since you were just a lad. You know this woman is a witch for such perfection can\'t stand in this world and in these parts it\'s like putting on makeup to go to the grave. Which is what she\'s done. You draw your sword and tell her to face her doom with honor. The witch\'s skin wrinkles to true, ghastly form, and she cackles with delight.%SPEECH_ON%Ah, for a moment I had you, but the cock slackens, and the pride returns. You\'ve such delightful scents, sellsword. I\'ll make sure they save you just for me.%SPEECH_OFF%Before you can ask what she means, the two trees she stand between blossom with the stretching of spider legs. Great black bulbs emerge from the thicket and scuttle to the terra below, the webknechts clacking their mandibles with imago hunger. The witch\'s hands go up and her fingers dance like a puppeteer in command of the clouds above.}",
+			Title = " %townname% 附近",
+			Text = "[img]gfx/ui/events/event_106.png[/img]{一个孤单的女人穿过小路，走到树缝间。她闲逛着，大腿在丝绸衣服上滑进滑出。她的皮肤一尘不染，翡翠色的眼睛凝视着红发之间，带着你小时候就没见过的放荡。你知道这个女人是个完美的女巫，在这个世界上是可怕的存在，她会引领你进入坟墓。这就是她所做的。你拔出你的剑，让她光荣地面对厄运。女巫的皮肤皱成了真正可怕的样子，她高兴得咯咯叫着。%SPEECH_ON%啊，有那么瞬间我拥有了你，但是小公鸡放松了，骄傲又回来了。你的气味真是太好闻了，剑士。我会拯救你.%SPEECH_OFF%在你问她什么意思之前，她站在花丛中间的那两棵树正伸展着蜘蛛一样的腿。巨大的黑球茎从灌木丛中冒出来，飞奔到下面的土地上，蜘蛛用饥饿地敲打着它们的下颌。女巫的手向上举起，手指像木偶一样舞动，指挥着天上的云.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "To arms!",
+					Text = "拿起武器!",
 					function getResult()
 					{
 						local p = this.World.State.getLocalCombatProperties(this.World.State.getPlayer().getPos());
@@ -327,13 +329,13 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "SinisterDeal",
-			Title = "Near %townname%",
-			Text = "[img]gfx/ui/events/event_106.png[/img]{%randombrother% whistles and tips his cap at the beautiful ladies which have arrived seemingly out of nowhere to swoon before the company. You hold the sellsword back and step forward, but before you can speak one of the women holds her hands up and strides to meet you.%SPEECH_ON%Let me show you my true self, sellsword.%SPEECH_OFF%Her arms go to her sides and there turn grey and shrivel like wet almond skin. Once bright and silken hair falls out in long wispy strands until her grotesque skull is bared, the last roots there holding clumped assemblage of gnats and lice like final congregates upon a dying world. She bows, her face up toward you with a yellow grin shorn across it.%SPEECH_ON%We\'ve great power, sellsword, of this you surely see. I offer you a deal.%SPEECH_OFF%She produces a tiny vial in each hand, one carrying a drop of green liquid, the other blue. She smiles and spins them in her fingers as she talks.%SPEECH_ON%A drink for the body, or for the spirit. Men would kill for either. I offer you one in exchange for the firstborn\'s life. What worth is the offspring of a stranger? You\'ve slaughtered your fair share, have you not? Stand aside, sellsword, and let us have this one. Or confront us, risk your men\'s lives, and your own, all for some runt who won\'t remember your face in due time. It\'s your choice.%SPEECH_OFF%}",
+			Title = " %townname% 附近",
+			Text = "[img]gfx/ui/events/event_106.png[/img]{%randombrother% 吹口哨，向那些似乎不知从何而来，在战队面前晕倒的美丽的女士致敬。你把剑一横，刚要向前走一步，但在你开口之前，其中一个女人举着她的手，大步走向你。%SPEECH_ON%让我向你展示我真实的自我，佣兵.%SPEECH_OFF%她的手臂垂向两侧，变成灰色，像潮湿的杏仁皮一样皱缩着。曾经她的头发又亮又滑，现在一缕缕地垂下来，直到她那怪诞的头颅露出来为止. 她鞠了一躬，朝你仰起脸来，蜡黄色的笑容露在脸上.%SPEECH_ON%我们有强大的力量，佣兵，你一定看到了。我跟你做个交易.%SPEECH_OFF%她两手都拿着一个小瓶子，一只手拿着绿色的液体，另一只手拿着蓝色的液体。她微笑着，边说边用手指转动着.%SPEECH_ON%这是强化身体或精神的饮料。男人会为此而杀人。我赐你一个，换长子的命. 为一个陌生人你值得这样做? 你把你应得的那份给宰了，不是吗?你选择哪一边，佣兵，让我们完成这个契约，或者与我们对抗，用你和你兄弟们的生命做赌注，为了那些不记得你的脸的小个子。你选择如何选择？%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "I will never yield that boy to you hags. To arms!",
+					Text = "我永远不会把那个男孩交给你，母夜叉.拿起武器!",
 					function getResult()
 					{
 						local p = this.World.State.getLocalCombatProperties(this.World.State.getPlayer().getPos());
@@ -349,7 +351,7 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "I desire a drink for the body.",
+					Text = "我想强化我的身体.",
 					function getResult()
 					{
 						return "SinisterDealBodily";
@@ -357,7 +359,7 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "I desire a drink for the spirit.",
+					Text = "我想强化我的精神.",
 					function getResult()
 					{
 						return "SinisterDealSpiritual";
@@ -368,13 +370,13 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "SinisterDealBodily",
-			Title = "Near %townname%",
-			Text = "[img]gfx/ui/events/event_106.png[/img]{The witch smiles.%SPEECH_ON%A man is nothing without an able body to maneuver him through the world. Here you are, sellsword. Please, do not waste it.%SPEECH_OFF%She tosses you the vial. Twisting through the air, it winks viridian spectra across the earth, each dip of its faint light springing forth a tiny flower out of unseeded mud. You catch the glass. It vibrates in your hand, and the ache of your bones slowly depart, as though your fist had been asleep all this time and you just didn\'t know it. When you look up for an explanation the witches are already gone. A lone cry is all that\'s left, piping up in the great distance yet with no way to ascertain just how far off it is. No doubt it is the demise of %employer%\'s firstborn.}",
+			Title = " %townname% 附近",
+			Text = "[img]gfx/ui/events/event_106.png[/img]{女巫微笑了.%SPEECH_ON%一个人如果没有一个能驾驭他的身体，那他就什么都不是。给你，佣兵。请不要浪费它.%SPEECH_OFF%她把瓶子扔给你。它在空中盘旋，闪烁着七彩的光芒，每一缕微弱的光线都像是从未播种的泥土中迸发出来的一朵小花。你抓住瓶子. 它在你手中振动，你的骨头疼痛慢慢消失，就好像你的拳头一直在沉睡，而你却不知道。当你想找个解释的时候女巫已经走了。只剩下一声孤独的呼喊，在遥远的地方呼啸而过，却无法确定它到底有多远. 毫无疑问， %employer%的长子已经遇害了.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "To arms!",
+					Text = "拿起武器!",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractBetrayal);
@@ -392,20 +394,20 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + item.getName()
+					text = "你获得 " + item.getName()
 				});
 			}
 
 		});
 		this.m.Screens.push({
 			ID = "SinisterDealSpiritual",
-			Title = "Near %townname%",
-			Text = "[img]gfx/ui/events/event_106.png[/img]{With a flip of her hand and a bump of her wrist the witch shunts the green vial down her sleeve. The remaining blue vial she holds out to you.%SPEECH_ON%A smart man you are, sellsword.%SPEECH_OFF%She snorts harshly, her fat nose shriveling into a maggot\'s girth before flopping back down.%SPEECH_ON%I do sense sharp minded men in your blood, sellsword. I\'d almost want to have the blood for myself.%SPEECH_OFF%Her eyes stare at you like a cat upon a delimbed cricket, a cricket which still dares to move. But then her smile returns, more gum than teeth, more black than pink.%SPEECH_ON%Ah, well, a deal is a deal. Here you are.%SPEECH_OFF%She throws the vial through the air and by the time you catch it and look back the witches are gone. You hear the faint cry of horrific torture, its distance seemingly both near and far, and you\'ve little doubt that it is the demise of %employer%\'s firstborn.}",
+			Title = " %townname% 附近",
+			Text = "[img]gfx/ui/events/event_106.png[/img]{女巫甩了甩手，手腕撞了一下，把绿色的小瓶顺手塞进了袖子里。她把剩下的蓝色小瓶递给你.%SPEECH_ON%你是个聪明人，佣兵。她粗声粗气地哼了一声，肥厚的鼻子缩成了一团，然后又耷拉下来.%SPEECH_ON%我确实感觉到你血液里有敏锐的头脑，佣兵。我几乎想把你的血留下来.%SPEECH_OFF%她的眼睛盯着你，就像一只猫盯着一只跨了界的蟋蟀，一只仍然敢动的蟋蟀。但她的笑容又回来了，更多的是口水而不是牙齿，更多的是黑色而不是粉色.%SPEECH_ON%好吧，一言为定。给你%SPEECH_OFF%她把瓶子扔向空中，当你捡起瓶子，回头一看，女巫们已经走了。你听到了可怕的折磨的微弱的呼喊，它的距离似乎既近又远, 你毫不怀疑%employer%的长子的消亡.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "To arms!",
+					Text = "拿起武器!",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractBetrayal);
@@ -423,20 +425,21 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + item.getName()
+					text = "你获得 " + item.getName()
 				});
 			}
 
 		});
 		this.m.Screens.push({
 			ID = "Encounter",
-			Title = "Near %townname%",
-			Text = "[img]gfx/ui/events/event_106.png[/img]{%randombrother% whistles and yells out.%SPEECH_ON%We\'ve company. Nice... beautiful company...%SPEECH_OFF%A licentious looking woman is approaching the band. She sashays over the ground with ease, one finger playing with her ear, the other pinching a stone hanging over her bulging bosom. You clap the sellsword on the shoulder.%SPEECH_ON%That\'s no ordinary lady.%SPEECH_OFF%Just as the words leave your lips, the woman\'s ample and youthful features shrivel into a patterned grey and her luxurious hair withers from her pate and what you\'re left with is a hag, grinning with nothing but evil intentions. To arms! Keep %protectee% safe! | You spot a woman approaching the party. She\'s wearing bright red and a necklace sways over and between her ample bosom. It\'s quite the sight, but she is flawless and such a thing does not exist in this world.\n\nYou draw your sword. The lady sees the steel and then looks at you with a wily grin. Plots of hair fall from her head and what\'s left shrivels into grey wisps. Her skin shrinks into pale valleys and her fingernails grow so long they curl. She points a finger at you and screams that nobody will prevent the conclusion of the pact she\'s made. You yell out to the company to make sure %protectee% is kept out of harm\'s way. | A woman is spotted approaching the company. The sellswords are ensorcelled by her beauty, but you know better. You draw your sword and clang it loud enough to draw the ire of this supposed lady. She sneers and her lips snap back with a grin that goes from nearly ear to ear. Her skin tightens until it creases and turns a pale grey. She laughs and laughs as her hair falls out. The witch points a finger at you.%SPEECH_ON%Ah, I smell your ancestry, sellsword, but it matters not where you come from. The pact must be paid by the firstborn\'s blood and anyone who stands in our way will bleed in kind!%SPEECH_OFF%The company falls into formation and you tell %protectee% to keep his head down.}",
+			Title = " %townname% 附近",
+			Text = "[img]gfx/ui/events/event_106.png[/img]{%randombrother% 吹口哨，大喊大叫.%SPEECH_ON%我们的战队是个不错的…美丽的战队%SPEECH_OFF%一个放荡的女人正在接近战队。她迈着轻快的步子在地上走来走去，一只手指玩弄着耳朵，另一只手指捏着一块挂在她鼓鼓的胸前的石头。你拍拍佣兵的肩膀.%SPEECH_ON%那不是一个普通的女人.%SPEECH_OFF%话刚一出口，女人丰腴而年轻的五官就萎缩成斑驳的灰色，华贵的头发也从头上垂了下来，你现在看到的是一个母夜叉，咧嘴一笑，满是恶念。拿起武器! 保障 %protectee% 的安全! }",
+			//| You spot a woman approaching the party. She\'s wearing bright red and a necklace sways over and between her ample bosom. It\'s quite the sight, but she is flawless and such a thing does not exist in this world.\n\nYou draw your sword. The lady sees the steel and then looks at you with a wily grin. Plots of hair fall from her head and what\'s left shrivels into grey wisps. Her skin shrinks into pale valleys and her fingernails grow so long they curl. She points a finger at you and screams that nobody will prevent the conclusion of the pact she\'s made. You yell out to the company to make sure %protectee% is kept out of harm\'s way. | A woman is spotted approaching the company. The sellswords are ensorcelled by her beauty, but you know better. You draw your sword and clang it loud enough to draw the ire of this supposed lady. She sneers and her lips snap back with a grin that goes from nearly ear to ear. Her skin tightens until it creases and turns a pale grey. She laughs and laughs as her hair falls out. The witch points a finger at you.%SPEECH_ON%Ah, I smell your ancestry, sellsword, but it matters not where you come from. The pact must be paid by the firstborn\'s blood and anyone who stands in our way will bleed in kind!%SPEECH_OFF%The company falls into formation and you tell %protectee% to keep his head down.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "To arms!",
+					Text = "拿起武器!",
 					function getResult()
 					{
 						local p = this.World.State.getLocalCombatProperties(this.World.State.getPlayer().getPos());
@@ -455,14 +458,14 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Curse",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_124.png[/img]{As you start your return trip to %employer%, you find %superstitious% staring down at a witch. You can see the damned woman\'s lips are still moving and you rush over. She\'s speaking in curses which you shutup with the heel of your boot. Teeth flutter from rent gums as she laughs. You draw your sword and stab it between her eyes, putting her to rest once and for all. %superstitious% is just about shaking.%SPEECH_ON%She knew all about me! She knew everything, captain! She knew everything! She knew when I\'d die and how!%SPEECH_OFF%You tell the man to ignore every word the witch told him. Nodding, he rejoins the company, but his face grimaces with fortunes that can\'t go unheard.}",
+			Title = "战斗之后...",
+			Text = "[img]gfx/ui/events/event_124.png[/img]{当你返回去找%employer%，你发现%superstitious%盯着一个女巫。你可以看到那个该死的女人的嘴唇还在动，你冲了过去。她在诅咒你，你踢了她一脚。当她笑的时候，牙齿从撕裂的牙龈掉了下来。你拔出你的剑，刺进她的眼睛，让她永远安息。%superstitious%颤抖着说道。%SPEECH_ON%她知道我的一切!她什么都知道，队长!她知道一切!她知道我什么时候死，怎么死!%SPEECH_OFF%你告诉那人不要理会女巫对他说的每一个字。}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Don\'t think about it.",
+					Text = "别多想了.",
 					function getResult()
 					{
 						return "Success";
@@ -495,13 +498,13 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "EnchantedVillager",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_124.png[/img]{As the men recover from battle, a young peasant runs across the field hollering and whooping. You turn to see him fall before a witch and hold her ghastly, leathery body up, clutching it between his arms and rocking back and forth. Seeing you, he spits curses.%SPEECH_ON%Why\'d you do it, huh? Goddam bastards the lot of ya! She was wed to me a fortnight ago and now I must bury her. Well I say take me with her! Do your worst, you savages! This world will bury us both, my love!%SPEECH_OFF%You raise an eyebrow. The man must have been bewitched sometime before your arrival, probably a lackey for the witches. Whatever you think, a few of the men are a bit disturbed by the sight of the grieving boy. However, one hardier sellsword with a slick grin and his hand on his weapon asks if he should grant the kid his request. You shake your head no and order the men back into formation.} ",
+			Title = "战斗之后...",
+			Text = "[img]gfx/ui/events/event_124.png[/img]{当士兵们从战场上回复过来时，一个年轻的农民跑过田野，大声叫喊着。你转过身来，看见他扑倒在一个女巫面前，把她那阴森可怕的皮包骨头的身体抱了起来，紧紧地抱在他的怀里，前后摇晃着。他看见你，就破口大骂。%SPEECH_ON%你为什么要这么做?你们这些该死的混蛋!她两星期前嫁给了我，现在我必须埋葬她。我说带我一起走!你们这些野蛮人，你们来试试看吧!这个世界会把我们都埋葬，我的爱人!%SPEECH_OFF%你扬起眉毛。在你到达之前，这个人一定是被施了魔法，可能是他的跟班}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Poor fool.",
+					Text = "可怜的傻瓜.",
 					function getResult()
 					{
 						return "Success";
@@ -512,13 +515,13 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Failure1",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_124.png[/img]{The battle over, %randombrother% comes to your side. He says %protectee% died during the fight. Says his eyeballs are gone as is his tongue, that his face looks like two wet rags folding in on each other. No point in going back to %employer% now. | You look down at %protectee%\'s corpse. The eyeballs have been yanked and hang down his cheeks like wet craw. His face is stretched into a smile, though whatever put it that way couldn\'t have been the least bit funny. %randombrother% asks if the company should return to %employer% and you shake your head no. | You find %employer%\'s firstborn crumpled on the ground. Every joint has been scooped or carved out, though when or how this happened is beyond you. %randombrother% tries to move the body, but it twists and clatters like a stringless puppet. The sellsword grimaces and throws the corpse back to the ground where it rimples into a basket of its own ribcage, the head egglike in the nest. There\'s no point in returning to %employer% now.}",
+			Title = "战斗之后...",
+			Text = "[img]gfx/ui/events/event_124.png[/img]{战斗结束，%randombrother%来到你的身边。他说，%protectee%在战斗中死了。他说他的眼球和舌头都不见了，他的脸看起来像两块湿抹布叠在一起。现在没有必要回到%employer%身边。你低头看着%protectee%的尸体。眼球被猛拉了一下，像湿漉漉的岩石一样耷拉下来。他的脸被拉长成一个微笑，尽管这样说一点也不滑稽。%randombrother%询问战队是否应该返回给%employer%消息，你摇了摇头。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Shite, shite, shite!",
+					Text = "狗屎!",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);
@@ -532,13 +535,13 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Failure2",
-			Title = "Along the way...",
-			Text = "[img]gfx/ui/events/event_16.png[/img]{%employer% was paying you to protect %protectee%. The firstborn is hard to protect when you leave %townname% and abandon him to the witches. Don\'t bother going back for your pay. | You had been tasked to keep %protectee% safe in %townname%, or did you forget? Don\'t bother going back, the firstborn is no doubt already dead or, worse, taken by the witches for some nefarious purpose.}",
+			Title = "路上...",
+			Text = "[img]gfx/ui/events/event_16.png[/img]{%employer% 付钱给你是为了保护 %protectee%. 当你离开时，长子很难保护。 %townname% 的村民把他交给了女巫. 别费事回去领报酬了. | 你是奉命留在 %townname% 保护 %protectee%  你忘了吗? 不用再回去了，长子肯定已经死了，或者更糟的是，被女巫们出于某种邪恶的目的带走了.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Oh, damn.",
+					Text = "哦,该死的.",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);
@@ -552,15 +555,16 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Success",
-			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_79.png[/img]{%employer% embraces %protectee%, holding the firstborn tight. He looks at you.%SPEECH_ON%So it\'s done then, all the witches are dead?%SPEECH_OFF%You nod. The townsman nods back.%SPEECH_ON%Thank you! Thank you, mercenary!%SPEECH_OFF%He points you to a chest in the corner of the room. It\'s full of your payment. | You return %protectee% to %employer%. The townsman and firstborn embrace like the telling of two separate dreams of identical circumstance, slowly coming together despite the appeals of reality. Finally, they hug and clench one another and pause to stare at one another to be sure it\'s all real. You tell %employer% that every witch is dead, but that he should keep the tale to himself. He nods.%SPEECH_ON%Spirits feed on hubris, I know that much, and I shall take this story to the grave. I thank you for what you\'ve done today, sellsword. I thank you to such lengths you could not possibly know. I\'ve but one way to express my appreciation.%SPEECH_OFF%He brings you a satchel of gold. The sight of the bag bulging with coin brings a warm smile to your face. | %protectee% runs from your side and into the arms of %employer%. The townsman looks over his firstborn\'s shoulders.%SPEECH_ON%So it\'s done then, we are free of the curse?%SPEECH_OFF%You shrug and respond.%SPEECH_ON%You\'re free of the witches.%SPEECH_OFF%The townsman purses his lips and nods.%SPEECH_ON%Well, that\'s good enough. Your payment is over there in the satchel, as much as promised.%SPEECH_OFF%}",
+			Title = "当你返回...",
+			//Text = "[img]gfx/ui/events/event_79.png[/img]{%employer% embraces %protectee%, holding the firstborn tight. He looks at you.%SPEECH_ON%So it\'s done then, all the witches are dead?%SPEECH_OFF%You nod. The townsman nods back.%SPEECH_ON%Thank you! Thank you, mercenary!%SPEECH_OFF%He points you to a chest in the corner of the room. It\'s full of your payment. | You return %protectee% to %employer%. The townsman and firstborn embrace like the telling of two separate dreams of identical circumstance, slowly coming together despite the appeals of reality. Finally, they hug and clench one another and pause to stare at one another to be sure it\'s all real. You tell %employer% that every witch is dead, but that he should keep the tale to himself. He nods.%SPEECH_ON%Spirits feed on hubris, I know that much, and I shall take this story to the grave. I thank you for what you\'ve done today, sellsword. I thank you to such lengths you could not possibly know. I\'ve but one way to express my appreciation.%SPEECH_OFF%He brings you a satchel of gold. The sight of the bag bulging with coin brings a warm smile to your face. | %protectee% runs from your side and into the arms of %employer%. The townsman looks over his firstborn\'s shoulders.%SPEECH_ON%So it\'s done then, we are free of the curse?%SPEECH_OFF%You shrug and respond.%SPEECH_ON%You\'re free of the witches.%SPEECH_OFF%The townsman purses his lips and nods.%SPEECH_ON%Well, that\'s good enough. Your payment is over there in the satchel, as much as promised.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_79.png[/img]{你告诉雇主每个女巫都死了，但他应该把这件事保密。他点了点头。%SPEECH_ON%灵魂以狂妄为食，我知道这一点，我将把这个故事带入坟墓。谢谢你今天所做的一切，佣兵。我感谢你，感谢到你都不可能知道的程度。%SPEECH_OFF% | %protectee%从你身边跑到%employer%的怀里。那个城里人从他长子的肩膀上看过来。%SPEECH_ON%既然如此，我们摆脱诅咒了吗?%SPEECH_OFF%你耸耸肩回答。你摆脱了女巫的魔爪。那镇上人噘着嘴点点头。%SPEECH_ON%嗯，这已经足够好了。你的报酬就在那边的小提包里，和答应你的一样多。%SPEECH_OFF%}",
 			Image = "",
 			Characters = [],
 			List = [],
 			ShowEmployer = true,
 			Options = [
 				{
-					Text = "All worked out in the end.",
+					Text = "最后一切都解决了.",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
@@ -577,7 +581,7 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
+					text = "你获得 [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] 克朗"
 				});
 				this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
 			}

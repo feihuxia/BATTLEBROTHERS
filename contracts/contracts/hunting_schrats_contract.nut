@@ -1,4 +1,4 @@
-this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
+﻿this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 	m = {
 		Target = null,
 		Dude = null,
@@ -240,14 +240,15 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_62.png[/img]{You find a town board littered with notes written in cheap scrap or even on leaves and held there with the most rusted of nails. %employer% sidles up to you.%SPEECH_ON%We\'ve been waiting for a man of your sort, sellsword. Folks keep going missing in the woods and I\'ve no recourse in getting them back. I\'ve heard tales of trees on the move and killing the lumberjacks hacking at their trunks, but who knows if any of that\'s true. I need your company to head into the woods and find out what\'s causing all this carnage. Are you interested?%SPEECH_OFF% | %employer% is rolling a piece of bark between his fingers like a gambler\'s coin. He sighs and throws it across his table.%SPEECH_ON%I\'ve been receiving stories about lumberjacks and peddlers going missing in the woods. Some say the trees are coming alive to have their revenge, but that sounds like hogwash to me. Either way, a sum of coin has been readied to help \'solve\' this issue and I\'m willing to dispense it. What say you, sellsword, are you interested in finding whatever monsters are hounding this town?%SPEECH_OFF% | There\'s a pile of sawdust on %employer%\'s desk and his eyes are intently staring into the mound. He waves you in without breaking his glare, and speaks all the same.%SPEECH_ON%The local lumberjacks are reporting that men are going missing in the woods. They say the trees are up to it, something about monsters made of wood and roots. Parts of me believe they\'re hiding a murder and won\'t fess to the crime, but then maybe the spooky stories are true. Either way, I\'ve coin to see it to an end and you\'re just the man the task, yeah?%SPEECH_OFF% | Entering %employer%\'s room, your foot clips a slat of chopped wood. It tumbles over and falls flat edged, the round trunk and its bark now up at you. The mayor claps his hands.%SPEECH_ON%So it didn\'t move! Ah, you\'re probably wondering what I\'m on about. Here.%SPEECH_OFF%He throws you a drawing of what looks like a tree with arms. He goes on.%SPEECH_ON%I\'ve word from the roads that the trees are coming alive. Even have a trusted friend who works as a lumberjack said, straight faced, that some spiritual beast in the trees had taken the wood and roots and wielded them as weapons. Whatever is out there, I need a set of killers to seek it out. Are you and your company up for the task?%SPEECH_OFF% | %employer% is found sitting on a trunk of a tree while surrounded by peasants. After a few minutes he throws his hands out.%SPEECH_ON%See! Ain\'t nothing wrong! It\'s a tree! A tree, see?%SPEECH_OFF%The peasants are not convinced and go on about monsters in the forest shaped like the woods themselves. Sighing, %employer% throws his hand out to you.%SPEECH_ON%Fine, we\'ll hire some mercenaries? Does that suit everyone? What say you, sellsword. We\'ve coin to pay and murderous trees for you to hunt. Sound good?%SPEECH_OFF%}",
+			//Text = "[img]gfx/ui/events/event_62.png[/img]{You find a town board littered with notes written in cheap scrap or even on leaves and held there with the most rusted of nails. %employer% sidles up to you.%SPEECH_ON%We\'ve been waiting for a man of your sort, sellsword. Folks keep going missing in the woods and I\'ve no recourse in getting them back. I\'ve heard tales of trees on the move and killing the lumberjacks hacking at their trunks, but who knows if any of that\'s true. I need your company to head into the woods and find out what\'s causing all this carnage. Are you interested?%SPEECH_OFF% | %employer% is rolling a piece of bark between his fingers like a gambler\'s coin. He sighs and throws it across his table.%SPEECH_ON%I\'ve been receiving stories about lumberjacks and peddlers going missing in the woods. Some say the trees are coming alive to have their revenge, but that sounds like hogwash to me. Either way, a sum of coin has been readied to help \'solve\' this issue and I\'m willing to dispense it. What say you, sellsword, are you interested in finding whatever monsters are hounding this town?%SPEECH_OFF% | There\'s a pile of sawdust on %employer%\'s desk and his eyes are intently staring into the mound. He waves you in without breaking his glare, and speaks all the same.%SPEECH_ON%The local lumberjacks are reporting that men are going missing in the woods. They say the trees are up to it, something about monsters made of wood and roots. Parts of me believe they\'re hiding a murder and won\'t fess to the crime, but then maybe the spooky stories are true. Either way, I\'ve coin to see it to an end and you\'re just the man the task, yeah?%SPEECH_OFF% | Entering %employer%\'s room, your foot clips a slat of chopped wood. It tumbles over and falls flat edged, the round trunk and its bark now up at you. The mayor claps his hands.%SPEECH_ON%So it didn\'t move! Ah, you\'re probably wondering what I\'m on about. Here.%SPEECH_OFF%He throws you a drawing of what looks like a tree with arms. He goes on.%SPEECH_ON%I\'ve word from the roads that the trees are coming alive. Even have a trusted friend who works as a lumberjack said, straight faced, that some spiritual beast in the trees had taken the wood and roots and wielded them as weapons. Whatever is out there, I need a set of killers to seek it out. Are you and your company up for the task?%SPEECH_OFF% | %employer% is found sitting on a trunk of a tree while surrounded by peasants. After a few minutes he throws his hands out.%SPEECH_ON%See! Ain\'t nothing wrong! It\'s a tree! A tree, see?%SPEECH_OFF%The peasants are not convinced and go on about monsters in the forest shaped like the woods themselves. Sighing, %employer% throws his hand out to you.%SPEECH_ON%Fine, we\'ll hire some mercenaries? Does that suit everyone? What say you, sellsword. We\'ve coin to pay and murderous trees for you to hunt. Sound good?%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_62.png[/img]{你发现城市的公告板上到处都是用廉价的废料甚至树叶写的便条，上面的钉子锈迹斑斑。%employer%悄悄走近你。%SPEECH_ON%我们一直在等一个像你这样的人，佣兵。人们老是在树林里失踪，我没有办法把他们找回来。我听说过树木在移动中杀死砍树的伐木工的故事，但谁知道这些是不是真的。我需要你的同伴到树林里去找出是什么造成了这场大屠杀。你感兴趣吗?%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{Interested for sure. | Let\'s talk pay. | Let\'s talk crowns. | This is going to cost you. | A wild chase through the forest, then? Count me in. | The %companyname% can help, for the right price.}",
+					Text = "{当然感兴趣. | 我们谈谈报酬吧. | 让我们谈谈价格吧. | 这值得你为此付出. | 那么，在森林里疯狂地追逐？数数克朗吧. | 如果价格合适我们 %companyname% 会帮助你的.}",
 					function getResult()
 					{
 						return "Negotiation";
@@ -255,7 +256,7 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "{This doesn\'t sound like our kind of work. | I won\'t lead the men on a wild goose chase through the woods. | I don\'t think so. | I say no. The men prefer known enemies of flesh and blood.}",
+					Text = "{这听起来不像是好工作. | 我不会带领人们在森林里追逐野兽. | 我不这么认为. | 我说不，男人们更喜欢血肉之敌.}",
 					function getResult()
 					{
 						this.World.Contracts.removeContract(this.Contract);
@@ -271,13 +272,14 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Banter",
-			Title = "Along the way...",
-			Text = "[img]gfx/ui/events/event_25.png[/img]{The company is increasingly on edge, insomuch as a company would be in a forest while hunting murderous trees. Every crack of a branch has the men drawing swords and one of them screamed when a fallen leaf fell into the nape of shirt. Your enemy is already scoring wins without even having to do anything! | The forest is making the men uneasy. You tell them to shape up for the enemy is out there one way or another, and it is not worth being fearful of that which is certain. It is you who shall be feared, the %companyname%, and these damned murderous trees will be wishing you were simple lumberjacks by the time you\'re done with them! | %randombrother% heaves his weapon over his shoulders and totters on with his arms swinging around dramatically. He\'s sizing up the forest foliage.%SPEECH_ON%Hey cap\', what you say we smash up one of these trees here and call it a day! Pitch \'em a pile of chopped wood and mulch and ain\'t no one gonna know the difference when it\'s all said and told. If they ask questions just tell \'em the bark had some bite!%SPEECH_OFF%The men laugh and you tell the sellsword you\'ll take his idea into consideration.}",
+			Title = "路上...",
+			Text = "[img]gfx/ui/events/event_25.png[/img]{在森林里猎杀杀人树木的战队越来越紧张。每一根树枝的裂缝都有拔剑的人，当一片落叶落进衬衫的后襟时，其中一人尖叫起来。你的敌人已经不用做任何事情就能得分了。}",
+//			| The forest is making the men uneasy. You tell them to shape up for the enemy is out there one way or another, and it is not worth being fearful of that which is certain. It is you who shall be feared, the %companyname%, and these damned murderous trees will be wishing you were simple lumberjacks by the time you\'re done with them! | %randombrother% heaves his weapon over his shoulders and totters on with his arms swinging around dramatically. He\'s sizing up the forest foliage.%SPEECH_ON%Hey cap\', what you say we smash up one of these trees here and call it a day! Pitch \'em a pile of chopped wood and mulch and ain\'t no one gonna know the difference when it\'s all said and told. If they ask questions just tell \'em the bark had some bite!%SPEECH_OFF%The men laugh and you tell the sellsword you\'ll take his idea into consideration.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Watch where you step.",
+					Text = "注意你的脚下.",
 					function getResult()
 					{
 						return 0;
@@ -289,12 +291,12 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Encounter",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_107.png[/img]{While standing around getting a lay of the land, %randombrother% calls out that there\'s something moving in the distance. As you come to his side, he points a finger into the foliage and draws his sword. A great tree is marching toward you, shambling from side to side like an old man in a library\'s familiar corridors. You draw your own sword and order the men into formation. | %randombrother% is sitting on a fallen tree when he suddenly jumps up yelling and grabbing his weapon. You look over to see the tree itself rising up into the air, clumps of earth raining below and a great wet ditch left as though it had bedded there for eons. It leans against its healthier brethren like a drunkard would into a friend\'s shoulder. Slowly, it twists its body around, a pair of green eyes flared from somewhere deep in its trunk, and its sharp branches wheel around with it, splayed wide with their shadows falling over the company like a web. You grab your sword and order the men into formation.}",
+			Text = "[img]gfx/ui/events/event_107.png[/img]{当站在周围看了看地面时，%randombrother%喊远处有什么东西在动。当你走到他身边时，他把手指伸进树叶里，拔出了剑。一棵大树正朝你走来，像一位老人在图书馆熟悉的走廊里那样左右摇晃着。你拔出自己的剑，命令士兵们排成队形 | %randombrother% 正坐在一棵倒下来的树上，突然跳了起来，大叫着抓住了他的武器。你往下看，看到那棵树自己升到了空中，一簇簇的泥土如雨一样下落，留下一条又大又湿的沟壑，仿佛它已经在那里扎根了好多年。它靠在健康的同胞身上，就像醉汉靠在朋友的肩膀上一样。它慢慢地扭动着身子，一双绿色的眼睛从树干深处向外一闪，它那锋利的枝条也随着它转动着，伸展开来，它们的影子像一张网一样落在这群人身上。你拿起剑命令士兵们排成队形.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Charge!",
+					Text = "冲锋!",
 					function getResult()
 					{
 						this.Contract.getActiveState().onTargetAttacked(this.Contract.m.Target, this.Contract.m.IsPlayerAttacking);
@@ -306,13 +308,13 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Direwolves",
-			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_118.png[/img]{You spot pairs of green eyes glowing in the distance. No doubt a sight of the schrats themselves, and so you order your men to clamber toward them quietly.\n\nCresting a hill you find the trunk of one tree is surrounded by direwolves. They\'re crouched beneath it like knights swearing fealty. Your arrival has not gone unnoticed as the schrat leans forward with a seemingly ancient crooning. The creatures at its roots growl and turn as though commanded. You\'re not sure what to make of such arboreal allegiance, but the %companyname% will break them all the same.}",
+			Title = "当你靠近...",
+			Text = "[img]gfx/ui/events/event_118.png[/img]{你看到一对绿色的眼睛在远处闪闪发光。毫无疑问看到了那些蠢货，所以你命令你的人悄悄地向他们爬去。登上山顶，你发现一棵树的树干被冰原狼包围着。他们蹲在树下，像骑士宣誓效忠。你的到来并不是没有被注意到，因为树人向前倾着身子，发出了一声看似古老的低吟。树根上的生物咆哮着，转身好像在发号施令。您不知道如何理解这种树状的忠诚，但是 %companyname% 会打败它们.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Charge!",
+					Text = "冲锋!",
 					function getResult()
 					{
 						this.Contract.addUnitsToEntity(this.Contract.m.Target, this.Const.World.Spawn.Direwolves, 70 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
@@ -325,13 +327,13 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Victory",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_121.png[/img]{The schrats are slain, their arboreal remains now resembling little more than ordinary trees. You carve trophies and evidence for a return to %employer%. | You stare at a felled tree and then at a felled schrat. Between the two you see almost no difference, which makes you ponder about all those supposedly dead trees you\'ve been hopping over your whole life. Not one to dwell on such matters, you order the company take trophies as proof of the battle and ready a return to %employer%. | The schrats are felled, each draped against the rest of the forest foliage like brawlers resting between rounds. You walk up beneath the roots of one and get a good look at it, but now it appears no different than any other tree around. You order the company to take what trophies they can to show %employer%.}",
+			Title = "战斗之后...",
+			Text = "[img]gfx/ui/events/event_121.png[/img]{这些树人被杀死了，它们的残骸现在看起来就像普通的树木. 你为向报告%employer%在收集证据 . | 你盯着一棵被砍倒的树人，然后又盯着一棵被砍倒的树。在这两者之间，你几乎看不出有什么不同，这让你思考那些你这辈子从没想过的问题树人和树的区别。没有人去细想这样的事情，你命令公司拿树枝作为战斗的证据，并准备返回 %employer%. | 这些树人被砍倒了，每一个都搭在其他的树叶上，就像在中场间休息的斗殴者。你走到一棵树的树根下，仔细地看了看，但现在它看起来和周围的其他树没什么不同。你命令公司拿走他们能拿的战利品向 %employer% 报告.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "It\'s done.",
+					Text = "就这么定了.",
 					function getResult()
 					{
 						if (this.Flags.get("IsGlade") && this.World.Assets.getStash().hasEmptySlot())
@@ -353,13 +355,13 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Glade",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_121.png[/img]{As you\'re departing the battlefield, %randombrother% remarks that the surrounding area looks rather ripe. You turn around to see that he\'s indeed correct: a beautiful crop of trees served host to the schrats, presumably chosen for good reason. And if the schrats took it for a good home, then it surely means the wood is very fine. You order the men to make use of this quality glade and chop as many trees down as time and energy permits. The harvested timber is very fine indeed.\n\n It begins to rain as you depart the impromptu lumbermill.}",
+			Title = "战斗之后...",
+			Text = "[img]gfx/ui/events/event_121.png[/img]{当你离开战场时，%randombrother%说周围的树木看起来相当成熟。你转过身来，就发现他说的确实是对的:一大片美丽的树木成了这些蠢人的主人，想必是有充分的理由选择它们的。如果树人把它当作一个好的家，那么它肯定意味着木头很好。你命令这些人利用这片空地，在时间和精力允许的情况下砍倒尽可能多的树。收获的木材确实很好。当你离开临时的伐木场时，天开始下雨了.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Back to %townname%!",
+					Text = "返回 %townname%!",
 					function getResult()
 					{
 						return 0;
@@ -374,27 +376,27 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + item.getName()
+					text = "你获得 " + item.getName()
 				});
 				item = this.new("scripts/items/trade/quality_wood_item");
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + item.getName()
+					text = "你获得 " + item.getName()
 				});
 			}
 
 		});
 		this.m.Screens.push({
 			ID = "DeadWoodcutter",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_121.png[/img]{Just as you\'re departing a glint catches your eye. You turn around and come to one of the schrats\' trunk. An axe is embedded in the wood. Moss has long since overgrown the handle, and yet the metal of the tool is without error, not a smidge of rust upon it. Scraping the moss away, you uncover wooden fingertips still at full grip. Tracing the fingers ends at the tree trunk where the wrist becomes a vein of wood. You follow that along to a wooden face with a twisted maw, like a face of brown wax melted by time alone. The frame of a helmet twists around the face and there\'s a chest plate cresting below like the reservoir of a deerchaser.\n\nYou shake your head and retrieve the axe, breaking it free and throwing the wooden fingers off its handle. The misshapen face blankly observes your theft, its stare preserved in the very annihilation from which it is eons removed. You don\'t dwell on the sight and return to the company with the axe.}",
+			Title = "战斗之后...",
+			Text = "[img]gfx/ui/events/event_121.png[/img]{就在你要离开的时候，一道闪光映入了你的眼帘。你转过身来，来到一只树人的树干前。斧头嵌在木头里。青苔早已长满了刀柄，然而金属没有一点瑕疵，一点锈也没有。刮去苔藓，你发现树人的指尖仍然紧紧地握着。手腕在树干处变成了一根木脉。你沿着这条路走到一张木头脸，上面有一个扭曲的鼻子，就像一张被时间独自融化的褐色蜡脸。}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Back to %townname%!",
+					Text = "返回 %townname%!",
 					function getResult()
 					{
 						return 0;
@@ -428,7 +430,7 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain a " + item.getName()
+					text = "你获得 " + item.getName()
 				});
 			}
 
@@ -436,14 +438,15 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Success",
 			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_62.png[/img]{You find %employer% carving a toy out of wood. He blows the shavings off his desk and claps the sawdust from his fingers. He sets the toy up on its legs, shaped like a knight that\'s eaten too many sweets, but it promptly falls over. Sighing, he turns to you for help. You pull the schrat\'s head into the room and let it rock back and forth on the floor til it rests upon one of its horns. The mayor nods.%SPEECH_ON%Quite good, sellsword.%SPEECH_OFF%He fetches your promised reward. | %employer% is shocked at your return, and shocked at the schrat\'s remains which you have brought upon his doorstep. He looks down at it, ever incredulous as to its source. Like a cat pawing at a bug\'s shorn wings he rummages the pile with his foot.%SPEECH_ON%I\'d no imagination of you bringing these back, but damned if you didn\'t find and kill those bastard trees. Well, I\'ll fetch your reward.%SPEECH_OFF%He brings you the contracted coin as promised. | %employer% is running a carver down the arm of a wooden chair when you find him. He looks up at your arrival and you present the remains of a schrat. The man gets up and takes a piece, coming to sit in his chair to get a good look at it, but his chair blows apart beneath his arse and claps the boards against the ground with a tremendous clatter as if his original designs all along were to export a great cacophony. %employer% throws his tools in a fit.%SPEECH_ON%By the gods I\'ll, well, I\'d best not make myself a savage and threaten them. Suppose doing that got me to this state in the first place.%SPEECH_OFF%You nod, stating it\'s unwise to anger the old gods. You also suggest that it is unwise to let a sellsword go unpaid for his work. The mayor jumps to his feet and runs to get a satchel of coin.%SPEECH_ON%Of course, mercenary! You need not lecture me on such matters!%SPEECH_OFF% | %employer% is found beneath a copse of trees. He\'s got his hands over his belly and he\'s staring at the sky. A smile crosses his face and he points up at a cloud as though someone should be beside him to witness, but he\'s all by himself and says nothing. You throw a chunk of schrat at his feet and ask if he has your payment. He turns over a satchel that had heretofore gone unseen.%SPEECH_ON% A couple of lumberjacks saw you in battle with them and told me the tale, already. I\'d not thought the schrats entirely real. Deadly trees seem like a superstition for children, but I suppose I\'ve things to learn yet. Good work, sellsword.%SPEECH_OFF%}",
+			//Text = "[img]gfx/ui/events/event_62.png[/img]{You find %employer% carving a toy out of wood. He blows the shavings off his desk and claps the sawdust from his fingers. He sets the toy up on its legs, shaped like a knight that\'s eaten too many sweets, but it promptly falls over. Sighing, he turns to you for help. You pull the schrat\'s head into the room and let it rock back and forth on the floor til it rests upon one of its horns. The mayor nods.%SPEECH_ON%Quite good, sellsword.%SPEECH_OFF%He fetches your promised reward. | %employer% is shocked at your return, and shocked at the schrat\'s remains which you have brought upon his doorstep. He looks down at it, ever incredulous as to its source. Like a cat pawing at a bug\'s shorn wings he rummages the pile with his foot.%SPEECH_ON%I\'d no imagination of you bringing these back, but damned if you didn\'t find and kill those bastard trees. Well, I\'ll fetch your reward.%SPEECH_OFF%He brings you the contracted coin as promised. | %employer% is running a carver down the arm of a wooden chair when you find him. He looks up at your arrival and you present the remains of a schrat. The man gets up and takes a piece, coming to sit in his chair to get a good look at it, but his chair blows apart beneath his arse and claps the boards against the ground with a tremendous clatter as if his original designs all along were to export a great cacophony. %employer% throws his tools in a fit.%SPEECH_ON%By the gods I\'ll, well, I\'d best not make myself a savage and threaten them. Suppose doing that got me to this state in the first place.%SPEECH_OFF%You nod, stating it\'s unwise to anger the old gods. You also suggest that it is unwise to let a sellsword go unpaid for his work. The mayor jumps to his feet and runs to get a satchel of coin.%SPEECH_ON%Of course, mercenary! You need not lecture me on such matters!%SPEECH_OFF% | %employer% is found beneath a copse of trees. He\'s got his hands over his belly and he\'s staring at the sky. A smile crosses his face and he points up at a cloud as though someone should be beside him to witness, but he\'s all by himself and says nothing. You throw a chunk of schrat at his feet and ask if he has your payment. He turns over a satchel that had heretofore gone unseen.%SPEECH_ON% A couple of lumberjacks saw you in battle with them and told me the tale, already. I\'d not thought the schrats entirely real. Deadly trees seem like a superstition for children, but I suppose I\'ve things to learn yet. Good work, sellsword.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_62.png[/img]{%SPEECH_ON%几个伐木工人看见你和它们在战斗，就已经告诉我了。我不认为那些笨蛋完全是真的。致命的树木对孩子们来说似乎是迷信，但我想我还需要学习一些东西。做的好,佣兵。%SPEECH_OFF%}",
 			Image = "",
 			Characters = [],
 			List = [],
 			ShowEmployer = true,
 			Options = [
 				{
-					Text = "A successful hunt.",
+					Text = "一次成功的狩猎.",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
@@ -460,7 +463,7 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
+					text = "你获得 [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] 克朗"
 				});
 				this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
 			}

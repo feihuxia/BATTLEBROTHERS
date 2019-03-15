@@ -196,7 +196,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Contract.m.BulletpointsObjectives = [
-					"在 %days% 天内护送车队至%direction%的%objective% ",
+					"在 %days% 内护送车队至%direction%的%objective% ",
 					"按照约定的方式给于报酬"
 				];
 
