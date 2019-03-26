@@ -1,4 +1,4 @@
-this.collector_wants_trophy_event <- this.inherit("scripts/events/event", {
+﻿this.collector_wants_trophy_event <- this.inherit("scripts/events/event", {
 	m = {
 		Peddler = null,
 		Reward = 0,
@@ -8,16 +8,16 @@ this.collector_wants_trophy_event <- this.inherit("scripts/events/event", {
 	function create()
 	{
 		this.m.ID = "event.collector_wants_trophy";
-		this.m.Title = "At %townname%";
+		this.m.Title = "在 %townname%";
 		this.m.Cooldown = 25.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_01.png[/img]{While browsing the town\'s markets, a man in silk approaches. He\'s wearing a grin with more glitter than chomp, and each of his fingers are adorned to glint. | As you take a look at the local market\'s wares, a strange man approaches. He has baubles of strange liquids hanging from his hip and there\'s a strange wood taking the place of most of his teeth. | It\'s not a true trip to the markets without some strange fella accosting you. This time it\'s a man with a large face, his mouth a bear trap of jagged teeth, and his cheeks set high as though they were meant to be shelves. Features aside, he swings his weight around like someone of import and wealth.}%SPEECH_ON%{Ah sellsword, I see you have some interesting trophies with ya. How about I take that %trophy% for, say, %reward% crowns? | That\'s an interesting trophy you got there, the %trophy%. I\'ll give you %reward% crowns for it, hand over fist, easy money! | Hmm, I see you are of the adventuring sort. You wouldn\'t come by that %trophy% without some guile in ya. Well I got some gold in me, and I\'ll give you %reward% of it for that trinket.}%SPEECH_OFF%You consider the man\'s offer.",
+			Text = "[img]gfx/ui/events/event_01.png[/img]{当你还在城镇里逛街时，一个穿着丝绸的男人朝你走了过来。他的着装看起来十分漂亮，并且每个手指上都带着金光闪闪的戒指。 | 当你还在集市中走来走去时，一个陌生人朝你走了过来。他的臀部上挂着一些装着奇怪的液体的小玩意，并且有一种奇怪的木头取代了他的大部分的牙齿。 | 说实话，没有奇怪的人的陪伴，这怎么可能叫做一次正常的集市之旅呢？这一次又是一个胖脸的男人，他的嘴好似一个巨大的捕兽夹，他的脸颊很高，整个人活脱脱仿佛就是个绞刑架。把这外貌放在一边不谈，他此时正在四处溜达，行为上看起来绝对是个有钱之人。}%SPEECH_ON%{哈，佣兵，你身上似乎带了一些很有趣的玩意。 不如你将 %trophy% 卖给我，开个价吧，%reward% 克朗? | 你似乎有一个看起来不错的东西带在身上, 这个 %trophy%。我希望用 %reward% 克朗买下它，你平常可没这么容易赚到这么多钱吧！ | 哟嚯，你看起来应该是个冒险家。如果是你手里有 %trophy% 的话，你应该还是身怀一些绝技的吧。但是正好我身怀一些金银，并且我愿意开 %reward% 克朗来换你的这个饰品。}%SPEECH_OFF% 你思考了一下这个男人的提议。",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Deal.",
+					Text = "老铁成交！",
 					function getResult( _event )
 					{
 						if (_event.m.Peddler != null)
@@ -44,7 +44,7 @@ this.collector_wants_trophy_event <- this.inherit("scripts/events/event", {
 
 				},
 				{
-					Text = "No deal.",
+					Text = "老铁不成交！",
 					function getResult( _event )
 					{
 						if (_event.m.Peddler != null)
@@ -66,13 +66,13 @@ this.collector_wants_trophy_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Peddler",
-			Text = "[img]gfx/ui/events/event_01.png[/img]{%peddler% steps forward and pushes you back as though you were a random customer and not the company captain. He yells at the buyer and throws a hand up and the buyer responds and it\'s like two dogs barking at one another and it\'s all so fast and with so many numbers being thrown around it may as well be another language. After a minute passes, the peddler returns.%SPEECH_ON%Alright. He\'s now offering %reward% crowns. I\'m off to look at some pots and pans, good luck.%SPEECH_OFF%He pats you on the shoulder and walks off.}",
+			Text = "[img]gfx/ui/events/event_01.png[/img]{%peddler% 走上前并把你推了回来，感觉你根本就不是什么站团长。他对买主大吼大叫，并且举起一只手，买家也予以回应，这就像两只狗正在互相狂吠，而且速度如此之快，只是一瞬间许多的数字就已经被提了出来，也许是另一种语言吧。一分钟过后，%peddler% 回来了。%SPEECH_ON%事情是这样，他现在愿意付 %reward% 个克朗。我得走了，我还得去看看锅和罐子，祝你好运。%SPEECH_OFF%他拍了拍你的肩膀，随后离开了。}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Deal.",
+					Text = "老铁成交！",
 					function getResult( _event )
 					{
 						this.World.Assets.addMoney(_event.m.Reward);
@@ -92,7 +92,7 @@ this.collector_wants_trophy_event <- this.inherit("scripts/events/event", {
 
 				},
 				{
-					Text = "No deal.",
+					Text = "老铁不成交！",
 					function getResult( _event )
 					{
 						return 0;

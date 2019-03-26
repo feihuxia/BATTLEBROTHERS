@@ -1,4 +1,4 @@
-this.bird_shits_on_sellsword_event <- this.inherit("scripts/events/event", {
+﻿this.bird_shits_on_sellsword_event <- this.inherit("scripts/events/event", {
 	m = {
 		Victim = null,
 		Superstitious = null,
@@ -8,17 +8,17 @@ this.bird_shits_on_sellsword_event <- this.inherit("scripts/events/event", {
 	function create()
 	{
 		this.m.ID = "event.bird_shits_on_sellsword";
-		this.m.Title = "Along the way...";
+		this.m.Title = "一路上...";
 		this.m.Cooldown = 60.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "%terrainImage%{While traveling the land, %birdbro% gets struck by birdshite. It hits his swordhand and splashes crosswise all over his armor.%SPEECH_ON%Aww, awwww!%SPEECH_OFF%His arms go wide like chicken wings as he looks at the damage.%SPEECH_ON%Bloody hell, just my luck!%SPEECH_OFF%}",
+			Text = "%terrainImage%{当大家还在四处游历时，%birdbro%却遭到了鸟粪的热情款待。鸟粪精准的命中了他的武器，并且溅在了他的盔甲上。%SPEECH_ON%啊啊啊！啊啊啊啊啊啊！%SPEECH_OFF% 他看着这些令人抓狂的污渍，手臂如鸡翅一般胡乱扑腾着 %SPEECH_ON%草，真吉尔倒霉! %SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Yeah, don\'t dwell on it and let\'s get going.",
+					Text = "好了，别纠结这点破事了，我们还要赶路呢。",
 					function getResult( _event )
 					{
 						if (_event.m.Historian == null)
@@ -40,7 +40,7 @@ this.bird_shits_on_sellsword_event <- this.inherit("scripts/events/event", {
 				if (_event.m.Superstitious != null)
 				{
 					this.Options.push({
-						Text = "Could this be an omen?",
+						Text = "这难不成是什么预兆？",
 						function getResult( _event )
 						{
 							return "Superstitious";
@@ -52,7 +52,7 @@ this.bird_shits_on_sellsword_event <- this.inherit("scripts/events/event", {
 				if (_event.m.Archer != null)
 				{
 					this.Options.push({
-						Text = "Someone bring down that plumed transgressor!",
+						Text = "来人给我搞定这个长着羽毛的罪犯！！",
 						function getResult( _event )
 						{
 							return "Archer";
@@ -65,13 +65,13 @@ this.bird_shits_on_sellsword_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Continue",
-			Text = "%terrainImage%{%birdbro% nods.%SPEECH_ON%Course. Just ruined m\'day that\'s all.%SPEECH_OFF%}",
+			Text = "%terrainImage%{%birdbro% 点了点头. %SPEECH_ON%当然。美好的一天就这么被彻底毁掉了。%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Ah well.",
+					Text = "唉，行吧……",
 					function getResult( _event )
 					{
 						return 0;
@@ -97,13 +97,13 @@ this.bird_shits_on_sellsword_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Superstitious",
-			Text = "%terrainImage%{The ever superstitious %superstitious% analyzes the shit with the appraising eye of a proper jeweler. He purses his lips and nods, as satisfied a summary of bird shit as there ever was. He says.%SPEECH_ON%This is a good thing.%SPEECH_OFF%In the face of very incredulous company the man calmly explains that being shat on by a bird is an omen of good things to come. A few of the sellswords seem convinced by this notion. It is rather spectacular to have a bird choose you, out of all earth below, to land a squat on. You nod and say %birdbro% should open his mouth next time for extra special good fortune.}",
+			Text = "%terrainImage%{有点迷信的 %superstitious% 用堪比珠宝商一样的眼神分析了这坨鸟粪。他噘着嘴，点了点头，一如既往的给鸟粪做了一段不错的解释。他说。%SPEECH_ON%这是件好事啊。%SPEECH_OFF%面对众人及其不信任的表情，他冷静地解释道，被鸟儿盯上是即将发生好事的预兆。一部分的雇佣兵似乎还被说服了。能被一只鸟唯独选中去来一泡，感觉确实是一件十分奇妙的事情。你点了点头并表示 %birdbro% 再遇到这种事应该尽可能张着嘴，以获得额外的好运。}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Lucky guy.",
+					Text = "幸运的家伙。",
 					function getResult( _event )
 					{
 						return 0;
@@ -141,13 +141,13 @@ this.bird_shits_on_sellsword_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Archer",
-			Text = "[img]gfx/ui/events/event_10.png[/img]{%archer% looks up, hand shielded over his eyes, tongue out. He sees the bird and nods. He licks a finger, puts it to the air, and nods again. The archer grins as he nocks an arrow.%SPEECH_ON%With crime there is punishment.%SPEECH_OFF%The mercenaries groan and mock the man\'s moralizing, but he calmly raises the bow and lets the arrow loose. It zips and shrinks high into the air and you can hardly see the shot but you do see the bird suddenly crank sideways and start twirling to the earth. The sharpshooter nods and looks over at the company.%SPEECH_ON%You laughing now?%SPEECH_OFF%This only brings more jeers. The archer snidely comments about his importance and this brings about a healthy debate between the men who stand on the frontline and those in the back. You tell the men that if they want to argue which is better they can prove it on the battlefield.}",
+			Text = "[img]gfx/ui/events/event_10.png[/img]{%archer% 抬起了头，双手为眼睛遮蔽了阳光，仔细观察着。他看着天上的鸟并点了点头。随后舔了舔指尖，并伸在半空中，随后他又点了点头。弓箭手笑着从箭袋中拿出弓箭上弦。%SPEECH_ON% 罪犯必须受到惩罚 %SPEECH_OFF%雇佣兵们低声嘲笑着他的道德论，但他看起来很冷静，并且很快射出了一箭。你只是看着箭矢飞速的消失在了空中不见了踪影，但你看到了鸟忽然失衡，并且坠向大地。弓箭手笑着点了点头，随后看向了自己的战友，%SPEECH_ON%你们再笑？%SPEECH_OFF%但这只迎来了更多地嘲笑声。弓箭手用这种方法，狡猾的解释了他在团队中的重要性，并且为这些前排肉盾和后排输出之间提供了一次友好的辩论。你告诉这些人，如果真的想要讨论出一个结果，还需要看战场上表现才能揭晓答案。}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Nice shot!",
+					Text = "干得漂亮！",
 					function getResult( _event )
 					{
 						return 0;
@@ -209,13 +209,13 @@ this.bird_shits_on_sellsword_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Historian",
-			Text = "%terrainImage%{You tell %birdbro% that being shit on is a part of life and get the company ready to get back on the road. But a modest %historian% comes up and tells the ill-fated sellsword to hold off on cleaning the shite. The historian takes a good look at the shite and then up at the bird which authored it.%SPEECH_ON%Yes, yes... I know that bird! That magical creature!%SPEECH_OFF%The men look up at the bird as though they were sealeagured sailors finding rarified land. %historian% points at %birdbro%.%SPEECH_ON%You got shat on by a red-and-blue mockingbird! That\'s all I wanted to say, really. I just hadn\'t seen one in awhile. You... you can clean it now.%SPEECH_OFF%The mercenaries stand slackjawed before bursting into laughter. %birdbro% grabs the historian and uses his sleeves to clean the shit off which brings more roars from the men.}",
+			Text = "%terrainImage%{你告诉 %birdbro% 运气差只是生活的一部分随后要求部队继续上路。但谦虚的 %historian% 上前表示这位雇佣兵没必要现在就清理掉这些排泄物，这位大学者先是看了看鸟粪，随后有瞧了瞧那只鸟。%SPEECH_ON%没错，没错...我认得那只鸟！就是那个神奇的生物！%SPEECH_OFF%大家抬头看着那鸟，眼神仿佛就是陷入绝境的船员发现大陆了一样。%historian% 指了指 %birdbro%。%SPEECH_ON%你被一只青红仿声雀给看上了！我必须得说，真的，我已经很久很久没见过这些小家伙了，我想说的就是这么多，你……你可以继续清理了。%SPEECH_OFF% 大家差点笑出了声。 %birdbro% 抓起了这位可怜的学者，用他的袖子擦净了鸟粪，雇佣兵们又热闹了起来。}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "So that mystery is solved.",
+					Text = "看来问题解决了。",
 					function getResult( _event )
 					{
 						return 0;
