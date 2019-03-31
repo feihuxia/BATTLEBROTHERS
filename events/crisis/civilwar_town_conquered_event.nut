@@ -10,7 +10,7 @@ this.civilwar_town_conquered_event <- this.inherit("scripts/events/event", {
 		this.m.IsSpecial = true;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_45.png[/img]{有消息称%conqueror%已经从%defeated%手中夺取了%city%！|信使们说%conqueror%已经是%city%的新统治者了，在经历了一场大战之后从%defeated%手中夺回来的。|重新规划地图！难民，信使，商人们都在说%city%已经属于%conqueror%了！}",
+			Text = "[img]gfx/ui/events/event_45.png[/img]{有消息称%conqueror%已经从%defeated%手中夺取了%city%！ | 信使们说%conqueror%已经是%city%的新统治者了，在经历了一场大战之后从%defeated%手中夺回来的。 | 重新规划地图！难民，信使，商人们都在说%city%已经属于%conqueror%了！}",
 			Image = "",
 			List = [],
 			Characters = [],

@@ -11,7 +11,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 21.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_59.png[/img]{战争除了造成人员伤亡，还有许多幸存者，你在前进的时候，发现一群避难者挤成一团。他们正在小溪边清洗自己，看到你的到来，他们感到十分害怕。大多数都是女人和小孩，还有几个老人和男人，他们似乎已经拼命防御，牺牲自己的准备，不管防御是否会成功。一个人走上前来，%SPEECH_ON%你们想要什么？%SPEECH_OFF%%aggro_bro%走到你身边，%SPEECH_ON%长官，我们可以拿走他们的一切，不过他们肯定不会束手就擒。%SPEECH_OFF%%injured_bro%摇了摇头，%SPEECH_ON%这不值得，他们已经饱经风霜，没多少东西剩下了。%SPEECH_OFF% | 你遇到一群避难者。女人，小孩，老人，还有几个瞪大眼睛的男人。他们没多少价值，不过他们有一些可以拿走的东西。| 避难者。他们彼此排成一行走在路上。看到你之后，为首的人停下来，所有人慢慢地挤作一团，非常害怕。%aggro_bro%建议杀了他们，夺走他们的东西，尽管一眼望去，他们并没有多少东西。}",
+			Text = "[img]gfx/ui/events/event_59.png[/img]{战争除了造成人员伤亡，还有许多幸存者，你在前进的时候，发现一群避难者挤成一团。他们正在小溪边清洗自己，看到你的到来，他们感到十分害怕。大多数都是女人和小孩，还有几个老人和男人，他们似乎已经拼命防御，牺牲自己的准备，不管防御是否会成功。一个人走上前来，%SPEECH_ON%你们想要什么？%SPEECH_OFF%%aggro_bro%走到你身边，%SPEECH_ON%长官，我们可以拿走他们的一切，不过他们肯定不会束手就擒。%SPEECH_OFF%%injured_bro%摇了摇头，%SPEECH_ON%这不值得，他们已经饱经风霜，没多少东西剩下了。%SPEECH_OFF%  |  你遇到一群避难者。女人，小孩，老人，还有几个瞪大眼睛的男人。他们没多少价值，不过他们有一些可以拿走的东西。 |  避难者。他们彼此排成一行走在路上。看到你之后，为首的人停下来，所有人慢慢地挤作一团，非常害怕。%aggro_bro%建议杀了他们，夺走他们的东西，尽管一眼望去，他们并没有多少东西。}",
 			Image = "",
 			Characters = [],
 			Options = [
@@ -127,7 +127,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/event_59.png[/img]{你让%randombrother%给避难者一些吃的。他们感到十分恐惧，你给拿出面包和水的时候，他们感到十分怀疑。一个老人走上前来，颤抖地跪下亲吻你的脚。你扶他起来，告诉他不用这样做。几个雇佣兵偷偷笑着，称你为‘面团和面包之王’。| 要想抢劫这些人很简单，不过如果消息传出去，对你们的名声没多少好处。你让%randombrother%给他们一些食物和水。避难者感到十分开心，围到你身边，你就好像一个施展恩惠的神。你刚好有一些要处理的旧食物。有些人说，神像人的时候，人就像神了。}",
+			Text = "[img]gfx/ui/events/event_59.png[/img]{你让%randombrother%给避难者一些吃的。他们感到十分恐惧，你给拿出面包和水的时候，他们感到十分怀疑。一个老人走上前来，颤抖地跪下亲吻你的脚。你扶他起来，告诉他不用这样做。几个雇佣兵偷偷笑着，称你为‘面团和面包之王’。 |  要想抢劫这些人很简单，不过如果消息传出去，对你们的名声没多少好处。你让%randombrother%给他们一些食物和水。避难者感到十分开心，围到你身边，你就好像一个施展恩惠的神。你刚好有一些要处理的旧食物。有些人说，神像人的时候，人就像神了。}",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -321,7 +321,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().isCombatBackground() || bro.getSkills().hasSkill("trait.bloodthirsty") || bro.getSkills().hasSkill("trait.brute"))
+			if (bro.getBackground().isCombatBackground()  ||  bro.getSkills().hasSkill("trait.bloodthirsty")  ||  bro.getSkills().hasSkill("trait.brute"))
 			{
 				candidates_aggro.push(bro);
 			}
@@ -335,7 +335,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 			}
 		}
 
-		if (candidates_aggro.len() == 0 || candidates_other.len() == 0)
+		if (candidates_aggro.len() == 0  ||  candidates_other.len() == 0)
 		{
 			return;
 		}

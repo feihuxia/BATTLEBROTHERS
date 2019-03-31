@@ -31,7 +31,7 @@ this.greenskins_slayer_leaves_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 13,
 					icon = "ui/icons/kills.png",
-					text = _event.m.Dude.getName() + " leaves the " + this.World.Assets.getName()
+					text = _event.m.Dude.getName() + " 离开了 " + this.World.Assets.getName()
 				});
 			}
 
